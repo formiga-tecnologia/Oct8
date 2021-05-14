@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
+body{
+    background-color: #642d7e;
+}
+#menu{
+    background-color: #31123f;
+    color: white;
+}
+#menu a {
+    color: #642d7e;
+}
+#result{
+    background-color: black;
+    margin:2vh 0vh 0vh 2vh;
+    height: 80vh;
+    width: 90vh;
+    position: relative;
+}
+#editorcode{
+    background-color: #512466;
+    height: 80vh;
+    width: 110vh;
+    position: relative;
+    float: right;
+    margin:0vh 2vh 0vh 2vh;
+}
+#editorcode textarea{
+    background-color: #31123f;
+    color: white;
+    font-family:'Comic Neue', cursive;
+    outline:none;
+    stroke: none;
+    resize: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    height: 70vh;
+    width: 100vh;
+    margin: 6vh 0vh 0vh 4vh;
+}
+#titlecode{
+    background-color:#642d7e;
+    color: white;
+    height: 5vh;
+    width: 100%;
+    position: absolute;
+}
