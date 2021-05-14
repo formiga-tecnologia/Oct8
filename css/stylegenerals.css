@@ -2,12 +2,23 @@
 body{
     background-color: #642d7e;
 }
+footer{
+    background-color: #31123f;
+    height: 6vh;
+    width: 100%;
+    color: aliceblue;
+    position: absolute;
+    bottom: 0%;
+    text-align: center;
+    color: #8a40ac;
+    padding-top: 1vh;
+}
 #menu{
     background-color: #31123f;
     color: white;
 }
 #menu a {
-    color: #642d7e;
+    color: #8a40ac;
 }
 #result{
     background-color: black;
@@ -17,31 +28,27 @@ body{
     position: relative;
 }
 #editorcode{
-    background-color: #512466;
     height: 80vh;
     width: 110vh;
     position: relative;
     float: right;
-    margin:0vh 2vh 0vh 2vh;
+    margin:0vh 0vh 4vh 0vh;
 }
 #editorcode textarea{
-    background-color: #31123f;
+    background-color: #642d7e;
     color: white;
     font-family:'Comic Neue', cursive;
     outline:none;
     stroke: none;
     resize: none;
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
-    height: 70vh;
+    height: 75vh;
     width: 100vh;
-    margin: 6vh 0vh 0vh 4vh;
+    margin: 5vh 0vh 0vh 1vh;
 }
-#titlecode{
+.titlecode{
     background-color:#642d7e;
-    color: white;
+    color: #9449b8;
     height: 5vh;
     width: 100%;
     position: absolute;
