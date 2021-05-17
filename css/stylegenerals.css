@@ -38,6 +38,8 @@ footer{
 #editorcode textarea{
     background-color: #642d7e;
     color: white;
+    font-size: larger;
+    font-weight: bolder;
     font-family:'Comic Neue', cursive;
     outline:none;
     stroke: none;
