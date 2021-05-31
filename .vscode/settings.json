@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "C:\\Users\\FELIPE\\.virtualenvs\\Oct8-2oWxLLhT\\Scripts\\python.exe",
+    "python.autoComplete.extraPaths": [
+        "app.py"
+    ],
+    "python.analysis.extraPaths": [
+        "app.py"
+    ],
+
+}
