@@ -1,0 +1,79 @@
+/*
+  CBE - Container Body Element
+  This element function with Pyshic and
+  limit insides elements and add interactive
+   with envirioment. 
+*/
+.cbe{
+    position: relative;
+    display: flex;
+    margin: auto;
+}
+.cbe-off {
+    position: absolute;
+}
+.cbe-on{
+    border: 4px #61ce61 solid;
+}
+.cbe-action{
+    border: 4px #61ce61 solid;
+}
+
+/*
+    Properties of Environment
+    X = position X of element 
+    Y = position Y of element 
+    H = Height of element
+    W = Width of element
+*/
+
+.X-1{ margin-left: 10%;}
+.X-2{ margin-left: 20%;}
+.X-3{ margin-left: 30%;}
+.X-4{ margin-left: 40%;}
+.X-5{ margin-left: 50%;}
+.X-6{ margin-left: 60%;}
+.X-7{ margin-left: 70%;}
+.X-8{ margin-left: 80%;}
+.X-9{ margin-left: 90%;}
+.X-10{ margin-left: 100%;}
+
+.Y-1{ margin-top: 10%;}
+.Y-2{ margin-top: 20%;}
+.Y-3{ margin-top: 30%;}
+.Y-4{ margin-top: 40%;}
+.Y-5{ margin-top: 50%;}
+.Y-6{ margin-top: 60%;}
+.Y-7{ margin-top: 70%;}
+.Y-8{ margin-top: 80%;}
+.Y-9{ margin-top: 90%;}
+.Y-10{ margin-top: 100%;}
+
+.W-1  {width: 10vh;}
+.W-2  {width: 20vh;}
+.W-3  {width: 30vh;}
+.W-4  {width: 40vh;}
+.W-5  {width: 50vh;}
+.W-6  {width: 60vh;}
+.W-7  {width: 70vh;}
+.W-8  {width: 80vh;}
+.W-9  {width: 90vh;}
+.W-10 {width: 100vh;}
+
+.H-1 {height: 10vh;}
+.H-2 {height: 20vh;}
+.H-3 {height: 30vh;}
+.H-4 {height: 40vh;}
+.H-5 {height: 50vh;}
+.H-6 {height: 60vh;}
+.H-7 {height: 70vh;}
+.H-8 {height: 80vh;}
+.H-9 {height: 90vh;}
+.H-10 {height: 100vh;}
+
+
+/*
+    Pyshycal Rules 
+    Add to Physic to add direct
+    to cbe containers.
+*/
