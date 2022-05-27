@@ -7,7 +7,11 @@
 .cbe{
     position: relative;
     display: flex;
+    flex-direction: row;
     margin: auto;
+    justify-content:space-around;
+    align-items: flex-end;
+    column-gap: 2vh;
 }
 .cbe-off {
     position: absolute;
@@ -20,6 +24,28 @@
 }
 .cbe-rotate{
     border: 4px #61ce61 solid;
+}
+
+/*
+  ELB - Element apply box
+  This element function with Pyshic and
+  limit insides elements and add interactive
+   with envirioment. 
+*/
+
+.elb{
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background-color: #464545;
+}
+.elb-off{
+    background-color: none;
+    border: none;
+} 
+.elb-on{
+    background-color:transparent;
+    border: 4px #464545 solid;
 }
 
 /*

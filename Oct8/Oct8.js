@@ -14,3 +14,5 @@ function GravityGlobal() {
     BasicWind += 80;
 }
 setInterval(GravityGlobal, 1000);
+
+
