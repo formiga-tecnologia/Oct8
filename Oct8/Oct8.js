@@ -1,17 +1,30 @@
 //Physical rules  of OCT8 Web System
 let Gravitybasic = 10;
 let BasicWind = 5;
+let Oct8Limit = 30;
+let GravityActive = true;
 
 function GravityGlobal() {
     let cbeItens = document.getElementsByClassName("cbe-action")
     for (let index = 0; index < cbeItens.length; index++) {
-        cbeItens.item(index).style.marginTop = Gravitybasic + "vh"
-        if (cbeItens.item(index).classList.contains("cbe-rotate")) {
+        if (cbeItens.item(index).classList.contains("cbe-rotate") && GravityActive == true) {
+            cbeItens.item(index).style.marginTop = Gravitybasic + "vh"
             cbeItens.item(index).style.transform = "rotate(" + BasicWind + "deg)";
         }
+        console.log(Oct8Limit + " " + Gravitybasic);
+        if (Gravitybasic >= Oct8Limit) {
+            GravityActive = false
+            break;
+
+        }
     }
-    Gravitybasic += 3;
-    BasicWind += 80;
+    if (GravityActive === true) {
+        Gravitybasic += 3;
+        BasicWind += 80;
+    }
+    else {
+        Gravitybasic = 0;
+    }
 }
 setInterval(GravityGlobal, 1000);
 

@@ -12,6 +12,7 @@
     justify-content:space-around;
     align-items: flex-end;
     column-gap: 2vh;
+    flex-flow: row wrap;
 }
 .cbe-off {
     position: absolute;
@@ -40,13 +41,16 @@
     background-color: #464545;
 }
 .elb-off{
-    background-color: none;
+    background-color: transparent;
     border: none;
 } 
 .elb-on{
     background-color:transparent;
     border: 4px #464545 solid;
 }
+
+  /*  Deform Elb elements with CSS custom   */
+  
 
 /*
     Properties of Environment
