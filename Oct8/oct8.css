@@ -50,7 +50,26 @@
 }
 
   /*  Deform Elb elements with CSS custom   */
+  .elb-dY-1{ transform: skewY(10deg)}
+  .elb-dY-2{ transform: skewY(20deg)}
+  .elb-dY-3{ transform: skewY(30deg)}
+  .elb-dY-4{ transform: skewY(40deg)}
+  .elb-dY-5{ transform: skewY(50deg)}
+  .elb-dY-6{ transform: skewY(60deg)}
+  .elb-dY-7{ transform: skewY(70deg)}
+  .elb-dY-8{ transform: skewY(80deg)}
+  .elb-dY-9{ transform: skewY(90deg)}
 
+  .elb-dX-1{ transform: skewX(10deg)}
+  .elb-dX-2{ transform: skewX(20deg)}
+  .elb-dX-3{ transform: skewX(30deg)}
+  .elb-dX-4{ transform: skewX(40deg)}
+  .elb-dX-5{ transform: skewX(50deg)}
+  .elb-dX-6{ transform: skewX(60deg)}
+  .elb-dX-7{ transform: skewX(70deg)}
+  .elb-dX-8{ transform: skewX(80deg)}
+  .elb-dX-9{ transform: skewX(90deg)}
+  
 
 /*
     Properties of Environment
@@ -106,6 +125,35 @@
 
 
 /*
+    STROKE LINES Effect
+*/
+.stroke-bottom
+{    
+    border-bottom: 4px solid #464545;
+}
+.stroke-right
+{
+    border-right: 4px solid #464545;
+}
+.stroke-left
+{
+    border-left: 4px solid #464545;
+}
+.stroke-top
+{
+    border-top: 4px solid #464545;
+}
+.border-smooth-1{ border-radius: 1vh;}
+.border-smooth-2{ border-radius: 2vh;}
+.border-smooth-3{ border-radius: 3vh;}
+.border-smooth-4{ border-radius: 4vh;}
+.border-smooth-5{ border-radius: 5vh;}
+.border-smooth-6{ border-radius: 6vh;}
+.border-smooth-7{ border-radius: 7vh;}
+.border-smooth-8{ border-radius: 8vh;}
+.border-smooth-9{ border-radius: 9vh;}
+
+/*
     Pyshycal Rules 
     Add to Physic to add direct
     to cbe containers.
@@ -114,9 +162,7 @@
 
 
 /* 
-
     Add rules to animations basic
-
 */
 
 .move-toX-1 {
