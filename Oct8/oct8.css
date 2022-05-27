@@ -126,6 +126,7 @@
     animation-delay: 2ms;
     animation-iteration-count: 1;
     margin-left: 100vh;
+
 }
 .move-toX-2 {
     animation-name: tox2;
