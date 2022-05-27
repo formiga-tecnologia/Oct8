@@ -50,7 +50,7 @@
 }
 
   /*  Deform Elb elements with CSS custom   */
-  
+
 
 /*
     Properties of Environment
@@ -110,3 +110,124 @@
     Add to Physic to add direct
     to cbe containers.
 */
+
+
+
+/* 
+
+    Add rules to animations basic
+
+*/
+
+.move-toX-1 {
+    animation-name: tox1;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-2 {
+    animation-name: tox2;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-3 {
+    animation-name: tox3;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-4 {
+    animation-name: tox4;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-5 {
+    animation-name: tox5;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-6 {
+    animation-name: tox6;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-7 {
+    animation-name: tox7;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-8 {
+    animation-name: tox8;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.move-toX-9 {
+    animation-name: tox9;
+    animation-delay: 2ms;
+    animation-duration: 4s;
+    animation-delay: 2ms;
+    animation-iteration-count: 1;
+    margin-left: 100vh;
+}
+.inifinity{
+    animation-iteration-count: infinite;
+}
+
+@keyframes tox1{
+    from {margin-left: 10vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox2{
+    from {margin-left: 20vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox3{
+    from {margin-left: 30vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox4{
+    from {margin-left: 40vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox5{
+    from {margin-left: 50vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox6{
+    from {margin-left: 60vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox7{
+    from {margin-left: 70vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox8{
+    from {margin-left: 80vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox9{
+    from {margin-left: 90vh;}
+    to {margin-left: 100vh;}
+}
