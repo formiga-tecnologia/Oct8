@@ -26,3 +26,11 @@ function oct8CreateAnimation_ToX(element,infinity,X,backEffect,full)
         element.className += " inifinity"
     }
 }
+
+function oct8CreateStrokes(element,top,left,rigth,button)
+{
+    if(top==1){ element.className += " stroke-top" }
+    if(left==1){ element.className += " stroke-left" }
+    if(rigth==1){ element.className += " stroke-right" }
+    if(button==1){  element.className += " stroke-bottom"}
+}

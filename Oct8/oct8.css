@@ -127,22 +127,11 @@
 /*
     STROKE LINES Effect
 */
-.stroke-bottom
-{    
-    border-bottom: 4px solid #464545;
-}
-.stroke-right
-{
-    border-right: 4px solid #464545;
-}
-.stroke-left
-{
-    border-left: 4px solid #464545;
-}
-.stroke-top
-{
-    border-top: 4px solid #464545;
-}
+.stroke-bottom{border-bottom: 4px solid #464545;}
+.stroke-right{border-right: 4px solid #464545;}
+.stroke-left{border-left: 4px solid #464545;}
+.stroke-top{border-top: 4px solid #464545;}
+
 .border-smooth-1{ border-radius: 1vh;}
 .border-smooth-2{ border-radius: 2vh;}
 .border-smooth-3{ border-radius: 3vh;}
