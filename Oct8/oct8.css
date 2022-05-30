@@ -77,8 +77,11 @@
    propries without retrictions
 
   */
-.SSE {
+.sse{
     position: absolute;
+    background-color: #000;
+    width: 1vh;
+    height: 1vh;
 }
 
 
