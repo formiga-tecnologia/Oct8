@@ -70,6 +70,17 @@
   .elb-dX-8{ transform: skewX(80deg)}
   .elb-dX-9{ transform: skewX(90deg)}
   
+  /*
+   SSE - Square solid element 
+   this elements not use rules to CBE
+   its possible create other element with news
+   propries without retrictions
+
+  */
+.SSE {
+    position: absolute;
+}
+
 
 /*
     Properties of Environment
