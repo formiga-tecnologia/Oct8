@@ -1,2 +1,2 @@
 # Oct8
-Functional language for graphic desing
+Functional language for dynamic  graphic desing
