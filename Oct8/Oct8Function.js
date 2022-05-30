@@ -10,6 +10,17 @@ function Oct8RemovePropries(element,propried)
 {
     element.classList.remove(propried)
 }
+
+/*  Create recursive functions  */
+function oct8Loop(timer,func,loopName)
+{
+    loopName= setInterval(func, timer);
+}
+function oct8BreakLoop(loopName)
+{
+    clearInterval(loopName);
+}
+
  /*
  Element = elemento alvo 
  infinity = False ou true para efeito infinito
