@@ -83,6 +83,10 @@
     width: 1vh;
     height: 1vh;
 }
+.sse-on{
+    background-color:transparent;
+    border: 4px #000 solid;
+}
 
 
 /*
@@ -114,6 +118,39 @@
 .Y-8{ margin-top: 80%;}
 .Y-9{ margin-top: 90%;}
 .Y-10{ margin-top: 100%;}
+
+/* 3D pespective apply */
+.apply-Z {  perspective: 30vh;}
+.Z{transform-style: preserve-3d;}
+
+.rotate-X-1{ transform: rotateX(10deg);}
+.rotate-Y-1{ transform: rotateY(10deg);}
+
+.rotate-X-2{ transform: rotateX(20deg);}
+.rotate-Y-2{ transform: rotateY(20deg);}
+
+.rotate-X-3{ transform: rotateX(30deg);}
+.rotate-Y-3{ transform: rotateY(30deg);}
+
+.rotate-X-4{ transform: rotateX(40deg);}
+.rotate-Y-4{ transform: rotateY(40deg);}
+
+.rotate-X-5{ transform: rotateX(50deg);}
+.rotate-Y-5{ transform: rotateY(50deg);}
+
+.rotate-X-6{ transform: rotateX(60deg);}
+.rotate-Y-6{ transform: rotateY(60deg);}
+
+.rotate-X-7{ transform: rotateX(70deg);}
+.rotate-Y-7{ transform: rotateY(70deg);}
+
+.rotate-X-8{ transform: rotateX(80deg);}
+.rotate-Y-8{ transform: rotateY(80deg);}
+
+.rotate-X-9{ transform: rotateX(90deg);}
+.rotate-Y-9{ transform: rotateY(90deg);}
+
+
 
 .W-1  {width: 10vh;}
 .W-2  {width: 20vh;}
@@ -166,17 +203,11 @@
 
 /* 
     Add rules to animations basic
+    Move X to 100vh
 */
 
-.move-toX-1 {
-    animation-name: tox1;
-    animation-delay: 2ms;
-    animation-duration: 4s;
-    animation-delay: 2ms;
-    animation-iteration-count: 1;
-    margin-left: 100vh;
+.move-toX-1 { animation-name: tox1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 
-}
 .move-toX-2 {
     animation-name: tox2;
     animation-delay: 2ms;

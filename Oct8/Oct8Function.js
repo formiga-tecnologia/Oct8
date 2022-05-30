@@ -34,3 +34,29 @@ function oct8CreateStrokes(element,top,left,rigth,button)
     if(rigth==1){ element.className += " stroke-right" }
     if(button==1){  element.className += " stroke-bottom"}
 }
+
+function oct8Create3dElements(Elb,Sse,rotate,angle){
+    Elb.className += " apply-Z"
+    Sse.className += " Z"
+    if(rotate == "X")
+    {
+        Sse.className += " rotate-X-"+angle
+    }
+    if(rotate == "Y")
+    {
+        Sse.className += " rotate-Y-"+angle
+    }
+}
+
+function oct8Create3dRotate(Sse,rotate,angle)
+{
+    Sse.className += " Z"
+    if(rotate == "X")
+    {
+        Sse.className += " rotate-X-"+angle
+    }
+    if(rotate == "Y")
+    {
+        Sse.className += " rotate-Y-"+angle
+    }
+}
