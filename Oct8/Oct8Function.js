@@ -47,6 +47,25 @@ function oct8CreateAnimation_ToX_toX(element,infinity,X,backEffect,full)
     }
 }
 
+function oct8AddX(element,Xvalue)
+{
+    element.className+=" X-"+Xvalue;
+}
+function oct8RemoveX(element,Xvalue)
+{
+    element.classList.remove("X-"+Xvalue)
+}
+
+function oct8RemoveAnimation_ToX_toX(element,infinity,X,backEffect,full)
+{
+    element.classList.remove("move-toX-"+X+"-toX-1");
+    console.log("move-toX-"+X+"-toX-1")
+    if(infinity == true)
+    {
+        element.classList.remove("inifinity")
+    }
+}
+
 function oct8CreateStrokes(element,top,left,rigth,button)
 {
     if(top==1){ element.className += " stroke-top" }
@@ -78,16 +97,5 @@ function oct8Create3dRotate(Sse,rotate,angle)
     if(rotate == "Y")
     {
         Sse.className += " rotate-Y-"+angle
-    }
-}
-
-function oct8FixSpaces(elem,QtdTofix,direction){
-    if(elem.length > 0)
-    {
-        for (let index = 0; index < elem.length; index++) {
-            elem[index].style.marginLeft = QtdTofix+"vh";
-            console.log(elem[index].style.marginLeft)
-            QtdTofix+=1
-        }
     }
 }

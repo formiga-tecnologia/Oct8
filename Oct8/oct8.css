@@ -119,16 +119,16 @@
 .X-9{ margin-left: 90vh;}
 .X-10{ margin-left: 100vh;}
 
-.Y-1{ margin-top: 10%;}
-.Y-2{ margin-top: 20%;}
-.Y-3{ margin-top: 30%;}
-.Y-4{ margin-top: 40%;}
-.Y-5{ margin-top: 50%;}
-.Y-6{ margin-top: 60%;}
-.Y-7{ margin-top: 70%;}
-.Y-8{ margin-top: 80%;}
-.Y-9{ margin-top: 90%;}
-.Y-10{ margin-top: 100%;}
+.Y-1{ margin-top: 10vh;}
+.Y-2{ margin-top: 20vh;}
+.Y-3{ margin-top: 30vh;}
+.Y-4{ margin-top: 40vh;}
+.Y-5{ margin-top: 50vh;}
+.Y-6{ margin-top: 60vh;}
+.Y-7{ margin-top: 70vh;}
+.Y-8{ margin-top: 80vh;}
+.Y-9{ margin-top: 90vh;}
+.Y-10{ margin-top: 100vh;}
 
 /* 3D pespective apply */
 .apply-Z {  perspective: 30vh;}
@@ -227,6 +227,7 @@
 .move-toX-1 { animation-name: tox8; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox9; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 
+.move-toX-0-toX-1 { animation-name: tox0-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1}
 .move-toX-1-toX-1 { animation-name: tox1-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 20vh;}
 .move-toX-2-toX-1 { animation-name: tox2-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 30vh;}
 .move-toX-3-toX-1 { animation-name: tox3-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 40vh;}
@@ -238,12 +239,23 @@
 .move-toX-9-toX-1 { animation-name: tox9-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 100vh;}
 
 .move-toY-1 { animation-name: toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 4s;  animation-iteration-count: 1;margin-left: 10vh;}
+.move-toY-0-toY-1  { animation-name: toy0-1; animation-duration: 2s;  animation-iteration-count: 1;margin-left: 10vh;}
+.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 2s;  animation-iteration-count: 1;margin-left: 20vh;}
 
 .inifinity{
     animation-iteration-count: infinite;
 }
+.testeAnimate{ 
+    transition: 1s;
+    margin-left: 20vh
+}
 /* MOVE TO X */
+@keyframes tox0-1{
+    from {margin-left: 0vh;}
+    to {margin-left: 10vh;}
+}
+
+
 @keyframes tox1{
     from {margin-left: 10vh;}
     to {margin-left: 100vh;}
@@ -323,6 +335,7 @@
 }
 
 /* MOVE TO Y */
+@keyframes toy0-1{from {margin-top: 0vh;} to {margin-top: 10vh;}}
 
 @keyframes toy1{ from {margin-top: 10vh;}  to {margin-top: 20vh;}}
 @keyframes toy1-1{from {margin-top: 10vh;} to {margin-top: 20vh;}}
