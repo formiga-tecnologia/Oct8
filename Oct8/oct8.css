@@ -108,16 +108,16 @@
     W = Width of element
 */
 
-.X-1{ margin-left: 10%;}
-.X-2{ margin-left: 20%;}
-.X-3{ margin-left: 30%;}
-.X-4{ margin-left: 40%;}
-.X-5{ margin-left: 50%;}
-.X-6{ margin-left: 60%;}
-.X-7{ margin-left: 70%;}
-.X-8{ margin-left: 80%;}
-.X-9{ margin-left: 90%;}
-.X-10{ margin-left: 100%;}
+.X-1{ margin-left: 10vh;}
+.X-2{ margin-left: 20vh;}
+.X-3{ margin-left: 30vh;}
+.X-4{ margin-left: 40vh;}
+.X-5{ margin-left: 50vh;}
+.X-6{ margin-left: 60vh;}
+.X-7{ margin-left: 70vh;}
+.X-8{ margin-left: 80vh;}
+.X-9{ margin-left: 90vh;}
+.X-10{ margin-left: 100vh;}
 
 .Y-1{ margin-top: 10%;}
 .Y-2{ margin-top: 20%;}
@@ -217,7 +217,7 @@
     Move X to 100vh
 */
 
-.move-toX-1 { animation-name: tox1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
+.move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox2; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox3; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox4; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
@@ -324,7 +324,7 @@
 
 /* MOVE TO Y */
 
-@keyframes toy1{ from {margin-top: 10vh;}  to {margin-top: 100vh;}}
+@keyframes toy1{ from {margin-top: 10vh;}  to {margin-top: 20vh;}}
 @keyframes toy1-1{from {margin-top: 10vh;} to {margin-top: 20vh;}}
 
 @keyframes toy2{from {margin-top: 20vh;} to {margin-top: 100vh;}}

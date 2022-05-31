@@ -38,6 +38,15 @@ function oct8CreateAnimation_ToX(element,infinity,X,backEffect,full)
     }
 }
 
+function oct8CreateAnimation_ToX_toX(element,infinity,X,backEffect,full)
+{
+    element.className += " move-toX-"+X+"-toX-1 ";
+    if(infinity == true)
+    {
+        element.className += " inifinity"
+    }
+}
+
 function oct8CreateStrokes(element,top,left,rigth,button)
 {
     if(top==1){ element.className += " stroke-top" }
