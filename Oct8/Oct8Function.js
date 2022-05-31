@@ -29,6 +29,17 @@ function oct8BreakLoop(loopName)
  full = true or false Determina se ele vai ir ate 100% ou até x+40
 
  */
+ function oct8CreateAnimation_ToY_toY(element,infinity,X,backEffect,full)
+ {
+     element.className += " move-toY-"+X+"-toY-1 ";
+     if(infinity == true)
+     {
+         element.className += " inifinity"
+     }
+ }
+
+ 
+
 function oct8CreateAnimation_ToX(element,infinity,X,backEffect,full)
 {
     element.className += " move-toX-"+X+" ";
@@ -45,6 +56,11 @@ function oct8CreateAnimation_ToX_toX(element,infinity,X,backEffect,full)
     {
         element.className += " inifinity"
     }
+}
+
+function oct8AddY(element,Xvalue)
+{
+    element.className+=" Y-"+Xvalue;
 }
 
 function oct8AddX(element,Xvalue)

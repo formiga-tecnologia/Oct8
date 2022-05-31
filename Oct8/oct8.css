@@ -229,18 +229,18 @@
 
 .move-toX-0-toX-1 { animation-name: tox0-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
 .move-toX-1-toX-1 { animation-name: tox1-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-2-toX-1 { animation-name: tox2-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 30vh;}
-.move-toX-3-toX-1 { animation-name: tox3-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 40vh;}
-.move-toX-4-toX-1 { animation-name: tox4-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 50vh;}
-.move-toX-5-toX-1 { animation-name: tox5-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 60vh;}
-.move-toX-6-toX-1 { animation-name: tox6-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 70vh;}
-.move-toX-7-toX-1 { animation-name: tox7-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 80vh;}
-.move-toX-8-toX-1 { animation-name: tox8-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 90vh;}
-.move-toX-9-toX-1 { animation-name: tox9-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 100vh;}
+.move-toX-2-toX-1 { animation-name: tox2-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-3-toX-1 { animation-name: tox3-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-4-toX-1 { animation-name: tox4-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-5-toX-1 { animation-name: tox5-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-6-toX-1 { animation-name: tox6-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-7-toX-1 { animation-name: tox7-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-8-toX-1 { animation-name: tox8-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
+.move-toX-9-toX-1 { animation-name: tox9-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
 
-.move-toY-1 { animation-name: toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toY-0-toY-1  { animation-name: toy0-1; animation-duration: 2s;  animation-iteration-count: 1;margin-left: 10vh;}
-.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 2s;  animation-iteration-count: 1;margin-left: 20vh;}
+.move-toY-1 { animation-name: toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;}
+.move-toY-0-toY-1  { animation-name: toy0-1; animation-duration: 2s;  animation-iteration-count: 1;}
+.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 2s;  animation-iteration-count: 1;}
 
 .inifinity{
     animation-iteration-count: infinite;
