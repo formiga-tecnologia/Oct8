@@ -71,3 +71,14 @@ function oct8Create3dRotate(Sse,rotate,angle)
         Sse.className += " rotate-Y-"+angle
     }
 }
+
+function oct8FixSpaces(elem,QtdTofix,direction){
+    if(elem.length > 0)
+    {
+        for (let index = 0; index < elem.length; index++) {
+            elem[index].style.marginLeft = QtdTofix+"vh";
+            console.log(elem[index].style.marginLeft)
+            QtdTofix+=1
+        }
+    }
+}

@@ -39,6 +39,15 @@
     bottom: 0;
     background-color: #464545;
 }
+.elb-cont{
+        display: flex;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
 .elb-off{
     background-color: transparent;
     border: none;
@@ -85,6 +94,9 @@
 .sse-on{
     background-color:transparent;
     border: 4px #000 solid;
+}
+.sse-pos{
+    position: relative;
 }
 
 
