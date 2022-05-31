@@ -225,12 +225,13 @@
 .move-toX-8-toX-1 { animation-name: tox8-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 90vh;}
 .move-toX-9-toX-1 { animation-name: tox9-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;margin-left: 100vh;}
 
-
+.move-toY-1 { animation-name: toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
+.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 4s;  animation-iteration-count: 1;margin-left: 10vh;}
 
 .inifinity{
     animation-iteration-count: infinite;
 }
-
+/* MOVE TO X */
 @keyframes tox1{
     from {margin-left: 10vh;}
     to {margin-left: 100vh;}
@@ -308,3 +309,72 @@
     from {margin-left: 90vh;}
     to {margin-left: 100vh;}
 }
+
+/* MOVE TO Y */
+
+@keyframes toy1{ from {margin-top: 10vh;}  to {margin-top: 100vh;}}
+@keyframes toy1-1{from {margin-top: 10vh;} to {margin-top: 20vh;}}
+
+@keyframes toy2{from {margin-top: 20vh;} to {margin-top: 100vh;}}
+@keyframes toy2-1{from {margin-top: 20vh;} to {margin-top: 30vh;}}
+
+@keyframes tox3{
+    from {margin-left: 30vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox3-1{
+    from {margin-left: 30vh;}
+    to {margin-left: 40vh;}
+}
+
+@keyframes tox4{
+    from {margin-left: 40vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox4-1{
+    from {margin-left: 40vh;}
+    to {margin-left: 50vh;}
+}
+
+@keyframes tox5{
+    from {margin-left: 50vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox5-1{
+    from {margin-left: 50vh;}
+    to {margin-left: 60vh;}
+}
+
+
+@keyframes tox6{
+    from {margin-left: 60vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox6-1{
+    from {margin-left: 60vh;}
+    to {margin-left: 70vh;}
+}
+
+@keyframes tox7{
+    from {margin-left: 70vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox7-1{
+    from {margin-left: 70vh;}
+    to {margin-left: 80vh;}
+}
+
+@keyframes tox8{
+    from {margin-left: 80vh;}
+    to {margin-left: 100vh;}
+}
+@keyframes tox8-1{
+    from {margin-left: 80vh;}
+    to {margin-left: 90vh;}
+}
+
+@keyframes tox9{
+    from {margin-left: 90vh;}
+    to {margin-left: 100vh;}
+}
+
