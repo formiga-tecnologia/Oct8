@@ -59,7 +59,7 @@ function oct8RemoveX(element,Xvalue)
 function oct8RemoveAnimation_ToX_toX(element,infinity,X,backEffect,full)
 {
     element.classList.remove("move-toX-"+X+"-toX-1");
-    console.log("move-toX-"+X+"-toX-1")
+
     if(infinity == true)
     {
         element.classList.remove("inifinity")
