@@ -37,7 +37,15 @@ function oct8BreakLoop(loopName)
          element.className += " inifinity"
      }
  }
-
+ function oct8RemoveAnimation_ToY_toY(element,infinity,X,backEffect,full)
+ {
+     element.classList.remove("move-toY-"+X+"-toY-1");
+ 
+     if(infinity == true)
+     {
+         element.classList.remove("inifinity")
+     }
+ }
  
 
 function oct8CreateAnimation_ToX(element,infinity,X,backEffect,full)
