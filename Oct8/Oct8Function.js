@@ -123,3 +123,40 @@ function oct8Create3dRotate(Sse,rotate,angle)
         Sse.className += " rotate-Y-"+angle
     }
 }
+
+var _animate=""
+var _element;
+var _NewPosition =0;
+var _oldPosition =0;
+var _axis ="";
+function Oct8CPlayAnimation(element,anim,oldpos,newpos,timeAnimate,axis)
+{
+    _element = element
+    _animate = anim
+    _NewPosition = newpos
+    _oldPosition = oldpos
+    _axis = axis
+    _animatePrivate();
+}
+async function _animatePrivate()
+{
+    await sleep(700)
+    _element.className += " "+_animate;
+    await sleep(70000)
+    _element.classList.remove(_animate.trim())
+    _element.classList.remove(_axis+"-"+_oldPosition)
+    console.log(_axis+"-"+_oldPosition)
+    _element.classList += " "+_axis+"-"+_NewPosition
+    await sleep(3000)
+    console.log("uma vez somente certo? "+_NewPosition+" vs "+_oldPosition)
+    
+}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+function _NewPositionPrivate(){
+    console.log(_animate.trim())
+    //_element.classList.remove(_animate.trim())
+    //_element.classList.remove(_axis+"-"+_oldPosition)
+    //_element.classList += " "+_axis+"-"+_NewPosition
+}
