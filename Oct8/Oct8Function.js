@@ -136,6 +136,7 @@ function Oct8CPlayMove(element,oldpos,newpos,axis)
     _oldPosition = oldpos
     _axis = axis
     _animatePrivate();
+
 }
 async function _animatePrivate()
 {
