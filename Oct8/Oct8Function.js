@@ -144,3 +144,15 @@ async function _animatePrivate()
     _element.classList += " "+_axis+"-"+_NewPosition
 
 }
+function Oct8NewElementContainer(id,AppendElementId,typeContainerProp)
+{
+    let newElement = document.createElement("div")
+    if(id!="")
+    {
+        newElement.id = id
+    }
+
+    newElement.className = typeContainerProp
+    let positionElement = document.getElementById(AppendElementId)
+    positionElement.appendChild(newElement)
+}

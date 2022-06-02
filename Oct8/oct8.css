@@ -119,6 +119,7 @@
 .X-9{ margin-left: 90vh;}
 .X-10{ margin-left: 100vh;}
 
+.Y-0{ margin-top: 0vh;}
 .Y-1{ margin-top: 10vh;}
 .Y-2{ margin-top: 20vh;}
 .Y-3{ margin-top: 30vh;}
@@ -134,8 +135,11 @@
 .apply-Z {  perspective: 30vh;}
 .Z{transform-style: preserve-3d;}
 
+.rotate-X-0{ transform: rotateX(0deg);}
+.rotate-Y-0{ transform:1 rotateY(0deg);}
+
 .rotate-X-1{ transform: rotateX(10deg);}
-.rotate-Y-1{ transform: rotateY(10deg);}
+.rotate-Y-1{ transform:1 rotateY(10deg);}
 
 .rotate-X-2{ transform: rotateX(20deg);}
 .rotate-Y-2{ transform: rotateY(20deg);}
@@ -161,8 +165,6 @@
 .rotate-X-9{ transform: rotateX(90deg);}
 .rotate-Y-9{ transform: rotateY(90deg);}
 
-
-
 .W-1  {width: 10vh;}
 .W-2  {width: 20vh;}
 .W-3  {width: 30vh;}
@@ -185,7 +187,6 @@
 .H-9 {height: 90vh;}
 .H-10 {height: 100vh;}
 
-
 /*
     STROKE LINES Effect
 */
@@ -205,12 +206,9 @@
 .border-smooth-9{ border-radius: 9vh;}
 
 /*
-    Pyshycal Rules 
-    Add to Physic to add direct
-    to cbe containers.
+==============================================
+==============================================
 */
-
-
 
 /* 
     Add rules to animations basic
