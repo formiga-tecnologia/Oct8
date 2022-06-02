@@ -215,11 +215,17 @@
     Move X to 100vh
 */
 .transition-2s{
-    transition: width 2s
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: background-color 2s
 }
-.transition-2s:hover{
-    opacity: 99%;
-    opacity: 100%;
+.hoverAplly-green{
+    background-color: transparent;
+    transition: background-color 1s
+}
+.hoverAplly-green:hover{
+    background: #61ce61;
 }
 
 .move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}

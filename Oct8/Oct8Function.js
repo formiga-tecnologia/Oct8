@@ -171,3 +171,12 @@ function Oct8ChangeStrokeWidth(element,borderWidth)
 {
     element.style.borderWidth = borderWidth
 }
+
+function Oct8AddHoverEffect(element,color)
+{
+    element.classList += " hoverAplly-"+color
+}
+function Oct8RemoveHoverEffect(element,color)
+{
+    element.classList.remove("hoverAplly-"+color)
+}
