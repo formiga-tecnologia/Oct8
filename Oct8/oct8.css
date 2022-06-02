@@ -214,6 +214,13 @@
     Add rules to animations basic
     Move X to 100vh
 */
+.transition-2s{
+    transition: width 2s
+}
+.transition-2s:hover{
+    opacity: 99%;
+    opacity: 100%;
+}
 
 .move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox2; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
