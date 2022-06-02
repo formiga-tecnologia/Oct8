@@ -159,7 +159,7 @@ function Oct8NewElementContainer(id,AppendElementId,typeContainerProp)
 
 function Oct8ChangeColor(element,color)
 {
-    element.style.backgroundColor = color
+    element.classList+= " bc-"+color+""
 }
 
 function Oct8ChangeStrokeColor(element,color)
@@ -174,15 +174,7 @@ function Oct8ChangeStrokeWidth(element,borderWidth)
 
 function Oct8AddHoverEffect(element,color)
 {
-    let copyAtribute = element.attributes
-    console.log(copyAtribute)
     element.classList += " hoverAplly-"+color
-    element.addEventListener("mouseover",function(event){
-        element.removeAttribute("style")
-    })
-
-    element.addEventListener("mouseleave",function(event){
-    })
 }
 function Oct8RemoveHoverEffect(element,color)
 {

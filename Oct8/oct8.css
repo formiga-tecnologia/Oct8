@@ -214,6 +214,12 @@
     Add rules to animations basic
     Move X to 100vh
 */
+.bc-green{
+    background-color: green;
+}
+.bc-gray{
+    background-color: gray;
+}
 .transition-2s{
     width: 100px;
     height: 100px;
@@ -221,11 +227,18 @@
     transition: background-color 2s
 }
 .hoverAplly-green{
-    background-color: transparent;
     transition: background-color 1s
 }
 .hoverAplly-green:hover{
     background: #61ce61;
+}
+
+.hoverAplly-yellow{
+    background-color: transparent;
+    transition: background-color 1s
+}
+.hoverAplly-yellow:hover{
+    background: #edff4f;
 }
 
 .move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
