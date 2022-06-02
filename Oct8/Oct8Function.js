@@ -174,7 +174,15 @@ function Oct8ChangeStrokeWidth(element,borderWidth)
 
 function Oct8AddHoverEffect(element,color)
 {
+    let copyAtribute = element.attributes
+    console.log(copyAtribute)
     element.classList += " hoverAplly-"+color
+    element.addEventListener("mouseover",function(event){
+        element.removeAttribute("style")
+    })
+
+    element.addEventListener("mouseleave",function(event){
+    })
 }
 function Oct8RemoveHoverEffect(element,color)
 {
