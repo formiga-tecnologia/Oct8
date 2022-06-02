@@ -156,3 +156,18 @@ function Oct8NewElementContainer(id,AppendElementId,typeContainerProp)
     let positionElement = document.getElementById(AppendElementId)
     positionElement.appendChild(newElement)
 }
+
+function Oct8ChangeColor(element,color)
+{
+    element.style.backgroundColor = color
+}
+
+function Oct8ChangeStrokeColor(element,color)
+{
+    element.style.borderColor = color
+}
+
+function Oct8ChangeStrokeWidth(element,borderWidth)
+{
+    element.style.borderWidth = borderWidth
+}
