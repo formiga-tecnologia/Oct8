@@ -169,7 +169,7 @@ function Oct8ChangeStrokeColor(element,color)
 
 function Oct8ChangeStrokeWidth(element,borderWidth)
 {
-    element.style.borderWidth = borderWidth
+    element.classList+=  " stroke-"+borderWidth
 }
 
 function Oct8AddHoverEffect(element,color)
