@@ -242,7 +242,9 @@
 */
 
 .hoverAplly-X{transition: margin-left 0.3s;}
-.hoverAplly-yellow-stroke:hover{border-color: #edff4f;}
+.hoverAplly-Y{transition: margin-top 0.3s;}
+.hoverAplly-Y{transition: height 0.3s;}
+.hoverAplly-Y{transition: width 0.3s;}
 
 /*
 ==============================================
