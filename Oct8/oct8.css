@@ -165,6 +165,16 @@
 .rotate-X-9{ transform: rotateX(90deg);}
 .rotate-Y-9{ transform: rotateY(90deg);}
 
+.Layer-1 { z-index: 1;}
+.Layer-2 { z-index: 2;}
+.Layer-3 { z-index: 3;}
+.Layer-4 { z-index: 4;}
+.Layer-5 { z-index: 5;}
+.Layer-6 { z-index: 6;}
+.Layer-7 { z-index: 7;}
+.Layer-8 { z-index: 8;}
+.Layer-9 { z-index: 9;}
+
 .W-1  {width: 10vh;}
 .W-2  {width: 20vh;}
 .W-3  {width: 30vh;}
