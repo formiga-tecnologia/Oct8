@@ -211,6 +211,21 @@
 .sbc-red{border-color: #ce4331;}
 .sbc-blue{border-color: #0a28ce;}
 
+.hoverAplly-gray-stroke{transition: background-color 1s;}
+.hoverAplly-gray-stroke:hover{border-color: #646464;}
+
+.hoverAplly-green-stroke{transition: background-color 1s;}
+.hoverAplly-green-stroke:hover{border-color: #429242;}
+
+.hoverAplly-red-stroke{transition: background-color 1s;}
+.hoverAplly-red-stroke:hover{border-color: #ce4331;}
+
+.hoverAplly-blue-stroke{transition: background-color 1s;}
+.hoverAplly-blue-stroke:hover{border-color: #0a28ce;}
+
+.hoverAplly-yellow-stroke{transition: background-color 1s;}
+.hoverAplly-yellow-stroke:hover{border-color: #edff4f;}
+
 .stroke-1{stroke-width: 1vh;}
 .stroke-2{stroke-width: 2vh;}
 .stroke-3{stroke-width: 3vh;}
@@ -220,6 +235,14 @@
 .stroke-7{stroke-width: 7vh;}
 .stroke-8{stroke-width: 8vh;}
 .stroke-9{stroke-width: 9vh;}
+
+/*
+==============================================
+==============================================
+*/
+
+.hoverAplly-x{transition: margin-left 0.3s;}
+.hoverAplly-yellow-stroke:hover{border-color: #edff4f;}
 
 /*
 ==============================================
