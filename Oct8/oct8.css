@@ -205,6 +205,22 @@
 .border-smooth-8{ border-radius: 8vh;}
 .border-smooth-9{ border-radius: 9vh;}
 
+.sbc-green{border-color:#429242;}
+.sbc-gray{border-color: #464545;}
+.sbc-yellow{border-color: #edff4f;}
+.sbc-red{border-color: #ce4331;}
+.sbc-blue{border-color: #0a28ce;}
+
+.stroke-1{stroke-width: 1vh;}
+.stroke-2{stroke-width: 2vh;}
+.stroke-3{stroke-width: 3vh;}
+.stroke-4{stroke-width: 4vh;}
+.stroke-5{stroke-width: 5vh;}
+.stroke-6{stroke-width: 6vh;}
+.stroke-7{stroke-width: 7vh;}
+.stroke-8{stroke-width: 8vh;}
+.stroke-9{stroke-width: 9vh;}
+
 /*
 ==============================================
 ==============================================
@@ -214,6 +230,7 @@
     Add rules to animations basic
     Move X to 100vh
 */
+
 .bc-green{background-color: #429242;}
 .bc-gray{background-color: #646464;}
 .bc-yellow{background-color: #edff4f;}
