@@ -180,3 +180,11 @@ function Oct8RemoveHoverEffect(element,color)
 {
     element.classList.remove("hoverAplly-"+color)
 }
+function Oct8AddHoverApplyAxis(element,Axis)
+{
+    element.classList += " hoverAplly-"+Axis
+}
+function Oct8RemoveHoverApplyAxis(element,Axis)
+{
+    element.classList.remove("hoverAplly-"+Axis)
+}
