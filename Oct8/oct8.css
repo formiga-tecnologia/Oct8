@@ -214,32 +214,27 @@
     Add rules to animations basic
     Move X to 100vh
 */
-.bc-green{
-    background-color: green;
-}
-.bc-gray{
-    background-color: gray;
-}
-.transition-2s{
-    width: 100px;
-    height: 100px;
-    background: red;
-    transition: background-color 2s
-}
-.hoverAplly-green{
-    transition: background-color 1s
-}
-.hoverAplly-green:hover{
-    background: #61ce61;
-}
+.bc-green{background-color: #429242;}
+.bc-gray{background-color: #646464;}
+.bc-yellow{background-color: #edff4f;}
+.bc-red{background-color: #ce4331;}
+.bc-blue{background-color: #0a28ce;}
 
-.hoverAplly-yellow{
-    background-color: transparent;
-    transition: background-color 1s
-}
-.hoverAplly-yellow:hover{
-    background: #edff4f;
-}
+
+.hoverAplly-green{transition: background-color 1s;}
+.hoverAplly-green:hover{background: #429242;}
+
+.hoverAplly-yellow{transition: background-color 1s;}
+.hoverAplly-yellow:hover{background: #edff4f;}
+
+.hoverAplly-red{transition: background-color 1s;}
+.hoverAplly-red:hover{background: #ce4331;}
+
+.hoverAplly-blue{transition: background-color 1s;}
+.hoverAplly-blue:hover{background: #0a28ce;}
+
+.hoverAplly-gray{transition: background-color 1s;}
+.hoverAplly-gray:hover{background: #646464;}
 
 .move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
 .move-toX-1 { animation-name: tox2; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
