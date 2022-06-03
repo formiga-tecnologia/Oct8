@@ -252,9 +252,37 @@
 */
 
 .hoverAplly-X{transition: margin-left 0.3s;}
+.hoverApply-Layer{transition: z-index 0.3s;}
 .hoverAplly-Y{transition: margin-top 0.3s;}
 .hoverAplly-Y{transition: height 0.3s;}
 .hoverAplly-Y{transition: width 0.3s;}
+
+.hoverApply-Layer-1{transition: height 0.3s;}
+.hoverApply-Layer-1:hover{z-index: 1;}
+
+.hoverApply-Layer-2{transition: height 0.3s;}
+.hoverApply-Layer-2:hover{z-index: 2;}
+
+.hoverApply-Layer-3{transition: height 0.3s;}
+.hoverApply-Layer-3:hover{z-index: 3;}
+
+.hoverApply-Layer-4{transition: height 0.3s;}
+.hoverApply-Layer-4:hover{z-index: 4;}
+
+.hoverApply-Layer-5{transition: height 0.3s;}
+.hoverApply-Layer-5:hover{z-index: 5;}
+
+.hoverApply-Layer-6{transition: height 0.3s;}
+.hoverApply-Layer-6:hover{z-index: 6;}
+
+.hoverApply-Layer-7{transition: height 0.3s;}
+.hoverApply-Layer-7:hover{z-index: 7;}
+
+.hoverApply-Layer-8{transition: height 0.3s;}
+.hoverApply-Layer-8:hover{z-index: 8;}
+
+.hoverApply-Layer-9{transition: height 0.3s;}
+.hoverApply-Layer-9:hover{z-index: 9;}
 
 /*
 ==============================================
