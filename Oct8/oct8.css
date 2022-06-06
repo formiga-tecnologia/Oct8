@@ -359,68 +359,16 @@
 
 /* Draw geometric shapes */ 
 
-.triangle-1{
-    width: 0; 
-    height: 0; 
-    border-left: 10vh solid transparent;
-    border-right: 10vh solid transparent;
-    border-bottom: 12vh solid;
-}
-.triangle-l1-1{
-    width: 0; 
-    height: 0; 
-    border-top: 10vh solid;
-    border-right:  10vh solid transparent;
-}
+.diamond-1{width:10vh;height:10vh;transform: rotate(-45deg);}
+.diamond-2{width:40vh;height:40vh;transform: rotate(-45deg);}
+.diamond-3{width:30vh;height:30vh;transform: rotate(-45deg);}
 
-.triangle-2{
-    width: 0; 
-    height: 0; 
-    border-left: 20vh solid transparent;
-    border-right: 20vh solid transparent;
-    border-bottom: 22vh solid;
-}
-.triangle-l1-2{
-    width: 0; 
-    height: 0; 
-    border-top: 20vh solid;
-    border-right:  20vh solid transparent;
-}
-
-.triangle-3{
-    width: 0; 
-    height: 0; 
-    border-left: 30vh solid transparent;
-    border-right: 30vh solid transparent;
-    border-bottom: 32vh solid;
-}
-.triangle-l1-3{
-    width: 0; 
-    height: 0; 
-    border-top: 30vh solid;
-    border-right:  30vh solid transparent;
-}
-
-.diamond-1{
-    width:10vh;
-    height:10vh;
-    transform: rotate(-45deg);  
-}
-
-.diamond-2{
-    width:40vh;
-    height:40vh;
-    transform: rotate(-45deg);  
-  }
-
-  .diamond-3{width:30vh;height:30vh;transform: rotate(-45deg);}
-  .circle-1{width: 10vh;height: 10vh;border-radius: 50%;}
-
-  .circle-2{width: 20vh;height: 20vh;border-radius: 50%;}
-  .circle-3{width: 30vh;height: 30vh;border-radius: 50%;}
+.circle-1{width: 10vh;height: 10vh;border-radius: 50%;}
+.circle-2{width: 20vh;height: 20vh;border-radius: 50%;}
+.circle-3{width: 30vh;height: 30vh;border-radius: 50%;}
 
 .half-ellipses-1{  border-radius: 50% / 100% 100% 0 0; }
+
 .parallelogram-1 {width: 20vh;height: 10vh;transform: skew(20deg);}
 .parallelogram-2 {width: 20vh;height: 10vh;transform: skew(20deg);}
-
 .parallelogram-3 {width: 20vh;height: 10vh;transform: skew(20deg);}
