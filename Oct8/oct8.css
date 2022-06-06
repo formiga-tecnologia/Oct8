@@ -373,3 +373,14 @@
 .parallelogram-2 {width: 20vh;height: 10vh;transform: skew(20deg);}
 .parallelogram-3 {width: 20vh;height: 10vh;transform: skew(20deg);}
  
+.Triangle{
+  width: 0; 
+  height: 0; 
+  border-left: 5vh solid transparent;
+  border-right: 0vh solid transparent;
+  border-bottom: 5vh solid;
+}
+.colorA
+{
+    background-color: red;
+}
