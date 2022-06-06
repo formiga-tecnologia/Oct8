@@ -253,6 +253,39 @@
 ==============================================
 ==============================================
 */
+.hoverApply-borders{
+    transition: border-left 0.3s;
+    transition: border-right 0.3s;
+    transition: border-top 0.3s;
+    transition: border-bottom 0.3s;
+}
+
+.hoverapply-height-1 {transition: height 0.3s;}
+.hoverapply-height-1:hover{height: 10vh;}
+
+.hoverapply-height-2 {transition: height 0.3s;}
+.hoverapply-height-2:hover{height: 20vh;}
+
+.hoverapply-height-3 {transition: height 0.3s;}
+.hoverapply-height-3:hover{height: 30vh;}
+
+.hoverapply-height-4 {transition: height 0.3s;}
+.hoverapply-height-4:hover{height: 40vh;}
+
+.hoverapply-height-5 {transition: height 0.3s;}
+.hoverapply-height-5:hover{height: 50vh;}
+
+.hoverapply-height-6 {transition: height 0.3s;}
+.hoverapply-height-6:hover{height: 60vh;}
+
+.hoverapply-height-7 {transition: height 0.3s;}
+.hoverapply-height-7:hover{height: 70vh;}
+
+.hoverapply-height-8 {transition: height 0.3s;}
+.hoverapply-height-8:hover{height: 80vh;}
+
+.hoverapply-height-9 {transition: height 0.3s;}
+.hoverapply-height-9:hover{height: 90vh;}
 
 .hoverAplly-X{transition: margin-left 0.3s;}
 .hoverApply-Layer{transition: z-index 0.3s;}
@@ -318,192 +351,6 @@
 
 .hoverAplly-gray{transition: background-color 1s;}
 .hoverAplly-gray:hover{background: #646464;}
-
-.move-toX-1 { animation-name: tox1 , toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox2; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox3; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox4; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox5; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox6; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox7; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox8; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-.move-toX-1 { animation-name: tox9; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;margin-left: 100vh;}
-
-.move-toX-0-toX-1 { animation-name: tox0-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-1-toX-1 { animation-name: tox1-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-2-toX-1 { animation-name: tox2-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-3-toX-1 { animation-name: tox3-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-4-toX-1 { animation-name: tox4-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-5-toX-1 { animation-name: tox5-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-6-toX-1 { animation-name: tox6-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-7-toX-1 { animation-name: tox7-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-8-toX-1 { animation-name: tox8-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-.move-toX-9-toX-1 { animation-name: tox9-1; animation-delay: 2ms; animation-duration: 2s; animation-iteration-count: 1;animation-fill-mode: forwards;}
-
-.move-toY-1 { animation-name: toy1; animation-delay: 2ms; animation-duration: 4s; animation-delay: 2ms; animation-iteration-count: 1;}
-.move-toY-0-toY-1  { animation-name: toy0-1; animation-duration: 2s;  animation-iteration-count: 1;}
-.move-toY-1-toY-1  { animation-name: toy1-1; animation-delay: 2ms; animation-duration: 2s;  animation-iteration-count: 1;}
-
-.inifinity{
-    animation-iteration-count: infinite;
-}
-.testeAnimate{ 
-    transition: 1s;
-    margin-left: 20vh
-}
-/* MOVE TO X */
-@keyframes tox0-1{
-    from {margin-left: 0vh;}
-    to {margin-left: 10vh;}
-}
-
-
-@keyframes tox1{
-    from {margin-left: 10vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox1-1{
-    from {margin-left: 10vh;}
-    to {margin-left: 20vh;}
-}
-
-@keyframes tox2{
-    from {margin-left: 20vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox2-1{
-    from {margin-left: 20vh;}
-    to {margin-left: 30vh;}
-}
-
-@keyframes tox3{
-    from {margin-left: 30vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox3-1{
-    from {margin-left: 30vh;}
-    to {margin-left: 40vh;}
-}
-
-@keyframes tox4{
-    from {margin-left: 40vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox4-1{
-    from {margin-left: 40vh;}
-    to {margin-left: 50vh;}
-}
-
-@keyframes tox5{
-    from {margin-left: 50vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox5-1{
-    from {margin-left: 50vh;}
-    to {margin-left: 60vh;}
-}
-
-
-@keyframes tox6{
-    from {margin-left: 60vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox6-1{
-    from {margin-left: 60vh;}
-    to {margin-left: 70vh;}
-}
-
-@keyframes tox7{
-    from {margin-left: 70vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox7-1{
-    from {margin-left: 70vh;}
-    to {margin-left: 80vh;}
-}
-
-@keyframes tox8{
-    from {margin-left: 80vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox8-1{
-    from {margin-left: 80vh;}
-    to {margin-left: 90vh;}
-}
-
-@keyframes tox9{
-    from {margin-left: 90vh;}
-    to {margin-left: 100vh;}
-}
-
-/* MOVE TO Y */
-@keyframes toy0-1{from {margin-top: 0vh;} to {margin-top: 10vh;}}
-
-@keyframes toy1{ from {margin-top: 10vh;}  to {margin-top: 20vh;}}
-@keyframes toy1-1{from {margin-top: 10vh;} to {margin-top: 20vh;}}
-
-@keyframes toy2{from {margin-top: 20vh;} to {margin-top: 100vh;}}
-@keyframes toy2-1{from {margin-top: 20vh;} to {margin-top: 30vh;}}
-
-@keyframes tox3{
-    from {margin-left: 30vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox3-1{
-    from {margin-left: 30vh;}
-    to {margin-left: 40vh;}
-}
-
-@keyframes tox4{
-    from {margin-left: 40vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox4-1{
-    from {margin-left: 40vh;}
-    to {margin-left: 50vh;}
-}
-
-@keyframes tox5{
-    from {margin-left: 50vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox5-1{
-    from {margin-left: 50vh;}
-    to {margin-left: 60vh;}
-}
-
-
-@keyframes tox6{
-    from {margin-left: 60vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox6-1{
-    from {margin-left: 60vh;}
-    to {margin-left: 70vh;}
-}
-
-@keyframes tox7{
-    from {margin-left: 70vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox7-1{
-    from {margin-left: 70vh;}
-    to {margin-left: 80vh;}
-}
-
-@keyframes tox8{
-    from {margin-left: 80vh;}
-    to {margin-left: 100vh;}
-}
-@keyframes tox8-1{
-    from {margin-left: 80vh;}
-    to {margin-left: 90vh;}
-}
-
-@keyframes tox9{
-    from {margin-left: 90vh;}
-    to {margin-left: 100vh;}
-}
 
 /* Draw geometric shapes */ 
 
