@@ -420,7 +420,6 @@
 .hexagon-1{
     width: 10vh;
     height: 5vh;
-    background: #32557f;
     position: relative;
 }
 .hexagon-1::before{
@@ -432,7 +431,7 @@
     height: 0;
     border-left: 5vh solid transparent;
     border-right: 5vh solid transparent;
-    border-bottom: 3vh solid #32557f;
+    border-bottom: 3vh solid;
 }
 .hexagon-1::after{
     content: '';
@@ -443,13 +442,12 @@
     height: 0;
     border-left: 5vh solid transparent;
     border-right: 5vh solid transparent;
-    border-top: 3vh solid #32557f;
+    border-top: 3vh solid;
 }
 
 .hexagon-2{
     width: 20vh;
     height: 10vh;
-    background: #32557f;
     position: relative;
 }
 .hexagon-2::before{
@@ -461,7 +459,7 @@
     height: 0;
     border-left: 10vh solid transparent;
     border-right: 10vh solid transparent;
-    border-bottom: 5vh solid #32557f;
+    border-bottom: 5vh solid;
 }
 .hexagon-2::after{
     content: '';
@@ -472,13 +470,12 @@
     height: 0;
     border-left: 10vh solid transparent;
     border-right: 10vh solid transparent;
-    border-top: 5vh solid #32557f;
+    border-top: 5vh solid;
 }
 
 .hexagon-3{
     width: 30vh;
     height: 15vh;
-    background: #32557f;
     position: relative;
 }
 .hexagon-3::before{
@@ -490,7 +487,6 @@
     height: 0;
     border-left: 15vh solid transparent;
     border-right: 15vh solid transparent;
-    border-bottom: 10vh solid #32557f;
 }
 .hexagon-3::after{
     content: '';
@@ -501,5 +497,27 @@
     height: 0;
     border-left: 15vh solid transparent;
     border-right: 15vh solid transparent;
-    border-top: 10vh solid #32557f;
+}
+
+.parallelogram-1 {
+    width: 20vh;
+    height: 10vh;
+    transform: skew(20deg);
+}
+
+.parallelogram-2 {
+    width: 20vh;
+    height: 10vh;
+    transform: skew(20deg);
+}
+
+.parallelogram-3 {
+    width: 20vh;
+    height: 10vh;
+    transform: skew(20deg);
+}
+
+.teste
+{
+    background: rebeccapurple;
 }
