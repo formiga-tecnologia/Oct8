@@ -505,3 +505,46 @@
     to {margin-left: 100vh;}
 }
 
+/* Draw geometric shapes */ 
+
+.triangle-1{
+    width: 0; 
+    height: 0; 
+    border-left: 10vh solid transparent;
+    border-right: 10vh solid transparent;
+    border-bottom: 12vh solid;
+}
+
+.triangle-2{
+    width: 0; 
+    height: 0; 
+    border-left: 20vh solid transparent;
+    border-right: 20vh solid transparent;
+    border-bottom: 22vh solid;
+}
+
+.triangle-3{
+    width: 0; 
+    height: 0; 
+    border-left: 30vh solid transparent;
+    border-right: 30vh solid transparent;
+    border-bottom: 32vh solid;
+}
+
+.diamond-1{
+    width:10vh;
+    height:10vh;
+    transform: rotate(-45deg);  
+}
+
+.diamond-2{
+    width:40vh;
+    height:40vh;
+    transform: rotate(-45deg);  
+  }
+
+  .diamond-3{
+    width:30vh;
+    height:30vh;
+    transform: rotate(-45deg);  
+  }
