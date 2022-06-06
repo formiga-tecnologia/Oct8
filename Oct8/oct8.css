@@ -372,3 +372,22 @@
 .parallelogram-1 {width: 20vh;height: 10vh;transform: skew(20deg);}
 .parallelogram-2 {width: 20vh;height: 10vh;transform: skew(20deg);}
 .parallelogram-3 {width: 20vh;height: 10vh;transform: skew(20deg);}
+
+.teste
+{
+    transform: skewY(30deg);
+    transform: skewX(30deg);
+   transform:  rotate(50deg);
+   position: relative;
+}
+.teste:after {
+    position: absolute;
+    right: -50px;
+    bottom: 40vh;
+    top: -10vh;
+    content: "";
+    border-bottom: 25px solid white;
+    border-left: 25px solid white;
+    border-top: 25px solid transparent;
+    border-right: 25px solid transparent;
+  }
