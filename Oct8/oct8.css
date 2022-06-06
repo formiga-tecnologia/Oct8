@@ -413,47 +413,14 @@
     transform: rotate(-45deg);  
   }
 
-  .diamond-3{
-    width:30vh;
-    height:30vh;
-    transform: rotate(-45deg);  
-  }
-  .circle-1{
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%; 
-  }
+  .diamond-3{width:30vh;height:30vh;transform: rotate(-45deg);}
+  .circle-1{width: 10vh;height: 10vh;border-radius: 50%;}
 
-  .circle-2{
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%; 
-  }
+  .circle-2{width: 20vh;height: 20vh;border-radius: 50%;}
+  .circle-3{width: 30vh;height: 30vh;border-radius: 50%;}
 
-  .circle-3{
-    width: 30vh;
-    height: 30vh;
-    border-radius: 50%; 
-  }
+.half-ellipses-1{  border-radius: 50% / 100% 100% 0 0; }
+.parallelogram-1 {width: 20vh;height: 10vh;transform: skew(20deg);}
+.parallelogram-2 {width: 20vh;height: 10vh;transform: skew(20deg);}
 
-.half-ellipses-1{
-    border-radius: 50% / 100% 100% 0 0;
-}
-
-.parallelogram-1 {
-    width: 20vh;
-    height: 10vh;
-    transform: skew(20deg);
-}
-
-.parallelogram-2 {
-    width: 20vh;
-    height: 10vh;
-    transform: skew(20deg);
-}
-
-.parallelogram-3 {
-    width: 20vh;
-    height: 10vh;
-    transform: skew(20deg);
-}
+.parallelogram-3 {width: 20vh;height: 10vh;transform: skew(20deg);}
