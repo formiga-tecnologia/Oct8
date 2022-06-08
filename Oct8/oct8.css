@@ -350,6 +350,8 @@
 .hoverAplly-gray{transition: background-color 1s;}
 .hoverAplly-gray:hover{background: #646464;}
 
+.hoverAplly-W{transition: width 0.3s;}
+
 /* Draw geometric shapes */ 
 
 .diamond-1{width:10vh;height:10vh;transform: rotate(-45deg);}

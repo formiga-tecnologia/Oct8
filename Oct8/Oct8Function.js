@@ -129,6 +129,18 @@ var _element;
 var _NewPosition =0;
 var _oldPosition =0;
 var _axis ="";
+var _sizeType = "";
+var _newsize = 0;
+var _oldsize = 0;
+
+function Oct8ChangeSizes(element,typeModify,newsize,oldSize){
+    _element = element
+    _sizeType =  typeModify
+    _newsize = newsize
+    _oldsize = oldSize
+    _animatePrivate_size()
+    
+}
 function Oct8CPlayMove(element,oldpos,newpos,axis)
 {
     _element = element
@@ -144,6 +156,13 @@ async function _animatePrivate()
     _element.classList += " "+_axis+"-"+_NewPosition
 
 }
+async function _animatePrivate_size()
+{
+    _element.classList.remove(_sizeType+"-"+_oldsize)
+    _element.classList += " "+_sizeType+"-"+_newsize
+}
+
+
 function Oct8NewElementContainer(id,AppendElementId,typeContainerProp)
 {
     let newElement = document.createElement("div")
