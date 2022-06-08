@@ -132,6 +132,19 @@
 .Y-100{ margin-top: 100vh;}
 /* ===========================   */
 
+/* WIDTH CONFIGURATIONS*/
+.W-0{width:0vh}.W-1{width:1vh}.W-2{width:2vh}.W-3{width:3vh}.W-4{width:4vh}.W-5{width:5vh}.W-6{width:6vh}.W-7{width:7vh}.W-8{width:8vh}.W-9{width:9vh}.W-10{width:10vh}.W-11{width:11vh}.W-12{width:12vh}.W-13{width:13vh}.W-14{width:14vh}.W-15{width:15vh}.W-16{width:16vh}.W-17{width:17vh}.W-18{width:18vh}.W-19{width:19vh}.W-20{width:20vh}.W-21{width:21vh}.W-22{width:22vh}.W-23{width:23vh}.W-24{width:24vh}.W-25{width:25vh}.W-26{width:26vh}.W-27{width:27vh}.W-28{width:28vh}.W-29{width:29vh}.W-30{width:30vh}.W-31{width:31vh}.W-32{width:32vh}.W-33{width:33vh}.W-34{width:34vh}.W-35{width:35vh}.W-36{width:36vh}.W-37{width:37vh}.W-38{width:38vh}.W-39{width:39vh}.W-40{width:40vh}.W-41{width:41vh}.W-42{width:42vh}.W-43{width:43vh}.W-44{width:44vh}.W-45{width:45vh}.W-46{width:46vh}.W-47{width:47vh}.W-48{width:48vh}.W-49{width:49vh}.W-50{width:50vh}.W-51{width:51vh}.W-52{width:52vh}.W-53{width:53vh}.W-54{width:54vh}.W-55{width:55vh}.W-56{width:56vh}.W-57{width:57vh}.W-58{width:58vh}.W-59{width:59vh}.W-60{width:60vh}
+.W-61{width:61vh}.W-62{width:62vh}.W-63{width:63vh}.W-64{width:64vh}.W-65{width:65vh}.W-66{width:66vh}.W-67{width:67vh}.W-68{width:68vh}.W-69{width:69vh}.W-70{width:70vh}.W-81{width:81vh}.W-82{width:82vh}.W-83{width:83vh}.W-84{width:84vh}.W-85{width:85vh}.W-86{width:86vh}.W-87{width:87vh}.W-88{width:88vh}.W-89{width:89vh}.W-90{width:90vh}
+.W-100{width:100vh}
+/* ===========================   */
+
+/* HEIGHT CONFIGURATIONS*/
+.H-0{height:0}.H-1{height:1vh}.H-2{height:2vh}.H-3{height:3vh}.H-4{height:4vh}.H-5{height:5vh}.H-6{height:6vh}.H-7{height:7vh}.H-8{height:8vh}.H-9{height:9vh}.H-10{height:10vh}.H-11{height:11vh}.H-12{height:12vh}.H-13{height:13vh}.H-14{height:14vh}.H-15{height:15vh}.H-16{height:16vh}.H-17{height:17vh}.H-18{height:18vh}.H-19{height:19vh}.H-20{height:20vh}.H-21{height:21vh}.H-22{height:22vh}.H-23{height:23vh}.H-24{height:24vh}.H-25{height:25vh}.H-26{height:26vh}.H-27{height:27vh}.H-28{height:28vh}.H-29{height:29vh}.H-30{height:30vh}.H-31{height:31vh}.H-32{height:32vh}.H-33{height:33vh}.H-34{height:34vh}.H-35{height:35vh}.H-36{height:36vh}.H-37{height:37vh}.H-38{height:38vh}.H-39{height:39vh}.H-40{height:40vh}.H-41{height:41vh}.H-42{height:42vh}.H-43{height:43vh}.H-44{height:44vh}.H-45{height:45vh}.H-46{height:46vh}.H-47{height:47vh}.H-48{height:48vh}.H-49{height:49vh}.H-50{height:50vh}.H-51{height:51vh}.H-52{height:52vh}.H-53{height:53vh}.H-54{height:54vh}.H-55{height:55vh}.H-56{height:56vh}
+.H-57{height:57vh}.H-58{height:58vh}.H-59{height:59vh}.H-60{height:60vh}
+.H-61{height:61vh}.H-62{height:62vh}.H-63{height:63vh}.H-64{height:64vh}.H-65{height:65vh}.H-66{height:66vh}.H-67{height:67vh}.H-68{height:68vh}.H-69{height:69vh}.H-70{height:70vh}.H-71{height:71vh}.H-72{height:72vh}.H-73{height:73vh}.H-74{height:74vh}.H-75{height:75vh}.H-76{height:76vh}.H-77{height:77vh}.H-78{height:78vh}.H-79{height:79vh}.H-80{height:80vh}.H-81{height:81vh}.H-82{height:82vh}.H-83{height:83vh}.H-84{height:84vh}.H-85{height:85vh}.H-86{height:86vh}.H-87{height:87vh}.H-88{height:88vh}.H-89{height:89vh}.H-90{height:90vh}.H-91{height:91vh}.H-92{height:92vh}.H-93{height:93vh}.H-94{height:94vh}.H-95{height:95vh}.H-96{height:96vh}.H-97{height:97vh}.H-98{height:98vh}.H-99{height:99vh}.H-100{height:100vh}
+/* ===========================   */
+
+
 /* 3D pespective apply */
 .apply-Z {  perspective: 30vh;}
 .Z{transform-style: preserve-3d;}
@@ -176,27 +189,8 @@
 .Layer-8 { z-index: 8;}
 .Layer-9 { z-index: 9;}
 
-.W-1  {width: 10vh;}
-.W-2  {width: 20vh;}
-.W-3  {width: 30vh;}
-.W-4  {width: 40vh;}
-.W-5  {width: 50vh;}
-.W-6  {width: 60vh;}
-.W-7  {width: 70vh;}
-.W-8  {width: 80vh;}
-.W-9  {width: 90vh;}
-.W-10 {width: 100vh;}
 
-.H-1 {height: 10vh;}
-.H-2 {height: 20vh;}
-.H-3 {height: 30vh;}
-.H-4 {height: 40vh;}
-.H-5 {height: 50vh;}
-.H-6 {height: 60vh;}
-.H-7 {height: 70vh;}
-.H-8 {height: 80vh;}
-.H-9 {height: 90vh;}
-.H-10 {height: 100vh;}
+
 
 /*
     STROKE LINES Effect
