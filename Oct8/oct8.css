@@ -110,17 +110,54 @@
     H = Height of element
     W = Width of element
 */
-.X-0{ margin-left: 0vh;}
-.X-1{ margin-left: 10vh;}
-.X-2{ margin-left: 20vh;}
-.X-3{ margin-left: 30vh;}
-.X-4{ margin-left: 40vh;}
-.X-5{ margin-left: 50vh;}
-.X-6{ margin-left: 60vh;}
-.X-7{ margin-left: 70vh;}
-.X-8{ margin-left: 80vh;}
-.X-9{ margin-left: 90vh;}
-.X-10{ margin-left: 100vh;}
+.X-0{ margin-left: 0vh;}.X-1{ margin-left: 1vh;}.X-2{ margin-left: 2vh;}.X-3{ margin-left: 3vh;}.X-4{ margin-left: 4vh;}.X-5{ margin-left: 5vh;}.X-6{ margin-left: 6vh;}.X-7{ margin-left: 7vh;}.X-8{ margin-left: 8vh;}.X-9{ margin-left: 9vh;}.X-10{ margin-left: 10vh;}
+.X-11{ margin-left: 11vh;}.X-12{ margin-left: 12vh;}.X-13{ margin-left: 13vh;}.X-14{ margin-left: 14vh;}.X-15{ margin-left: 15vh;}.X-16{ margin-left: 16vh;}.X-17{ margin-left: 17vh;}.X-18{ margin-left: 18vh;}.X-19{ margin-left: 19vh;}.X-20{ margin-left: 20vh;}
+.X-20{ margin-left: 20vh;}.X-21{ margin-left: 21vh;}.X-22{ margin-left: 22vh;}.X-23{ margin-left: 23vh;}.X-24{ margin-left: 24vh;}.X-25{ margin-left: 25vh;}.X-26{ margin-left: 26vh;}.X-27{ margin-left: 27vh;}.X-28{ margin-left: 28vh;}.X-29{ margin-left: 29vh;}
+.X-0{ margin-left: 30vh;}
+.X-1{ margin-left: 31vh;}
+.X-2{ margin-left: 32vh;}
+.X-3{ margin-left: 33vh;}
+.X-4{ margin-left: 34vh;}
+.X-5{ margin-left: 35vh;}
+.X-6{ margin-left: 36vh;}
+.X-7{ margin-left: 37vh;}
+.X-8{ margin-left: 38vh;}
+.X-9{ margin-left: 39vh;}
+.X-0{ margin-left: 40vh;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.X-40{ margin-left: 40vh;}
+.X-41{ margin-left: 41vh;}
+.X-42{ margin-left: 42vh;}
+.X-43{ margin-left: 43vh;}
+.X-44{ margin-left: 44vh;}
+.X-45{ margin-left: 45vh;}
+.X-46{ margin-left: 46vh;}
+.X-47{ margin-left: 47vh;}
+.X-48{ margin-left: 48vh;}
+.X-49{ margin-left: 49vh;}
+.X-50{ margin-left: 50vh;}
+
+
 
 .Y-0{ margin-top: 0vh;}
 .Y-1{ margin-top: 10vh;}
