@@ -110,82 +110,27 @@
     H = Height of element
     W = Width of element
 */
+
+/* POSITION X axis*/
 .X-0{ margin-left: 0vh;}.X-1{ margin-left: 1vh;}.X-2{ margin-left: 2vh;}.X-3{ margin-left: 3vh;}.X-4{ margin-left: 4vh;}.X-5{ margin-left: 5vh;}.X-6{ margin-left: 6vh;}.X-7{ margin-left: 7vh;}.X-8{ margin-left: 8vh;}.X-9{ margin-left: 9vh;}.X-10{ margin-left: 10vh;}
 .X-11{ margin-left: 11vh;}.X-12{ margin-left: 12vh;}.X-13{ margin-left: 13vh;}.X-14{ margin-left: 14vh;}.X-15{ margin-left: 15vh;}.X-16{ margin-left: 16vh;}.X-17{ margin-left: 17vh;}.X-18{ margin-left: 18vh;}.X-19{ margin-left: 19vh;}.X-20{ margin-left: 20vh;}
 .X-20{ margin-left: 20vh;}.X-21{ margin-left: 21vh;}.X-22{ margin-left: 22vh;}.X-23{ margin-left: 23vh;}.X-24{ margin-left: 24vh;}.X-25{ margin-left: 25vh;}.X-26{ margin-left: 26vh;}.X-27{ margin-left: 27vh;}.X-28{ margin-left: 28vh;}.X-29{ margin-left: 29vh;}
 .X-30{ margin-left: 30vh;}.X-31{ margin-left: 31vh;}.X-32{ margin-left: 32vh;}.X-33{ margin-left: 33vh;}.X-34{ margin-left: 34vh;}.X-35{ margin-left: 35vh;}.X-36{ margin-left: 36vh;}.X-37{ margin-left: 37vh;}.X-38{ margin-left: 38vh;}.X-39{ margin-left: 39vh;}
-.X-40{ margin-left: 0vh;}.X-41{ margin-left: 1vh;}.X-42{ margin-left: 2vh;}.X-43{ margin-left: 3vh;}.X-44{ margin-left: 4vh;}.X-45{ margin-left: 5vh;}.X-46{ margin-left: 6vh;}.X-47{ margin-left: 7vh;}.X-48{ margin-left: 8vh;}.X-49{ margin-left: 9vh;}
-.X-50{ margin-left: 0vh;}.X-51{ margin-left: 1vh;}.X-52{ margin-left: 2vh;}.X-53{ margin-left: 3vh;}.X-54{ margin-left: 4vh;}.X-55{ margin-left: 5vh;}.X-56{ margin-left: 6vh;}.X-57{ margin-left: 7vh;}.X-58{ margin-left: 8vh;}.X-59{ margin-left: 9vh;}
+.X-40{ margin-left: 40vh;}.X-41{ margin-left: 41vh;}.X-42{ margin-left: 42vh;}.X-43{ margin-left: 43vh;}.X-44{ margin-left: 44vh;}.X-45{ margin-left: 45vh;}.X-46{ margin-left: 46vh;}.X-47{ margin-left: 47vh;}.X-48{ margin-left: 48vh;}.X-49{ margin-left: 49vh;}
+.X-50{ margin-left: 50vh;}.X-51{ margin-left: 51vh;}.X-52{ margin-left: 52vh;}.X-53{ margin-left: 53vh;}.X-54{ margin-left: 54vh;}.X-55{ margin-left: 55vh;}.X-56{ margin-left: 56vh;}.X-57{ margin-left: 57vh;}.X-58{ margin-left: 58vh;}.X-59{ margin-left: 59vh;}
+.X-60{margin-left:60vh}.X-61{margin-left:61vh}.X-62{margin-left:62vh}.X-63{margin-left:63vh}.X-64{margin-left:64vh}.X-65{margin-left:65vh}.X-66{margin-left:66vh}.X-67{margin-left:67vh}.X-68{margin-left:68vh}.X-69{margin-left:69vh}
+.X-70{margin-left:70vh}.X-71{margin-left:71vh}.X-72{margin-left:72vh}.X-73{margin-left:73vh}.X-74{margin-left:74vh}.X-75{margin-left:75vh}.X-76{margin-left:76vh}.X-77{margin-left:77vh}.X-78{margin-left:78vh}.X-79{margin-left:79vh}
+.X-80{margin-left:80vh}.X-81{margin-left:81vh}.X-82{margin-left:82vh}.X-83{margin-left:83vh}.X-84{margin-left:84vh}.X-85{margin-left:85vh}.X-86{margin-left:86vh}.X-87{margin-left:87vh}.X-88{margin-left:88vh}.X-89{margin-left:89vh}
+.X-90{margin-left:90vh}.X-91{margin-left:91vh}.X-92{margin-left:92vh}.X-93{margin-left:93vh}.X-94{margin-left:94vh}.X-95{margin-left:95vh}.X-96{margin-left:96vh}.X-97{margin-left:97vh}.X-98{margin-left:98vh}.X-99{margin-left:99vh}
+.X-100{margin-left:100vh}
+/* ===========================   */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.X-0{ margin-left: 0vh;}
-.X-1{ margin-left: 1vh;}
-.X-2{ margin-left: 2vh;}
-.X-3{ margin-left: 3vh;}
-.X-4{ margin-left: 4vh;}
-.X-5{ margin-left: 5vh;}
-.X-6{ margin-left: 6vh;}
-.X-7{ margin-left: 7vh;}
-.X-8{ margin-left: 8vh;}
-.X-9{ margin-left: 9vh;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Y-0{ margin-top: 0vh;}
-.Y-1{ margin-top: 10vh;}
-.Y-2{ margin-top: 20vh;}
-.Y-3{ margin-top: 30vh;}
-.Y-4{ margin-top: 40vh;}
-.Y-5{ margin-top: 50vh;}
-.Y-6{ margin-top: 60vh;}
-.Y-7{ margin-top: 70vh;}
-.Y-8{ margin-top: 80vh;}
-.Y-9{ margin-top: 90vh;}
-.Y-10{ margin-top: 100vh;}
+/* POSITION Y axis*/
+.Y-0{margin-top:0}.Y-1{margin-top:1vh}.Y-2{margin-top:2vh}.Y-3{margin-top:3vh}.Y-4{margin-top:4vh}.Y-5{margin-top:5vh}.Y-6{margin-top:6vh}.Y-7{margin-top:7vh}.Y-8{margin-top:8vh}.Y-9{margin-top:9vh}.Y-10{margin-top:10vh}.Y-11{margin-top:11vh}.Y-12{margin-top:12vh}.Y-13{margin-top:13vh}.Y-14{margin-top:14vh}.Y-15{margin-top:15vh}.Y-16{margin-top:16vh}.Y-17{margin-top:17vh}.Y-18{margin-top:18vh}.Y-19{margin-top:19vh}.Y-20{margin-top:20vh}.Y-21{margin-top:21vh}.Y-22{margin-top:22vh}.Y-23{margin-top:23vh}.Y-24{margin-top:24vh}.Y-25{margin-top:25vh}.Y-26{margin-top:26vh}.Y-27{margin-top:27vh}.Y-28{margin-top:28vh}.Y-29{margin-top:29vh}.Y-30{margin-top:30vh}.Y-31{margin-top:31vh}.Y-32{margin-top:32vh}.Y-33{margin-top:33vh}.Y-34{margin-top:34vh}.Y-35{margin-top:35vh}.Y-36{margin-top:36vh}.Y-37{margin-top:37vh}.Y-38{margin-top:38vh}.Y-39{margin-top:39vh}.Y-40{margin-top:40vh}.Y-41{margin-top:41vh}.Y-42{margin-top:42vh}.Y-43{margin-top:43vh}.Y-44{margin-top:44vh}.Y-45{margin-top:45vh}.Y-46{margin-top:46vh}
+.Y-47{margin-top:47vh}.Y-48{margin-top:48vh}.Y-49{margin-top:49vh}.Y-50{margin-top:50vh}.Y-51{margin-top:51vh}.Y-52{margin-top:52vh}.Y-53{margin-top:53vh}.Y-54{margin-top:54vh}.Y-55{margin-top:55vh}.Y-56{margin-top:56vh}.Y-57{margin-top:57vh}.Y-58{margin-top:58vh}.Y-59{margin-top:59vh}
+.Y-60{margin-top:60vh}.Y-61{margin-top:61vh}.Y-62{margin-top:62vh}.Y-63{margin-top:63vh}.Y-64{margin-top:64vh}.Y-65{margin-top:65vh}.Y-66{margin-top:66vh}.Y-67{margin-top:67vh}.Y-68{margin-top:68vh}.Y-69{margin-top:69vh}.Y-70{margin-top:70vh}.Y-71{margin-top:71vh}.Y-72{margin-top:72vh}.Y-73{margin-top:73vh}.Y-74{margin-top:74vh}.Y-75{margin-top:75vh}.Y-76{margin-top:76vh}.Y-77{margin-top:77vh}.Y-78{margin-top:78vh}.Y-79{margin-top:79vh}.Y-80{margin-top:80vh}.Y-81{margin-top:81vh}.Y-82{margin-top:82vh}.Y-83{margin-top:83vh}.Y-84{margin-top:84vh}.Y-85{margin-top:85vh}.Y-86{margin-top:86vh}.Y-87{margin-top:87vh}.Y-88{margin-top:88vh}.Y-89{margin-top:89vh}.Y-90{margin-top:90vh}.Y-91{margin-top:91vh}.Y-92{margin-top:92vh}.Y-93{margin-top:93vh}.Y-94{margin-top:94vh}.Y-95{margin-top:95vh}.Y-96{margin-top:96vh}.Y-97{margin-top:97vh}.Y-98{margin-top:98vh}.Y-99{margin-top:99vh}
+.Y-100{ margin-top: 100vh;}
+/* ===========================   */
 
 /* 3D pespective apply */
 .apply-Z {  perspective: 30vh;}
