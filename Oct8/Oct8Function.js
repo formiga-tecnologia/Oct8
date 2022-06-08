@@ -141,7 +141,9 @@ function Oct8CPlayMove(element,oldpos,newpos,axis)
 async function _animatePrivate()
 {
     _element.classList.remove(_axis+"-"+_oldPosition)
+    console.log("REMOVER :"+_axis+"-"+_oldPosition)
     _element.classList += " "+_axis+"-"+_NewPosition
+    console.log("ADICIONAR: "+_axis+"-"+_oldPosition)
 
 }
 function Oct8NewElementContainer(id,AppendElementId,typeContainerProp)
@@ -178,7 +180,7 @@ function Oct8AddHoverEffect(element,color)
 }
 function Oct8RemoveHoverEffect(element,color)
 {
-    element.classList.remove("hoverAplly-"+color)
+   // element.classList.remove("hoverAplly-"+color)
 }
 function Oct8AddHoverApplyAxis(element,Axis)
 {
