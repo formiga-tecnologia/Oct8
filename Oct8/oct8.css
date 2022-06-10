@@ -150,35 +150,34 @@
 .apply-Z {  perspective: 30vh;}
 .Z{transform-style: preserve-3d;}
 
-.rotate-X-0{ transform: rotateX(0deg);}
-.rotate-Y-0{ transform:1 rotateY(0deg);}
+/* ROTATE AXIS X */
 
-.rotate-X-1{ transform: rotateX(10deg);}
-.rotate-Y-1{ transform:1 rotateY(10deg);}
+.rotate-X-0{transform:rotateX(0deg)}.rotate-X-1{transform:rotateX(1deg)}.rotate-X-2{transform:rotateX(2deg)}.rotate-X-3{transform:rotateX(3deg)}.rotate-X-4{transform:rotateX(4deg)}.rotate-X-5{transform:rotateX(5deg)}.rotate-X-6{transform:rotateX(6deg)}.rotate-X-7{transform:rotateX(7deg)}.rotate-X-8{transform:rotateX(9deg)}.rotate-X-9{transform:rotateX(9deg)}.rotate-X-10{transform:rotateX(10deg)}.rotate-X-11{transform:rotateX(11deg)}.rotate-X-12{transform:rotateX(12deg)}.rotate-X-13{transform:rotateX(13deg)}.rotate-X-14{transform:rotateX(14deg)}.rotate-X-15{transform:rotateX(15deg)}.rotate-X-16{transform:rotateX(16deg)}.rotate-X-17{transform:rotateX(17deg)}.rotate-X-18{transform:rotateX(19deg)}.rotate-X-20{transform:rotateX(20deg)}.rotate-X-21{transform:rotateX(21deg)}.rotate-X-22{transform:rotateX(22deg)}.rotate-X-23{transform:rotateX(23deg)}.rotate-X-24{transform:rotateX(24deg)}.rotate-X-25{transform:rotateX(25deg)}.rotate-X-26{transform:rotateX(26deg)}.rotate-X-27{transform:rotateX(27deg)}
+.rotate-X-28{transform:rotateX(29deg)}.rotate-X-30{transform:rotateX(30deg)}.rotate-X-31{transform:rotateX(31deg)}.rotate-X-32{transform:rotateX(32deg)}.rotate-X-33{transform:rotateX(33deg)}.rotate-X-34{transform:rotateX(34deg)}.rotate-X-35{transform:rotateX(35deg)}.rotate-X-36{transform:rotateX(36deg)}.rotate-X-37{transform:rotateX(37deg)}.rotate-X-38{transform:rotateX(39deg)}.rotate-X-40{transform:rotateX(40deg)}.rotate-X-41{transform:rotateX(41deg)}.rotate-X-4{transform:rotateX(42deg)}.rotate-X-43{transform:rotateX(43deg)}.rotate-X-44{transform:rotateX(44deg)}.rotate-X-45{transform:rotateX(45deg)}.rotate-X-46{transform:rotateX(46deg)}.rotate-X-47{transform:rotateX(47deg)}.rotate-X-48{transform:rotateX(49deg)}.rotate-X-50{transform:rotateX(50deg)}.rotate-X-51{transform:rotateX(51deg)}.rotate-X-52{transform:rotateX(52deg)}.rotate-X-53{transform:rotateX(53deg)}.rotate-X-54{transform:rotateX(54deg)}.rotate-X-55{transform:rotateX(55deg)}.rotate-X-56{transform:rotateX(56deg)}.rotate-X-57{transform:rotateX(57deg)}
+.rotate-X-58{transform:rotateX(59deg)}
 
-.rotate-X-2{ transform: rotateX(20deg);}
-.rotate-Y-2{ transform: rotateY(20deg);}
+.rotate-X-60{transform:rotateX(60deg)}.rotate-X-61{transform:rotateX(61deg)}.rotate-X-62{transform:rotateX(62deg)}.rotate-X-63{transform:rotateX(63deg)}.rotate-X-64{transform:rotateX(64deg)}.rotate-X-65{transform:rotateX(65deg)}.rotate-X-66{transform:rotateX(66deg)}.rotate-X-67{transform:rotateX(67deg)}.rotate-X-68{transform:rotateX(69deg)}.rotate-X-70{transform:rotateX(70deg)}.rotate-X-71{transform:rotateX(71deg)}.rotate-X-72{transform:rotateX(72deg)}.rotate-X-73{transform:rotateX(73deg)}.rotate-X-74{transform:rotateX(74deg)}.rotate-X-75{transform:rotateX(75deg)}.rotate-X-76{transform:rotateX(76deg)}.rotate-X-77{transform:rotateX(77deg)}.rotate-X-78{transform:rotateX(79deg)}.rotate-X-80{transform:rotateX(80deg)}.rotate-X-81{transform:rotateX(81deg)}.rotate-X-82{transform:rotateX(82deg)}.rotate-X-83{transform:rotateX(83deg)}.rotate-X-84{transform:rotateX(84deg)}.rotate-X-85{transform:rotateX(85deg)}.rotate-X-86{transform:rotateX(86deg)}.rotate-X-87{transform:rotateX(87deg)}.rotate-X-88{transform:rotateX(89deg)}
+.rotate-X-90{transform:rotateX(90deg)}.rotate-X-91{transform:rotateX(91deg)}.rotate-X-92{transform:rotateX(92deg)}.rotate-X-93{transform:rotateX(93deg)}.rotate-X-94{transform:rotateX(94deg)}.rotate-X-95{transform:rotateX(95deg)}.rotate-X-96{transform:rotateX(96deg)}.rotate-X-97{transform:rotateX(97deg)}.rotate-X-98{transform:rotateX(99deg)}.rotate-X-100{transform:rotateX(100deg)}
 
-.rotate-X-3{ transform: rotateX(30deg);}
-.rotate-Y-3{ transform: rotateY(30deg);}
+/* ================================ */
 
-.rotate-X-4{ transform: rotateX(40deg);}
-.rotate-Y-4{ transform: rotateY(40deg);}
+/* ROTATE AXIS X */
 
-.rotate-X-5{ transform: rotateX(50deg);}
-.rotate-Y-5{ transform: rotateY(50deg);}
+.rotate-Y-0{ transform:rotateY(0deg);}
+.rotate-Y-1{ transform:rotateY(1deg);}
+.rotate-Y-2{ transform:rotateY(2deg);}
+.rotate-Y-3{ transform:rotateY(3deg);}
+.rotate-Y-4{ transform:rotateY(4deg);}
+.rotate-Y-5{ transform:rotateY(5deg);}
+.rotate-Y-6{ transform:rotateY(6deg);}
+.rotate-Y-7{ transform:rotateY(7deg);}
+.rotate-Y-8{ transform:rotateY(8deg);}
+.rotate-Y-9{ transform:rotateY(9deg);}
 
-.rotate-X-6{ transform: rotateX(60deg);}
-.rotate-Y-6{ transform: rotateY(60deg);}
 
-.rotate-X-7{ transform: rotateX(70deg);}
-.rotate-Y-7{ transform: rotateY(70deg);}
 
-.rotate-X-8{ transform: rotateX(80deg);}
-.rotate-Y-8{ transform: rotateY(80deg);}
+/* ================================ */
 
-.rotate-X-9{ transform: rotateX(90deg);}
-.rotate-Y-9{ transform: rotateY(90deg);}
 
 .Layer-1 { z-index: 1;}
 .Layer-2 { z-index: 2;}
