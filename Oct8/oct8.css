@@ -129,7 +129,7 @@
 .transition-Rotate-Y{transition: rotateY 03s;}
 .transition-alpha{transition: opacity 0.3s}
 .transition{
-    transition: rotateY 03s;
+    transition: rotateY 03s; 
     transition: rotateX 03s;
     transition: skewY 0.3s ;
     transition: skewX 0.3s ;
@@ -149,4 +149,4 @@
 .diamond-1{width:10vh;height:10vh;transform:rotate(-45deg)}.diamond-2{width:40vh;height:40vh;transform:rotate(-45deg)}.diamond-3{width:30vh;height:30vh;transform:rotate(-45deg)}.circle-1{width:10vh;height:10vh;border-radius:50%}.circle-2{width:20vh;height:20vh;border-radius:50%}.circle-3{width:30vh;height:30vh;border-radius:50%}.half-ellipses-1{border-radius:50%/100% 100% 0 0}.parallelogram-1{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-2{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-3{width:20vh;height:10vh;transform:skew(20deg)}
 
 /* ALPHA RULES */ 
-.alpha-0{opacity:0}.alpha-1{opacity:.1}.alpha-2{opacity:.2}.alpha-3{opacity:.3}.alpha-4{opacity:.4}.alpha-5{opacity:.5}.alpha-6{opacity:.6}.alpha-7{opacity:.7}.alpha-8{opacity:.8}.alpha-9{opacity:.9}.alpha-100{opacity:1}
+.alpha-0{opacity:0}.alpha-1{opacity:.1}.alpha-2{opacity:.2}.alpha-3{opacity:.3}.alpha-4{opacity:.4}.alpha-5{opacity:.5}.alpha-6{opacity:.6}.alpha-7{opacity:.7}.alpha-8{opacity:.8}.alpha-9{opacity:.9}.alpha-10{opacity:1}
