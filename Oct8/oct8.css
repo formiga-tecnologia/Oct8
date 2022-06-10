@@ -13,16 +13,6 @@
 */
 
 .elb{width:100%;height:100%;bottom:0;background-color:#464545}.elb-cont{display:flex;align-content:flex-start;justify-content:flex-start;align-items:flex-start;flex-wrap:nowrap;flex-direction:row;flex-wrap:wrap}.elb-off{background-color:transparent;border:none}.elb-on{background-color:transparent;border:4px #464545 solid}
-  .elb-dX-1{ transform: skewX(10deg)}
-  .elb-dX-2{ transform: skewX(20deg)}
-  .elb-dX-3{ transform: skewX(30deg)}
-  .elb-dX-4{ transform: skewX(40deg)}
-  .elb-dX-5{ transform: skewX(50deg)}
-  .elb-dX-6{ transform: skewX(60deg)}
-  .elb-dX-7{ transform: skewX(70deg)}
-  .elb-dX-8{ transform: skewX(80deg)}
-  .elb-dX-9{ transform: skewX(90deg)}
-  
   /*
    SSE - Square solid element 
    this elements not use rules to CBE
@@ -81,6 +71,11 @@
 
 /* TRANSFORM Y Skew */
 
+.Skew-Y-0{transform:skewX(0deg)}.Skew-Y-1{transform:skewX(1deg)}.Skew-Y-2{transform:skewX(2deg)}.Skew-Y-3{transform:skewX(3deg)}.Skew-Y-4{transform:skewX(4deg)}.Skew-Y-5{transform:skewX(5deg)}.Skew-Y-6{transform:skewX(6deg)}.Skew-Y-7{transform:skewX(7deg)}.Skew-Y-8{transform:skewX(8deg)}.Skew-Y-9{transform:skewX(9deg)}.Skew-Y-10{transform:skewX(10deg)}.Skew-Y-11{transform:skewX(11deg)}.Skew-Y-12{transform:skewX(12deg)}.Skew-Y-13{transform:skewX(13deg)}.Skew-Y-14{transform:skewX(14deg)}.Skew-Y-15{transform:skewX(15deg)}.Skew-Y-16{transform:skewX(16deg)}.Skew-Y-17{transform:skewX(17deg)}.Skew-Y-18{transform:skewX(18deg)}.Skew-Y-19{transform:skewX(19deg)}.Skew-Y-20{transform:skewX(20deg)}.Skew-Y-21{transform:skewX(21deg)}.Skew-Y-22{transform:skewX(22deg)}.Skew-Y-23{transform:skewX(23deg)}.Skew-Y-24{transform:skewX(24deg)}.Skew-Y-25{transform:skewX(25deg)}.Skew-Y-26{transform:skewX(26deg)}.Skew-Y-27{transform:skewX(27deg)}.Skew-Y-28{transform:skewX(28deg)}.Skew-Y-29{transform:skewX(29deg)}.Skew-Y-30{transform:skewX(30deg)}
+.Skew-Y-31{transform:skewX(31deg)}.Skew-Y-32{transform:skewX(32deg)}.Skew-Y-33{transform:skewX(33deg)}.Skew-Y-34{transform:skewX(34deg)}.Skew-Y-35{transform:skewX(35deg)}.Skew-Y-36{transform:skewX(36deg)}.Skew-Y-37{transform:skewX(37deg)}.Skew-Y-38{transform:skewX(38deg)}.Skew-Y-39{transform:skewX(39deg)}.Skew-Y-40{transform:skewX(40deg)}.Skew-Y-41{transform:skewX(41deg)}.Skew-Y-42{transform:skewX(42deg)}.Skew-Y-43{transform:skewX(43deg)}.Skew-Y-44{transform:skewX(44deg)}.Skew-Y-45{transform:skewX(45deg)}.Skew-Y-46{transform:skewX(46deg)}.Skew-Y-47{transform:skewX(47deg)}.Skew-Y-48{transform:skewX(48deg)}.Skew-Y-49{transform:skewX(49deg)}.Skew-Y-50{transform:skewX(50deg)}.Skew-Y-51{transform:skewX(51deg)}.Skew-Y-52{transform:skewX(52deg)}.Skew-Y-53{transform:skewX(53deg)}.Skew-Y-54{transform:skewX(54deg)}.Skew-Y-55{transform:skewX(55deg)}.Skew-Y-56{transform:skewX(56deg)}.Skew-Y-57{transform:skewX(57deg)}.Skew-Y-58{transform:skewX(58deg)}.Skew-Y-59{transform:skewX(59deg)}
+
+.Skew-Y-60{transform:skewX(60deg)}.Skew-Y-61{transform:skewX(61deg)}.Skew-Y-62{transform:skewX(62deg)}.Skew-Y-63{transform:skewX(63deg)}.Skew-Y-64{transform:skewX(64deg)}.Skew-Y-65{transform:skewX(65deg)}.Skew-Y-66{transform:skewX(66deg)}.Skew-Y-67{transform:skewX(67deg)}.Skew-Y-68{transform:skewX(68deg)}.Skew-Y-69{transform:skewX(69deg)}.Skew-Y-70{transform:skewX(70deg)}.Skew-Y-71{transform:skewX(71deg)}.Skew-Y-72{transform:skewX(72deg)}.Skew-Y-73{transform:skewX(73deg)}.Skew-Y-74{transform:skewX(74deg)}.Skew-Y-75{transform:skewX(75deg)}.Skew-Y-76{transform:skewX(76deg)}.Skew-Y-77{transform:skewX(77deg)}.Skew-Y-78{transform:skewX(78deg)}.Skew-Y-79{transform:skewX(79deg)}.Skew-Y-80{transform:skewX(80deg)}.Skew-Y-81{transform:skewX(81deg)}.Skew-Y-82{transform:skewX(82deg)}.Skew-Y-83{transform:skewX(83deg)}.Skew-Y-84{transform:skewX(84deg)}.Skew-Y-85{transform:skewX(85deg)}.Skew-Y-86{transform:skewX(86deg)}.Skew-Y-87{transform:skewX(87deg)}.Skew-Y-88{transform:skewX(88deg)}.Skew-Y-89{transform:skewX(89deg)}
+.Skew-Y-90{transform:skewX(90deg)}.Skew-Y-91{transform:skewX(91deg)}.Skew-Y-92{transform:skewX(92deg)}.Skew-Y-93{transform:skewX(93deg)}.Skew-Y-94{transform:skewX(94deg)}.Skew-Y-95{transform:skewX(95deg)}.Skew-Y-96{transform:skewX(96deg)}.Skew-Y-97{transform:skewX(97deg)}.Skew-Y-98{transform:skewX(98deg)}.Skew-Y-99{transform:skewX(99deg)}.Skew-Y-100{transform:skewX(100deg)}
 
 /* ===========================   */
 
