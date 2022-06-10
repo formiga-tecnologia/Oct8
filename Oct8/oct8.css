@@ -110,6 +110,38 @@
 /* ================================ */
 
 
+/* TRANSITION RULES */
+.transition-height{transition: height 0.3s}
+.transition-width{transition: width 0.3s;}
+.transition-layer{transition: z-index 0.3s;}
+.transition-X{transition: margin-left 0.3s;}
+.transition-Y{transition: margin-top 0.3s;}
+.hoverApply-borders{
+    transition: border-left 0.3s;
+    transition: border-right 0.3s;
+    transition: border-top 0.3s;
+    transition: border-bottom 0.3s;
+}
+.transition-Skew-X{transition: skewX 0.3s ;}
+.transition-Skew-Y{transition: skewY 0.3s ;}
+.transition-Rotate-X{transition: rotateX 03s;}
+.transition-Rotate-Y{transition: rotateY 03s;}
+.transition{
+    transition: rotateY 03s;
+    transition: rotateX 03s;
+    transition: skewY 0.3s ;
+    transition: skewX 0.3s ;
+    transition: border-left 0.3s;
+    transition: border-right 0.3s;
+    transition: border-top 0.3s;
+    transition: border-bottom 0.3s;
+    transition: z-index 0.3s;
+    transition: height 0.3s;
+    transition: margin-top 0.3s;
+    transition: margin-left 0.3s;
+}
+/* ======================= */
+
 
 /*
     STROKE LINES Effect
@@ -164,39 +196,6 @@
 ==============================================
 ==============================================
 */
-.hoverApply-borders{
-    transition: border-left 0.3s;
-    transition: border-right 0.3s;
-    transition: border-top 0.3s;
-    transition: border-bottom 0.3s;
-}
-
-.hoverapply-height-1 {transition: height 0.3s;}
-.hoverapply-height-1:hover{height: 10vh;}
-
-.hoverapply-height-2 {transition: height 0.3s;}
-.hoverapply-height-2:hover{height: 20vh;}
-
-.hoverapply-height-3 {transition: height 0.3s;}
-.hoverapply-height-3:hover{height: 30vh;}
-
-.hoverapply-height-4 {transition: height 0.3s;}
-.hoverapply-height-4:hover{height: 40vh;}
-
-.hoverapply-height-5 {transition: height 0.3s;}
-.hoverapply-height-5:hover{height: 50vh;}
-
-.hoverapply-height-6 {transition: height 0.3s;}
-.hoverapply-height-6:hover{height: 60vh;}
-
-.hoverapply-height-7 {transition: height 0.3s;}
-.hoverapply-height-7:hover{height: 70vh;}
-
-.hoverapply-height-8 {transition: height 0.3s;}
-.hoverapply-height-8:hover{height: 80vh;}
-
-.hoverapply-height-9 {transition: height 0.3s;}
-.hoverapply-height-9:hover{height: 90vh;}
 
 .hoverAplly-X{transition: margin-left 0.3s;}
 .hoverApply-Layer{transition: z-index 0.3s;}
@@ -231,15 +230,6 @@
 .hoverApply-Layer-9{transition: height 0.3s;}
 .hoverApply-Layer-9:hover{z-index: 9;}
 
-/*
-==============================================
-==============================================
-*/
-/* LINES RULES */
-.blazer-border{
-    border-bottom-left-radius: 60%;
-}
-
 
 /* 
     Add rules to animations basic
@@ -271,56 +261,4 @@
 .hoverAplly-W{transition: width 0.3s;}
 
 /* Draw geometric shapes */ 
-
-.diamond-1{width:10vh;height:10vh;transform: rotate(-45deg);}
-.diamond-2{width:40vh;height:40vh;transform: rotate(-45deg);}
-.diamond-3{width:30vh;height:30vh;transform: rotate(-45deg);}
-
-.circle-1{width: 10vh;height: 10vh;border-radius: 50%;}
-.circle-2{width: 20vh;height: 20vh;border-radius: 50%;}
-.circle-3{width: 30vh;height: 30vh;border-radius: 50%;}
-
-.half-ellipses-1{  border-radius: 50% / 100% 100% 0 0; }
-
-.parallelogram-1 {width: 20vh;height: 10vh;transform: skew(20deg);}
-.parallelogram-2 {width: 20vh;height: 10vh;transform: skew(20deg);}
-.parallelogram-3 {width: 20vh;height: 10vh;transform: skew(20deg);}
-
-.teste
-{
-    transform: skewY(30deg);
-    transform: skewX(30deg);
-   transform:  rotate(50deg);
-   position: relative;
-}
-.teste:after {
-    position: absolute;
-    right: -50px;
-    bottom: 40vh;
-    top: -10vh;
-    content: "";
-    border-bottom: 25px solid white;
-    border-left: 25px solid white;
-    border-top: 25px solid transparent;
-    border-right: 25px solid transparent;
-  }
-
-  .hexagon {
-    width: 0;
-    border-bottom: 30px solid transparent;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-}
-
-.hexagon::before {
-    width: 104px;
-    height: 60px;
-    background-color: #6C6;
-  }
-
-  .hexagon::after {
-    width: 0;
-    border-top: 30px solid #6C6;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-  }
+.diamond-1{width:10vh;height:10vh;transform:rotate(-45deg)}.diamond-2{width:40vh;height:40vh;transform:rotate(-45deg)}.diamond-3{width:30vh;height:30vh;transform:rotate(-45deg)}.circle-1{width:10vh;height:10vh;border-radius:50%}.circle-2{width:20vh;height:20vh;border-radius:50%}.circle-3{width:30vh;height:30vh;border-radius:50%}.half-ellipses-1{border-radius:50%/100% 100% 0 0}.parallelogram-1{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-2{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-3{width:20vh;height:10vh;transform:skew(20deg)}
