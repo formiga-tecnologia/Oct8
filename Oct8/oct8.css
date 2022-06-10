@@ -111,6 +111,7 @@
 
 
 /* TRANSITION RULES */
+
 .transition-height{transition: height 0.3s}
 .transition-width{transition: width 0.3s;}
 .transition-layer{transition: z-index 0.3s;}
@@ -126,6 +127,7 @@
 .transition-Skew-Y{transition: skewY 0.3s ;}
 .transition-Rotate-X{transition: rotateX 03s;}
 .transition-Rotate-Y{transition: rotateY 03s;}
+.transition-alpha{transition: opacity 0.3s}
 .transition{
     transition: rotateY 03s;
     transition: rotateX 03s;
@@ -139,126 +141,12 @@
     transition: height 0.3s;
     transition: margin-top 0.3s;
     transition: margin-left 0.3s;
+    transition: opacity 0.3s;
 }
 /* ======================= */
 
-
-/*
-    STROKE LINES Effect
-*/
-.stroke-bottom{border-bottom: 4px solid #464545;}
-.stroke-right{border-right: 4px solid #464545;}
-.stroke-left{border-left: 4px solid #464545;}
-.stroke-top{border-top: 4px solid #464545;}
-
-.border-smooth-1{ border-radius: 1vh;}
-.border-smooth-2{ border-radius: 2vh;}
-.border-smooth-3{ border-radius: 3vh;}
-.border-smooth-4{ border-radius: 4vh;}
-.border-smooth-5{ border-radius: 5vh;}
-.border-smooth-6{ border-radius: 6vh;}
-.border-smooth-7{ border-radius: 7vh;}
-.border-smooth-8{ border-radius: 8vh;}
-.border-smooth-9{ border-radius: 9vh;}
-
-.sbc-green{border-color:#429242;}
-.sbc-gray{border-color: #464545;}
-.sbc-yellow{border-color: #edff4f;}
-.sbc-red{border-color: #ce4331;}
-.sbc-blue{border-color: #0a28ce;}
-
-.hoverAplly-gray-stroke{transition: background-color 1s;}
-.hoverAplly-gray-stroke:hover{border-color: #646464;}
-
-.hoverAplly-green-stroke{transition: background-color 1s;}
-.hoverAplly-green-stroke:hover{border-color: #429242;}
-
-.hoverAplly-red-stroke{transition: background-color 1s;}
-.hoverAplly-red-stroke:hover{border-color: #ce4331;}
-
-.hoverAplly-blue-stroke{transition: background-color 1s;}
-.hoverAplly-blue-stroke:hover{border-color: #0a28ce;}
-
-.hoverAplly-yellow-stroke{transition: background-color 1s;}
-.hoverAplly-yellow-stroke:hover{border-color: #edff4f;}
-
-.stroke-1{border-width: 1vh;}
-.stroke-2{border-width: 2vh;}
-.stroke-3{border-width: 3vh;}
-.stroke-4{border-width: 4vh;}
-.stroke-5{border-width: 5vh;}
-.stroke-6{border-width: 6vh;}
-.stroke-7{border-width: 7vh;}
-.stroke-8{border-width: 8vh;}
-.stroke-9{border-width: 9vh;}
-
-/*
-==============================================
-==============================================
-*/
-
-.hoverAplly-X{transition: margin-left 0.3s;}
-.hoverApply-Layer{transition: z-index 0.3s;}
-.hoverAplly-Y{transition: margin-top 0.3s;}
-.hoverAplly-Y{transition: height 0.3s;}
-.hoverAplly-Y{transition: width 0.3s;}
-
-.hoverApply-Layer-1{transition: height 0.3s;}
-.hoverApply-Layer-1:hover{z-index: 1;}
-
-.hoverApply-Layer-2{transition: height 0.3s;}
-.hoverApply-Layer-2:hover{z-index: 2;}
-
-.hoverApply-Layer-3{transition: height 0.3s;}
-.hoverApply-Layer-3:hover{z-index: 3;}
-
-.hoverApply-Layer-4{transition: height 0.3s;}
-.hoverApply-Layer-4:hover{z-index: 4;}
-
-.hoverApply-Layer-5{transition: height 0.3s;}
-.hoverApply-Layer-5:hover{z-index: 5;}
-
-.hoverApply-Layer-6{transition: height 0.3s;}
-.hoverApply-Layer-6:hover{z-index: 6;}
-
-.hoverApply-Layer-7{transition: height 0.3s;}
-.hoverApply-Layer-7:hover{z-index: 7;}
-
-.hoverApply-Layer-8{transition: height 0.3s;}
-.hoverApply-Layer-8:hover{z-index: 8;}
-
-.hoverApply-Layer-9{transition: height 0.3s;}
-.hoverApply-Layer-9:hover{z-index: 9;}
-
-
-/* 
-    Add rules to animations basic
-    Move X to 100vh
-*/
-
-.bc-green{background-color: #429242;}
-.bc-gray{background-color: #646464;}
-.bc-yellow{background-color: #edff4f;}
-.bc-red{background-color: #ce4331;}
-.bc-blue{background-color: #0a28ce;}
-
-
-.hoverAplly-green{transition: background-color 1s;}
-.hoverAplly-green:hover{background: #429242;}
-
-.hoverAplly-yellow{transition: background-color 1s;}
-.hoverAplly-yellow:hover{background: #edff4f;}
-
-.hoverAplly-red{transition: background-color 1s;}
-.hoverAplly-red:hover{background: #ce4331;}
-
-.hoverAplly-blue{transition: background-color 1s;}
-.hoverAplly-blue:hover{background: #0a28ce;}
-
-.hoverAplly-gray{transition: background-color 1s;}
-.hoverAplly-gray:hover{background: #646464;}
-
-.hoverAplly-W{transition: width 0.3s;}
-
 /* Draw geometric shapes */ 
 .diamond-1{width:10vh;height:10vh;transform:rotate(-45deg)}.diamond-2{width:40vh;height:40vh;transform:rotate(-45deg)}.diamond-3{width:30vh;height:30vh;transform:rotate(-45deg)}.circle-1{width:10vh;height:10vh;border-radius:50%}.circle-2{width:20vh;height:20vh;border-radius:50%}.circle-3{width:30vh;height:30vh;border-radius:50%}.half-ellipses-1{border-radius:50%/100% 100% 0 0}.parallelogram-1{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-2{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-3{width:20vh;height:10vh;transform:skew(20deg)}
+
+/* ALPHA RULES */ 
+.alpha-0{opacity:0}.alpha-1{opacity:.1}.alpha-2{opacity:.2}.alpha-3{opacity:.3}.alpha-4{opacity:.4}.alpha-5{opacity:.5}.alpha-6{opacity:.6}.alpha-7{opacity:.7}.alpha-8{opacity:.8}.alpha-9{opacity:.9}.alpha-100{opacity:1}
