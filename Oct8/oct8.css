@@ -4,28 +4,7 @@
   limit insides elements and add interactive
    with envirioment. 
 */
-.cbe{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    justify-content:space-around;
-    align-items: flex-end;
-    flex-flow: row wrap;
-}
-.cbe-off {
-    position: absolute;
-}
-.cbe-on{
-    border: 4px #61ce61 solid;
-}
-.cbe-action{
-    border: 4px #61ce61 solid;
-}
-.cbe-rotate{
-    border: 4px #61ce61 solid;
-}
-
+.cbe{position:relative;display:flex;flex-direction:row;margin:auto;justify-content:space-around;align-items:flex-end;flex-flow:row wrap}.cbe-off{position:absolute}.cbe-on{border:4px #61ce61 solid}.cbe-action{border:4px #61ce61 solid}.cbe-rotate{border:4px #61ce61 solid}
 /*
   ELB - Element apply box
   This element function with Pyshic and
@@ -33,41 +12,7 @@
    with envirioment. 
 */
 
-.elb{
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    background-color: #464545;
-}
-.elb-cont{
-        display: flex;
-        align-content: flex-start;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        flex-wrap: wrap;
-}
-.elb-off{
-    background-color: transparent;
-    border: none;
-} 
-.elb-on{
-    background-color:transparent;
-    border: 4px #464545 solid;
-}
-
-  /*  Deform Elb elements with CSS custom   */
-  .elb-dY-1{ transform: skewY(10deg)}
-  .elb-dY-2{ transform: skewY(20deg)}
-  .elb-dY-3{ transform: skewY(30deg)}
-  .elb-dY-4{ transform: skewY(40deg)}
-  .elb-dY-5{ transform: skewY(50deg)}
-  .elb-dY-6{ transform: skewY(60deg)}
-  .elb-dY-7{ transform: skewY(70deg)}
-  .elb-dY-8{ transform: skewY(80deg)}
-  .elb-dY-9{ transform: skewY(90deg)}
-
+.elb{width:100%;height:100%;bottom:0;background-color:#464545}.elb-cont{display:flex;align-content:flex-start;justify-content:flex-start;align-items:flex-start;flex-wrap:nowrap;flex-direction:row;flex-wrap:wrap}.elb-off{background-color:transparent;border:none}.elb-on{background-color:transparent;border:4px #464545 solid}
   .elb-dX-1{ transform: skewX(10deg)}
   .elb-dX-2{ transform: skewX(20deg)}
   .elb-dX-3{ transform: skewX(30deg)}
@@ -83,32 +28,11 @@
    this elements not use rules to CBE
    its possible create other element with news
    propries without retrictions
-
   */
-.sse{
-    position: absolute;
-    background-color: #000;
-    width: 1vh;
-    height: 1vh;
-}
-.sse-on{
-    background-color:transparent;
-    border: 4px #000 solid;
-}
-.sse-off{
-    background-color:transparent;
-}
-.sse-pos{
-    position: relative;
-}
-
+  .sse{position:absolute;background-color:#000;width:1vh;height:1vh}.sse-on{background-color:transparent;border:4px #000 solid}.sse-off{background-color:transparent}.sse-pos{position:relative}
 
 /*
     Properties of Environment
-    X = position X of element 
-    Y = position Y of element 
-    H = Height of element
-    W = Width of element
 */
 
 /* POSITION X axis*/
@@ -145,6 +69,20 @@
 .H-61{height:61vh}.H-62{height:62vh}.H-63{height:63vh}.H-64{height:64vh}.H-65{height:65vh}.H-66{height:66vh}.H-67{height:67vh}.H-68{height:68vh}.H-69{height:69vh}.H-70{height:70vh}.H-71{height:71vh}.H-72{height:72vh}.H-73{height:73vh}.H-74{height:74vh}.H-75{height:75vh}.H-76{height:76vh}.H-77{height:77vh}.H-78{height:78vh}.H-79{height:79vh}.H-80{height:80vh}.H-81{height:81vh}.H-82{height:82vh}.H-83{height:83vh}.H-84{height:84vh}.H-85{height:85vh}.H-86{height:86vh}.H-87{height:87vh}.H-88{height:88vh}.H-89{height:89vh}.H-90{height:90vh}.H-91{height:91vh}.H-92{height:92vh}.H-93{height:93vh}.H-94{height:94vh}.H-95{height:95vh}.H-96{height:96vh}.H-97{height:97vh}.H-98{height:98vh}.H-99{height:99vh}.H-100{height:100vh}
 /* ===========================   */
 
+/* TRANSFORM X Skew */
+
+.Skew-X-0{transform:skewY(0deg)}.Skew-X-1{transform:skewY(1deg)}.Skew-X-2{transform:skewY(2deg)}.Skew-X-3{transform:skewY(3deg)}.Skew-X-4{transform:skewY(4deg)}.Skew-X-5{transform:skewY(5deg)}.Skew-X-6{transform:skewY(6deg)}.Skew-X-7{transform:skewY(7deg)}.Skew-X-8{transform:skewY(8deg)}.Skew-X-9{transform:skewY(9deg)}.Skew-X-10{transform:skewY(10deg)}.Skew-X-11{transform:skewY(11deg)}.Skew-X-12{transform:skewY(12deg)}.Skew-X-13{transform:skewY(13deg)}.Skew-X-14{transform:skewY(14deg)}.Skew-X-15{transform:skewY(15deg)}.Skew-X-16{transform:skewY(16deg)}.Skew-X-17{transform:skewY(17deg)}.Skew-X-18{transform:skewY(18deg)}.Skew-X-19{transform:skewY(19deg)}.Skew-X-20{transform:skewY(20deg)}.Skew-X-21{transform:skewY(21deg)}.Skew-X-22{transform:skewY(22deg)}.Skew-X-23{transform:skewY(23deg)}.Skew-X-24{transform:skewY(24deg)}.Skew-X-25{transform:skewY(25deg)}.Skew-X-26{transform:skewY(26deg)}.Skew-X-27{transform:skewY(27deg)}.Skew-X-28{transform:skewY(28deg)}.Skew-X-29{transform:skewY(29deg)}.Skew-X-30{transform:skewY(30deg)}
+.Skew-X-31{transform:skewY(31deg)}.Skew-X-32{transform:skewY(32deg)}.Skew-X-33{transform:skewY(33deg)}.Skew-X-34{transform:skewY(34deg)}.Skew-X-35{transform:skewY(35deg)}.Skew-X-36{transform:skewY(36deg)}.Skew-X-37{transform:skewY(37deg)}.Skew-X-38{transform:skewY(38deg)}.Skew-X-39{transform:skewY(39deg)}.Skew-X-40{transform:skewY(40deg)}.Skew-X-41{transform:skewY(41deg)}.Skew-X-42{transform:skewY(42deg)}.Skew-X-43{transform:skewY(43deg)}.Skew-X-44{transform:skewY(44deg)}.Skew-X-45{transform:skewY(45deg)}.Skew-X-46{transform:skewY(46deg)}.Skew-X-47{transform:skewY(47deg)}.Skew-X-48{transform:skewY(48deg)}.Skew-X-49{transform:skewY(49deg)}.Skew-X-50{transform:skewY(50deg)}.Skew-X-51{transform:skewY(51deg)}.Skew-X-52{transform:skewY(52deg)}.Skew-X-53{transform:skewY(53deg)}.Skew-X-54{transform:skewY(54deg)}.Skew-X-55{transform:skewY(55deg)}.Skew-X-56{transform:skewY(56deg)}.Skew-X-57{transform:skewY(57deg)}.Skew-X-58{transform:skewY(58deg)}.Skew-X-59{transform:skewY(59deg)}
+
+.Skew-X-60{transform:skewY(60deg)}.Skew-X-61{transform:skewY(61deg)}.Skew-X-62{transform:skewY(62deg)}.Skew-X-63{transform:skewY(63deg)}.Skew-X-64{transform:skewY(64deg)}.Skew-X-65{transform:skewY(65deg)}.Skew-X-66{transform:skewY(66deg)}.Skew-X-67{transform:skewY(67deg)}.Skew-X-68{transform:skewY(68deg)}.Skew-X-69{transform:skewY(69deg)}.Skew-X-70{transform:skewY(70deg)}.Skew-X-71{transform:skewY(71deg)}.Skew-X-72{transform:skewY(72deg)}.Skew-X-73{transform:skewY(73deg)}.Skew-X-74{transform:skewY(74deg)}.Skew-X-75{transform:skewY(75deg)}.Skew-X-76{transform:skewY(76deg)}.Skew-X-77{transform:skewY(77deg)}.Skew-X-78{transform:skewY(78deg)}.Skew-X-79{transform:skewY(79deg)}.Skew-X-80{transform:skewY(80deg)}.Skew-X-81{transform:skewY(81deg)}.Skew-X-82{transform:skewY(82deg)}.Skew-X-83{transform:skewY(83deg)}.Skew-X-84{transform:skewY(84deg)}.Skew-X-85{transform:skewY(85deg)}.Skew-X-86{transform:skewY(86deg)}.Skew-X-87{transform:skewY(87deg)}.Skew-X-88{transform:skewY(88deg)}.Skew-X-89{transform:skewY(89deg)}
+.Skew-X-90{transform:skewY(90deg)}.Skew-X-91{transform:skewY(91deg)}.Skew-X-92{transform:skewY(92deg)}.Skew-X-93{transform:skewY(93deg)}.Skew-X-94{transform:skewY(94deg)}.Skew-X-95{transform:skewY(95deg)}.Skew-X-96{transform:skewY(96deg)}.Skew-X-97{transform:skewY(97deg)}.Skew-X-98{transform:skewY(98deg)}.Skew-X-99{transform:skewY(99deg)}.Skew-X-100{transform:skewY(100deg)}
+
+/* ===========================   */
+
+/* TRANSFORM Y Skew */
+
+
+/* ===========================   */
 
 /* 3D pespective apply */
 .apply-Z {  perspective: 30vh;}
@@ -172,17 +110,9 @@
 
 /* ================================ */
 
-
-.Layer-1 { z-index: 1;}
-.Layer-2 { z-index: 2;}
-.Layer-3 { z-index: 3;}
-.Layer-4 { z-index: 4;}
-.Layer-5 { z-index: 5;}
-.Layer-6 { z-index: 6;}
-.Layer-7 { z-index: 7;}
-.Layer-8 { z-index: 8;}
-.Layer-9 { z-index: 9;}
-
+/* LAYER CONFIGURATE */
+.Layer-0{z-index:0}.Layer-1{z-index:1}.Layer-2{z-index:2}.Layer-3{z-index:3}.Layer-4{z-index:4}.Layer-5{z-index:5}.Layer-6{z-index:6}.Layer-7{z-index:7}.Layer-8{z-index:8}.Layer-9{z-index:9}.Layer-10{z-index:10}
+/* ================================ */
 
 
 
