@@ -94,6 +94,28 @@
 
 /* ================================ */
 
+/* ESCALE X */
+
+.escale-X-1-1{transform:scaleX(0.1)}.escale-X-2-2{transform:scaleX(0.2)}.escale-X-3-3{transform:scaleX(0.3)}.escale-X-4-4{transform:scaleX(0.4)}.escale-X-5-5{transform:scaleX(0.5)}.escale-X-6-6{transform:scaleX(0.6)}.escale-X-7{transform:scaleX(0.7)}.escale-X-8-8{transform:scaleX(0.8)}.escale-X-9-9{transform:scaleX(0.9)}.escale-X-0{transform:scaleX(0)}.escale-X-1{transform:scaleX(1)}.escale-X-2{transform:scaleX(2)}.escale-X-3{transform:scaleX(3)}.escale-X-4{transform:scaleX(4)}.escale-X-5{transform:scaleX(5)}.escale-X-6{transform:scaleX(6)}.escale-X-7{transform:scaleX(7)}.escale-X-8{transform:scaleX(8)}.escale-X-9{transform:scaleX(9)}.escale-X-10{transform:scaleX(10)}.escale-X-11{transform:scaleX(11)}.escale-X-12{transform:scaleX(12)}.escale-X-13{transform:scaleX(13)}.escale-X-14{transform:scaleX(14)}.escale-X-15{transform:scaleX(15)}.escale-X-16{transform:scaleX(16)}.escale-X-17{transform:scaleX(17)}.escale-X-18{transform:scaleX(18)}.escale-X-19{transform:scaleX(19)}.escale-X-20{transform:scaleX(20)}
+.escale-X-21{transform:scaleX(21)}.escale-X-22{transform:scaleX(22)}.escale-X-23{transform:scaleX(23)}.escale-X-24{transform:scaleX(24)}.escale-X-25{transform:scaleX(25)}.escale-X-26{transform:scaleX(26)}.escale-X-27{transform:scaleX(27)}.escale-X-28{transform:scaleX(28)}.escale-X-29{transform:scaleX(29)}.escale-X-30{transform:scaleX(30)}.escale-X-31{transform:scaleX(31)}.escale-X-32{transform:scaleX(32)}.escale-X-33{transform:scaleX(33)}.escale-X-34{transform:scaleX(34)}.escale-X-35{transform:scaleX(35)}.escale-X-36{transform:scaleX(36)}.escale-X-37{transform:scaleX(37)}.escale-X-38{transform:scaleX(38)}.escale-X-39{transform:scaleX(39)}.escale-X-40{transform:scaleX(40)}.escale-X-41{transform:scaleX(41)}.escale-X-42{transform:scaleX(42)}.escale-X-43{transform:scaleX(43)}.escale-X-44{transform:scaleX(44)}.escale-X-45{transform:scaleX(45)}.escale-X-46{transform:scaleX(46)}.escale-X-47{transform:scaleX(47)}.escale-X-48{transform:scaleX(48)}.escale-X-49{transform:scaleX(49)}.escale-X-50{transform:scaleX(50)}
+.escale-X-51{transform:scaleX(51)}.escale-X-52{transform:scaleX(52)}.escale-X-53{transform:scaleX(53)}.escale-X-54{transform:scaleX(54)}.escale-X-55{transform:scaleX(55)}.escale-X-56{transform:scaleX(56)}.escale-X-57{transform:scaleX(57)}.escale-X-58{transform:scaleX(58)}.escale-X-59{transform:scaleX(59)}
+
+.escale-X-60{transform:scaleX(60)}.escale-X-61{transform:scaleX(61)}.escale-X-62{transform:scaleX(62)}.escale-X-63{transform:scaleX(63)}.escale-X-64{transform:scaleX(64)}.escale-X-65{transform:scaleX(65)}.escale-X-66{transform:scaleX(66)}.escale-X-67{transform:scaleX(67)}.escale-X-68{transform:scaleX(68)}.escale-X-69{transform:scaleX(69)}.escale-X-70{transform:scaleX(70)}.escale-X-71{transform:scaleX(71)}.escale-X-72{transform:scaleX(72)}.escale-X-73{transform:scaleX(73)}.escale-X-74{transform:scaleX(74)}.escale-X-75{transform:scaleX(75)}.escale-X-76{transform:scaleX(76)}.escale-X-77{transform:scaleX(77)}.escale-X-78{transform:scaleX(78)}.escale-X-79{transform:scaleX(79)}.escale-X-80{transform:scaleX(80)}.escale-X-81{transform:scaleX(81)}.escale-X-82{transform:scaleX(82)}.escale-X-83{transform:scaleX(83)}.escale-X-84{transform:scaleX(84)}.escale-X-85{transform:scaleX(85)}.escale-X-86{transform:scaleX(86)}.escale-X-87{transform:scaleX(87)}.escale-X-88{transform:scaleX(88)}.escale-X-89{transform:scaleX(89)}
+.escale-X-90{transform:scaleX(90)}.escale-X-91{transform:scaleX(91)}.escale-X-92{transform:scaleX(92)}.escale-X-93{transform:scaleX(93)}.escale-X-94{transform:scaleX(94)}.escale-X-95{transform:scaleX(95)}.escale-X-96{transform:scaleX(96)}.escale-X-97{transform:scaleX(97)}.escale-X-98{transform:scaleX(98)}.escale-X-99{transform:scaleX(99)}.escale-X-100{transform:scaleX(100)}
+
+/* ================================ */
+
+/* ESCALE Y */
+
+.escale-Y-1-1{transform:scaleY(0.1)}.escale-Y-2-2{transform:scaleY(0.2)}.escale-Y-3-3{transform:scaleY(0.3)}.escale-Y-4-4{transform:scaleY(0.4)}.escale-Y-5-5{transform:scaleY(0.5)}.escale-Y-6-6{transform:scaleY(0.6)}.escale-Y-7{transform:scaleY(0.7)}.escale-Y-8-8{transform:scaleY(0.8)}.escale-Y-9-9{transform:scaleY(0.9)}.escale-Y-0{transform:scaleY(0)}.escale-Y-1{transform:scaleY(1)}.escale-Y-2{transform:scaleY(2)}.escale-Y-3{transform:scaleY(3)}.escale-Y-4{transform:scaleY(4)}.escale-Y-5{transform:scaleY(5)}.escale-Y-6{transform:scaleY(6)}.escale-Y-7{transform:scaleY(7)}.escale-Y-8{transform:scaleY(8)}.escale-Y-9{transform:scaleY(9)}.escale-Y-10{transform:scaleY(10)}.escale-Y-11{transform:scaleY(11)}.escale-Y-12{transform:scaleY(12)}.escale-Y-13{transform:scaleY(13)}.escale-Y-14{transform:scaleY(14)}.escale-Y-15{transform:scaleY(15)}.escale-Y-16{transform:scaleY(16)}.escale-Y-17{transform:scaleY(17)}.escale-Y-18{transform:scaleY(18)}.escale-Y-19{transform:scaleY(19)}.escale-Y-20{transform:scaleY(20)}
+.escale-Y-21{transform:scaleY(21)}.escale-Y-22{transform:scaleY(22)}.escale-Y-23{transform:scaleY(23)}.escale-Y-24{transform:scaleY(24)}.escale-Y-25{transform:scaleY(25)}.escale-Y-26{transform:scaleY(26)}.escale-Y-27{transform:scaleY(27)}.escale-Y-28{transform:scaleY(28)}.escale-Y-29{transform:scaleY(29)}.escale-Y-30{transform:scaleY(30)}.escale-Y-31{transform:scaleY(31)}.escale-Y-32{transform:scaleY(32)}.escale-Y-33{transform:scaleY(33)}.escale-Y-34{transform:scaleY(34)}.escale-Y-35{transform:scaleY(35)}.escale-Y-36{transform:scaleY(36)}.escale-Y-37{transform:scaleY(37)}.escale-Y-38{transform:scaleY(38)}.escale-Y-39{transform:scaleY(39)}.escale-Y-40{transform:scaleY(40)}.escale-Y-41{transform:scaleY(41)}.escale-Y-42{transform:scaleY(42)}.escale-Y-43{transform:scaleY(43)}.escale-Y-44{transform:scaleY(44)}.escale-Y-45{transform:scaleY(45)}.escale-Y-46{transform:scaleY(46)}.escale-Y-47{transform:scaleY(47)}.escale-Y-48{transform:scaleY(48)}.escale-Y-49{transform:scaleY(49)}.escale-Y-50{transform:scaleY(50)}
+.escale-Y-51{transform:scaleY(51)}.escale-Y-52{transform:scaleY(52)}.escale-Y-53{transform:scaleY(53)}.escale-Y-54{transform:scaleY(54)}.escale-Y-55{transform:scaleY(55)}.escale-Y-56{transform:scaleY(56)}.escale-Y-57{transform:scaleY(57)}.escale-Y-58{transform:scaleY(58)}.escale-Y-59{transform:scaleY(59)}
+
+.escale-Y-60{transform:scaleY(60)}.escale-Y-61{transform:scaleY(61)}.escale-Y-62{transform:scaleY(62)}.escale-Y-63{transform:scaleY(63)}.escale-Y-64{transform:scaleY(64)}.escale-Y-65{transform:scaleY(65)}.escale-Y-66{transform:scaleY(66)}.escale-Y-67{transform:scaleY(67)}.escale-Y-68{transform:scaleY(68)}.escale-Y-69{transform:scaleY(69)}.escale-Y-70{transform:scaleY(70)}.escale-Y-71{transform:scaleY(71)}.escale-Y-72{transform:scaleY(72)}.escale-Y-73{transform:scaleY(73)}.escale-Y-74{transform:scaleY(74)}.escale-Y-75{transform:scaleY(75)}.escale-Y-76{transform:scaleY(76)}.escale-Y-77{transform:scaleY(77)}.escale-Y-78{transform:scaleY(78)}.escale-Y-79{transform:scaleY(79)}.escale-Y-80{transform:scaleY(80)}.escale-Y-81{transform:scaleY(81)}.escale-Y-82{transform:scaleY(82)}.escale-Y-83{transform:scaleY(83)}.escale-Y-84{transform:scaleY(84)}.escale-Y-85{transform:scaleY(85)}.escale-Y-86{transform:scaleY(86)}.escale-Y-87{transform:scaleY(87)}.escale-Y-88{transform:scaleY(88)}.escale-Y-89{transform:scaleY(89)}
+.escale-Y-90{transform:scaleY(90)}.escale-Y-91{transform:scaleY(91)}.escale-Y-92{transform:scaleY(92)}.escale-Y-93{transform:scaleY(93)}.escale-Y-94{transform:scaleY(94)}.escale-Y-95{transform:scaleY(95)}.escale-Y-96{transform:scaleY(96)}.escale-Y-97{transform:scaleY(97)}.escale-Y-98{transform:scaleY(98)}.escale-Y-99{transform:scaleY(99)}.escale-Y-100{transform:scaleY(100)}
+
+/* ================================ */
+
 /* ROTATE AXIS Y */
 
 .rotate-Y-0{transform:rotateY(0deg)}.rotate-Y-1{transform:rotateY(1deg)}.rotate-Y-2{transform:rotateY(2deg)}.rotate-Y-3{transform:rotateY(3deg)}.rotate-Y-4{transform:rotateY(4deg)}.rotate-Y-5{transform:rotateY(5deg)}.rotate-Y-6{transform:rotateY(6deg)}.rotate-Y-7{transform:rotateY(7deg)}.rotate-Y-8{transform:rotateY(8deg)}.rotate-Y-9{transform:rotateY(9deg)}.rotate-Y-10{transform:rotateY(10deg)}.rotate-Y-11{transform:rotateY(11deg)}.rotate-Y-12{transform:rotateY(12deg)}.rotate-Y-13{transform:rotateY(13deg)}.rotate-Y-14{transform:rotateY(14deg)}.rotate-Y-15{transform:rotateY(15deg)}.rotate-Y-16{transform:rotateY(16deg)}.rotate-Y-17{transform:rotateY(17deg)}.rotate-Y-18{transform:rotateY(18deg)}.rotate-Y-19{transform:rotateY(19deg)}.rotate-Y-20{transform:rotateY(20deg)}.rotate-Y-21{transform:rotateY(21deg)}.rotate-Y-22{transform:rotateY(22deg)}.rotate-Y-23{transform:rotateY(23deg)}.rotate-Y-24{transform:rotateY(24deg)}.rotate-Y-25{transform:rotateY(25deg)}.rotate-Y-26{transform:rotateY(26deg)}
@@ -128,6 +150,8 @@
 .transition-Rotate-X{transition: rotateX 03s;}
 .transition-Rotate-Y{transition: rotateY 03s;}
 .transition-alpha{transition: opacity 0.3s}
+.transition-scaleY{transition: scaleY 0.3s;}
+.transition-scaleX{transition: scaleX 0.3s;}
 .transition{
     transition: rotateY 03s; 
     transition: rotateX 03s;
@@ -142,11 +166,22 @@
     transition: margin-top 0.3s;
     transition: margin-left 0.3s;
     transition: opacity 0.3s;
+    transition: scaleY 0.3s;
+    transition: scaleX 0.3s;
 }
 /* ======================= */
 
 /* Draw geometric shapes */ 
 .diamond-1{width:10vh;height:10vh;transform:rotate(-45deg)}.diamond-2{width:40vh;height:40vh;transform:rotate(-45deg)}.diamond-3{width:30vh;height:30vh;transform:rotate(-45deg)}.circle-1{width:10vh;height:10vh;border-radius:50%}.circle-2{width:20vh;height:20vh;border-radius:50%}.circle-3{width:30vh;height:30vh;border-radius:50%}.half-ellipses-1{border-radius:50%/100% 100% 0 0}.parallelogram-1{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-2{width:20vh;height:10vh;transform:skew(20deg)}.parallelogram-3{width:20vh;height:10vh;transform:skew(20deg)}
+/* ======================= */
+
 
 /* ALPHA RULES */ 
 .alpha-0{opacity:0}.alpha-1{opacity:.1}.alpha-2{opacity:.2}.alpha-3{opacity:.3}.alpha-4{opacity:.4}.alpha-5{opacity:.5}.alpha-6{opacity:.6}.alpha-7{opacity:.7}.alpha-8{opacity:.8}.alpha-9{opacity:.9}.alpha-10{opacity:1}
+/* ======================= */
+
+/* COLORS RULES */ 
+
+.bc-green{background-color:#429242}.bc-gray{background-color:#646464}.bc-yellow{background-color:#edff4f}.bc-red{background-color:#ce4331}.bc-blue{background-color:#0a28ce}.bc-pink{background-color:#ce0a9d}
+
+/* ======================= */
