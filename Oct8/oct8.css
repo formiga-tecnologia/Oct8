@@ -185,3 +185,39 @@
 .bc-green{background-color:#429242}.bc-gray{background-color:#646464}.bc-yellow{background-color:#edff4f}.bc-red{background-color:#ce4331}.bc-blue{background-color:#0a28ce}.bc-pink{background-color:#ce0a9d}
 
 /* ======================= */
+
+/* BLUR EFFECT */
+.blur-0{
+  filter: blur(0vh);
+}
+.blur-1{
+  filter: blur(1vh);
+}
+.blur-2{
+  filter: blur(2vh);
+}
+.blur-3{
+  filter: blur(3vh);
+}
+.blur-4{
+  filter: blur(4vh);
+}
+.blur-5{
+  filter: blur(5vh);
+}
+.blur-6{
+  filter: blur(6vh);
+}
+.blur-7{
+  filter: blur(7vh);
+}
+.blur-8{
+  filter: blur(8vh);
+}
+.blur-9{
+  filter: blur(9vh);
+}
+.blur-10{
+  filter: blur(10vh);
+}
+/* ======================= */
