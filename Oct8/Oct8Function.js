@@ -150,6 +150,13 @@ function Oct8CPlayMove(element,oldpos,newpos,axis)
     _animatePrivate();
 
 }
+function Oct8PlayBlur(element,oldpos,newpos)
+{
+    _element = element
+    _NewPosition = newpos
+    _oldPosition = oldpos
+    _animatePrivate_blur()
+}
 function Oct8PlayBorderSmooth(element,oldpos,newpos)
 {
     _element = element
@@ -157,10 +164,16 @@ function Oct8PlayBorderSmooth(element,oldpos,newpos)
     _oldPosition = oldpos
     _animatePrivate_borderSmooth()
 }
+
 async function _animatePrivate_borderSmooth()
 {
     _element.classList.remove("border-smooth-"+_oldPosition)
     _element.classList += " "+"border-smooth-"+_NewPosition
+}
+async function _animatePrivate_blur()
+{
+    _element.classList.remove("blur-"+_oldPosition)
+    _element.classList += " "+"blur-"+_NewPosition
 }
 async function _animatePrivate()
 {
