@@ -150,6 +150,18 @@ function Oct8CPlayMove(element,oldpos,newpos,axis)
     _animatePrivate();
 
 }
+function Oct8PlayBorderSmooth(element,oldpos,newpos)
+{
+    _element = element
+    _NewPosition = newpos
+    _oldPosition = oldpos
+    _animatePrivate_borderSmooth()
+}
+async function _animatePrivate_borderSmooth()
+{
+    _element.classList.remove("border-smooth-"+_oldPosition)
+    _element.classList += " "+"border-smooth-"+_NewPosition
+}
 async function _animatePrivate()
 {
     _element.classList.remove(_axis+"-"+_oldPosition)

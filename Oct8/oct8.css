@@ -131,6 +131,9 @@
 .Layer-0{z-index:0}.Layer-1{z-index:1}.Layer-2{z-index:2}.Layer-3{z-index:3}.Layer-4{z-index:4}.Layer-5{z-index:5}.Layer-6{z-index:6}.Layer-7{z-index:7}.Layer-8{z-index:8}.Layer-9{z-index:9}.Layer-10{z-index:10}
 /* ================================ */
 
+/* BORDER RADIUS */
+.border-smooth-0{border-radius:0vh}.border-smooth-1{border-radius:1vh}.border-smooth-2{border-radius:2vh}.border-smooth-3{border-radius:3vh}.border-smooth-4{border-radius:4vh}.border-smooth-5{border-radius:5vh}.border-smooth-6{border-radius:6vh}.border-smooth-7{border-radius:7vh}.border-smooth-8{border-radius:8vh}.border-smooth-9{border-radius:9vh}.border-smooth-10{border-radius:10vh}
+/* ================================ */
 
 /* TRANSITION RULES */
 
@@ -139,6 +142,7 @@
 .transition-layer{transition: z-index 0.3s;}
 .transition-X{transition: margin-left 0.3s;}
 .transition-Y{transition: margin-top 0.3s;}
+.transition-border-smooth{transition: border-radius 0.3s;}
 .hoverApply-borders{
     transition: border-left 0.3s;
     transition: border-right 0.3s;
@@ -152,6 +156,7 @@
 .transition-alpha{transition: opacity 0.3s}
 .transition-scaleY{transition: scaleY 0.3s;}
 .transition-scaleX{transition: scaleX 0.3s;}
+.transition-blur{transition:  filter 0.3s;}
 .transition{
     transition: rotateY 03s; 
     transition: rotateX 03s;
@@ -168,6 +173,8 @@
     transition: opacity 0.3s;
     transition: scaleY 0.3s;
     transition: scaleX 0.3s;
+    transition: filter 0.3s;
+    transition: border-radius 0.3s;
 }
 /* ======================= */
 
