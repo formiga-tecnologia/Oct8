@@ -11,6 +11,8 @@ class Oct8 {
         this.Y =null;
         this.id =id
         this.element = element
+        this.On = true
+        this.event = null
 
     }
     /*  Add Transitions */
@@ -51,4 +53,20 @@ class Oct8 {
             this.Y =  newpos
         }
     }
+    CreateEvent(functionCallback,time){
+        if(this.On ==true)
+        {
+           this.event = setInterval(functionCallback,time)
+           console.log(this.event)
+        }
+        else
+        {
+            clearInterval(eventInterval) 
+            console.log("Detect "+this.event)   
+        }
+    }
+    StopEvent(){
+        clearInterval(this.event)
+    }
+
 }
