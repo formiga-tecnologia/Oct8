@@ -13,7 +13,7 @@ class Oct8 {
         this.element = element
         this.On = true
         this.event = null
-
+        this.keyboardEvent = null
     }
     /*  Add Transitions */
 
@@ -68,8 +68,26 @@ class Oct8 {
     StopEvent(){
         clearInterval(this.event)
     }
-    CreateAddKeyboardEvent(functionCallBack){
-        document.addEventListener('keypress',functionCallBack,false)
+    // Target Events with Inputs
+    CreateAddKeyboardEvent(functionCallBack,Targetkey){
+        document.addEventListener('keypress',(event)=>{
+            var key = event.key 
+            var type = typeof(Targetkey)
+            if(type == "string" && typeof(key) == "string" )
+            {
+                Targetkey = Targetkey.toUpperCase()
+                key = key.toUpperCase()
+            }
+            if(key == Targetkey)
+            {
+                functionCallBack()
+            }
+        },false)
+    }
+    CreateAddMouseClickEvent(functionCallBack,ElementToClick){
+        ElementToClick.addEventListener('click',(event)=>{
+            functionCallBack()
+        },false)
     }
 
 }
