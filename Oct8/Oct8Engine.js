@@ -14,6 +14,7 @@ class Oct8 {
         this.On = true
         this.event = null
         this.keyboardEvent = null
+        this.ColaiderEvent = true
     }
     /*  Add Transitions */
 
@@ -62,7 +63,6 @@ class Oct8 {
         else
         {
             clearInterval(eventInterval) 
-            console.log("Detect "+this.event)   
         }
     }
     StopEvent(){
@@ -88,6 +88,12 @@ class Oct8 {
         ElementToClick.addEventListener('click',(event)=>{
             functionCallBack()
         },false)
+    }
+
+    //Colider Event
+    AddColider(TargetColider,elementToColider,Event)
+    {
+        //created cacl X and Y to both elements  if detect execute Event
     }
 
 }
