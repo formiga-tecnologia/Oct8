@@ -68,5 +68,8 @@ class Oct8 {
     StopEvent(){
         clearInterval(this.event)
     }
+    CreateAddKeyboardEvent(functionCallBack){
+        document.addEventListener('keypress',functionCallBack,false)
+    }
 
 }
