@@ -16,8 +16,9 @@ class Oct8 {
         this.ColaiderEvent = true  //if colliders event have works
         this.eventColider = null  //Event when colider for true
         this.ColiderCurrent = false //If collider have happen
-        this.ElementColiderX = 0 // Cordernates of X elements for Colider 
-        this.ElementColiderY = 0 // Cordernates of Y elements for Colider
+        this.ColisionObject = null //Element event object to colider
+        this.calcX = 0 //CalcX for colaiders 
+        this.calcY =0 //CalcY for calaiders
     }
     /*  Add Transitions */
 
@@ -89,21 +90,34 @@ class Oct8 {
     }
 
     //Colider Event
-    AddColider(elementToColider, Event, calcX, calcY) {
+    AddColider(elementToColider, EventColider, calcX, calcY,time) {
         //created cacl X and Y to both elements  if detect execute Event
         if (this.ColaiderEvent == true) {
-
+            this.ColisionObject = elementToColider
+            this.eventColider = EventColider  
+            this.calcX = calcX
+            this.calcY = calcY
+            return this.ColiderDetectReflect()  
         }
-        else {
-            stop
-        }
-
     }
-    stopColider(){
-        clearInterval(this.eventColider)
-    }
-    _coliderDetectReflect(){
-        //if()
+    ColiderDetectReflect(){
+        let EventX = 0
+        let EventY = 0 
+        for (let index = 0; index < this.ColisionObject.classList.length; index++) {
+            if(this.ColisionObject.classList[index].includes('X-')){
+                EventX = this.ColisionObject.classList[index].replace("X-","")
+            }
+            if(this.ColisionObject.classList[index].includes('Y-'))
+            {
+                EventY = this.ColisionObject.classList[index].replace("Y-","")
+            }
+         }
+         if(this.Y == EventY &&  this.X == EventX-this.calcX){
+            this.eventColider()   
+         }
+         else{
+            console.log("Ainda não foi XD")
+         }
     }
 
 
