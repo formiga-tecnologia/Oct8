@@ -115,9 +115,6 @@ class Oct8 {
          if(this.Y == EventY &&  this.X == EventX-this.calcX){
             this.eventColider()   
          }
-         else{
-            console.log("Ainda não foi XD")
-         }
     }
 
 
