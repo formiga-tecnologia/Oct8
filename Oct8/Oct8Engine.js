@@ -5,16 +5,19 @@
 
 class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
-    constructor(id,element)
-    {
+    constructor(id, element) {
         this.X = null;
-        this.Y =null;
-        this.id =id
+        this.Y = null;
+        this.id = id
         this.element = element
         this.On = true
         this.event = null
         this.keyboardEvent = null
-        this.ColaiderEvent = true
+        this.ColaiderEvent = true  //if colliders event have works
+        this.eventColider = null  //Event when colider for true
+        this.ColiderCurrent = false //If collider have happen
+        this.ElementColiderX = 0 // Cordernates of X elements for Colider 
+        this.ElementColiderY = 0 // Cordernates of Y elements for Colider
     }
     /*  Add Transitions */
 
@@ -43,57 +46,65 @@ class Oct8 {
             oct8AddY(Element, pos)
         }
     }
-    
+
     /* Modify Dynamic position */
-    PlayMove(element, oldpos, newpos, axis){
+    PlayMove(element, oldpos, newpos, axis) {
         Oct8CPlayMove(element, oldpos, newpos, axis)
-        if(axis == 'X'){
-            this.X=newpos
+        if (axis == 'X') {
+            this.X = newpos
         }
-        if(axis == 'Y'){
-            this.Y =  newpos
-        }
-    }
-    CreateEvent(functionCallback,time){
-        if(this.On ==true)
-        {
-           this.event = setInterval(functionCallback,time)
-           console.log(this.event)
-        }
-        else
-        {
-            clearInterval(eventInterval) 
+        if (axis == 'Y') {
+            this.Y = newpos
         }
     }
-    StopEvent(){
+    CreateEvent(functionCallback, time) {
+        if (this.On == true) {
+            this.event = setInterval(functionCallback, time)
+        }
+        else {
+            this.StopEvent()
+        }
+    }
+    StopEvent() {
         clearInterval(this.event)
     }
     // Target Events with Inputs
-    CreateAddKeyboardEvent(functionCallBack,Targetkey){
-        document.addEventListener('keypress',(event)=>{
-            var key = event.key 
-            var type = typeof(Targetkey)
-            if(type == "string" && typeof(key) == "string" )
-            {
+    CreateAddKeyboardEvent(functionCallBack, Targetkey) {
+        document.addEventListener('keypress', (event) => {
+            var key = event.key
+            var type = typeof (Targetkey)
+            if (type == "string" && typeof (key) == "string") {
                 Targetkey = Targetkey.toUpperCase()
                 key = key.toUpperCase()
             }
-            if(key == Targetkey)
-            {
+            if (key == Targetkey) {
                 functionCallBack()
             }
-        },false)
+        }, false)
     }
-    CreateAddMouseClickEvent(functionCallBack,ElementToClick){
-        ElementToClick.addEventListener('click',(event)=>{
+    CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
+        ElementToClick.addEventListener('click', (event) => {
             functionCallBack()
-        },false)
+        }, false)
     }
 
     //Colider Event
-    AddColider(TargetColider,elementToColider,Event)
-    {
+    AddColider(elementToColider, Event, calcX, calcY) {
         //created cacl X and Y to both elements  if detect execute Event
+        if (this.ColaiderEvent == true) {
+
+        }
+        else {
+            stop
+        }
+
     }
+    stopColider(){
+        clearInterval(this.eventColider)
+    }
+    _coliderDetectReflect(){
+        //if()
+    }
+
 
 }
