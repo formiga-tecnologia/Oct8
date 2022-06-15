@@ -105,7 +105,7 @@ class Oct8 {
         let EventY = 0 
         for (let index = 0; index < this.ColisionObject.classList.length; index++) {
             if(this.ColisionObject.classList[index].includes('X-')){
-                EventX = this.ColisionObject.classList[index].replace("X-","")
+                EventX = parseInt(this.ColisionObject.classList[index].replace("X-",""))
             }
             if(this.ColisionObject.classList[index].includes('Y-'))
             {
@@ -113,6 +113,9 @@ class Oct8 {
             }
          }
          if(this.Y == EventY &&  this.X == EventX-this.calcX){
+            this.eventColider()   
+         }
+         if(this.Y == EventY &&  this.X == EventX+this.calcX){
             this.eventColider()   
          }
     }
