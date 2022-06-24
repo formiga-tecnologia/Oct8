@@ -115,7 +115,7 @@ class Oct8 {
          console.log("Calc X minus: "+(EventX-this.calcX))
          console.log("Calc X plus: "+(EventX+this.calcX))
          console.log(EventX-this.calcX)
-         console.log(this.X +" / "+EventX+" AND Y"+this.Y+" / "+(EventY+this.calcY))
+        // console.log(this.X +" / "+EventX+" AND Y"+this.Y+" / "+(EventY+this.calcY))
 
          if(this.X == EventX-this.calcX && this.Y > EventY-this.calcY && this.Y< EventY+this.calcY ){
             this.eventColider()   
@@ -125,12 +125,12 @@ class Oct8 {
             this.eventColider()   
          }
 
-         if(this.Y == EventY+this.calcY && this.X > EventX-this.calcX && this.X> EventX+this.calcX ){
-            console.log("!2")
+         if(this.Y == EventY+this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
             this.eventColider()   
          }
 
-         if(this.Y == EventY-this.calcY && this.X < EventX+this.calcX && this.X> EventX-this.calcX ){
+         console.log("Calc: "+(EventX+this.calcX)+"  || This.x: "+this.X)
+         if(this.Y == EventY-this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
             console.log("!s")
             this.eventColider()   
          }
