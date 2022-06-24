@@ -43,3 +43,12 @@ in this case hierarchically the ideal would be to place the elements within the 
 ```
    
 <h2> Oct8 Reference </h2>
+</br>
+
+<b>Implementing Oct8 in your Project: </b> Enter the scripts below in the HTML
+</br>
+```html
+	<script src="../Oct8/Oct8Function.js"></script>
+	<script src="../Oct8/Oct8Engine.js"></script>
+```
+
