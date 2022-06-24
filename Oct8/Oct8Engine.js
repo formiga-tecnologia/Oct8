@@ -112,9 +112,16 @@ class Oct8 {
                 EventY = parseInt(this.ColisionObject.classList[index].replace("Y-",""))
             }
          }
-         if(this.Y == EventY &&  this.X == EventX-this.calcX){
+         console.log("Calc Y minus: "+(EventY-this.calcY))
+         console.log("Calc Y plus: "+(EventY+this.calcY))
+         console.log(EventX-this.calcX)
+         console.log(this.X +" / "+EventX+" AND Y"+this.Y+" / "+(EventY+this.calcY))
+
+         if(this.X == EventX-this.calcX && this.Y > EventY-this.calcY && this.Y< EventY+this.calcY ){
+            console.log("Teste")
             this.eventColider()   
          }
+         /*
          if(this.Y == EventY &&  this.X == EventX+this.calcX){
             this.eventColider()   
          }
@@ -123,6 +130,7 @@ class Oct8 {
          {
             this.eventColider()   
          }
+         */
     }
 
 
