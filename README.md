@@ -29,15 +29,17 @@ Short snippet to get started in Oct8 understand that Oct8 uses a cartesian plan 
 </br>
 
 in this case hierarchically the ideal would be to place the elements within the other follows these two examples of container creation: 
-   <b> example </b>
-    <ul>
-      <li> Cbe </li>
-	<li>Elb</li>
- 		<li>SSE OPEN /CLOSE </li>
- 		<li>SSE OPEN /CLOSE </li>
- 		<li>SSE OPEN /CLOSE </li>
-	<li>ELB CLOSE</li>
-      <li>CBE CLOSE </li>
-    </ul>
-
+</br>
+   <b> example class elements hierarchy</b>
+  ```html
+   <cbe>
+      <elb>
+        <sse></sse>
+	 <sse></sse>
+	 <sse></sse>
+      </elb>
+   </cbe>
+  
+```
+   
 <h2> Oct8 Reference </h2>
