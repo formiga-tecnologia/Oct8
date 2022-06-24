@@ -129,6 +129,4 @@ class Oct8 {
             this.eventColider()   
          }
     }
-
-
 }
