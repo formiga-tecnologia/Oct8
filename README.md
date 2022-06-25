@@ -51,4 +51,14 @@ in this case hierarchically the ideal would be to place the elements within the 
 	<script src="../Oct8/Oct8Function.js"></script>
 	<script src="../Oct8/Oct8Engine.js"></script>
 ```
+</br>
+<b>creating a container: </b> To create container it is possible to create with a function directly from the Oct8 Engine it follows below as an example
+</br>
+This code is to create a container of type elb container
+</br>
 
+```javascript
+	Engine.CreateContainerElement(< Id of the element where this new element will be created >, < Id do elemento >)
+```
+
+By default definition it creates a container with a default outline, to remove there is a function for this called RemoveDebugStroke(IdElement)
