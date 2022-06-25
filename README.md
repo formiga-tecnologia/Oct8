@@ -46,19 +46,33 @@ in this case hierarchically the ideal would be to place the elements within the 
 </br>
 
 <b>Implementing Oct8 in your Project: </b> Enter the scripts below in the HTML
-</br>
+</br></br>
 ```html
 	<script src="../Oct8/Oct8Function.js"></script>
 	<script src="../Oct8/Oct8Engine.js"></script>
 ```
-</br>
+<h3> Creating containers </h3>
 <b>creating a container: </b> To create container it is possible to create with a function directly from the Oct8 Engine it follows below as an example
 </br>
 This code is to create a container of type elb container
-</br>
 
 ```javascript
 	Engine.CreateContainerElement(< Id of the element where this new element will be created >, < Id do elemento >)
 ```
+</br>
+This code is to create a container of type CBE container
+
+```javascript
+	Engine.CreateContainerBody(< Id of the element where this new element will be created >, < Id do elemento >)
+```
+
+</br>
+This code is to create a container of type SSE container
+
+
+```javascript
+	Engine.CreateContainerSquareElement(< Id of the element where this new element will be created >, < Id do elemento >)
+```
+</br>
 
 By default definition it creates a container with a default outline, to remove there is a function for this called RemoveDebugStroke(IdElement)
