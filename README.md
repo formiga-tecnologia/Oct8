@@ -57,13 +57,13 @@ in this case hierarchically the ideal would be to place the elements within the 
 This code is to create a container of type elb container
 
 ```javascript
-	Engine.CreateContainerElement(< Id of the element where this new element will be created >, < Id do elemento >)
+	Engine.CreateContainerElement(< Id of the element where this new element will be created >, < Id of element >)
 ```
 </br>
 This code is to create a container of type CBE container
 
 ```javascript
-	Engine.CreateContainerBody(< Id of the element where this new element will be created >, < Id do elemento >)
+	Engine.CreateContainerBody(< Id of the element where this new element will be created >, < Id of element >)
 ```
 
 </br>
@@ -71,7 +71,7 @@ This code is to create a container of type SSE container
 
 
 ```javascript
-	Engine.CreateContainerSquareElement(< Id of the element where this new element will be created >, < Id do elemento >)
+	Engine.CreateContainerSquareElement(< Id of the element where this new element will be created >, < Id of element >)
 ```
 </br>
 
