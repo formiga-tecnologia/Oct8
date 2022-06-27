@@ -18,7 +18,7 @@ class Oct8 {
         this.ColiderCurrent = false //If collider have happen
         this.ColisionObject = null //Element event object to colider
         this.calcX = 0 //CalcX for colaiders 
-        this.calcY =0 //CalcY for calaiders
+        this.calcY = 0 //CalcY for calaiders
         this.RaycastX = 0 //Calc of Raycast X
         this.RayCastY = 0  //Calc of Raycast Y
     }
@@ -92,52 +92,58 @@ class Oct8 {
     }
 
     //Colider Event
-    AddColider(elementToColider, EventColider, calcX, calcY,time) {
+    AddColider(elementToColider, EventColider, calcX, calcY, time) {
         //created cacl X and Y to both elements  if detect execute Event
         if (this.ColaiderEvent == true) {
             this.ColisionObject = elementToColider
-            this.eventColider = EventColider  
+            this.eventColider = EventColider
             this.calcX = calcX
             this.calcY = calcY
-            return this.ColiderDetectReflect()  
+            return this.ColiderDetectReflect()
         }
     }
-    ColiderDetectReflect(){
+    ColiderDetectReflect() {
         let EventX = 0
-        let EventY = 0 
+        let EventY = 0
         for (let index = 0; index < this.ColisionObject.classList.length; index++) {
-            if(this.ColisionObject.classList[index].includes('X-')){
-                EventX = parseInt(this.ColisionObject.classList[index].replace("X-",""))
+            if (this.ColisionObject.classList[index].includes('X-')) {
+                EventX = parseInt(this.ColisionObject.classList[index].replace("X-", ""))
             }
-            if(this.ColisionObject.classList[index].includes('Y-'))
-            {
-                EventY = parseInt(this.ColisionObject.classList[index].replace("Y-",""))
+            if (this.ColisionObject.classList[index].includes('Y-')) {
+                EventY = parseInt(this.ColisionObject.classList[index].replace("Y-", ""))
             }
-         }
+        }
 
-         if(this.X == EventX-this.calcX && this.Y > EventY-this.calcY && this.Y< EventY+this.calcY ){
-            this.eventColider()   
-         }
+        if (this.X == EventX - this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+            this.eventColider()
+        }
 
-         if(this.X == EventX+this.calcX && this.Y > EventY-this.calcY && this.Y< EventY+this.calcY ){
-            this.eventColider()   
-         }
+        if (this.X == EventX + this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+            this.eventColider()
+        }
 
-         if(this.Y == EventY+this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
-            this.eventColider()   
-         }
+        if (this.Y == EventY + this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
+            this.eventColider()
+        }
 
-         if(this.Y == EventY-this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
-            this.eventColider()   
-         }
+        if (this.Y == EventY - this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
+            this.eventColider()
+        }
     }
-    RayCastDetect(XComparate,Ycomparate,Debug){
+    RayCastDetect(XComparate, Ycomparate, Debug) {
         //Create RaycastEvents 
         //el[0].childNodes[1].attributes[0].nodeValue
-        var el = document.getElementsByClassName('X-'+(this.X+XComparate)+' Y-'+(this.Y+Ycomparate))
+        var el = document.getElementsByClassName('X-' + (this.X + XComparate))
+        var elArrays = []
+        var StrTest = ""
         //console.log(el[0].childNodes[1].attributes[0].nodeValue)
-        console.log('X-'+(this.X+XComparate)+' Y-'+(this.Y+Ycomparate))
-        console.log(el.length)
-        return el
+        console.log('X-' + (this.X + XComparate) + ' Y-' + (this.Y + Ycomparate))
+        if (el.length > 1) {
+            for (let index = 0; index < el.length; index++) {
+                StrTest = el[index].id
+                elArrays.push(StrTest)
+            }   
+        }
+        return elArrays
     }
 }
