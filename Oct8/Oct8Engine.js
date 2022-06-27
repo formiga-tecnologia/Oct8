@@ -128,5 +128,5 @@ class Oct8 {
          if(this.Y == EventY-this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
             this.eventColider()   
          }
-    }
+    } 
 }
