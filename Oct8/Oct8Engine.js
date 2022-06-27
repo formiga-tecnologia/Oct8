@@ -134,6 +134,12 @@ class Oct8 {
         //Create RaycastEvents 
         //el[0].childNodes[1].attributes[0].nodeValue
         var el = document.getElementsByClassName('X-' + (this.X + XComparate))
+        /*
+        var el = document.getElementsByClassName('X-' + (this.X - XComparate))
+        var el = document.getElementsByClassName('X-' + (this.Y + XComparate))
+        var el = document.getElementsByClassName('X-' + (this.Y - XComparate))
+
+        */
         var elArrays = []
         var StrTest = ""
         //console.log(el[0].childNodes[1].attributes[0].nodeValue)
