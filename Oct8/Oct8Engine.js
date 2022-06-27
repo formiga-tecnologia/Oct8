@@ -132,6 +132,12 @@ class Oct8 {
          }
     }
     RayCastDetect(XComparate,Ycomparate,Debug){
+        //Create RaycastEvents 
         //el[0].childNodes[1].attributes[0].nodeValue
+        var el = document.getElementsByClassName('X-'+(this.X+XComparate)+' Y-'+(this.Y+Ycomparate))
+        //console.log(el[0].childNodes[1].attributes[0].nodeValue)
+        console.log('X-'+(this.X+XComparate)+' Y-'+(this.Y+Ycomparate))
+        console.log(el.length)
+        return el
     }
 }
