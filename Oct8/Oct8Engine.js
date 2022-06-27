@@ -130,5 +130,8 @@ class Oct8 {
          if(this.Y == EventY-this.calcY && this.X > EventX-this.calcX && this.X< EventX+this.calcX ){
             this.eventColider()   
          }
-    } 
+    }
+    RayCastDetect(XComparate,Ycomparate,Debug){
+        //el[0].childNodes[1].attributes[0].nodeValue
+    }
 }
