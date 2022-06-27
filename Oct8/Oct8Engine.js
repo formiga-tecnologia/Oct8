@@ -19,6 +19,8 @@ class Oct8 {
         this.ColisionObject = null //Element event object to colider
         this.calcX = 0 //CalcX for colaiders 
         this.calcY =0 //CalcY for calaiders
+        this.RaycastX = 0 //Calc of Raycast X
+        this.RayCastY = 0  //Calc of Raycast Y
     }
     /*  Add Transitions */
 
