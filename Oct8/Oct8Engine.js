@@ -148,14 +148,12 @@ class Oct8 {
         var el = ""
         if(XComparateLeft>1)
         {
-            console.log("======")
             for (let indexValue = XcalcLeft; indexValue < (this.X + XComparateLeft); indexValue++) {
                 el = document.getElementsByClassName('X-' + indexValue)
                 console.log(" "+indexValue+" -/- "+(this.X + XComparateLeft))
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        console.log("===========")
                         console.log(StrTest)
                         elArrays.push(StrTest) 
                     } 
