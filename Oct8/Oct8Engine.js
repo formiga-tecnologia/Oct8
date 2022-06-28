@@ -154,12 +154,12 @@ class Oct8 {
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        console.log(StrTest)
                         elArrays.push(StrTest) 
                     } 
                 }
             }
         }
+        
 
         return elArrays
     } 
