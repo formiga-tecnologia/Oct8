@@ -130,7 +130,7 @@ class Oct8 {
             this.eventColider()
         }
     }
-    RayCastDetect(XComparate, Ycomparate, Debug) {
+    RayCastDetect(XComparate, Ycomparate) {
         //Create RaycastEvents 
         //el[0].childNodes[1].attributes[0].nodeValue
         var el = document.getElementsByClassName('X-' + (this.X + XComparate))
