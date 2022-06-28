@@ -140,22 +140,26 @@ class Oct8 {
         //el[0].childNodes[1].attributes[0].nodeValue
         */
 
-        console.log('X-' + (this.X + XComparateLeft) + ' Y-' + (this.Y + YcomparateLeft))
+       // console.log('X-' + (this.X + XComparateLeft) + ' Y-' + (this.Y + YcomparateLeft))
 
         var elArrays = []
         var StrTest = ""
         var XcalcLeft = this.X
+        var el = ""
         if(XComparateLeft>1)
         {
-            for (let index = 0; XcalcLeft < (this.X + XComparateLeft); index++) {
-                var el = document.getElementsByClassName('X-' + XcalcLeft)
-                if (el.length > 1) {
+            console.log("======")
+            for (let indexValue = XcalcLeft; indexValue < (this.X + XComparateLeft); indexValue++) {
+                el = document.getElementsByClassName('X-' + indexValue)
+                console.log(" "+indexValue+" -/- "+(this.X + XComparateLeft))
+                if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
+                        console.log("===========")
+                        console.log(StrTest)
                         elArrays.push(StrTest) 
-                    }   
+                    } 
                 }
-                XcalcLeft+=1
             }
         }
 
