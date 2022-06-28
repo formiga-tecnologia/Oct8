@@ -130,10 +130,10 @@ class Oct8 {
             this.eventColider()
         }
     }
-    RayCastDetect(XComparate, Ycomparate) {
+    RayCastDetect(XComparateLeft, YcomparateLeft,XComparateRigth, YcomparateRigth) {
         //Create RaycastEvents 
         //el[0].childNodes[1].attributes[0].nodeValue
-        var el = document.getElementsByClassName('X-' + (this.X + XComparate))
+        var el = document.getElementsByClassName('X-' + (this.X + XComparateLeft))
         /*
         var el = document.getElementsByClassName('X-' + (this.X - XComparate))
         var el = document.getElementsByClassName('X-' + (this.Y + XComparate))
@@ -143,7 +143,7 @@ class Oct8 {
         var elArrays = []
         var StrTest = ""
         //console.log(el[0].childNodes[1].attributes[0].nodeValue)
-        console.log('X-' + (this.X + XComparate) + ' Y-' + (this.Y + Ycomparate))
+        console.log('X-' + (this.X + XComparateLeft) + ' Y-' + (this.Y + YcomparateLeft))
         if (el.length > 1) {
             for (let index = 0; index < el.length; index++) {
                 StrTest = el[index].id
