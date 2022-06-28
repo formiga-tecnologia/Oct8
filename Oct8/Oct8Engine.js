@@ -130,7 +130,7 @@ class Oct8 {
             this.eventColider()
         }
     }
-    RayCastDetect(XComparateLeft, YcomparateLeft,XComparateRigth, YcomparateRigth) {
+    RayCastDetect(XComparateLeft, YcomparateTop,XComparateRigth, YcomparateDown) {
         //Create RaycastEvents 
         /*
         var el = document.getElementsByClassName('X-' + (this.X - XComparate))
@@ -158,6 +158,21 @@ class Oct8 {
                     } 
                 }
             }
+        }
+
+        if(XComparateRigth>1)
+        {
+            
+        }
+
+        if(YcomparateDown >1)
+        {
+
+        }
+
+        if(YcomparateTop >1)
+        {
+
         }
         
 
