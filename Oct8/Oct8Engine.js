@@ -145,6 +145,7 @@ class Oct8 {
         var elArrays = []
         var StrTest = ""
         var XcalcLeft = this.X
+        var XcalcRight = this.X
         var el = ""
         if(XComparateLeft>1)
         {
@@ -162,7 +163,23 @@ class Oct8 {
 
         if(XComparateRigth>1)
         {
-            
+            console.log("esta rodando aqui 4/8"+XcalcLeft+" || "+(this.X + XComparateRigth))
+            var Dynamic_cors =  XComparateRigth
+
+            for (let indexValue = 0; indexValue < XComparateRigth; indexValue++) {
+                XcalcRight = XcalcRight-1
+                console.log(XcalcRight) 
+                el = document.getElementsByClassName('X-' + Dynamic_cors)
+                //console.log(" "+indexValue+" -/- "+(this.X + XComparateLeft))
+                console.log("teste")
+                if (el.length >= 1) {
+                    for (let index = 0; index < el.length; index++) {
+                        StrTest = el[index].id
+                        console.log("teste")
+                        elArrays.push(StrTest) 
+                    } 
+                }
+            }
         }
 
         if(YcomparateDown >1)
