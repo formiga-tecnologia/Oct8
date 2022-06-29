@@ -102,6 +102,7 @@ class Oct8 {
             return this.ColiderDetectReflect()
         }
     }
+
     ColiderDetectReflect() {
         let EventX = 0
         let EventY = 0
@@ -130,17 +131,8 @@ class Oct8 {
             this.eventColider()
         }
     }
-    RayCastDetect(XComparateLeft, YcomparateTop,XComparateRigth, YcomparateDown) {
-        //Create RaycastEvents 
-        /*
-        var el = document.getElementsByClassName('X-' + (this.X - XComparate))
-        var el = document.getElementsByClassName('X-' + (this.Y + XComparate))
-        var el = document.getElementsByClassName('X-' + (this.Y - XComparate))
-        //console.log(el[0].childNodes[1].attributes[0].nodeValue)
-        //el[0].childNodes[1].attributes[0].nodeValue
-        */
-
-       // console.log('X-' + (this.X + XComparateLeft) + ' Y-' + (this.Y + YcomparateLeft))
+    
+    RayCastDetect(XComparateLeft, YcomparateTop, XComparateRigth, YcomparateDown) {
 
         var elArrays = []
         var StrTest = ""
@@ -148,68 +140,64 @@ class Oct8 {
         var XcalcRight = this.X
         var YcalcTop = this.Y
         var el = ""
-        if(XComparateLeft>1)
-        {
+
+        if (XComparateLeft > 1) {
             for (let indexValue = XcalcLeft; indexValue < (this.X + XComparateLeft); indexValue++) {
                 el = document.getElementsByClassName('X-' + indexValue)
-                console.log(" "+indexValue+" -/- "+(this.X + XComparateLeft))
+                console.log(" " + indexValue + " -/- " + (this.X + XComparateLeft))
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        elArrays.push(StrTest) 
-                    } 
+                        elArrays.push(StrTest)
+                    }
                 }
             }
         }
 
-        if(XComparateRigth>1)
-        {
-            console.log("esta rodando aqui 4/8"+XcalcLeft+" || "+(this.X + XComparateRigth))
+        if (XComparateRigth > 1) {
+            console.log("esta rodando aqui 4/8" + XcalcLeft + " || " + (this.X + XComparateRigth))
             for (let indexValue = 0; indexValue < XComparateRigth; indexValue++) {
-                XcalcRight = XcalcRight-1
-                console.log(XcalcRight) 
+                XcalcRight = XcalcRight - 1
+                console.log(XcalcRight)
                 el = document.getElementsByClassName('X-' + XcalcRight)
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        elArrays.push(StrTest) 
-                    } 
+                        elArrays.push(StrTest)
+                    }
                 }
             }
         }
 
-        if(YcomparateDown >1)
-        {
-            console.log("esta rodando aqui /"+YcalcTop+" || "+(this.Y + YcomparateDown))
-            for (let indexValue = 0; indexValue < (this.X +YcomparateDown); indexValue++) {
+        if (YcomparateDown > 1) {
+            console.log("esta rodando aqui /" + YcalcTop + " || " + (this.Y + YcomparateDown))
+            for (let indexValue = 0; indexValue < (this.X + YcomparateDown); indexValue++) {
                 el = document.getElementsByClassName('Y-' + indexValue)
-                console.log(indexValue+" Y atual")
+                console.log(indexValue + " Y atual")
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        elArrays.push(StrTest) 
-                    } 
+                        elArrays.push(StrTest)
+                    }
                 }
             }
         }
 
-        if(YcomparateTop >1)
-        {
-            console.log("esta rodando aqui 4/8"+YcalcTop+" || "+(this.X + YcomparateTop))
+        if (YcomparateTop > 1) {
+            console.log("esta rodando aqui 4/8" + YcalcTop + " || " + (this.X + YcomparateTop))
             for (let indexValue = 0; indexValue < YcomparateTop; indexValue++) {
-                YcalcTop = YcalcTop-1
-                console.log(YcalcTop) 
+                YcalcTop = YcalcTop - 1
+                console.log(YcalcTop)
                 el = document.getElementsByClassName('Y-' + YcalcTop)
                 if (el.length >= 1) {
                     for (let index = 0; index < el.length; index++) {
                         StrTest = el[index].id
-                        elArrays.push(StrTest) 
-                    } 
+                        elArrays.push(StrTest)
+                    }
                 }
             }
         }
-        
 
         return elArrays
-    } 
+    }
 }
