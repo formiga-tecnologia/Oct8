@@ -146,6 +146,7 @@ class Oct8 {
         var StrTest = ""
         var XcalcLeft = this.X
         var XcalcRight = this.X
+        var YcalcTop = this.Y
         var el = ""
         if(XComparateLeft>1)
         {
@@ -179,12 +180,33 @@ class Oct8 {
 
         if(YcomparateDown >1)
         {
-
+            console.log("esta rodando aqui /"+YcalcTop+" || "+(this.Y + YcomparateDown))
+            for (let indexValue = 0; indexValue < (this.X +YcomparateDown); indexValue++) {
+                el = document.getElementsByClassName('Y-' + indexValue)
+                console.log(indexValue+" Y atual")
+                if (el.length >= 1) {
+                    for (let index = 0; index < el.length; index++) {
+                        StrTest = el[index].id
+                        elArrays.push(StrTest) 
+                    } 
+                }
+            }
         }
 
         if(YcomparateTop >1)
         {
-
+            console.log("esta rodando aqui 4/8"+YcalcTop+" || "+(this.X + YcomparateTop))
+            for (let indexValue = 0; indexValue < YcomparateTop; indexValue++) {
+                YcalcTop = YcalcTop-1
+                console.log(YcalcTop) 
+                el = document.getElementsByClassName('Y-' + YcalcTop)
+                if (el.length >= 1) {
+                    for (let index = 0; index < el.length; index++) {
+                        StrTest = el[index].id
+                        elArrays.push(StrTest) 
+                    } 
+                }
+            }
         }
         
 
