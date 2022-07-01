@@ -64,6 +64,10 @@ class Oct8 {
         axis = "rotate"
         Oct8CPlayMove(element,oldpos,newpos,axis)
     }
+    PlaySkew(element, oldpos, newpos, axis){
+        axis= "Skew-"+axis
+        Oct8CPlayMove(element,oldpos,newpos,axis)
+    }
     CreateEvent(functionCallback, time) {
         if (this.On == true) {
             this.event = setInterval(functionCallback, time)

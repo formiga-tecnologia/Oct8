@@ -180,6 +180,7 @@
     transition: scaleX 0.3s;
     transition: filter 0.3s;
     transition: border-radius 0.3s;
+    transition: all;
 }
 /* ======================= */
 
