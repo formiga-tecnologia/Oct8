@@ -1,0 +1,37 @@
+body{
+    background-color: #ffe77d;
+}
+
+nav{
+    background-color: #bea536;
+    height: 10vh;
+    width:100%;
+    position:absolute;
+    left:0%;
+    top:0%;
+    margin: 0px;
+    padding: 0;
+    border: 1px yellow;
+    border-bottom: none;
+}
+
+nav ul li{
+    float: left;
+    list-style: none;
+    padding: 2vh;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+}
+
+#banner_section{
+    position: absolute;
+    margin-top: 10vh;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    height: 40vh;
+    width: 194vh;
+    background-color: #915700;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+}
