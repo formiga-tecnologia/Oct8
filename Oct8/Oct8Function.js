@@ -120,7 +120,7 @@ async function _animatePrivate_blur() {
     _element.classList += " " + "blur-" + _NewPosition
 }
 async function _animatePrivate() {
-    _element.classList.remove(_axis + "-" + _oldPosition)
+    _element.classList.remove(_axis + "-" + _oldPosition) 
     _element.classList += " " + _axis + "-" + _NewPosition
 
 }

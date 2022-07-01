@@ -54,11 +54,15 @@ class Oct8 {
     PlayMove(element, oldpos, newpos, axis) {
         Oct8CPlayMove(element, oldpos, newpos, axis)
         if (axis == 'X') {
-            this.X = newpos
+            this.X = newpos 
         }
         if (axis == 'Y') {
             this.Y = newpos
         }
+    }
+    PlayRotate(element, oldpos, newpos, axis){
+        axis = "rotate"
+        Oct8CPlayMove(element,oldpos,newpos,axis)
     }
     CreateEvent(functionCallback, time) {
         if (this.On == true) {
