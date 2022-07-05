@@ -21,6 +21,10 @@ class Oct8 {
         this.calcY = 0 //CalcY for calaiders
         this.RaycastX = 0 //Calc of Raycast X
         this.RayCastY = 0  //Calc of Raycast Y
+        //Pyshics vars 
+        this.GravityForce = 0
+        this.force = 0 
+        this.speed = 0 
     }
     /*  Add Transitions */
 
