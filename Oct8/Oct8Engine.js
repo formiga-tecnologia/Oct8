@@ -17,20 +17,31 @@ class Oct8 {
         this.eventColider = null  //Event when colider for true
         this.ColiderCurrent = false //If collider have happen
         this.ColisionObject = null //Element event object to colider
+        this.coliderCheck = false
         this.calcX = 0 //CalcX for colaiders 
         this.calcY = 0 //CalcY for calaiders
         this.RaycastX = 0 //Calc of Raycast X
         this.RayCastY = 0  //Calc of Raycast Y
         //Pyshics vars 
         this.GravityForce = 0
+        this.rotateActive = true
         this.force = 0 
         this.speed = 0 
+        this.rotateCalc =0
+        this.windForce = 0
+        //Bound puyshics
+        this._AxisBound = ''
+        this._ForceBound = 0
+        this._elementBound = null
+        this._reverseBound = false
+        this._Boundtime = 0
+        this._eventBounce = null
     }
     /*  Add Transitions */
-
     /* Containers Created */
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
+        this.lot =0
     }
 
     CreateContainerElement(elementInsertId, Id) {
@@ -124,6 +135,7 @@ class Oct8 {
             }
             if (this.ColisionObject.classList[index].includes('Y-')) {
                 EventY = parseInt(this.ColisionObject.classList[index].replace("Y-", ""))
+
             }
         }
 
@@ -212,4 +224,27 @@ class Oct8 {
 
         return elArrays
     }
+    //pyshics Events 
+    ApplyGravity(element){
+        if(this.coliderCheck == false){
+            this.PlayMove(element,this.Y,this.Y+this.force,'Y')
+        }
+    }
+    CreateRotatePishics(element){
+        if(this.rotateCalc>=10)
+        {
+            this.rotateCalc = 0 
+            element.classList.remove('rotate-10')
+        }
+        else
+        {
+            if(this.rotateActive == true)
+            {
+            console.log((this.rotateCalc)+" / "+(this.rotateCalc+this.force))
+            this.PlayRotate(element,this.rotateCalc,this.rotateCalc+this.force,'X')
+            this.rotateCalc+=1
+            }
+        }
+    }
+
 }
