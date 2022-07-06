@@ -17,6 +17,7 @@ class Oct8 {
         this.eventColider = null  //Event when colider for true
         this.ColiderCurrent = false //If collider have happen
         this.ColisionObject = null //Element event object to colider
+        this.coliderCheck = false
         this.calcX = 0 //CalcX for colaiders 
         this.calcY = 0 //CalcY for calaiders
         this.RaycastX = 0 //Calc of Raycast X
@@ -124,6 +125,7 @@ class Oct8 {
             }
             if (this.ColisionObject.classList[index].includes('Y-')) {
                 EventY = parseInt(this.ColisionObject.classList[index].replace("Y-", ""))
+                console.log(EventY)
             }
         }
 
@@ -134,7 +136,7 @@ class Oct8 {
         if (this.X == EventX + this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
             this.eventColider()
         }
-
+        console.log("  "+(EventY + this.calcY)+" / "+(EventX - this.calcX)+" / "+this.calcX)
         if (this.Y == EventY + this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
             this.eventColider()
         }
@@ -211,5 +213,11 @@ class Oct8 {
         }
 
         return elArrays
+    }
+    //pyshics Events 
+    ApllyGravity(element){
+        if(this.coliderCheck == false){
+            this.PlayMove(element,this.Y,this.Y+this.force,'Y')
+        }
     }
 }
