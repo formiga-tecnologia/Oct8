@@ -24,8 +24,11 @@ class Oct8 {
         this.RayCastY = 0  //Calc of Raycast Y
         //Pyshics vars 
         this.GravityForce = 0
+        this.rotateActive = true
         this.force = 0 
         this.speed = 0 
+        this.rotateCalc =0
+        this.windForce = 0
     }
     /*  Add Transitions */
 
@@ -215,9 +218,25 @@ class Oct8 {
         return elArrays
     }
     //pyshics Events 
-    ApllyGravity(element){
+    ApplyGravity(element){
         if(this.coliderCheck == false){
             this.PlayMove(element,this.Y,this.Y+this.force,'Y')
+        }
+    }
+    CreateRotatePishics(element){
+        if(this.rotateCalc>=10)
+        {
+            this.rotateCalc = 0 
+            element.classList.remove('rotate-10')
+        }
+        else
+        {
+            if(this.rotateActive == true)
+            {
+            console.log((this.rotateCalc)+" / "+(this.rotateCalc+this.force))
+            this.PlayRotate(element,this.rotateCalc,this.rotateCalc+this.force,'X')
+            this.rotateCalc+=1
+            }
         }
     }
 }
