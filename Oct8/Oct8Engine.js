@@ -29,12 +29,19 @@ class Oct8 {
         this.speed = 0 
         this.rotateCalc =0
         this.windForce = 0
+        //Bound puyshics
+        this._AxisBound = ''
+        this._ForceBound = 0
+        this._elementBound = null
+        this._reverseBound = false
+        this._Boundtime = 0
+        this._eventBounce = null
     }
     /*  Add Transitions */
-
     /* Containers Created */
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
+        this.lot =0
     }
 
     CreateContainerElement(elementInsertId, Id) {
@@ -239,4 +246,5 @@ class Oct8 {
             }
         }
     }
+
 }
