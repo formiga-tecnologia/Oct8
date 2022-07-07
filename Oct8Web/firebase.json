@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "oct8projects",
     "public": "public",
     "ignore": [
       "firebase.json",
