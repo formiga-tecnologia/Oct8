@@ -1,6 +1,8 @@
 
 var fileinput = document.getElementById("file-input")
 
+
+
 var ref = firebase.storage().ref('Project_01')
 fileinput.onchange = function (event) {
     var arquivo = event.target.files[0]
