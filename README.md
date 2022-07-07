@@ -25,7 +25,6 @@ Short snippet to get started in Oct8 understand that Oct8 uses a cartesian plan 
    <li>ELB class: An element that helps center varied elements if you want to create interactivity of various elements in a dynamic way create the ELB to place several elements.</li>
    <li>SSE class: they are diverse elements that do not follow alignments and the ideal is to place these elements inside an ELB class container</li>
 </ul>
-
 </br>
 
 in this case hierarchically the ideal would be to place the elements within the other follows these two examples of container creation: 
@@ -75,4 +74,7 @@ This code is to create a container of type SSE container
 ```
 </br>
 
-By default definition it creates a container with a default outline, to remove there is a function for this called RemoveDebugStroke(IdElement)
+By default definition it creates a container with a default outline, to remove there is a function for this called RemoveDebugStroke(IdElement
+
+
+create pyshics forces 
