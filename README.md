@@ -76,3 +76,5 @@ This code is to create a container of type SSE container
 </br>
 
 By default definition it creates a container with a default outline, to remove there is a function for this called RemoveDebugStroke(IdElement)
+
+<h3>Update Pyshic Events</h3>
