@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oct8 Projects Hub</title>
 </head>
+
 <body>
   <h1>Welcome to Oct8 Hub</h1>
   <h2>Host your project Oct8 here!</h2>
+  <div>
+    <input type="file" id="file-input">
+  </div>
+
 </body>
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+<!-- Inicializa o firebase -->
 <script>
-  import { getStorage, ref, uploadBytes } from "firebase/storage";
-
-const storage = getStorage();
-const storageRef = ref(storage, 'some-child');
-
-// 'file' comes from the Blob or File API
-uploadBytes(storageRef, file).then((snapshot) => {
-  console.log('Uploaded a blob or file!');
-});
+  var config = {
+    apiKey: "AIzaSyD7JCGTU-fCTlF-V3ir5qx4rtpObYkB0pU",
+    authDomain: "devconstuct.firebaseapp.com",
+    databaseURL: "https://devconstuct.firebaseio.com",
+    projectId: "devconstuct",
+    storageBucket: "devconstuct.appspot.com",
+    messagingSenderId: "1080373602320",
+    appId: "1:1080373602320:web:aae3f34a873d791f764295",
+    measurementId: "G-FGN6153C0R"
+  };
+  firebase.initializeApp(config);
 </script>
+<script src="./app.js" ''></script>
+
 </html>
