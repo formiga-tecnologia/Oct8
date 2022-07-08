@@ -3,7 +3,7 @@
    DESIGNER PRODUCT: FELIPE CATÃO 
    CREATION DATE: 11/06/2021 */
 
-class Oct8Engine {
+class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
     constructor(id, element) {
         this.X = null;
@@ -94,8 +94,10 @@ class Oct8Engine {
     StopEvent() {
         clearInterval(this.event)
     }
+    
     // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
+        
         document.addEventListener('keypress', (event) => {
             var key = event.key
             var type = typeof (Targetkey)
@@ -177,7 +179,7 @@ class Oct8Engine {
                 }
             }
         }
-
+        
         if (XComparateRigth > 1) {
             console.log("esta rodando aqui 4/8" + XcalcLeft + " || " + (this.X + XComparateRigth))
             for (let indexValue = 0; indexValue < XComparateRigth; indexValue++) {
@@ -205,7 +207,7 @@ class Oct8Engine {
                     }
                 }
             }
-        }
+        }  
 
         if (YcomparateTop > 1) {
             console.log("esta rodando aqui 4/8" + YcalcTop + " || " + (this.X + YcomparateTop))
@@ -218,7 +220,7 @@ class Oct8Engine {
                         StrTest = el[index].id
                         elArrays.push(StrTest)
                     }
-                }
+                } jjkks 
             }
         }
 
