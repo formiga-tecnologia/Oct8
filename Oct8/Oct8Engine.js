@@ -3,7 +3,7 @@
    DESIGNER PRODUCT: FELIPE CATÃO 
    CREATION DATE: 11/06/2021 */
 
-class Oct8 {
+export class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
     constructor(id, element) {
         this.X = null;

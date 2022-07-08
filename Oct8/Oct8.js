@@ -26,6 +26,9 @@ function GravityGlobal() {
         Gravitybasic = 0;
     }
 }
+function Lock(){
+    Oct8Limit+=3;
+}
 setInterval(GravityGlobal, 1000);
 
 
