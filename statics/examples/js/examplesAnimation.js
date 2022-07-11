@@ -1,0 +1,10 @@
+var Engine = new Oct8()
+
+Engine.CreateContainerElement("campo",'Teste')
+Engine.ModifySize(document.getElementById('Teste'),'W',80)
+Engine.ModifySize(document.getElementById('Teste'),'H',80)
+Engine.CreateContainerSquareElement("Teste",'bloc')
+Engine.ModifySize(document.getElementById('bloc'),'W',40)
+Engine.ModifySize(document.getElementById('bloc'),'H',10)
+Engine.ModifySize(document.getElementById('bloc'),'X',4)
+Engine.ModifySize(document.getElementById('bloc'),'Y',4)
