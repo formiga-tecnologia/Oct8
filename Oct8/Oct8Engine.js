@@ -45,7 +45,16 @@ class Oct8 {
     }
 
     CreateContainerElement(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+        if(elementInsertId == 'body')
+        {
+            //Oct8NewElementContainer(Id, document.getElementsByTagName('body'), 'elb  elb-on')
+            Oct8NewElementBody(Id,'elb  elb-on')
+        }
+        else{
+            Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+        }
+        
+        
     }
 
     CreateContainerSquareElement(elementInsertId, Id) {
