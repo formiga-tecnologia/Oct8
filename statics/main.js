@@ -6,7 +6,7 @@ console.log(varPage)
 var prod = 'https://oct8engine.com/statics/gamepage.html'
 var desenv = 'http://127.0.0.1:5500/statics/gamepage.html'
 
-if(varPage != prod)
+if(varPage != desenv)
 {
     Engine.CreateContainerElement("Field",'ElementsBase')
     Engine.ModifySize(document.getElementById('ElementsBase'),'W',80)
@@ -61,16 +61,31 @@ else
 }
 
 function move(){
-    Engine.PlayMove(document.getElementById('Square0'),Engine.X,Engine.X+1,'X')
-    Engine.PlayMove(document.getElementById('Square0'),Engine.Y,Engine.Y+1,'Y')
+   
     if(Engine.X == 68)
     {
-        Engine.StopEvent()
+        Engine.CreateRotatePishics(document.getElementById('Square0'))
         Engine.ApplyNewStyle(document.getElementById('Square0'),'EventPlay')
+    }
+
+    else{
+        Engine.PlayMove(document.getElementById('Square0'),Engine.X,Engine.X+1,'X')
+        Engine.PlayMove(document.getElementById('Square0'),Engine.Y,Engine.Y+1,'Y')
+    }
+    
+    if(Engine.rotateCalc == 10)
+    {
+        Engine.StopEvent()
     }
 }
 
 
-
-
+function Rotate(){
+    Engine.CreateRotatePishics(document.getElementById('Square0'))
+    if(Engine.rotateCalc == 10)
+    {
+        Engine.creater
+        Engine.StopEvent()
+    }
+}
 
