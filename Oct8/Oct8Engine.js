@@ -124,6 +124,9 @@ class Oct8 {
             functionCallBack()
         }, false)
     }
+    ApplyNewStyle(ElementTarget,Classrule){
+        ElementTarget.classList+= " "+Classrule
+    }
 
     //Colider Event
     AddColider(elementToColider, EventColider, calcX, calcY, time) {

@@ -66,3 +66,11 @@ body{
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
 }
+
+.AddEvent{
+    border: 3px solid #6275ff;
+    opacity: 0.2;
+}
+.EventPlay{
+    background-color: #6275ff;
+}
