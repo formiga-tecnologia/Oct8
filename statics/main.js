@@ -4,7 +4,7 @@ var Engine_2 = new Oct8();
 var varPage = window.location.href
 console.log(varPage)
 
-if(varPage != 'http://127.0.0.1:5500/statics/gamepage.html')
+if(varPage != 'https://oct8engine.com/statics/gamepage.html')
 {
     Engine.CreateContainerElement("Field",'ElementsBase')
     Engine.ModifySize(document.getElementById('ElementsBase'),'W',80)
