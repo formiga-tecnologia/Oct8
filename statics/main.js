@@ -6,7 +6,7 @@ console.log(varPage)
 var prod = 'https://oct8engine.com/statics/gamepage.html'
 var desenv = 'http://127.0.0.1:5500/statics/gamepage.html'
 
-if(varPage != desenv)
+if(varPage != prod)
 {
     Engine.CreateContainerElement("Field",'ElementsBase')
     Engine.ModifySize(document.getElementById('ElementsBase'),'W',80)
