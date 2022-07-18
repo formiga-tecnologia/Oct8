@@ -5,6 +5,12 @@
    with envirioment. 
 */
 .cbe{position:relative;display:flex;flex-direction:row;margin:auto;justify-content:space-around;align-items:flex-end;flex-flow:row wrap}.cbe-off{position:absolute}.cbe-on{border:4px #61ce61 solid}.cbe-action{border:4px #61ce61 solid}.cbe-rotate{border:4px #61ce61 solid}
+@media screen and (max-width: 290px) {
+  .cbe{
+    flex-direction:column;
+    
+  }
+}
 /*
   ELB - Element apply box
   This element function with Pyshic and
