@@ -6,6 +6,12 @@
 class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
     constructor(id, element) {
+        //Mouse events
+        this.mouseX = 0;
+        this.mouseY = 0;
+        this.mouseEvent = null;
+        this.mouseOn = true;
+        //env values
         this.X = null;
         this.Y = null;
         this.id = id
@@ -103,6 +109,34 @@ class Oct8 {
     StopEvent() {
         clearInterval(this.event)
     }
+
+    //Mouse events
+
+    MouseClickEvent(target,event){
+        this.mouseEvent = event
+        if(this.mouseOn == true)
+        {
+            target.addEventListener('click',this.mouseEvent,false)    
+        }
+        
+    }
+
+    MouseDownEvent(target,event){
+        this.mouseEvent = event
+        if(this.mouseOn == true)
+        {
+            target.addEventListener('mouseup',event)
+        }
+    }
+
+    RemoveMouseDownEvent(target){
+        target.removeEventListener('mouseup',this.mouseEvent)
+    }
+    RemoveMouseClickEvent(target){
+        target.removeEventListener('click',this.mouseEvent)
+    }
+    
+    //End Mouse Events
     
     // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
