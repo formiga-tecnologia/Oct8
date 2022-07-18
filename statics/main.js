@@ -18,6 +18,7 @@ if(varPage != prod)
     Engine.ModifySize(document.getElementById('Square0'),'bg-blue',1)
     Engine.ModifySize(document.getElementById('Square0'),'X',37)
     Engine.ModifySize(document.getElementById('Square0'),'Y',48)
+    Engine.MouseClickEvent(document.getElementById('Square0'),clickEventMove)
     
     Engine_2.CreateContainerSquareElement("ElementsBase","Square1")
     Engine_2.ModifySize(document.getElementById('Square1'),'W',10)
@@ -55,9 +56,18 @@ function Dynamic_Animation_2(){
 }
 else
 {
+    
     Engine.ApplyNewStyle(document.getElementById('Square0'),'AddEvent')
     Engine.ApplyNewStyle(document.getElementById('Square1'),'AddEvent')
     Engine.CreateEvent(move,100)
+    
+    
+}
+
+function clickEventMove(){
+    //create event to remove class 
+    Engine.ApplyNewStyle(document.getElementById('Square0'),'EventPlay')
+    alert("welcome to Oct8!!")
 }
 
 function move(){
@@ -66,6 +76,7 @@ function move(){
     {
         Engine.CreateRotatePishics(document.getElementById('Square0'))
         Engine.ApplyNewStyle(document.getElementById('Square0'),'EventPlay')
+       
     }
 
     else{
