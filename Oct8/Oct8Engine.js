@@ -5,15 +5,23 @@
 
 class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
-    constructor(id, element) {
+    constructor(id, element,posX,posY) {
+        this.PropsElement = {
+            Rotate:"rotate",
+            Skew:["transform","skew"],
+            MoveX:"marginLeft",
+            MoveY:"marginTop",
+            W:"width",
+            H:"height"
+        }
         //Mouse events
         this.mouseX = 0;
         this.mouseY = 0;
         this.mouseEvent = null;
         this.mouseOn = true;
         //env values
-        this.X = null;
-        this.Y = null;
+        this.X = posX;
+        this.Y = posY;
         this.id = id
         this._element = element
         this.On = true
@@ -42,9 +50,12 @@ class Oct8 {
         this._reverseBound = false
         this._Boundtime = 0
         this._eventBounce = null
+
     }
     /*  Add Transitions */
     /* Containers Created */
+
+    //CREATE CONTAINERS  
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
         this.lot =0
@@ -58,14 +69,15 @@ class Oct8 {
         }
         else{
             Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+
         }
-        
-        
     }
 
     CreateContainerSquareElement(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
     }
+    //END CREATE CONTAINERS
+
 
     /* Modify Props */
     ModifySize(getElement, axis, value, OldValue) {
@@ -80,6 +92,27 @@ class Oct8 {
         }
     }
 
+    //MODIFY  PROPERTY ELEMENTS
+    // FELIPE CATAO |  DATE UP: 25/07/2022 | 
+
+    ModifyProps(element,value,prop){
+        let DynamicModify = prop
+        if(this._element!=null)
+        {
+            this._element.style[DynamicModify]=value+"vh"
+        }
+        else
+        {
+            if(prop.constructor === Array){
+                console.log([prop[0]]+"="+prop[1]+"("+value+"deg)")
+                element.style[prop[0]]=prop[1]+"("+value+"deg)"
+            }
+            else{
+                element.style[prop]=value+"vh"
+            }
+            
+        }
+    }
     MoveElement(element,pos,axis){
         if(this._element !=null)
         {
@@ -102,6 +135,8 @@ class Oct8 {
             element.style.marginTop =pos+"vh"
         }
     }
+
+    //END PROPERY ELEMENTS 
 
     /* Modify Dynamic position */
     PlayMove(element, oldpos, newpos, axis) {
