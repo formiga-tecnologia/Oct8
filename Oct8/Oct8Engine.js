@@ -15,7 +15,7 @@ class Oct8 {
         this.X = null;
         this.Y = null;
         this.id = id
-        this.element = element
+        this._element = element
         this.On = true
         this.event = null
         this.keyboardEvent = null
@@ -77,6 +77,43 @@ class Oct8 {
         }
         else {
             oct8AddY(Element, pos)
+        }
+    }
+
+    MoveElement(element,pos,axis){
+        if(this._element !=null)
+        {
+            this._moveElementAnimate(this._element,axis,pos)
+        }
+        else{
+            this._moveElementAnimate(element,axis,pos)
+        }
+    }
+
+    _moveElementAnimate(element,axis,pos){
+        let _axis = axis
+        if(_axis.includes('X') || _axis.includes('x'))
+        {
+            if(_axis.includes('-'))
+            {
+                element.style.marginLeft-=pos
+            }
+            else
+            {
+                element.style.marginLeft+=pos
+            }
+        }
+
+        if(_axis.includes('Y') || _axis.includes('y'))
+        {
+            if(_axis.includes('-'))
+            {
+                element.style.marginTop-=pos
+            }
+            else
+            {
+                element.style.marginTop+=pos
+            }
         }
     }
 
