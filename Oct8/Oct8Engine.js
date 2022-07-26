@@ -94,26 +94,12 @@ class Oct8 {
         let _axis = axis
         if(_axis.includes('X') || _axis.includes('x'))
         {
-            if(_axis.includes('-'))
-            {
-                element.style.marginLeft-=pos
-            }
-            else
-            {
-                element.style.marginLeft+=pos
-            }
+            element.style.marginLeft=pos+"vh"
         }
 
         if(_axis.includes('Y') || _axis.includes('y'))
         {
-            if(_axis.includes('-'))
-            {
-                element.style.marginTop-=pos
-            }
-            else
-            {
-                element.style.marginTop+=pos
-            }
+            element.style.marginTop =pos+"vh"
         }
     }
 
