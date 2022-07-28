@@ -19,7 +19,8 @@ class Oct8 {
             marginTop:0,
             width:0,
             height:0,
-            rotate:0
+            rotate:0,
+            skew:0
         }
         //Mouse events
         this.mouseX = 0;
@@ -114,9 +115,10 @@ class Oct8 {
             if(prop.constructor === Array){
                 
                 element.style[prop[0]]=prop[1]+"("+value+"deg)"
+                this.Properties[prop[1]] = value
             }
             else{
-                //console.log(this.Properties[prop])
+            
                 element.style[prop]=value+"vh"
                 this.Properties[prop] = value 
             }
