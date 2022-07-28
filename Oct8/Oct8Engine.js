@@ -112,11 +112,13 @@ class Oct8 {
         else
         {
             if(prop.constructor === Array){
-                console.log([prop[0]]+"="+prop[1]+"("+value+"deg)")
+                
                 element.style[prop[0]]=prop[1]+"("+value+"deg)"
             }
             else{
+                //console.log(this.Properties[prop])
                 element.style[prop]=value+"vh"
+                this.Properties[prop] = value 
             }
             
         }
