@@ -5,11 +5,31 @@
 
 class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
-    constructor(id, element) {
-        this.X = null;
-        this.Y = null;
+    constructor(id, X, Y, W, H) {
+        this.PropsElement = {
+            Rotate: "rotate",
+            Skew: ["transform", "skew"],
+            MoveX: "marginLeft",
+            MoveY: "marginTop",
+            W: "width",
+            H: "height"
+        }
+        this.Properties = {
+            marginLeft: X,
+            marginTop: Y,
+            width: W,
+            height: H,
+            rotate: 0,
+            skew: 0
+        }
+        //Mouse events
+        this.mouseX = 0;
+        this.mouseY = 0;
+        this.mouseEvent = null;
+        this.mouseOn = true;
+        //env values
         this.id = id
-        this.element = element
+        this._element = document.getElementById(id)
         this.On = true
         this.event = null
         this.keyboardEvent = null
@@ -25,9 +45,9 @@ class Oct8 {
         //Pyshics vars 
         this.GravityForce = 0
         this.rotateActive = true
-        this.force = 0 
-        this.speed = 0 
-        this.rotateCalc =0
+        this.force = 0
+        this.speed = 0
+        this.rotateCalc = 0
         this.windForce = 0
         //Bound puyshics
         this._AxisBound = ''
@@ -39,33 +59,101 @@ class Oct8 {
     }
     /*  Add Transitions */
     /* Containers Created */
+
+    //CREATE CONTAINERS  
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
-        this.lot =0
+        this.lot = 0
     }
 
     CreateContainerElement(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+        if (elementInsertId == 'body') {
+            //Oct8NewElementContainer(Id, document.getElementsByTagName('body'), 'elb  elb-on')
+            Oct8NewElementBody(Id, 'elb  elb-on')
+        }
+        else {
+            Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+
+        }
     }
 
     CreateContainerSquareElement(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
     }
+    //END CREATE CONTAINERS
+
 
     /* Modify Props */
-    ModifySize(getElement, axis, value, OldValue) {
-        Oct8ChangeSizes(getElement, axis, value, OldValue)
-    }
-    AddPositionToElement(Element, axis, pos) {
-        if (axis == 'X') {
-            oct8AddX(Element, pos)
+    /*  ModifySize(getElement, axis, value, OldValue) {
+          Oct8ChangeSizes(getElement, axis, value, OldValue)
+      }
+      AddPositionToElement(Element, axis, pos) {
+          if (axis == 'X') {
+              oct8AddX(Element, pos)
+          }
+          else {
+              oct8AddY(Element, pos)
+          }
+      }
+      */
+
+    //UPDATES EVENTS AND PROPS
+    // FELIPE CATAO |  DATE UP: 25/07/2022 | 
+
+    ModifyProps(element, value, prop) {
+
+        if (prop.constructor === Array) {
+
+            element.style[prop[0]] = prop[1] + "(" + value + "deg)"
+            this.Properties[prop[1]] = value
         }
         else {
-            oct8AddY(Element, pos)
+            element.style[prop] = value + "vh"
+            this.Properties[prop] = value
         }
     }
 
-    /* Modify Dynamic position */
+    CreateEvent(functionCallback, time) {
+        if (this.On == true) {
+            this.event = setInterval(functionCallback, time)
+        }
+        else {
+            this.StopEvent()
+        }
+    }
+
+    StopEvent() {
+        clearInterval(this.event)
+    }
+
+    /*
+    MoveElement(element,pos,axis){
+        if(this._element !=null)
+        {
+            this._moveElementAnimate(this._element,axis,pos)
+        }
+        else{
+            this._moveElementAnimate(element,axis,pos)
+        }
+    }
+
+    _moveElementAnimate(element,axis,pos){
+        let _axis = axis
+        if(_axis.includes('X') || _axis.includes('x'))
+        {
+            element.style.marginLeft=pos+"vh"
+        }
+
+        if(_axis.includes('Y') || _axis.includes('y'))
+        {
+            element.style.marginTop =pos+"vh"
+        }
+    }
+    */
+
+    //END PROPERY ELEMENTS 
+
+    /*
     PlayMove(element, oldpos, newpos, axis) {
         Oct8CPlayMove(element, oldpos, newpos, axis)
         if (axis == 'X') {
@@ -83,21 +171,38 @@ class Oct8 {
         axis= "Skew-"+axis
         Oct8CPlayMove(element,oldpos,newpos,axis)
     }
-    CreateEvent(functionCallback, time) {
-        if (this.On == true) {
-            this.event = setInterval(functionCallback, time)
+    */
+
+
+    //Mouse events
+
+    MouseClickEvent(target, event) {
+        this.mouseEvent = event
+        if (this.mouseOn == true) {
+            target.addEventListener('click', this.mouseEvent, false)
         }
-        else {
-            this.StopEvent()
+
+    }
+
+    MouseDownEvent(target, event) {
+        this.mouseEvent = event
+        if (this.mouseOn == true) {
+            target.addEventListener('mouseup', event)
         }
     }
-    StopEvent() {
-        clearInterval(this.event)
+
+    RemoveMouseDownEvent(target) {
+        target.removeEventListener('mouseup', this.mouseEvent)
     }
-    
+    RemoveMouseClickEvent(target) {
+        target.removeEventListener('click', this.mouseEvent)
+    }
+
+    //End Mouse Events
+
     // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
-        
+
         document.addEventListener('keypress', (event) => {
             var key = event.key
             var type = typeof (Targetkey)
@@ -111,12 +216,15 @@ class Oct8 {
         }, false)
     }
 
-    
+
 
     CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
         ElementToClick.addEventListener('click', (event) => {
             functionCallBack()
         }, false)
+    }
+    ApplyNewStyle(ElementTarget, Classrule) {
+        ElementTarget.classList += " " + Classrule
     }
 
     //Colider Event
@@ -125,42 +233,34 @@ class Oct8 {
         if (this.ColaiderEvent == true) {
             this.ColisionObject = elementToColider
             this.eventColider = EventColider
-            this.calcX = calcX
+            this.calcX = parseInt(calcX)
             this.calcY = calcY
             return this.ColiderDetectReflect()
         }
     }
 
     ColiderDetectReflect() {
-        let EventX = 0
-        let EventY = 0
-        for (let index = 0; index < this.ColisionObject.classList.length; index++) {
-            if (this.ColisionObject.classList[index].includes('X-')) {
-                EventX = parseInt(this.ColisionObject.classList[index].replace("X-", ""))
-            }
-            if (this.ColisionObject.classList[index].includes('Y-')) {
-                EventY = parseInt(this.ColisionObject.classList[index].replace("Y-", ""))
 
-            }
+        let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
+        let EventY = parseInt(this.ColisionObject.Properties.marginTop)
+
+        if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
+            console.log(":D")
+            this.eventColider()
         }
-
-        if (this.X == EventX - this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+        if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
 
-        if (this.X == EventX + this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+        if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
             this.eventColider()
         }
 
-        if (this.Y == EventY + this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
-            this.eventColider()
-        }
-
-        if (this.Y == EventY - this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
+        if (this.Properties.marginTop == EventY - this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
             this.eventColider()
         }
     }
-    
+
     RayCastDetect(XComparateLeft, YcomparateTop, XComparateRigth, YcomparateDown) {
 
         var elArrays = []
@@ -182,7 +282,7 @@ class Oct8 {
                 }
             }
         }
-        
+
         if (XComparateRigth > 1) {
             console.log("esta rodando aqui 4/8" + XcalcLeft + " || " + (this.X + XComparateRigth))
             for (let indexValue = 0; indexValue < XComparateRigth; indexValue++) {
@@ -210,7 +310,7 @@ class Oct8 {
                     }
                 }
             }
-        }  
+        }
 
         if (YcomparateTop > 1) {
             console.log("esta rodando aqui 4/8" + YcalcTop + " || " + (this.X + YcomparateTop))
@@ -223,31 +323,28 @@ class Oct8 {
                         StrTest = el[index].id
                         elArrays.push(StrTest)
                     }
-                } jjkks 
+                } jjkks
             }
         }
 
         return elArrays
     }
     //pyshics Events 
-    ApplyGravity(element){
-        if(this.coliderCheck == false){
-            this.PlayMove(element,this.Y,this.Y+this.force,'Y')
+    ApplyGravity(element) {
+        if (this.coliderCheck == false) {
+            this.PlayMove(element, this.Y, this.Y + this.force, 'Y')
         }
     }
-    CreateRotatePishics(element){
-        if(this.rotateCalc>=10)
-        {
-            this.rotateCalc = 0 
+    CreateRotatePishics(element) {
+        if (this.rotateCalc >= 10) {
+            this.rotateCalc = 0
             element.classList.remove('rotate-10')
         }
-        else
-        {
-            if(this.rotateActive == true)
-            {
-            console.log((this.rotateCalc)+" / "+(this.rotateCalc+this.force))
-            this.PlayRotate(element,this.rotateCalc,this.rotateCalc+this.force,'X')
-            this.rotateCalc+=1
+        else {
+            if (this.rotateActive == true) {
+                console.log((this.rotateCalc) + " / " + (this.rotateCalc + this.force))
+                this.PlayRotate(element, this.rotateCalc, this.rotateCalc + this.force, 'X')
+                this.rotateCalc += 1
             }
         }
     }

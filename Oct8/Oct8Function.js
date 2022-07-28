@@ -150,6 +150,15 @@ function Oct8NewElementContainer(id, AppendElementId, typeContainerProp) {
     positionElement.appendChild(newElement)
 }
 
+function Oct8NewElementBody(id,typeContainerProp) {
+    let newElement = document.createElement("div")
+    if (id != "") {
+        newElement.id = id
+    }
+    newElement.className = typeContainerProp
+    document.body.appendChild(newElement)
+}
+
 function Oct8ChangeColor(element, color) {
     element.classList += " bc-" + color + ""
 }

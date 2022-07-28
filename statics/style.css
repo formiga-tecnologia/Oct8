@@ -1,27 +1,58 @@
 body{
-    background-color: #ffe77d;
+    background-color: #2a2d42;
 }
-
-nav{
-    background-color: #bea536;
-    height: 10vh;
-    width:100%;
-    position:absolute;
-    left:0%;
-    top:0%;
-    margin: 0px;
-    padding: 0;
-    border: 1px yellow;
-    border-bottom: none;
+/* ======================= */
+#body-document{
+    /*height: 97vh;
+    width: 194vh;*/
+    height: 90vh;
+    width: 100%;
+    display: flex;
 }
-
-nav ul li{
-    float: left;
-    list-style: none;
+.nav-01{
+    display: flex;
+    flex-direction: row;
     padding: 2vh;
-    font-family: 'Open Sans', sans-serif;
-    color: #FFF;
 }
+.banner{
+    height: 60vh;
+    width: 80vh;
+    border: 2px solid blue;
+    margin-left: 40vh;
+}
+.navbar{
+    height: 80vh;
+    width: 20vh;
+    border-left: 2px solid blue;
+}
+
+.navbar ul li{
+    color: #FFF;
+    margin-left: -6vh;
+    border-bottom:  2px solid blue;
+    padding: 2vh;
+    margin-top: 2vh;
+    list-style: none;
+    font-family:Arial, Helvetica, sans-serif
+}
+.navbar li:hover{
+    background-color: #FFF;
+    color: #2a2d42;
+    transition: 1s;
+}
+.bg-blue-1{
+    background-color: #6275ff;
+}
+.topFlag{
+    height: 10vh;
+    width: 100%;
+    color: #FFF;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 4vh;
+}
+/* ======================= */
+
 
 #banner_section{
     position: absolute;
@@ -34,4 +65,13 @@ nav ul li{
     background-color: #915700;
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
+}
+
+.AddEvent{
+    border: 3px solid #6275ff;
+    opacity: 0.2;
+}
+.EventPlay{
+    background-color: #6275ff;
+    border-color: red;
 }
