@@ -15,8 +15,8 @@ class Oct8 {
             H:"height"
         }
         this.Properties = {
-            marginLeft:0,
-            marginTop:0,
+            marginLeft:posX,
+            marginTop:posY,
             width:0,
             height:0,
             rotate:0,
@@ -28,8 +28,6 @@ class Oct8 {
         this.mouseEvent = null;
         this.mouseOn = true;
         //env values
-        this.X = posX;
-        this.Y = posY;
         this.id = id
         this._element = element
         this.On = true
@@ -101,7 +99,7 @@ class Oct8 {
     }
     */
 
-    //MODIFY  PROPERTY ELEMENTS
+    //UPDATES EVENTS AND PROPS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
 
     ModifyProps(element,value,prop){
@@ -125,6 +123,21 @@ class Oct8 {
             
         }
     }
+
+    CreateEvent(functionCallback, time) {
+        if (this.On == true) {
+            this.event = setInterval(functionCallback, time)
+        }
+        else {
+            this.StopEvent()
+        }
+    }
+
+    StopEvent() {
+        clearInterval(this.event)
+    }
+
+    /*
     MoveElement(element,pos,axis){
         if(this._element !=null)
         {
@@ -147,10 +160,11 @@ class Oct8 {
             element.style.marginTop =pos+"vh"
         }
     }
+    */
 
     //END PROPERY ELEMENTS 
 
-    /* Modify Dynamic position */
+    /*
     PlayMove(element, oldpos, newpos, axis) {
         Oct8CPlayMove(element, oldpos, newpos, axis)
         if (axis == 'X') {
@@ -168,17 +182,8 @@ class Oct8 {
         axis= "Skew-"+axis
         Oct8CPlayMove(element,oldpos,newpos,axis)
     }
-    CreateEvent(functionCallback, time) {
-        if (this.On == true) {
-            this.event = setInterval(functionCallback, time)
-        }
-        else {
-            this.StopEvent()
-        }
-    }
-    StopEvent() {
-        clearInterval(this.event)
-    }
+    */
+    
 
     //Mouse events
 
@@ -248,31 +253,31 @@ class Oct8 {
     }
 
     ColiderDetectReflect() {
-        let EventX = 0
-        let EventY = 0
-        for (let index = 0; index < this.ColisionObject.classList.length; index++) {
+        let EventX = parseInt(this.ColisionObject.PropsElement.MoveX)
+        let EventY = parseInt(this.ColisionObject.PropsElement.MoveY)
+        /*for (let index = 0; index < this.ColisionObject.classList.length; index++) {
             if (this.ColisionObject.classList[index].includes('X-')) {
-                EventX = parseInt(this.ColisionObject.classList[index].replace("X-", ""))
+                EventX = parseInt(this.ColisionObject.PropsElement.MoveX)
             }
             if (this.ColisionObject.classList[index].includes('Y-')) {
-                EventY = parseInt(this.ColisionObject.classList[index].replace("Y-", ""))
+                EventY = parseInt(this.ColisionObject.PropsElement.MoveY)
 
             }
-        }
+        }*/
 
-        if (this.X == EventX - this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+        if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
 
-        if (this.X == EventX + this.calcX && this.Y > EventY - this.calcY && this.Y < EventY + this.calcY) {
+        if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
 
-        if (this.Y == EventY + this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
+        if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
             this.eventColider()
         }
 
-        if (this.Y == EventY - this.calcY && this.X > EventX - this.calcX && this.X < EventX + this.calcX) {
+        if (this.Properties.marginTop == EventY - this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
             this.eventColider()
         }
     }
