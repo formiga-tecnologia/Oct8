@@ -244,12 +244,10 @@ class Oct8 {
         let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
         let EventY = parseInt(this.ColisionObject.Properties.marginTop)
 
-
-        console.log(this.Properties.marginLeft+" / " + (this.calcX + EventX) +" / " + EventY +" / "+this.calcY  )
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
+            console.log(":D")
             this.eventColider()
         }
-
         if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
