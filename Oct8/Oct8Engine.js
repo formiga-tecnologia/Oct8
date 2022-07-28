@@ -5,22 +5,22 @@
 
 class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
-    constructor(id, element,posX,posY) {
+    constructor(id, X, Y, W, H) {
         this.PropsElement = {
-            Rotate:"rotate",
-            Skew:["transform","skew"],
-            MoveX:"marginLeft",
-            MoveY:"marginTop",
-            W:"width",
-            H:"height"
+            Rotate: "rotate",
+            Skew: ["transform", "skew"],
+            MoveX: "marginLeft",
+            MoveY: "marginTop",
+            W: "width",
+            H: "height"
         }
         this.Properties = {
-            marginLeft:posX,
-            marginTop:posY,
-            width:0,
-            height:0,
-            rotate:0,
-            skew:0
+            marginLeft: X,
+            marginTop: Y,
+            width: W,
+            height: H,
+            rotate: 0,
+            skew: 0
         }
         //Mouse events
         this.mouseX = 0;
@@ -29,7 +29,7 @@ class Oct8 {
         this.mouseOn = true;
         //env values
         this.id = id
-        this._element = element
+        this._element = document.getElementById(id)
         this.On = true
         this.event = null
         this.keyboardEvent = null
@@ -45,9 +45,9 @@ class Oct8 {
         //Pyshics vars 
         this.GravityForce = 0
         this.rotateActive = true
-        this.force = 0 
-        this.speed = 0 
-        this.rotateCalc =0
+        this.force = 0
+        this.speed = 0
+        this.rotateCalc = 0
         this.windForce = 0
         //Bound puyshics
         this._AxisBound = ''
@@ -56,7 +56,6 @@ class Oct8 {
         this._reverseBound = false
         this._Boundtime = 0
         this._eventBounce = null
-
     }
     /*  Add Transitions */
     /* Containers Created */
@@ -64,16 +63,15 @@ class Oct8 {
     //CREATE CONTAINERS  
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
-        this.lot =0
+        this.lot = 0
     }
 
     CreateContainerElement(elementInsertId, Id) {
-        if(elementInsertId == 'body')
-        {
+        if (elementInsertId == 'body') {
             //Oct8NewElementContainer(Id, document.getElementsByTagName('body'), 'elb  elb-on')
-            Oct8NewElementBody(Id,'elb  elb-on')
+            Oct8NewElementBody(Id, 'elb  elb-on')
         }
-        else{
+        else {
             Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
 
         }
@@ -86,41 +84,32 @@ class Oct8 {
 
 
     /* Modify Props */
-  /*  ModifySize(getElement, axis, value, OldValue) {
-        Oct8ChangeSizes(getElement, axis, value, OldValue)
-    }
-    AddPositionToElement(Element, axis, pos) {
-        if (axis == 'X') {
-            oct8AddX(Element, pos)
-        }
-        else {
-            oct8AddY(Element, pos)
-        }
-    }
-    */
+    /*  ModifySize(getElement, axis, value, OldValue) {
+          Oct8ChangeSizes(getElement, axis, value, OldValue)
+      }
+      AddPositionToElement(Element, axis, pos) {
+          if (axis == 'X') {
+              oct8AddX(Element, pos)
+          }
+          else {
+              oct8AddY(Element, pos)
+          }
+      }
+      */
 
     //UPDATES EVENTS AND PROPS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
 
-    ModifyProps(element,value,prop){
-        let DynamicModify = prop
-        if(this._element!=null)
-        {
-            this._element.style[DynamicModify]=value+"vh"
+    ModifyProps(element, value, prop) {
+
+        if (prop.constructor === Array) {
+
+            element.style[prop[0]] = prop[1] + "(" + value + "deg)"
+            this.Properties[prop[1]] = value
         }
-        else
-        {
-            if(prop.constructor === Array){
-                
-                element.style[prop[0]]=prop[1]+"("+value+"deg)"
-                this.Properties[prop[1]] = value
-            }
-            else{
-            
-                element.style[prop]=value+"vh"
-                this.Properties[prop] = value 
-            }
-            
+        else {
+            element.style[prop] = value + "vh"
+            this.Properties[prop] = value
         }
     }
 
@@ -183,39 +172,37 @@ class Oct8 {
         Oct8CPlayMove(element,oldpos,newpos,axis)
     }
     */
-    
+
 
     //Mouse events
 
-    MouseClickEvent(target,event){
+    MouseClickEvent(target, event) {
         this.mouseEvent = event
-        if(this.mouseOn == true)
-        {
-            target.addEventListener('click',this.mouseEvent,false)    
+        if (this.mouseOn == true) {
+            target.addEventListener('click', this.mouseEvent, false)
         }
-        
+
     }
 
-    MouseDownEvent(target,event){
+    MouseDownEvent(target, event) {
         this.mouseEvent = event
-        if(this.mouseOn == true)
-        {
-            target.addEventListener('mouseup',event)
+        if (this.mouseOn == true) {
+            target.addEventListener('mouseup', event)
         }
     }
 
-    RemoveMouseDownEvent(target){
-        target.removeEventListener('mouseup',this.mouseEvent)
+    RemoveMouseDownEvent(target) {
+        target.removeEventListener('mouseup', this.mouseEvent)
     }
-    RemoveMouseClickEvent(target){
-        target.removeEventListener('click',this.mouseEvent)
+    RemoveMouseClickEvent(target) {
+        target.removeEventListener('click', this.mouseEvent)
     }
-    
+
     //End Mouse Events
-    
+
     // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
-        
+
         document.addEventListener('keypress', (event) => {
             var key = event.key
             var type = typeof (Targetkey)
@@ -229,15 +216,15 @@ class Oct8 {
         }, false)
     }
 
-    
+
 
     CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
         ElementToClick.addEventListener('click', (event) => {
             functionCallBack()
         }, false)
     }
-    ApplyNewStyle(ElementTarget,Classrule){
-        ElementTarget.classList+= " "+Classrule
+    ApplyNewStyle(ElementTarget, Classrule) {
+        ElementTarget.classList += " " + Classrule
     }
 
     //Colider Event
@@ -246,15 +233,16 @@ class Oct8 {
         if (this.ColaiderEvent == true) {
             this.ColisionObject = elementToColider
             this.eventColider = EventColider
-            this.calcX = calcX
+            this.calcX = parseInt(calcX)
             this.calcY = calcY
             return this.ColiderDetectReflect()
         }
     }
 
     ColiderDetectReflect() {
-        let EventX = parseInt(this.ColisionObject.PropsElement.MoveX)
-        let EventY = parseInt(this.ColisionObject.PropsElement.MoveY)
+        console.log()
+        let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
+        let EventY = parseInt(this.ColisionObject.Properties.marginTop)
         /*for (let index = 0; index < this.ColisionObject.classList.length; index++) {
             if (this.ColisionObject.classList[index].includes('X-')) {
                 EventX = parseInt(this.ColisionObject.PropsElement.MoveX)
@@ -265,6 +253,7 @@ class Oct8 {
             }
         }*/
 
+        console.log(this.Properties.marginLeft+" / " + this.calcX + EventX +" / " + EventY +" / "+this.calcY  )
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
@@ -281,7 +270,7 @@ class Oct8 {
             this.eventColider()
         }
     }
-    
+
     RayCastDetect(XComparateLeft, YcomparateTop, XComparateRigth, YcomparateDown) {
 
         var elArrays = []
@@ -303,7 +292,7 @@ class Oct8 {
                 }
             }
         }
-        
+
         if (XComparateRigth > 1) {
             console.log("esta rodando aqui 4/8" + XcalcLeft + " || " + (this.X + XComparateRigth))
             for (let indexValue = 0; indexValue < XComparateRigth; indexValue++) {
@@ -331,7 +320,7 @@ class Oct8 {
                     }
                 }
             }
-        }  
+        }
 
         if (YcomparateTop > 1) {
             console.log("esta rodando aqui 4/8" + YcalcTop + " || " + (this.X + YcomparateTop))
@@ -344,31 +333,28 @@ class Oct8 {
                         StrTest = el[index].id
                         elArrays.push(StrTest)
                     }
-                } jjkks 
+                } jjkks
             }
         }
 
         return elArrays
     }
     //pyshics Events 
-    ApplyGravity(element){
-        if(this.coliderCheck == false){
-            this.PlayMove(element,this.Y,this.Y+this.force,'Y')
+    ApplyGravity(element) {
+        if (this.coliderCheck == false) {
+            this.PlayMove(element, this.Y, this.Y + this.force, 'Y')
         }
     }
-    CreateRotatePishics(element){
-        if(this.rotateCalc>=10)
-        {
-            this.rotateCalc = 0 
+    CreateRotatePishics(element) {
+        if (this.rotateCalc >= 10) {
+            this.rotateCalc = 0
             element.classList.remove('rotate-10')
         }
-        else
-        {
-            if(this.rotateActive == true)
-            {
-            console.log((this.rotateCalc)+" / "+(this.rotateCalc+this.force))
-            this.PlayRotate(element,this.rotateCalc,this.rotateCalc+this.force,'X')
-            this.rotateCalc+=1
+        else {
+            if (this.rotateActive == true) {
+                console.log((this.rotateCalc) + " / " + (this.rotateCalc + this.force))
+                this.PlayRotate(element, this.rotateCalc, this.rotateCalc + this.force, 'X')
+                this.rotateCalc += 1
             }
         }
     }
