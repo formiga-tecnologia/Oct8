@@ -14,6 +14,13 @@ class Oct8 {
             W:"width",
             H:"height"
         }
+        this.Properties = {
+            marginLeft:0,
+            marginTop:0,
+            width:0,
+            height:0,
+            rotate:0
+        }
         //Mouse events
         this.mouseX = 0;
         this.mouseY = 0;
@@ -80,7 +87,7 @@ class Oct8 {
 
 
     /* Modify Props */
-    ModifySize(getElement, axis, value, OldValue) {
+  /*  ModifySize(getElement, axis, value, OldValue) {
         Oct8ChangeSizes(getElement, axis, value, OldValue)
     }
     AddPositionToElement(Element, axis, pos) {
@@ -91,6 +98,7 @@ class Oct8 {
             oct8AddY(Element, pos)
         }
     }
+    */
 
     //MODIFY  PROPERTY ELEMENTS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
