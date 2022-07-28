@@ -1,12 +1,12 @@
 var Engine = new Oct8();
 
-Engine.CreateContainerElement("campo_2", "teste");
-Engine.ModifySize(document.getElementById("teste"), "H", 29);
-Engine.ModifySize(document.getElementById("teste"), "X", 0);
-Engine.ModifySize(document.getElementById("teste"), "Y", 0);
+Engine.CreateContainerElement("campo_2", "test_2");
+Engine.ModifySize(document.getElementById("test_2"), "H", 29);
+Engine.ModifySize(document.getElementById("test_2"), "X", 0);
+Engine.ModifySize(document.getElementById("test_2"), "Y", 0);
 Engine.X = 0;
 Engine.Y = 0;
-Engine.CreateContainerSquareElement("teste", "bloc_2");
+Engine.CreateContainerSquareElement("test_2", "bloc_2");
 Engine.ModifySize(document.getElementById("bloc_2"), "W", 2);
 Engine.ModifySize(document.getElementById("bloc_2"), "H", 2);
 Engine.ModifySize(document.getElementById("bloc_2"), "X", 1);
