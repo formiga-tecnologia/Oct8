@@ -240,20 +240,12 @@ class Oct8 {
     }
 
     ColiderDetectReflect() {
-        console.log()
+
         let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
         let EventY = parseInt(this.ColisionObject.Properties.marginTop)
-        /*for (let index = 0; index < this.ColisionObject.classList.length; index++) {
-            if (this.ColisionObject.classList[index].includes('X-')) {
-                EventX = parseInt(this.ColisionObject.PropsElement.MoveX)
-            }
-            if (this.ColisionObject.classList[index].includes('Y-')) {
-                EventY = parseInt(this.ColisionObject.PropsElement.MoveY)
 
-            }
-        }*/
 
-        console.log(this.Properties.marginLeft+" / " + this.calcX + EventX +" / " + EventY +" / "+this.calcY  )
+        console.log(this.Properties.marginLeft+" / " + (this.calcX + EventX) +" / " + EventY +" / "+this.calcY  )
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
