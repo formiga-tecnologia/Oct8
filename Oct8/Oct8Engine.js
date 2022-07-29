@@ -262,19 +262,21 @@ class Oct8 {
         let EventY = parseInt(this.ColisionObject.Properties.marginTop)
 
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
-            console.log(":D")
             this.eventColider()
         }
         if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
 
-        if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
-            this.eventColider()
-        }
+      //  if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
+      //      this.eventColider()
+     //   }
 
-        if (this.Properties.marginTop == EventY - this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
-            this.eventColider()
+        let number = this.calcX-EventX*2
+        let formula = this.calcX-EventX
+        if (this.Properties.marginTop == EventY - this.calcY && formula-number<this.Properties.marginLeft+this.Properties.height  && this.Properties.marginLeft-this.Properties.height < EventX + this.calcX) {
+                console.log(":D")
+                this.eventColider()          
         }
     }
 
