@@ -10,6 +10,7 @@ class Oct8 {
             Rotate: "rotate",
             Skew: ["transform", "skew"],
             Rotate: ["transform", "rotate"],
+            BackgroundImage:"backgroundImage",
             MoveX: "marginLeft",
             MoveY: "marginTop",
             W: "width",
@@ -21,7 +22,8 @@ class Oct8 {
             width: W,
             height: H,
             rotate: 0,
-            skew: 0
+            skew: 0,
+            backgroundImage:null
         }
         //Mouse events
         this.mouseX = 0;
@@ -78,8 +80,16 @@ class Oct8 {
         }
     }
 
-    CreateContainerSquareElement(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
+    CreateContainerSquareElement(elementInsertId, Id,debug) {
+        if(debug == false)
+        {
+            Oct8NewElementContainer(Id, elementInsertId, 'sse')
+        }
+        else
+        {
+            Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')    
+        }
+        
     }
     //END CREATE CONTAINERS
 
@@ -109,8 +119,14 @@ class Oct8 {
             this.Properties[prop[1]] = value
         }
         else {
-            element.style[prop] = value + "vh"
+            if(prop == "backgroundImage"){
+                element.style[prop] = value
+                this.Properties[prop] = value
+            }
+            else{
+                element.style[prop] = value + "vh"
             this.Properties[prop] = value
+            }
         }
     }
 
