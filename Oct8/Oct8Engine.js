@@ -9,6 +9,7 @@ class Oct8 {
         this.PropsElement = {
             Rotate: "rotate",
             Skew: ["transform", "skew"],
+            Rotate: ["transform", "rotate"],
             MoveX: "marginLeft",
             MoveY: "marginTop",
             W: "width",
