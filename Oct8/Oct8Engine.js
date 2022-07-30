@@ -278,7 +278,6 @@ class Oct8 {
 
         
         if (this.Properties.marginTop == EventY - this.calcY && formula-number<this.Properties.marginLeft+this.Properties.height  && this.Properties.marginLeft-this.Properties.height < EventX + this.calcX) {
-                console.log(":D")
                 this.eventColider()          
         }
     }
