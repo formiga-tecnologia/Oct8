@@ -59,6 +59,11 @@ class Oct8 {
         this._reverseBound = false
         this._Boundtime = 0
         this._eventBounce = null
+        //Animates controllers
+        this.animate = true,
+        this.AnimateEvent=[],
+        this.PropAnimate = null
+
     }
     /*  Add Transitions */
     /* Containers Created */
@@ -141,6 +146,19 @@ class Oct8 {
 
     StopEvent() {
         clearInterval(this.event)
+    }
+
+    CreateAnimation(id,propToAmimate,value,maxValue,time,reverse,operation){
+        if(this.animate == true) {
+            if (propToAmimate.length >=2) {
+                let AnimateClass = new AnimateOct8(propToAmimate,value,operation,maxValue,reverse,time,this) 
+                this.AnimateEvent.push(id)
+                this.PropAnimate = propToAmimate
+                this.AnimateEvent.push(AnimateClass)
+            }
+
+                
+        }
     }
 
     /*
@@ -370,4 +388,37 @@ class Oct8 {
         }
     }
 
+}
+
+// CLASS ANIMATE PROPRIES 
+// FELIPE CATAO |  DATE UP: 30/07/2022 |
+
+class AnimateOct8{
+    constructor(propAnimate,value,operation,maxValue,Reverse,time,classCl) {
+        this._propAnimate = propAnimate,
+        this._maxValue = maxValue,
+        this._reverse = Reverse,
+        this._classCl = classCl,
+        this._time=time
+        this.value=value
+        this.event = null,
+        this._operation=operation
+        this.OctCopy = new Oct8()
+        this.functionAnimate()
+    }
+    functionAnimate(){
+        let OctCopy = new Oct8()
+        OctCopy = this._classCl
+        this.event = setInterval(this._animate,this._time)
+        if(this._operation == "+")
+        {
+            this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._propAnimate,this._propAnimate)
+        }
+        else
+        {
+            this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._classCl.Properties[this._propAnimate]-this.value,this._classCl.PropsElement[this._propAnimate])
+        }
+        console.log("aaaaah")
+        
+    }
 }
