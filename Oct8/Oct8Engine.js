@@ -61,7 +61,9 @@ class Oct8 {
         this._eventBounce = null
         //Animates controllers
         this.animate = true,
+        this.animation_time = 0,
         this.AnimateEvent=[],
+        this.EventAnimateExecute =null,
         this.PropAnimate = null
 
     }
@@ -151,14 +153,21 @@ class Oct8 {
     CreateAnimation(id,propToAmimate,value,maxValue,time,reverse,operation){
         if(this.animate == true) {
             if (propToAmimate.length >=2) {
-                let AnimateClass = new AnimateOct8(propToAmimate,value,operation,maxValue,reverse,time,this) 
+                this.animation_time = time
+                //let AnimateClass = new AnimateOct8(propToAmimate,value,operation,maxValue,reverse,time,this) 
                 this.AnimateEvent.push(id)
                 this.PropAnimate = propToAmimate
-                this.AnimateEvent.push(AnimateClass)
-            }
-
-                
+               // this.AnimateEvent.push(AnimateClass)
+                console.log(this.AnimateEvent)
+            }           
         }
+    }
+    CreateEventAnimate()
+    {
+        this.EventAnimateExecute = setInterval(this._AnimateEvent,this.animation_time)
+    }
+    _AnimateEvent(){
+     console.log(this.animation_time)
     }
 
     /*
@@ -404,21 +413,59 @@ class AnimateOct8{
         this.event = null,
         this._operation=operation
         this.OctCopy = new Oct8()
+
+        this.PropsElement = {
+            Rotate: "rotate",
+            Skew: ["transform", "skew"],
+            Rotate: ["transform", "rotate"],
+            BackgroundImage:"backgroundImage",
+            MoveX: "marginLeft",
+            MoveY: "marginTop",
+            W: "width",
+            H: "height"
+        }
+        this.Properties = {
+            marginLeft: 0,
+            marginTop: 0,
+            width: 0,
+            height: 0,
+            rotate: 0,
+            skew: 0,
+            backgroundImage:null
+        }
         this.functionAnimate()
     }
     functionAnimate(){
-        let OctCopy = new Oct8()
-        OctCopy = this._classCl
+        this.Properties = this._classCl
         this.event = setInterval(this._animate,this._time)
+        this.OctCopy = this._classCl 
         if(this._operation == "+")
         {
-            this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._propAnimate,this._propAnimate)
+            //this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._propAnimate,this.OctCopy.PropsElement[this._propAnimate])
+            this.ModifyProps(document.getElementById(this._classCl.id),this.value,this._propAnimate)
+            return this.value+this._classCl.Properties.rotate
         }
         else
         {
             this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._classCl.Properties[this._propAnimate]-this.value,this._classCl.PropsElement[this._propAnimate])
+        }        
+    }
+    ModifyProps(element, value, prop) { 
+
+        if (prop.constructor === Array) {
+
+            element.style[prop[0]] = prop[1] + "(" + value + "deg)"
+            this.Properties[prop[1]] = value
         }
-        console.log("aaaaah")
-        
+        else {
+            if(prop == "backgroundImage"){
+                element.style[prop] = value
+                this.Properties[prop] = value
+            }
+            else{
+                element.style[prop] = value + "vh"
+            this.Properties[prop] = value
+            }
+        }
     }
 }
