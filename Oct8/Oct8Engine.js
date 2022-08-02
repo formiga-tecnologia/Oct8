@@ -1,4 +1,5 @@
 /* OCT8 ENGINE FOR ANIMATIONS */
+
 /* CREATED BY: FORMIGA TECNOLOGY 
    DESIGNER PRODUCT: FELIPE CATÃO 
    CREATION DATE: 11/06/2021 */
@@ -10,7 +11,7 @@ class Oct8 {
             Rotate: "rotate",
             Skew: ["transform", "skew"],
             Rotate: ["transform", "rotate"],
-            BackgroundImage:"backgroundImage",
+            BackgroundImage: "backgroundImage",
             MoveX: "marginLeft",
             MoveY: "marginTop",
             W: "width",
@@ -23,7 +24,7 @@ class Oct8 {
             height: H,
             rotate: 0,
             skew: 0,
-            backgroundImage:null
+            backgroundImage: null
         }
         //Mouse events
         this.mouseX = 0;
@@ -61,59 +62,40 @@ class Oct8 {
         this._eventBounce = null
         //Animates controllers
         this.animate = true,
-        this.animation_time = 0,
-        this.AnimateEvent=[],
-        this.EventAnimateExecute =null,
-        this.PropAnimate = null
+            this.animation_time = 0,
+            this.AnimateEvent = [],
+            this.EventAnimateExecute = null,
+            this.PropAnimate = null
 
     }
     /*  Add Transitions */
     /* Containers Created */
 
     //CREATE CONTAINERS  
+    // FELIPE CATAO |  DATE UP: 11/06/2022 | 
     CreateContainerBody(elementInsertId, Id) {
         Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
-        this.lot = 0
     }
 
     CreateContainerElement(elementInsertId, Id) {
         if (elementInsertId == 'body') {
-            //Oct8NewElementContainer(Id, document.getElementsByTagName('body'), 'elb  elb-on')
             Oct8NewElementBody(Id, 'elb  elb-on')
         }
         else {
             Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
-
         }
     }
 
-    CreateContainerSquareElement(elementInsertId, Id,debug) {
-        if(debug == false)
-        {
+    CreateContainerSquareElement(elementInsertId, Id, debug) {
+        if (debug == false) {
             Oct8NewElementContainer(Id, elementInsertId, 'sse')
         }
-        else
-        {
-            Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')    
+        else {
+            Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
         }
-        
+
     }
     //END CREATE CONTAINERS
-
-
-    /* Modify Props */
-    /*  ModifySize(getElement, axis, value, OldValue) {
-          Oct8ChangeSizes(getElement, axis, value, OldValue)
-      }
-      AddPositionToElement(Element, axis, pos) {
-          if (axis == 'X') {
-              oct8AddX(Element, pos)
-          }
-          else {
-              oct8AddY(Element, pos)
-          }
-      }
-      */
 
     //UPDATES EVENTS AND PROPS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
@@ -126,13 +108,13 @@ class Oct8 {
             this.Properties[prop[1]] = value
         }
         else {
-            if(prop == "backgroundImage"){
+            if (prop == "backgroundImage") {
                 element.style[prop] = value
                 this.Properties[prop] = value
             }
-            else{
+            else {
                 element.style[prop] = value + "vh"
-            this.Properties[prop] = value
+                this.Properties[prop] = value
             }
         }
     }
@@ -150,75 +132,8 @@ class Oct8 {
         clearInterval(this.event)
     }
 
-    CreateAnimation(id,propToAmimate,value,maxValue,time,reverse,operation){
-        if(this.animate == true) {
-            if (propToAmimate.length >=2) {
-                this.animation_time = time
-                //let AnimateClass = new AnimateOct8(propToAmimate,value,operation,maxValue,reverse,time,this) 
-                this.AnimateEvent.push(id)
-                this.PropAnimate = propToAmimate
-               // this.AnimateEvent.push(AnimateClass)
-                console.log(this.AnimateEvent)
-            }           
-        }
-    }
-    CreateEventAnimate()
-    {
-        this.EventAnimateExecute = setInterval(this._AnimateEvent,this.animation_time)
-    }
-    _AnimateEvent(){
-     console.log(this.animation_time)
-    }
-
-    /*
-    MoveElement(element,pos,axis){
-        if(this._element !=null)
-        {
-            this._moveElementAnimate(this._element,axis,pos)
-        }
-        else{
-            this._moveElementAnimate(element,axis,pos)
-        }
-    }
-
-    _moveElementAnimate(element,axis,pos){
-        let _axis = axis
-        if(_axis.includes('X') || _axis.includes('x'))
-        {
-            element.style.marginLeft=pos+"vh"
-        }
-
-        if(_axis.includes('Y') || _axis.includes('y'))
-        {
-            element.style.marginTop =pos+"vh"
-        }
-    }
-    */
-
-    //END PROPERY ELEMENTS 
-
-    /*
-    PlayMove(element, oldpos, newpos, axis) {
-        Oct8CPlayMove(element, oldpos, newpos, axis)
-        if (axis == 'X') {
-            this.X = newpos 
-        }
-        if (axis == 'Y') {
-            this.Y = newpos
-        }
-    }
-    PlayRotate(element, oldpos, newpos, axis){
-        axis = "rotate"
-        Oct8CPlayMove(element,oldpos,newpos,axis)
-    }
-    PlaySkew(element, oldpos, newpos, axis){
-        axis= "Skew-"+axis
-        Oct8CPlayMove(element,oldpos,newpos,axis)
-    }
-    */
-
-
-    //Mouse events
+    //MOUSE EVENTS MOUSE AND KEYBOARDS
+    // FELIPE CATAO |  DATE UP: 20/06/2022 | 
 
     MouseClickEvent(target, event) {
         this.mouseEvent = event
@@ -242,9 +157,6 @@ class Oct8 {
         target.removeEventListener('click', this.mouseEvent)
     }
 
-    //End Mouse Events
-
-    // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
 
         document.addEventListener('keypress', (event) => {
@@ -260,8 +172,6 @@ class Oct8 {
         }, false)
     }
 
-
-
     CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
         ElementToClick.addEventListener('click', (event) => {
             functionCallBack()
@@ -271,7 +181,11 @@ class Oct8 {
         ElementTarget.classList += " " + Classrule
     }
 
-    //Colider Event
+    //END EVENTS
+
+
+    //COLIDERS EVENTS 
+    // FELIPE CATAO |  DATE UP: 14/06/2022 | 
     AddColider(elementToColider, EventColider, calcX, calcY, time) {
         //created cacl X and Y to both elements  if detect execute Event
         if (this.ColaiderEvent == true) {
@@ -288,8 +202,8 @@ class Oct8 {
         let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
         let EventY = parseInt(this.ColisionObject.Properties.marginTop)
 
-        let number = this.calcX-EventX*2
-        let formula = this.calcX-EventX
+        let number = this.calcX - EventX * 2
+        let formula = this.calcX - EventX
 
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
@@ -297,15 +211,12 @@ class Oct8 {
         if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
-
         //Refactor this!
-      //  if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
-      //      this.eventColider()
-     //   }
-
-        
-        if (this.Properties.marginTop == EventY - this.calcY && formula-number<this.Properties.marginLeft+this.Properties.height  && this.Properties.marginLeft-this.Properties.height < EventX + this.calcX) {
-                this.eventColider()          
+        //  if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
+        //      this.eventColider()
+        //   }    
+        if (this.Properties.marginTop == EventY - this.calcY && formula - number < this.Properties.marginLeft + this.Properties.height && this.Properties.marginLeft - this.Properties.height < EventX + this.calcX) {
+            this.eventColider()
         }
     }
 
@@ -377,95 +288,11 @@ class Oct8 {
 
         return elArrays
     }
-    //pyshics Events 
-    ApplyGravity(element) {
-        if (this.coliderCheck == false) {
-            this.PlayMove(element, this.Y, this.Y + this.force, 'Y')
-        }
-    }
-    CreateRotatePishics(element) {
-        if (this.rotateCalc >= 10) {
-            this.rotateCalc = 0
-            element.classList.remove('rotate-10')
-        }
-        else {
-            if (this.rotateActive == true) {
-                console.log((this.rotateCalc) + " / " + (this.rotateCalc + this.force))
-                this.PlayRotate(element, this.rotateCalc, this.rotateCalc + this.force, 'X')
-                this.rotateCalc += 1
-            }
-        }
-    }
+    //END COLIDERS 
+
+    //PYSHICS EVENTS 
+    // FELIPE CATAO |  DATE UP: 15/06/2022 |  
+        
 
 }
 
-// CLASS ANIMATE PROPRIES 
-// FELIPE CATAO |  DATE UP: 30/07/2022 |
-
-class AnimateOct8{
-    constructor(propAnimate,value,operation,maxValue,Reverse,time,classCl) {
-        this._propAnimate = propAnimate,
-        this._maxValue = maxValue,
-        this._reverse = Reverse,
-        this._classCl = classCl,
-        this._time=time
-        this.value=value
-        this.event = null,
-        this._operation=operation
-        this.OctCopy = new Oct8()
-
-        this.PropsElement = {
-            Rotate: "rotate",
-            Skew: ["transform", "skew"],
-            Rotate: ["transform", "rotate"],
-            BackgroundImage:"backgroundImage",
-            MoveX: "marginLeft",
-            MoveY: "marginTop",
-            W: "width",
-            H: "height"
-        }
-        this.Properties = {
-            marginLeft: 0,
-            marginTop: 0,
-            width: 0,
-            height: 0,
-            rotate: 0,
-            skew: 0,
-            backgroundImage:null
-        }
-        this.functionAnimate()
-    }
-    functionAnimate(){
-        this.Properties = this._classCl
-        this.event = setInterval(this._animate,this._time)
-        this.OctCopy = this._classCl 
-        if(this._operation == "+")
-        {
-            //this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._propAnimate,this.OctCopy.PropsElement[this._propAnimate])
-            this.ModifyProps(document.getElementById(this._classCl.id),this.value,this._propAnimate)
-            return this.value+this._classCl.Properties.rotate
-        }
-        else
-        {
-            this._classCl.ModifyProps(document.getElementById(this._classCl.id),this._classCl.Properties[this._propAnimate]-this.value,this._classCl.PropsElement[this._propAnimate])
-        }        
-    }
-    ModifyProps(element, value, prop) { 
-
-        if (prop.constructor === Array) {
-
-            element.style[prop[0]] = prop[1] + "(" + value + "deg)"
-            this.Properties[prop[1]] = value
-        }
-        else {
-            if(prop == "backgroundImage"){
-                element.style[prop] = value
-                this.Properties[prop] = value
-            }
-            else{
-                element.style[prop] = value + "vh"
-            this.Properties[prop] = value
-            }
-        }
-    }
-}
