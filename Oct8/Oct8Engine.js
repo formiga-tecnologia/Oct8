@@ -177,8 +177,23 @@ class Oct8 {
             functionCallBack()
         }, false)
     }
-    ApplyNewStyle(ElementTarget, Classrule) {
-        ElementTarget.classList += " " + Classrule
+
+    CreateMouseMoveEvent(ElementAreaId,ElementPosY,ElementPosX,SavePosition,moveElement){
+        ElementAreaId.addEventListener("mousemove", () => {
+            let mousex = Math.round( (event.clientX-this.Properties.height)*(100/ElementAreaId.clientWidth))
+            let mousey = Math.round((event.clientY-this.Properties.width)*(100/ElementAreaId.clientHeight));
+            if(moveElement == true )
+            {
+                this.ModifyProps(document.getElementById(this.id),mousex-ElementPosX,Engine.PropsElement.MoveX)
+                this.ModifyProps(document.getElementById(this.id),mousey-ElementPosY,Engine.PropsElement.MoveY)
+            }   
+            if(SavePosition == true)
+            {
+                this.mouseX = mousex
+                this.mouseY = mousey
+            } 
+            
+        })
     }
 
     //END EVENTS
@@ -292,7 +307,7 @@ class Oct8 {
 
     //PYSHICS EVENTS 
     // FELIPE CATAO |  DATE UP: 15/06/2022 |  
-        
+
 
 }
 
