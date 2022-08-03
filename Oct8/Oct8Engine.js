@@ -7,7 +7,7 @@ class Oct8 {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
     constructor(id, X, Y, W, H) {
         this.PropsElement = {
-            Rotate: "rotate",
+            Rotate: ["transform", "rotate"],
             Skew: ["transform", "skew"],
             MoveX: "marginLeft",
             MoveY: "marginTop",
@@ -20,7 +20,8 @@ class Oct8 {
             width: W,
             height: H,
             rotate: 0,
-            skew: 0
+            skew: 0,
+            rotate: 0
         }
         //Mouse events
         this.mouseX = 0;
