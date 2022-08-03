@@ -174,25 +174,44 @@ class Oct8 {
 
     CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
         ElementToClick.addEventListener('click', (event) => {
-            functionCallBack()
+            if (this.mouseOn == true) {
+                functionCallBack()
+            }
         }, false)
     }
 
-    CreateMouseMoveEvent(ElementAreaId,ElementPosY,ElementPosX,SavePosition,moveElement){
+    CreateAddMouseClickUpEvent(functionCallBack, TargetElement) {
+        TargetElement.addEventListener('click', (event) => {
+            if (this.mouseOn == true) {
+                functionCallBack()
+            }
+        }, false)
+    }
+
+    MouseControlActive(){
+        if(this.mouseOn == true){
+           return this.mouseOn = false
+        }
+        else{
+            return this.mouseOn = true
+        }
+        
+    }
+
+    CreateMouseMoveEvent(ElementAreaId, ElementPosY, ElementPosX, SavePosition, moveElement) {
         ElementAreaId.addEventListener("mousemove", () => {
-            let mousex = Math.round( (event.clientX-this.Properties.height)*(100/ElementAreaId.clientWidth))
-            let mousey = Math.round((event.clientY-this.Properties.width)*(100/ElementAreaId.clientHeight));
-            if(moveElement == true )
-            {
-                this.ModifyProps(document.getElementById(this.id),mousex-ElementPosX,Engine.PropsElement.MoveX)
-                this.ModifyProps(document.getElementById(this.id),mousey-ElementPosY,Engine.PropsElement.MoveY)
-            }   
-            if(SavePosition == true)
-            {
-                this.mouseX = mousex
-                this.mouseY = mousey
-            } 
-            
+            if (this.mouseOn == true) {
+                let mousex = Math.round((event.clientX - this.Properties.height) * (100 / ElementAreaId.clientWidth))
+                let mousey = Math.round((event.clientY - this.Properties.width) * (100 / ElementAreaId.clientHeight));
+                if (moveElement == true) {
+                    this.ModifyProps(document.getElementById(this.id), mousex - ElementPosX, Engine.PropsElement.MoveX)
+                    this.ModifyProps(document.getElementById(this.id), mousey - ElementPosY, Engine.PropsElement.MoveY)
+                }
+                if (SavePosition == true) {
+                    this.mouseX = mousex
+                    this.mouseY = mousey
+                }
+            }
         })
     }
 
