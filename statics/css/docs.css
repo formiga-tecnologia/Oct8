@@ -2,28 +2,28 @@
     font-family: 'Open Sans', sans-serif;
 }
 body{
-    background-color: #814909;
-}
-nav{
-    top: 0; 
-    
-    background-color: #ffa33a;
-    color: #ffffff;
-    height: 20vh;
+    background-color: #ffb764;
 }
 
-nav ul li{
-    float: left;
-    list-style: none;
-    margin-left: 3vh;
+#mainPage{
+    background-color: white;   
+}
+#topPage{
+    height: 10vh;
+    width: 90vh;
+    margin-left: 60vh;
+}
+#navPage h1{
     text-align: center;
 }
 
-#welcome-Page{
-    background-color: #ffffff;
-    text-align: left;
+/* MEDIAS QUERYS */
 
-}
-h1{
-    text-align: center;
+@media (min-height:915px){
+    #topPage{
+        height: 8vh;
+        width: 40vh;
+        margin-top: 0vh;
+        margin-left: 1vh;
+    }
 }
