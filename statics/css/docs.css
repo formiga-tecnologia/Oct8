@@ -1,0 +1,29 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #814909;
+}
+nav{
+    top: 0; 
+    
+    background-color: #ffa33a;
+    color: #ffffff;
+    height: 20vh;
+}
+
+nav ul li{
+    float: left;
+    list-style: none;
+    margin-left: 3vh;
+    text-align: center;
+}
+
+#welcome-Page{
+    background-color: #ffffff;
+    text-align: left;
+
+}
+h1{
+    text-align: center;
+}
