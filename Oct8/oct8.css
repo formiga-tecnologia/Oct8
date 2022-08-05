@@ -25,7 +25,7 @@
    its possible create other element with news
    propries without retrictions
   */
-  .sse{transition: all 0.1s;position:absolute;width:1vh;height:1vh}.sse-on{background-color:transparent;border:4px #000 solid}.sse-off{background-color:transparent}.sse-pos{position:relative}
+  .sse{transition: all 1s;position:absolute;width:1vh;height:1vh}.sse-on{background-color:transparent;border:4px #000 solid}.sse-off{background-color:transparent}.sse-pos{position:relative}
 
 /*
     Properties of Environment
