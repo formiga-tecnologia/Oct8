@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/docs.css" type="text/css" rel="stylesheet">
     <link href="../Oct8/oct8.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="../image/vi_export_4gvajckbj_16548749092741241.png">
     <title>Documentation Oct8</title>
 </head>
 
@@ -24,16 +25,36 @@
 
    <div id="mainPage" class="cbe H-73">
         <div id="navPage" class="elb elb-off">
-            <div id="topPage" class="sse">
-                <h1>Welcome to Oct8 Docs</h1>
+            <img id="Img_pc_main" src="../image/Future-Ready-Solutions-1.png" class="sse H-60 W-60 X-100">
+            <div class="sse H-60 W-60 X-10 Y-1">
+                <h1>Introdution to Oct8 web Development</h1>
+                <h4>Learn how to use Oct8 in web development for both websites, 2d browser games, and interactive animations for websites.
+                 <br/>   Using Js and with CSS you can create high performance applications, with the minimum code you get amazing results
+                </h4>
             </div>
-            
+            <div class="codeBase sse H-30 W-90 X-9 Y-34 border-smooth-3">
+            </br> &nbsp var picture_01 = new Oct8("pic_1")
+            </br> &nbsp picture_01.CreateEvent(movePicture,50)
+                </br> &nbsp movePicture()
+            </br>&nbsp {
+                </br> &nbsp&nbsp&nbsp picture_01.ModifyProps(document.getElementById(picture_01.Id),
+            </br> &nbsp&nbsp&nbsp2,Engine.PropsElement.MoveX)
+                </br> &nbsp&nbsp&nbsp if(picture_01.Properties.marginLef > 20)
+                </br> &nbsp&nbsp&nbsp {
+                </br>&nbsp&nbsp&nbsp  picture_01.StopEvent()
+                    </br> &nbsp&nbsp&nbsp }
+                </br>&nbsp }
+            </div>
+            <button class="btOct8 Y-65 X-85" value="Get Starting">Quick start</button>
         </div>
    </div>
 
    <footer>
-     <article>Oct 8 is one tradmark of Formiga Tecnologia last update in 2022</article>
+<!--   <article>Oct 8 is one tradmark of Formiga Tecnologia last update in 2022</article> -->
    </footer>
+   <script src="../Oct8/Oct8Engine.js"></script>
+   <script src="../Oct8/Oct8Function.js"></script>
+   <script src="./js/documentation.js"></script>
 </body>
 
 </html>
