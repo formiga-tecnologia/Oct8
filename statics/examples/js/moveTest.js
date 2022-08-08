@@ -11,7 +11,7 @@ Blue.CreateEvent(move,20)
 function move(){
   Blue.ModifyProps(document.getElementById("block"),Blue.Properties.marginLeft+1,Blue.PropsElement.MoveX)
   
-  if(Blue.Properties.marginLeft >= 10){
+  if(Blue.Properties.marginLeft >= 49){
     Blue.StopEvent()
   }
 }
