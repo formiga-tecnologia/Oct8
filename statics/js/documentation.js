@@ -21,4 +21,4 @@ function MoveImage(){
         Reverse_move=true
     }
 }
-console.log("opas")
+
