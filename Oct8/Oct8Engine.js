@@ -36,7 +36,8 @@ class Oct8 {
         this._element = document.getElementById(id)
         this.On = true
         this.event = null
-        this.keyboardEvent = null
+        this.keyboardEvent = [],
+        this.CallKey = []
         this.ColaiderEvent = true  //if colliders event have works
         this.eventColider = null  //Event when colider for true
         this.ColiderCurrent = false //If collider have happen
@@ -73,28 +74,26 @@ class Oct8 {
 
     //CREATE CONTAINERS  
     // FELIPE CATAO |  DATE UP: 11/06/2022 | 
-    CreateContainerBody(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
+    CreateContainerElementBody(id,typeContainerProp) {
+        let newElement = document.createElement("div")
+        if (id != "") {
+            newElement.id = id
+        }
+        newElement.className = typeContainerProp
+        document.body.appendChild(newElement)
     }
 
-    CreateContainerElement(elementInsertId, Id) {
-        if (elementInsertId == 'body') {
-            Oct8NewElementBody(Id, 'elb  elb-on')
+    CreateContainerElement(id, AppendElementId, typeContainerProp) {
+        let newElement = document.createElement("div")
+        if (id != "") {
+            newElement.id = id
         }
-        else {
-            Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
-        }
+        
+        newElement.className = typeContainerProp
+        let positionElement = document.getElementById(AppendElementId)
+        positionElement.appendChild(newElement)
     }
 
-    CreateContainerSquareElement(elementInsertId, Id, debug) {
-        if (debug == false) {
-            Oct8NewElementContainer(Id, elementInsertId, 'sse')
-        }
-        else {
-            Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
-        }
-
-    }
     //END CREATE CONTAINERS
 
     //UPDATES EVENTS AND PROPS

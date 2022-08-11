@@ -5,10 +5,12 @@
    with envirioment. 
 */
 .cbe{position:relative;display:flex;flex-direction:row;margin:auto;justify-content:space-around;align-items:flex-end;flex-flow:row wrap}.cbe-off{position:absolute}.cbe-on{border:4px #61ce61 solid}.cbe-action{border:4px #61ce61 solid}.cbe-rotate{border:4px #61ce61 solid}
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 450px) {
   .cbe{
+    display: flex;
     flex-direction:column;
-    
+    flex-flow: column;
+    background-color: red;
   }
 }
 /*
