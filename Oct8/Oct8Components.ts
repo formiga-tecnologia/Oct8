@@ -17,6 +17,7 @@ class Oct8Components {
     }
 
     CreateNewComponent(content:string,Target:HTMLDivElement,value:string){
+        this.Components =[]
         let el = document.createElement(content)
         el.innerHTML = value
         Target.appendChild(el)
@@ -26,6 +27,10 @@ class Oct8Components {
 
     RemoveComponent(Target:HTMLDivElement){
         Target.remove()
+    }
+
+    GetComponent(){
+        return this.Components[0][1]
     }
 
     AlterComponentValues(Target:HTMLDivElement,NewValue:string){

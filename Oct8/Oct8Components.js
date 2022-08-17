@@ -14,6 +14,7 @@ class Oct8Components {
         }
     }
     CreateNewComponent(content, Target, value) {
+        this.Components = [];
         let el = document.createElement(content);
         el.innerHTML = value;
         Target.appendChild(el);
@@ -22,6 +23,9 @@ class Oct8Components {
     }
     RemoveComponent(Target) {
         Target.remove();
+    }
+    GetComponent() {
+        return this.Components[0][1];
     }
     AlterComponentValues(Target, NewValue) {
         this.Components.forEach(element => {
