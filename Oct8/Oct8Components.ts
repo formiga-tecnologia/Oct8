@@ -8,7 +8,8 @@ class Oct8Components {
     constructor(
         public content:string,
         public Target:HTMLDivElement,
-        public Value:string
+        public Value:string,
+        private Components: Array<(string |  HTMLDivElement)[]> = []
     ){
         if(Target != null){
             this.CreateNewComponent(this.content,this.Target,this.Value)
@@ -19,6 +20,22 @@ class Oct8Components {
         let el = document.createElement(content)
         el.innerHTML = value
         Target.appendChild(el)
+        let ObjectElement = [content,Target,value]
+        this.Components.push(ObjectElement)
+    }
+
+    RemoveComponent(Target:HTMLDivElement){
+        Target.remove()
+    }
+
+    AlterComponentValues(Target:HTMLDivElement,NewValue:string){
+        this.Components.forEach(element => {
+            let _element = element[1]
+            if(_element === Target){
+                element[2] = NewValue
+                Target.innerHTML = NewValue
+            }
+        });
     }
 }
 
