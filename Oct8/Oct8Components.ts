@@ -9,7 +9,7 @@ class Oct8Components {
         public content:string,
         public Target:HTMLDivElement,
         public Value:string,
-        private Components: Array<(string |  HTMLDivElement)[]> = []
+        public Components: Array<(string |  HTMLDivElement)[]> = []
     ){
         if(Target != null){
             this.CreateNewComponent(this.content,this.Target,this.Value)
