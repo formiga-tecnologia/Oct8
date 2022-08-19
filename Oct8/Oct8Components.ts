@@ -4,7 +4,7 @@
    DESIGNER PRODUCT: FELIPE CATÃO 
    CREATION DATE: 17/08/2022 */
 
- export class Oct8Components {
+export default class Oct8Components {
     constructor(
         public content:string,
         public Target:HTMLDivElement,

@@ -1,7 +1,6 @@
 "use strict";
 /* OCT8 ENGINE FOR COMPONENTS */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Oct8Components = void 0;
+
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
@@ -58,4 +57,5 @@ class Oct8Components {
         });
     }
 }
-exports.Oct8Components = Oct8Components;
+const _default = Oct8Components;
+export { _default as default };
