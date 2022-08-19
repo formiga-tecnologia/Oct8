@@ -1,28 +1,38 @@
 "use strict";
-
 /* OCT8 ENGINE FOR COMPONENTS */
-
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
-class Oct8Components  {
-    constructor(content, Target, Value, PropsValues = [], Components = []) {
+class Oct8Components {
+    constructor(content, Target, Value, PropsValues = [], Components = [], CompName) {
         this.content = content;
         this.Target = Target;
         this.Value = Value;
         this.PropsValues = PropsValues;
         this.Components = Components;
+        this.CompName = CompName;
         if (Target != null) {
-            this.CreateNewComponent(this.content, this.Target, this.Value);
+            this.CreateNewComponent(this.CompName, this.content, this.Target, this.Value);
         }
     }
-    CreateNewComponent(content, Target, value) {
-        this.Components = [];
+    CreateNewComponent(ComponentName, content, Target, value) {
         let el = document.createElement(content);
+        el.id = ComponentName;
         el.innerHTML = value;
         Target.appendChild(el);
-        let ObjectElement = [content, Target, value];
+        let ObjectElement = [ComponentName, content, Target, value];
         this.Components.push(ObjectElement);
+    }
+    GenerateComponent(ComponentName, TargetElement) {
+        this.Components.forEach(element => {
+            var _a;
+            if (element[0] == ComponentName) {
+                console.log(element)
+                let el = document.createElement(element[1].toString());
+                el.innerHTML = element[3].toString();
+                (_a = document.getElementById(TargetElement)) === null || _a === void 0 ? void 0 : _a.appendChild(el);
+            }
+        });
     }
     RemoveComponent(Target) {
         Target.remove();
