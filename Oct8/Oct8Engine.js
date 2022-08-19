@@ -4,9 +4,12 @@
    DESIGNER PRODUCT: FELIPE CATÃO 
    CREATION DATE: 11/06/2022 */
 
-class Oct8 {
+import Oct8Components  from "./Oct8Components.js";
+class Oct8 extends Oct8Components {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
+   
     constructor(id, X, Y, W, H) {
+        super();
         this.PropsElement = {
             Rotate: "rotate",
             Skew: ["transform", "skew"],
@@ -329,3 +332,5 @@ class Oct8 {
 
 }
 
+const _default =Oct8
+export { _default as default };
