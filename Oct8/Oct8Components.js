@@ -1,13 +1,15 @@
 "use strict";
 /* OCT8 ENGINE FOR COMPONENTS */
+
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
 class Oct8Components {
-    constructor(content, Target, Value, Components = []) {
+    constructor(content, Target, Value, PropsValues = [], Components = []) {
         this.content = content;
         this.Target = Target;
         this.Value = Value;
+        this.PropsValues = PropsValues;
         this.Components = Components;
         if (Target != null) {
             this.CreateNewComponent(this.content, this.Target, this.Value);
@@ -27,6 +29,24 @@ class Oct8Components {
     GetComponent() {
         return this.Components[0][1];
     }
+    CreateNewProps(KeyValue, Value) {
+        let object = { KeyValue, Value };
+        this.PropsValues.push(object);
+    }
+    GetPropValue(KeyValue) {
+        for (let index = 0; index < this.PropsValues.length; index++) {
+            if (this.PropsValues[index].KeyValue == KeyValue) {
+                return this.PropsValues[index].Value;
+            }
+        }
+    }
+    AlterPropValue(KeyValue, NewValue) {
+        for (let index = 0; index < this.PropsValues.length; index++) {
+            if (this.PropsValues[index].KeyValue == KeyValue) {
+                this.PropsValues[index].Value = NewValue;
+            }
+        }
+    }
     AlterComponentValues(Target, NewValue) {
         this.Components.forEach(element => {
             let _element = element[1];
@@ -37,4 +57,5 @@ class Oct8Components {
         });
     }
 }
-//export =  Oct8Components
+const _default = Oct8Components;
+export { _default as default };
