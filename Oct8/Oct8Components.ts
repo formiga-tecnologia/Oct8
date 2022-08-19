@@ -10,7 +10,7 @@ export default class Oct8Components {
         public Target:HTMLDivElement,
         public Value:string,
         public PropsValues: any =[],
-        public Components: Array<(string |  HTMLDivElement)[]> = [],
+        public Components: Array<(string | Number | HTMLDivElement)[]> = [],
         public CompName:string
     ){
         if(Target != null){
@@ -23,7 +23,7 @@ export default class Oct8Components {
         el.id = ComponentName
         el.innerHTML = value
         Target.appendChild(el)
-        let ObjectElement = [ComponentName,content,Target,value]
+        let ObjectElement = [ComponentName,content,Target,value,0]
         this.Components.push(ObjectElement)
     }
 
@@ -31,7 +31,12 @@ export default class Oct8Components {
        
         this.Components.forEach(element => {
             if(element[0] == ComponentName){
+                
+                let number = parseInt(element[4].toString())
+                number+=1
+                element[4] = number
                 let el = document.createElement(element[1].toString())
+                el.id=element[0]+"["+number+"]"
                 el.innerHTML = element[3].toString()
                 document.getElementById(TargetElement)?.appendChild(el)
             }

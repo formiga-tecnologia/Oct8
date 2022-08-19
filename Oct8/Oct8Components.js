@@ -1,5 +1,6 @@
 "use strict";
 /* OCT8 ENGINE FOR COMPONENTS */
+
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
@@ -20,15 +21,18 @@ class Oct8Components {
         el.id = ComponentName;
         el.innerHTML = value;
         Target.appendChild(el);
-        let ObjectElement = [ComponentName, content, Target, value];
+        let ObjectElement = [ComponentName, content, Target, value, 0];
         this.Components.push(ObjectElement);
     }
     GenerateComponent(ComponentName, TargetElement) {
         this.Components.forEach(element => {
             var _a;
             if (element[0] == ComponentName) {
-                console.log(element)
+                let number = parseInt(element[4].toString());
+                number += 1;
+                element[4] = number;
                 let el = document.createElement(element[1].toString());
+                el.id = element[0] + "[" + number + "]";
                 el.innerHTML = element[3].toString();
                 (_a = document.getElementById(TargetElement)) === null || _a === void 0 ? void 0 : _a.appendChild(el);
             }
