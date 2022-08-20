@@ -25,6 +25,7 @@ export default class Oct8Components {
         Target.appendChild(el)
         let ObjectElement = [ComponentName,content,Target,value,0]
         this.Components.push(ObjectElement)
+        console.log("Op")
     }
 
     GenerateComponent(ComponentName:string,TargetElement:string){
