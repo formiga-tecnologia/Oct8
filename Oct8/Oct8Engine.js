@@ -5,7 +5,8 @@
    CREATION DATE: 11/06/2022 */
 
 import Oct8Components  from "./Oct8Components.js";
-class Oct8 extends Oct8Components {
+import Oct8Fuctions from './Oct8Function.js'
+class Oct8 extends( Oct8Components,Oct8Fuctions) {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
    
     constructor(id, X, Y, W, H) {

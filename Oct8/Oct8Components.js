@@ -1,10 +1,8 @@
-"use strict";
 /* OCT8 ENGINE FOR COMPONENTS */
-
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
-class Oct8Components {
+export default class Oct8Components {
     constructor(content, Target, Value, PropsValues = [], Components = [], CompName) {
         this.content = content;
         this.Target = Target;
@@ -72,5 +70,3 @@ class Oct8Components {
         });
     }
 }
-const _default = Oct8Components;
-export { _default as default };

@@ -6,6 +6,14 @@
 // Functions to Oct8 
 // Its Js no use pyshicals some manipulations in DOM
 
+export default class Oct8Functions{
+    callList(){
+
+    }
+    callXList(){
+
+    }
+}
 
 function Oct8Remove(element) {
     element.remove()
