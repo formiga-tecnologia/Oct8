@@ -37,6 +37,7 @@ export default class Oct8Components {
             }
         });
     }
+
     RemoveComponent(Target) {
         Target.remove();
     }
@@ -58,12 +59,22 @@ export default class Oct8Components {
         for (let index = 0; index < this.PropsValues.length; index++) {
             if (this.PropsValues[index].KeyValue == KeyValue) {
                 this.PropsValues[index].Value = NewValue;
+                return NewValue
             }
         }
     }
     AlterComponentValues(Target,index, NewValue) {
         this.Components.forEach(element => {
             let _element = element[0];
+            if(NewValue == "R"){
+                //Article.AlterPropValue("Name","Joao")
+                //Article.AlterPropValue("TextObjeto","</br> <p> Nome da Propriedade: "+ Article.GetPropValue("Name") +"  </p>")
+               // Article.AlterComponentValues("HelloWorld2[1']",0,Article.GetPropValue("TextObjeto"))
+                if (_element === Target) {
+                    console.log(element)
+                }
+                
+            }
             if (_element === Target) {
                 element[2] = NewValue;
                 let ele = null;
