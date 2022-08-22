@@ -5,7 +5,8 @@
    CREATION DATE: 11/06/2022 */
 
 import Oct8Components  from "./Oct8Components.js";
-class Oct8 extends Oct8Components {
+import Oct8Fuctions from './Oct8Function.js'
+class Oct8 extends( Oct8Components,Oct8Fuctions) {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
    
     constructor(id, X, Y, W, H) {
@@ -95,6 +96,30 @@ class Oct8 extends Oct8Components {
         newElement.className = typeContainerProp
         let positionElement = document.getElementById(AppendElementId)
         positionElement.appendChild(newElement)
+    }
+
+    ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,time){
+            if(screen.width <=maxScreen)
+            {
+                this.StopEvent()
+                this.CreateEvent(CallEventWhenMin,time)
+            }
+            else{
+                this.StopEvent()
+                this.CreateEvent(callEventWhenMax,time)
+            }
+
+        window.addEventListener('resize',()=>{
+            if(screen.width <=maxScreen)
+            {
+                this.StopEvent()
+                this.CreateEvent(CallEventWhenMin,time)
+            }
+            else{
+                this.StopEvent()
+                this.CreateEvent(callEventWhenMax,time)
+            }
+        }, true);
     }
 
     //END CREATE CONTAINERS

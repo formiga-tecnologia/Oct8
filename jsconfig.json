@@ -2,8 +2,9 @@
     "compilerOptions": {
       "module": "commonjs",
       "target": "es6",
+      "outDir": "Oct8",     
       "allowJs": true,
       "strictNullChecks": true
     },
-    "exclude": ["node_modules"]
+    "include": ["TS"]
   }

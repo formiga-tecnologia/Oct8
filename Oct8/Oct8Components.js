@@ -1,10 +1,8 @@
-"use strict";
 /* OCT8 ENGINE FOR COMPONENTS */
-
 /* CREATED BY: FORMIGA TECNOLOGY
    DESIGNER PRODUCT: FELIPE CATÃO
    CREATION DATE: 17/08/2022 */
-class Oct8Components {
+export default class Oct8Components {
     constructor(content, Target, Value, PropsValues = [], Components = [], CompName) {
         this.content = content;
         this.Target = Target;
@@ -23,6 +21,7 @@ class Oct8Components {
         Target.appendChild(el);
         let ObjectElement = [ComponentName, content, Target, value, 0];
         this.Components.push(ObjectElement);
+        console.log("Op");
     }
     GenerateComponent(ComponentName, TargetElement) {
         this.Components.forEach(element => {
@@ -38,6 +37,7 @@ class Oct8Components {
             }
         });
     }
+
     RemoveComponent(Target) {
         Target.remove();
     }
@@ -59,18 +59,40 @@ class Oct8Components {
         for (let index = 0; index < this.PropsValues.length; index++) {
             if (this.PropsValues[index].KeyValue == KeyValue) {
                 this.PropsValues[index].Value = NewValue;
+                return NewValue
             }
         }
     }
-    AlterComponentValues(Target, NewValue) {
+    AlterComponentValues(Target,index, NewValue) {
         this.Components.forEach(element => {
-            let _element = element[1];
+            let _element = element[0];
+            if(NewValue == "R"){
+                //Article.AlterPropValue("Name","Joao")
+                //Article.AlterPropValue("TextObjeto","</br> <p> Nome da Propriedade: "+ Article.GetPropValue("Name") +"  </p>")
+               // Article.AlterComponentValues("HelloWorld2[1']",0,Article.GetPropValue("TextObjeto"))
+                if (_element === Target) {
+                    console.log(element)
+                }
+                
+            }
             if (_element === Target) {
                 element[2] = NewValue;
-                Target.innerHTML = NewValue;
+                let ele = null;
+                if(index!=0)
+                {
+                    ele = document.getElementById(element[0].toString()+"["+index+"]");
+                    ele.innerHTML = NewValue;
+                    return 0
+                }
+                else
+                {
+                    ele = document.getElementById(element[0].toString());
+                    ele.innerHTML = NewValue;
+                    return 0 
+                }
+                
+                
             }
         });
     }
 }
-const _default = Oct8Components;
-export { _default as default };

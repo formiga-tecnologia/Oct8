@@ -25,6 +25,7 @@ export default class Oct8Components {
         Target.appendChild(el)
         let ObjectElement = [ComponentName,content,Target,value,0]
         this.Components.push(ObjectElement)
+        console.log("Op")
     }
 
     GenerateComponent(ComponentName:string,TargetElement:string){
@@ -74,10 +75,12 @@ export default class Oct8Components {
 
     AlterComponentValues(Target:HTMLDivElement,NewValue:string){
         this.Components.forEach(element => {
-            let _element = element[1]
+            let _element = element[0]
             if(_element === Target){
                 element[2] = NewValue
-                Target.innerHTML = NewValue
+                let ele = null 
+                ele = document.getElementById(element[0].toString())
+                ele!.innerHTML = NewValue;
             }
         });
     }
