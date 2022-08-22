@@ -78,3 +78,7 @@ By default definition it creates a container with a default outline, to remove t
 
 
 create pyshics forces 
+
+<h1>Componetization support</h1>
+
+<p>With Oct8 you can create component interfaces more easily and elegantly and ensure responsiveness of the components themselves elegantly</P>
