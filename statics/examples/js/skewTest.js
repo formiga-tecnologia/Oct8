@@ -6,7 +6,7 @@ Green.ModifyProps(document.getElementById("block3"),10,Green.PropsElement.W)
 Green.ModifyProps(document.getElementById("block3"),10,Green.PropsElement.H)
 Green.ModifyProps(document.getElementById("block3"),0,Green.PropsElement.Skew)
 
-Green.CreateEvent(skew, 20)
+Green.CreateEvent(skew, 10)
 
 function skew(){
   Green.ModifyProps(document.getElementById("block3"),Green.Properties.skew+1,Green.PropsElement.Skew)
