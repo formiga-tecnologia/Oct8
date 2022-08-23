@@ -1,7 +1,7 @@
 # Oct8
 <p align="center">
   <img width="200" src="./image/vi_export_4gvajckbj_16548749092741241.png" alt="Material Bread logo"><br/>
-</p>
+</p>  
 <h1> Objetive </h1>
 Functional language for dynamic  graphic desing
 Oct8 is one  library for desing and dynamic sites , with support to cartesian plan ( basic) 
@@ -37,7 +37,7 @@ in this case hierarchically the ideal would be to place the elements within the 
 	 <sse></sse>
 	 <sse></sse>
       </elb>
-   </cbe>
+   </cbe>  
   
 ```
    
@@ -78,3 +78,7 @@ By default definition it creates a container with a default outline, to remove t
 
 
 create pyshics forces 
+
+<h1>Componetization support</h1>
+
+<p>With Oct8 you can create component interfaces more easily and elegantly and ensure responsiveness of the components themselves elegantly</P>

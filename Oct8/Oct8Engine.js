@@ -1,14 +1,21 @@
 /* OCT8 ENGINE FOR ANIMATIONS */
+
 /* CREATED BY: FORMIGA TECNOLOGY 
    DESIGNER PRODUCT: FELIPE CATÃO 
-   CREATION DATE: 11/06/2021 */
+   CREATION DATE: 11/06/2022 */
 
-class Oct8 {
+import Oct8Components  from "./Oct8Components.js";
+import Oct8Fuctions from './Oct8Function.js'
+class Oct8 extends( Oct8Components,Oct8Fuctions) {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
+   
     constructor(id, X, Y, W, H) {
+        super();
         this.PropsElement = {
             Rotate: ["transform", "rotate"],
             Skew: ["transform", "skew"],
+            Rotate: ["transform", "rotate"],
+            BackgroundImage: "backgroundImage",
             MoveX: "marginLeft",
             MoveY: "marginTop",
             W: "width",
@@ -21,7 +28,8 @@ class Oct8 {
             height: H,
             rotate: 0,
             skew: 0,
-            rotate: 0
+            rotate: 0,
+            backgroundImage: null
         }
         //Mouse events
         this.mouseX = 0;
@@ -33,7 +41,8 @@ class Oct8 {
         this._element = document.getElementById(id)
         this.On = true
         this.event = null
-        this.keyboardEvent = null
+        this.keyboardEvent = [],
+        this.CallKey = []
         this.ColaiderEvent = true  //if colliders event have works
         this.eventColider = null  //Event when colider for true
         this.ColiderCurrent = false //If collider have happen
@@ -57,46 +66,64 @@ class Oct8 {
         this._reverseBound = false
         this._Boundtime = 0
         this._eventBounce = null
+        //Animates controllers
+        this.animate = true,
+            this.animation_time = 0,
+            this.AnimateEvent = [],
+            this.EventAnimateExecute = null,
+            this.PropAnimate = null
+
     }
     /*  Add Transitions */
     /* Containers Created */
 
     //CREATE CONTAINERS  
-    CreateContainerBody(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'cbe cbe-on')
-        this.lot = 0
-    }
-
-    CreateContainerElement(elementInsertId, Id) {
-        if (elementInsertId == 'body') {
-            //Oct8NewElementContainer(Id, document.getElementsByTagName('body'), 'elb  elb-on')
-            Oct8NewElementBody(Id, 'elb  elb-on')
+    // FELIPE CATAO |  DATE UP: 11/06/2022 | 
+    CreateContainerElementBody(id,typeContainerProp) {
+        let newElement = document.createElement("div")
+        if (id != "") {
+            newElement.id = id
         }
-        else {
-            Oct8NewElementContainer(Id, elementInsertId, 'elb  elb-on')
+        newElement.className = typeContainerProp
+        document.body.appendChild(newElement)
+    }
 
+    CreateContainerElement(id, AppendElementId, typeContainerProp) {
+        let newElement = document.createElement("div")
+        if (id != "") {
+            newElement.id = id
         }
+        
+        newElement.className = typeContainerProp
+        let positionElement = document.getElementById(AppendElementId)
+        positionElement.appendChild(newElement)
     }
 
-    CreateContainerSquareElement(elementInsertId, Id) {
-        Oct8NewElementContainer(Id, elementInsertId, 'sse  sse-on')
+    ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,time){
+            if(screen.width <=maxScreen)
+            {
+                this.StopEvent()
+                this.CreateEvent(CallEventWhenMin,time)
+            }
+            else{
+                this.StopEvent()
+                this.CreateEvent(callEventWhenMax,time)
+            }
+
+        window.addEventListener('resize',()=>{
+            if(screen.width <=maxScreen)
+            {
+                this.StopEvent()
+                this.CreateEvent(CallEventWhenMin,time)
+            }
+            else{
+                this.StopEvent()
+                this.CreateEvent(callEventWhenMax,time)
+            }
+        }, true);
     }
+
     //END CREATE CONTAINERS
-
-
-    /* Modify Props */
-    /*  ModifySize(getElement, axis, value, OldValue) {
-          Oct8ChangeSizes(getElement, axis, value, OldValue)
-      }
-      AddPositionToElement(Element, axis, pos) {
-          if (axis == 'X') {
-              oct8AddX(Element, pos)
-          }
-          else {
-              oct8AddY(Element, pos)
-          }
-      }
-      */
 
     //UPDATES EVENTS AND PROPS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
@@ -109,8 +136,14 @@ class Oct8 {
             this.Properties[prop[1]] = value
         }
         else {
-            element.style[prop] = value + "vh"
-            this.Properties[prop] = value
+            if (prop == "backgroundImage") {
+                element.style[prop] = value
+                this.Properties[prop] = value
+            }
+            else {
+                element.style[prop] = value + "vh"
+                this.Properties[prop] = value
+            }
         }
     }
 
@@ -127,55 +160,8 @@ class Oct8 {
         clearInterval(this.event)
     }
 
-    /*
-    MoveElement(element,pos,axis){
-        if(this._element !=null)
-        {
-            this._moveElementAnimate(this._element,axis,pos)
-        }
-        else{
-            this._moveElementAnimate(element,axis,pos)
-        }
-    }
-
-    _moveElementAnimate(element,axis,pos){
-        let _axis = axis
-        if(_axis.includes('X') || _axis.includes('x'))
-        {
-            element.style.marginLeft=pos+"vh"
-        }
-
-        if(_axis.includes('Y') || _axis.includes('y'))
-        {
-            element.style.marginTop =pos+"vh"
-        }
-    }
-    */
-
-    //END PROPERY ELEMENTS 
-
-    /*
-    PlayMove(element, oldpos, newpos, axis) {
-        Oct8CPlayMove(element, oldpos, newpos, axis)
-        if (axis == 'X') {
-            this.X = newpos 
-        }
-        if (axis == 'Y') {
-            this.Y = newpos
-        }
-    }
-    PlayRotate(element, oldpos, newpos, axis){
-        axis = "rotate"
-        Oct8CPlayMove(element,oldpos,newpos,axis)
-    }
-    PlaySkew(element, oldpos, newpos, axis){
-        axis= "Skew-"+axis
-        Oct8CPlayMove(element,oldpos,newpos,axis)
-    }
-    */
-
-
-    //Mouse events
+    //MOUSE EVENTS MOUSE AND KEYBOARDS
+    // FELIPE CATAO |  DATE UP: 20/06/2022 | 
 
     MouseClickEvent(target, event) {
         this.mouseEvent = event
@@ -199,9 +185,6 @@ class Oct8 {
         target.removeEventListener('click', this.mouseEvent)
     }
 
-    //End Mouse Events
-
-    // Target Events with Inputs
     CreateAddKeyboardEvent(functionCallBack, Targetkey) {
 
         document.addEventListener('keypress', (event) => {
@@ -217,18 +200,54 @@ class Oct8 {
         }, false)
     }
 
-
-
     CreateAddMouseClickEvent(functionCallBack, ElementToClick) {
         ElementToClick.addEventListener('click', (event) => {
-            functionCallBack()
+            if (this.mouseOn == true) {
+                functionCallBack()
+            }
         }, false)
     }
-    ApplyNewStyle(ElementTarget, Classrule) {
-        ElementTarget.classList += " " + Classrule
+
+    CreateAddMouseClickUpEvent(functionCallBack, TargetElement) {
+        TargetElement.addEventListener('click', (event) => {
+            if (this.mouseOn == true) {
+                functionCallBack()
+            }
+        }, false)
     }
 
-    //Colider Event
+    MouseControlActive(){
+        if(this.mouseOn == true){
+           return this.mouseOn = false
+        }
+        else{
+            return this.mouseOn = true
+        }
+        
+    }
+
+    CreateMouseMoveEvent(ElementAreaId, ElementPosY, ElementPosX, SavePosition, moveElement) {
+        ElementAreaId.addEventListener("mousemove", () => {
+            if (this.mouseOn == true) {
+                let mousex = Math.round((event.clientX - this.Properties.height) * (100 / ElementAreaId.clientWidth))
+                let mousey = Math.round((event.clientY - this.Properties.width) * (100 / ElementAreaId.clientHeight));
+                if (moveElement == true) {
+                    this.ModifyProps(document.getElementById(this.id), mousex - ElementPosX, Engine.PropsElement.MoveX)
+                    this.ModifyProps(document.getElementById(this.id), mousey - ElementPosY, Engine.PropsElement.MoveY)
+                }
+                if (SavePosition == true) {
+                    this.mouseX = mousex
+                    this.mouseY = mousey
+                }
+            }
+        })
+    }
+
+    //END EVENTS
+
+
+    //COLIDERS EVENTS 
+    // FELIPE CATAO |  DATE UP: 14/06/2022 | 
     AddColider(elementToColider, EventColider, calcX, calcY, time) {
         //created cacl X and Y to both elements  if detect execute Event
         if (this.ColaiderEvent == true) {
@@ -245,19 +264,20 @@ class Oct8 {
         let EventX = parseInt(this.ColisionObject.Properties.marginLeft)
         let EventY = parseInt(this.ColisionObject.Properties.marginTop)
 
+        let number = this.calcX - EventX * 2
+        let formula = this.calcX - EventX
+
         if (this.Properties.marginLeft == EventX - this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
-            console.log(":D")
             this.eventColider()
         }
         if (this.Properties.marginLeft == EventX + this.calcX && this.Properties.marginTop > EventY - this.calcY && this.Properties.marginTop < EventY + this.calcY) {
             this.eventColider()
         }
-
-        if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
-            this.eventColider()
-        }
-
-        if (this.Properties.marginTop == EventY - this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
+        //Refactor this!
+        //  if (this.Properties.marginTop == EventY + this.calcY && this.Properties.marginLeft > EventX - this.calcX && this.Properties.marginLeft < EventX + this.calcX) {
+        //      this.eventColider()
+        //   }    
+        if (this.Properties.marginTop == EventY - this.calcY && formula - number < this.Properties.marginLeft + this.Properties.height && this.Properties.marginLeft - this.Properties.height < EventX + this.calcX) {
             this.eventColider()
         }
     }
@@ -330,24 +350,13 @@ class Oct8 {
 
         return elArrays
     }
-    //pyshics Events 
-    ApplyGravity(element) {
-        if (this.coliderCheck == false) {
-            this.PlayMove(element, this.Y, this.Y + this.force, 'Y')
-        }
-    }
-    CreateRotatePishics(element) {
-        if (this.rotateCalc >= 10) {
-            this.rotateCalc = 0
-            element.classList.remove('rotate-10')
-        }
-        else {
-            if (this.rotateActive == true) {
-                console.log((this.rotateCalc) + " / " + (this.rotateCalc + this.force))
-                this.PlayRotate(element, this.rotateCalc, this.rotateCalc + this.force, 'X')
-                this.rotateCalc += 1
-            }
-        }
-    }
+    //END COLIDERS 
+
+    //PYSHICS EVENTS 
+    // FELIPE CATAO |  DATE UP: 15/06/2022 |  
+
 
 }
+
+const _default =Oct8
+export { _default as default };

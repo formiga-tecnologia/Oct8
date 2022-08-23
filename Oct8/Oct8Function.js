@@ -1,5 +1,19 @@
+
+// OCT8 FUNCTION IS OBSOLETE NOW 11/08/2022
+//FELIPE CATAO || 
+// Recomedation: Use Oct8Engine.js 
+
 // Functions to Oct8 
 // Its Js no use pyshicals some manipulations in DOM
+
+export default class Oct8Functions{
+    callList(){
+
+    }
+    callXList(){
+
+    }
+}
 
 function Oct8Remove(element) {
     element.remove()

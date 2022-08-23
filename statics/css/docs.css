@@ -1,0 +1,47 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background: rgb(255,251,245);
+}
+
+#mainPage{
+    background-color: none;   
+    color: #d8811d;
+}
+
+.navTop{
+    display: flex;
+    flex-direction: row;
+    color: #d8811d;
+}
+.navTop ul{
+    align-items: center;    
+    align-items: center;
+   /* margin-left: 40vh; */
+    text-align: center;
+}
+.navTop ul li {
+    float: left;
+    list-style: none;
+    margin-left: 2vh;
+    padding: 2vh;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.codeBase{
+    background-color: #210938;
+    color: #89DDFF;
+    font-style: italic;
+    font-size: 2vh;
+    font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.btOct8{
+    background-color: #ffba60;
+    border: none;
+    padding: 2vh;
+    border-radius: 2vh;
+    color: #FFF;
+}
