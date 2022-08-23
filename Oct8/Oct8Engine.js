@@ -12,7 +12,7 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
     constructor(id, X, Y, W, H) {
         super();
         this.PropsElement = {
-            Rotate: "rotate",
+            Rotate: ["transform", "rotate"],
             Skew: ["transform", "skew"],
             Rotate: ["transform", "rotate"],
             BackgroundImage: "backgroundImage",
@@ -28,6 +28,7 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
             height: H,
             rotate: 0,
             skew: 0,
+            rotate: 0,
             backgroundImage: null
         }
         //Mouse events
