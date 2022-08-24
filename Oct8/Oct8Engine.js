@@ -98,26 +98,43 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
         positionElement.appendChild(newElement)
     }
 
-    ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,time){
+    ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,DesktopCallEvent,time){
+
             if(screen.width <=maxScreen)
             {
                 this.StopEvent()
                 this.CreateEvent(CallEventWhenMin,time)
             }
             else{
-                this.StopEvent()
-                this.CreateEvent(callEventWhenMax,time)
+                if(screen.width >= 1000)
+                {
+                    this.StopEvent()
+                    this.CreateEvent(DesktopCallEvent,time)
+                }
+                else{
+                    this.StopEvent()
+                    this.CreateEvent(callEventWhenMax,time)
+                }
+                
             }
 
         window.addEventListener('resize',()=>{
+           
             if(screen.width <=maxScreen)
             {
                 this.StopEvent()
                 this.CreateEvent(CallEventWhenMin,time)
             }
             else{
-                this.StopEvent()
-                this.CreateEvent(callEventWhenMax,time)
+                if(screen.width >= 1000)
+                {
+                    this.StopEvent()
+                    this.CreateEvent(DesktopCallEvent,time)
+                }
+                else{
+                    this.StopEvent()
+                    this.CreateEvent(callEventWhenMax,time)
+                }
             }
         }, true);
     }
