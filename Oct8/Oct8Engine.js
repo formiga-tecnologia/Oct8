@@ -94,8 +94,10 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
         }
         
         newElement.className = typeContainerProp
+        newElement.setAttribute("style","height:"+this.Properties.height+"vh;width:"+this.Properties.width+"vh; margin-left:"+this.Properties.marginLeft+"vh;margin-top:"+this.Properties.marginTop+"vh;")
         let positionElement = document.getElementById(AppendElementId)
         positionElement.appendChild(newElement)
+
     }
 
     ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,DesktopCallEvent,time){
