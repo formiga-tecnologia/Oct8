@@ -15,7 +15,7 @@ For this to work import only two script tags into your projection, as shown in o
 If your first project on October 8, we recommend the download project example at this link: </br>
     <a href="https://github.com/formiga-tecnologia/Oct8">Example Project</a> 
 Download yours for git clone
-
+  
 
 <h1>Documentation Oct8 </h1>
 Short snippet to get started in Oct8 understand that Oct8 uses a cartesian plan system inside boxes or containers, fully responsive. The basic structure follows with 3 main types of standard containers: 

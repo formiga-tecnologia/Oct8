@@ -19,7 +19,8 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
             MoveX: "marginLeft",
             MoveY: "marginTop",
             W: "width",
-            H: "height"
+            H: "height",
+            backgroundColor:"backgroundColor"
         }
         this.Properties = {
             marginLeft: X,
@@ -29,7 +30,8 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
             rotate: 0,
             skew: 0,
             rotate: 0,
-            backgroundImage: null
+            backgroundImage: null,
+            backgroundColor:"null"
         }
         //Mouse events
         this.mouseX = 0;
@@ -96,6 +98,7 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
         
         newElement.className = typeContainerProp
         newElement.setAttribute("style","height:"+this.Properties.height+"vh;width:"+this.Properties.width+"vh; margin-left:"+this.Properties.marginLeft+"vh;margin-top:"+this.Properties.marginTop+"vh;")
+        console.log("oi")
         let positionElement = document.getElementById(AppendElementId)
         positionElement.appendChild(newElement)
 
