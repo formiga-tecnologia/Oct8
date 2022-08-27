@@ -150,12 +150,25 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
     //UPDATES EVENTS AND PROPS
     // FELIPE CATAO |  DATE UP: 25/07/2022 | 
 
+    GetElementId()
+    {
+        return document.getElementById(this.id)
+    }
+
     ModifyProps(element, value, prop) {
 
         if (prop.constructor === Array) {
 
             element.style[prop[0]] = prop[1] + "(" + value + "deg)"
-            this.Properties[prop[1]] = value
+            if(value.valueOf().length >=1)
+            {
+                this.Properties[prop[1]] = value
+            }
+            else
+            {
+                this.Properties[prop[1]] = this.Properties[prop[1]]+value
+            }
+            
         }
         else {
             if (prop == "backgroundImage") {
@@ -164,7 +177,13 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
             }
             else {
                 element.style[prop] = value + "vh"
-                this.Properties[prop] = value
+                if (value.valueOf().length >= 1) {
+                    this.Properties[prop] = value
+                }
+                else {
+                    this.Properties[prop] = this.Properties[prop]+value
+                }
+                
             }
         }
     }
