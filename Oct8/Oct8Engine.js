@@ -159,14 +159,16 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
 
         if (prop.constructor === Array) {
 
-            element.style[prop[0]] = prop[1] + "(" + value + "deg)"
+           
             if(value.valueOf().length >=1)
             {
                 this.Properties[prop[1]] = value
+                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
             }
             else
             {
                 this.Properties[prop[1]] = this.Properties[prop[1]]+value
+                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
             }
             
         }
