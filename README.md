@@ -1,6 +1,6 @@
 # Oct8
 <p align="center">
-  <img width="200" src="./image/vi_export_4gvajckbj_16548749092741241.png" alt="Material Bread logo"><br/>
+  <img width="200" src="./image/IconOct8.png" alt="Material Bread logo"><br/>
 </p>  
 <h1> Objetive  </h1>
 Functional language for dynamic  graphic desing
