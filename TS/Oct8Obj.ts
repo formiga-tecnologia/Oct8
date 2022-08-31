@@ -32,7 +32,7 @@ export default class Oct8Obj{
         public W:number =0,
         public H:number =0,
         public TypeContainer:string ="",
-        public AppendElement:string,
+        public AppendElement:string = "",
         public Render:boolean = true,
     ){
         this.Properties.marginLeft = X;
@@ -46,7 +46,7 @@ export default class Oct8Obj{
         }
     }
 
-    CreateContainerElement(id:string, AppendElementId:string,typeContainerProp:string){
+    CreateContainerElement(id:string="", AppendElementId:string="",typeContainerProp:string=""){
         let  newElement = document.createElement("div")
         if(id != ""){
             newElement.id = id

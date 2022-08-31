@@ -1,5 +1,5 @@
 export default class Oct8Obj {
-    constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement, Render = true) {
+    constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         this.Id = Id;
         this.X = X;
         this.Y = Y;
@@ -40,7 +40,7 @@ export default class Oct8Obj {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
         }
     }
-    CreateContainerElement(id, AppendElementId, typeContainerProp) {
+    CreateContainerElement(id = "", AppendElementId = "", typeContainerProp = "") {
         var _a;
         let newElement = document.createElement("div");
         if (id != "") {
