@@ -9,7 +9,7 @@ import Oct8Fuctions from './Oct8Function.js'
 class Oct8 extends( Oct8Components,Oct8Fuctions) {
     /* CREATE ENVS VARS -- FOR MECHANICAL OF GAME */
    
-    constructor(id, X, Y, W, H) {
+    constructor(id, X, Y, W, H) { 
         super();
         this.PropsElement = {
             Rotate: ["transform", "rotate"],
@@ -101,7 +101,6 @@ class Oct8 extends( Oct8Components,Oct8Fuctions) {
         console.log("oi")
         let positionElement = document.getElementById(AppendElementId)
         positionElement.appendChild(newElement)
-
     }
 
     ResponsiveScreen(maxScreen,CallEventWhenMin,callEventWhenMax,DesktopCallEvent,time){
