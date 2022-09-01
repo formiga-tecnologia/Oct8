@@ -40,6 +40,7 @@ export default class Oct8Obj{
         this.Properties.height = H;
         this.Properties.width = W;
         this.containerSet = TypeContainer
+        this.id = Id
         if(Render == true)
         {
             this.CreateContainerElement(this.Id,this.AppendElement,this.TypeContainer)
@@ -54,6 +55,20 @@ export default class Oct8Obj{
         newElement.className = typeContainerProp
         newElement.setAttribute("style","height:"+this.Properties.height+"vh;width:"+this.Properties.width+"vh; margin-left:"+this.Properties.marginLeft+"vh;margin-top:"+this.Properties.marginTop+"vh;")
         let positionElement = document.getElementById(AppendElementId)?.appendChild(newElement)
+    }
+
+    CreateContainerElementBody(id:string ="",typeContainerProp:string="sse sse-on") {
+        let newElement = document.createElement("div")
+        if (id != "") {
+            newElement.id = id
+        }
+        newElement.className = typeContainerProp
+        document.body.appendChild(newElement)
+    }
+
+    GetElementId()
+    {
+        return document.getElementById(this.id)
     }
 
 }
