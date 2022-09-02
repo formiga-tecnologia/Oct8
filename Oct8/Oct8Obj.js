@@ -32,6 +32,8 @@ export default class Oct8Obj {
         this.containerSet = "";
         this.id = "Null";
         this.AnimateEvent = 0;
+        this.event = 0;
+        this.On = true;
         this.Properties.marginLeft = X;
         this.Properties.marginTop = Y;
         this.Properties.height = H;
@@ -100,5 +102,16 @@ export default class Oct8Obj {
         this.AnimateEvent = setInterval(() => {
             this.ModifyProps(document.getElementById(this.id), Value, TypePropModify);
         }, Time);
+    }
+    CreateEvent(functionCallback = (() => { console.log("Oct8 Functions"); }), time = 100) {
+        if (this.On == true) {
+            this.event = setInterval(functionCallback, time);
+        }
+        else {
+            this.StopEvent();
+        }
+    }
+    StopEvent() {
+        clearInterval(this.event);
     }
 }

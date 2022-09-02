@@ -25,6 +25,8 @@ export default class Oct8Obj{
     containerSet ="";
     id = "Null"
     AnimateEvent = 0
+    event = 0
+    On:boolean = true
 
     constructor(
         public Id:string = "",
@@ -108,7 +110,6 @@ export default class Oct8Obj{
         }
     }
 
-
     CreateAnimationEvent(TypePropModify:string="marginLeft",Id:string="null",Time:number=100,Value:number=0){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
@@ -120,4 +121,18 @@ export default class Oct8Obj{
             this.ModifyProps(document.getElementById(this.id)!,Value,TypePropModify)
         },Time)
     }
+
+    CreateEvent(functionCallback:any=(()=>{console.log("Oct8 Functions")}), time:number=100) {
+        if (this.On == true) {
+            this.event = setInterval(functionCallback, time)!
+        }
+        else {
+            this.StopEvent()
+        }
+    }
+
+    StopEvent() {
+        clearInterval(this.event)
+    }
+
 }
