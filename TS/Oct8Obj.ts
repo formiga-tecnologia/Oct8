@@ -112,10 +112,12 @@ export default class Oct8Obj{
     CreateAnimationEvent(TypePropModify:string="marginLeft",Id:string="null",Time:number=100,Value:number=0){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
+        if(Id == null)
+        {
+            Id = this.id
+        }
         this.AnimateEvent = setInterval(()=>{
-            let GetDocument = document.getElementById(Id)
-            this.ModifyProps(GetDocument,Value,TypePropModify)
+            this.ModifyProps(document.getElementById(this.id)!,Value,TypePropModify)
         },Time)
     }
-
 }
