@@ -44,6 +44,12 @@ export default class Oct8Obj {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
         }
     }
+    /**
+     * Create one new Element for your page,insert one Id.
+     * @param {string} id of tag Html what your want add to page.
+     * @param {string} AppendElementId Content for your new element.
+     * @param {string} typeContainerProp Target object of your add the new element.
+     */
     CreateContainerElement(id = "", AppendElementId = "", typeContainerProp = "") {
         var _a;
         let newElement = document.createElement("div");
@@ -93,14 +99,11 @@ export default class Oct8Obj {
             }
         }
     }
-    CreateAnimationEvent(TypePropModify = "marginLeft", Id = "null", Time = 100, Value = 0) {
+    CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0) {
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
-        if (Id == null) {
-            Id = this.id;
-        }
         this.AnimateEvent = setInterval(() => {
-            this.ModifyProps(document.getElementById(this.id), Value, TypePropModify);
+            this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
         }, Time);
     }
     CreateEvent(functionCallback = (() => { console.log("Oct8 Functions"); }), time = 100) {

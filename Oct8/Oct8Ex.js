@@ -1,4 +1,6 @@
 //Physical rules  of OCT8 Web System
+
+//OBSOLETE PROJECT NOT FOR USE!!
 let Gravitybasic = 10;
 let BasicWind = 5;
 let Oct8Limit = 30;
