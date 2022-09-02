@@ -1,6 +1,6 @@
 
 export default class Oct8Obj{
-    PropsElement = {
+    PropsElement:any = {
         Skew: ["transform", "skew"],
         Rotate: ["transform", "rotate"],
         BackgroundImage: "backgroundImage",
@@ -11,7 +11,7 @@ export default class Oct8Obj{
         backgroundColor:"backgroundColor"
     }
 
-    Properties = {
+    Properties:any = {
         marginLeft: 0,
         marginTop: 0,
         width: 0,
@@ -24,6 +24,7 @@ export default class Oct8Obj{
     ContainerTypes = ["sse","sse-on"]
     containerSet ="";
     id = "Null"
+    AnimateEvent = 0
 
     constructor(
         public Id:string = "",
@@ -69,6 +70,52 @@ export default class Oct8Obj{
     GetElementId()
     {
         return document.getElementById(this.id)
+    }
+
+    ModifyProps(element:HTMLElement, value:any = 0, prop:string="MarginLeft") {
+
+        if (prop.constructor === Array) {
+
+           
+            if(value.valueOf().length >=1)
+            {
+                this.Properties[prop[1]] =  value
+                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
+            }
+            else
+            {
+                this.Properties[prop[1]] = this.Properties[prop[1]]+value
+                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
+            }
+            
+        }
+        else {
+            if (prop == "backgroundImage") {
+                element.style[prop] = value
+                this.Properties[prop] = value
+            }
+            else {
+                let Teste:any = prop 
+                element.style[Teste] = value + "vh"
+                if (value.valueOf().length >= 1) {
+                    this.Properties[prop] = value
+                }
+                else {
+                    this.Properties[prop] = this.Properties[prop]+value
+                }
+                
+            }
+        }
+    }
+
+
+    CreateAnimationEvent(TypePropModify:string="marginLeft",Id:string="null",Time:number=100,Value:number=0){
+        //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
+        //Modificar props
+        this.AnimateEvent = setInterval(()=>{
+            let GetDocument = document.getElementById(Id)
+            this.ModifyProps(GetDocument,Value,TypePropModify)
+        },Time)
     }
 
 }
