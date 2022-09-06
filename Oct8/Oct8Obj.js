@@ -91,8 +91,8 @@ export default class Oct8Obj {
             else {
                 let Teste = prop;
                 if (value.valueOf().length >= 1) {
-                    this.Properties[prop] = value;
-                    element.style[Teste] = value + "vh";
+                    this.Properties[prop] = value[0];
+                    element.style[Teste] = this.Properties[prop] + "vh";
                 }
                 else {
                     this.Properties[prop] = this.Properties[prop] + value;

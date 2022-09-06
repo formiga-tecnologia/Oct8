@@ -12,7 +12,6 @@ export default class Oct8 extends (Oct8Obj) {
         this.Render = Render;
         if (Render = true) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
-            console.log(OctCreate.Id);
         }
     }
 }
