@@ -1,6 +1,7 @@
+import Oct8Events from "./Oct8Events.js";
 import Oct8Obj from "./Oct8Obj.js";
 
-export default class Oct8 extends(Oct8Obj){
+export default  class Oct8 extends (Oct8Obj) implements Oct8Events{
 
     constructor(       
     public Id:string = "",
@@ -16,5 +17,8 @@ export default class Oct8 extends(Oct8Obj){
         {
             var OctCreate = new Oct8Obj(Id,X,Y,W,H,TypeContainer,AppendElement,true)
         }
+    }
+    WhereColision(coliderObj: Oct8): string {
+        throw new Error("Method not implemented.");
     }
 }
