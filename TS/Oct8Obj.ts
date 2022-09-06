@@ -27,6 +27,7 @@ export default class Oct8Obj{
     AnimateEvent = 0
     event = 0
     On:boolean = true
+    animMove =0
 
     constructor(
         public Id:string = "",
@@ -116,11 +117,19 @@ export default class Oct8Obj{
         }
     }
 
-    CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0){
+    CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+"){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
         this.AnimateEvent = setInterval(()=>{
-            this.ModifyProps(document.getElementById(this.Id)!,Value,TypePropModify)
+            if(moveDirect == "+")
+            {
+                this.ModifyProps(document.getElementById(this.Id)!,+Value,TypePropModify)
+            }
+            else
+            {
+                this.ModifyProps(document.getElementById(this.Id)!,-Value,TypePropModify)
+            }
+           
         },Time)
     }
 

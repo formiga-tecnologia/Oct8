@@ -99,11 +99,21 @@ export default class Oct8Obj {
             }
         }
     }
-    CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0) {
+    CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0, moveDirect = "+") {
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
         this.AnimateEvent = setInterval(() => {
-            this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
+            if (moveDirect == "+") {
+                Value = this.Properties[TypePropModify]+Value
+                this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
+                console.log(this.Properties[TypePropModify]+"/")
+            }
+            else {
+                Value = this.Properties[TypePropModify]+Value
+                
+                this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
+                console.log(this.Properties[TypePropModify]+" "+Value)
+            }
         }, Time);
     }
     CreateEvent(functionCallback = (() => { console.log("Oct8 Functions"); }), time = 100) {
