@@ -34,6 +34,7 @@ export default class Oct8Obj {
         this.AnimateEvent = 0;
         this.event = 0;
         this.On = true;
+        this.animMove = 0;
         this.Properties.marginLeft = X;
         this.Properties.marginTop = Y;
         this.Properties.height = H;
@@ -89,12 +90,13 @@ export default class Oct8Obj {
             }
             else {
                 let Teste = prop;
-                element.style[Teste] = value + "vh";
                 if (value.valueOf().length >= 1) {
                     this.Properties[prop] = value;
+                    element.style[Teste] = value + "vh";
                 }
                 else {
                     this.Properties[prop] = this.Properties[prop] + value;
+                    element.style[Teste] = this.Properties[prop] + "vh";
                 }
             }
         }
@@ -104,15 +106,10 @@ export default class Oct8Obj {
         //Modificar props
         this.AnimateEvent = setInterval(() => {
             if (moveDirect == "+") {
-                Value = this.Properties[TypePropModify]+Value
-                this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
-                console.log(this.Properties[TypePropModify]+"/")
+                this.ModifyProps(document.getElementById(this.Id), +Value, TypePropModify);
             }
             else {
-                Value = this.Properties[TypePropModify]+Value
-                
-                this.ModifyProps(document.getElementById(this.Id), Value, TypePropModify);
-                console.log(this.Properties[TypePropModify]+" "+Value)
+                this.ModifyProps(document.getElementById(this.Id), -Value, TypePropModify);
             }
         }, Time);
     }
