@@ -6,7 +6,7 @@ export default class Oct8Pyshics{
     wind=0;
     EventPyshicsForce=0
     DeltaTime=0;
-    SetDynamics(gravitySet:number=1,forceSet:number=1,windSet:number=1,DeltaTimeSet=200){
+    SetDynamics(gravitySet:number=1,forceSet:number=1,windSet:number=1,DeltaTimeSet=100){
         this.gravity = gravitySet
         this.force = forceSet
         this.wind = windSet
@@ -14,7 +14,11 @@ export default class Oct8Pyshics{
     }
     CreateGravityForce(objectOct8:Oct8Obj){
         this.EventPyshicsForce = setInterval(()=>{
-            objectOct8.CreateAnimationEvent("marginTop",this.DeltaTime,-this.force,"-")
+            objectOct8.CreateAnimationEvent("marginTop",this.DeltaTime,-this.gravity,"-")
+            this.force-=1
+            if(this.force == 0){
+                clearInterval(this.EventPyshicsForce)
+            }
         },this.DeltaTime)
     }
 }
