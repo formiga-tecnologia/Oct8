@@ -6,7 +6,6 @@
    * GENERIC EVENTS mouse, keyboard and other events providers with periferics
 */
 export default class Oct8Events {
-    WhereColision(coliderObj) {
-        return "Colider Insider";
+    Event() {
     }
 }

@@ -1,4 +1,3 @@
-import Oct8 from "./Oct8";
 
  /*
    CREATE EVENTS TO PROCESSING  
@@ -8,7 +7,7 @@ import Oct8 from "./Oct8";
     * GENERIC EVENTS mouse, keyboard and other events providers with periferics
  */
 export default class Oct8Events{
-    WhereColision(coliderObj:Oct8){
-        return "Colider Insider"
+    Event(){
+
     }
 }

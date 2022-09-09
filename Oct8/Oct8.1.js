@@ -14,4 +14,10 @@ export default class Oct8 extends (Oct8Obj) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
         }
     }
+    CreatePyshicsForce(object) {
+        throw new Error("Method not implemented.");
+    }
+    WhereColision(coliderObj) {
+        throw new Error("Method not implemented.");
+    }
 }
