@@ -3,6 +3,8 @@ import Oct8Obj from "./Oct8Obj.js";
 import Oct8Pyshics from "./Oct8Physhics.js";
 
 export default  class Oct8 extends (Oct8Obj){
+
+    Pyshics = new Oct8Pyshics()
     constructor(       
     public Id:string = "",
     public X:number =0,
@@ -16,6 +18,7 @@ export default  class Oct8 extends (Oct8Obj){
         if(Render = true)
         {
             var OctCreate = new Oct8Obj(Id,X,Y,W,H,TypeContainer,AppendElement,true)
+            this.Pyshics.SetDynamics();
         }
     }
 }

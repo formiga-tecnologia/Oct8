@@ -1,4 +1,5 @@
 import Oct8Obj from "./Oct8Obj.js";
+import Oct8Pyshics from "./Oct8Physhics.js";
 export default class Oct8 extends (Oct8Obj) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         super();
@@ -10,8 +11,10 @@ export default class Oct8 extends (Oct8Obj) {
         this.TypeContainer = TypeContainer;
         this.AppendElement = AppendElement;
         this.Render = Render;
+        this.Pyshics = new Oct8Pyshics();
         if (Render = true) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
+            this.Pyshics.SetDynamics();
         }
     }
 }
