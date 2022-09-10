@@ -6,6 +6,12 @@
    * GENERIC EVENTS mouse, keyboard and other events providers with periferics
 */
 export default class Oct8Events {
-    Event() {
+    WhereColide(PyshicsOct8, timeColider, Callfunction) {
+        setInterval(() => {
+            if (PyshicsOct8.colider == true) {
+                Callfunction();
+            }
+            console.log(PyshicsOct8.colider);
+        }, timeColider);
     }
 }

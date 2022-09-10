@@ -1,3 +1,5 @@
+import Oct8Obj from "./Oct8Obj";
+import Oct8Pyshics from "./Oct8Physhics";
 
  /*
    CREATE EVENTS TO PROCESSING  
@@ -7,7 +9,13 @@
     * GENERIC EVENTS mouse, keyboard and other events providers with periferics
  */
 export default class Oct8Events{
-    Event(){
-
+    WhereColide(PyshicsOct8:Oct8Pyshics,timeColider:number,Callfunction:any){
+      setInterval(()=>{
+        if(PyshicsOct8.colider == true)
+        {
+          Callfunction()
+        }
+        console.log(PyshicsOct8.colider)
+      },timeColider)
     }
 }

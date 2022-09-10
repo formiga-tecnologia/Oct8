@@ -47,16 +47,24 @@ export default class Oct8Pyshics{
         this.coliderEvent = setInterval(()=>{
             if(ObjectTarget.Properties.marginTop-2 == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
                 Callfuncion()
-            } 
+                this.colider = true
+            }
+
             if(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
                 Callfuncion()
-            } 
+                this.colider = true
+            }
+
             if(ObjectTarget.Properties.marginLeft-2 == ObjectHit.Properties.marginLeft && ObjectHit.Properties.marginTop > ObjectTarget.Properties.marginTop && ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height >= ObjectHit.Properties.marginTop){
                 Callfuncion()
+                this.colider = true
             }
+
             if(ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width == ObjectHit.Properties.marginLeft && ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height >= ObjectHit.Properties.marginTop){
                 Callfuncion()
+                this.colider = true
             }
+
         },10)
     }
 }

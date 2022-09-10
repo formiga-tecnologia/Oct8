@@ -1,3 +1,4 @@
+import Oct8Events from "./Oct8Events.js";
 import Oct8Obj from "./Oct8Obj.js";
 import Oct8Pyshics from "./Oct8Physhics.js";
 export default class Oct8 extends (Oct8Obj) {
@@ -13,6 +14,7 @@ export default class Oct8 extends (Oct8Obj) {
         this.Render = Render;
         this.Pyshics = new Oct8Pyshics();
         this.OctObj = new Oct8Obj();
+        this.CallEvents = new Oct8Events();
         if (Render = true) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
             this.OctObj = OctCreate;
