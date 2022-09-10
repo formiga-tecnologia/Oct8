@@ -16,14 +16,16 @@ export default class Oct8Pyshics{
         this.wind = windSet
         this.DeltaTime = DeltaTimeSet
     }
-    CreateGravityForce(element:HTMLElement,ObjectOct8:Oct8Obj){
-        let setPyshic = parseInt(element.style.marginTop)+this.gravity
+    CreateGravityForce(element:HTMLElement,ObjectOct8:Oct8Obj,ReverseForce:boolean=false){
+        let setPyshic = 0
+        if(ReverseForce == false){setPyshic = parseInt(element.style.marginTop)+this.gravity }else{setPyshic = parseInt(element.style.marginTop)+this.gravity-1 }
         this.EventPyshicsForce = setInterval(()=>{      
             if(this.GravityActive == true)
             {
                 ObjectOct8.Properties.marginTop = setPyshic
                 element.style.marginTop=setPyshic+"vh"
-                setPyshic=setPyshic+1 
+                
+                if(ReverseForce == false){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
             }
         },this.DeltaTime)
     }
@@ -32,7 +34,13 @@ export default class Oct8Pyshics{
             //Detectar TOPO
             if(ObjectTarget.Properties.marginTop == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
                 Callfuncion()
-            }
-        },1000)
+            } 
+            if(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width <= ObjectHit.Properties.marginLeft){
+                Callfuncion()
+            } 
+            console.log(ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft )
+           // console.log(ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width <= ObjectHit.Properties.marginLeft)
+            //console.log(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop)
+        },10)
     }
 }
