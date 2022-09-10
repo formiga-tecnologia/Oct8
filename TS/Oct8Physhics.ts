@@ -2,6 +2,7 @@ import Oct8 from "./Oct8";
 import Oct8Obj from "./Oct8Obj"
 
 export default class Oct8Pyshics{
+    ReverseForce:Boolean= false
     gravity=0;
     force=0;
     wind=0;
@@ -32,14 +33,15 @@ export default class Oct8Pyshics{
     }
     CreateMoveForce(element:HTMLElement,ObjectOct8:Oct8Obj,ReverseForce:boolean=false){
         let setPyshic = 0
-        if(ReverseForce == false){setPyshic = parseInt(element.style.marginLeft)+this.gravity }else{setPyshic = parseInt(element.style.marginLeft)+this.gravity-1 }
+        this.ReverseForce = ReverseForce
+        if(this.ReverseForce){setPyshic = parseInt(element.style.marginLeft)+this.gravity }else{setPyshic = parseInt(element.style.marginLeft)+this.gravity-1 }
         this.EventmoveForce = setInterval(()=>{      
             if(this.GravityActive == true)
             {
                 ObjectOct8.Properties.marginLeft = setPyshic
                 element.style.marginLeft=setPyshic+"vh"
                 
-                if(ReverseForce == false){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
+                if(this.ReverseForce){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
             }
         },this.DeltaTime)
     }

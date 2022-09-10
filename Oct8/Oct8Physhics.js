@@ -1,5 +1,6 @@
 export default class Oct8Pyshics {
     constructor() {
+        this.ReverseForce = false;
         this.gravity = 0;
         this.force = 0;
         this.wind = 0;
@@ -39,7 +40,8 @@ export default class Oct8Pyshics {
     }
     CreateMoveForce(element, ObjectOct8, ReverseForce = false) {
         let setPyshic = 0;
-        if (ReverseForce == false) {
+        this.ReverseForce = ReverseForce;
+        if (this.ReverseForce) {
             setPyshic = parseInt(element.style.marginLeft) + this.gravity;
         }
         else {
@@ -49,7 +51,7 @@ export default class Oct8Pyshics {
             if (this.GravityActive == true) {
                 ObjectOct8.Properties.marginLeft = setPyshic;
                 element.style.marginLeft = setPyshic + "vh";
-                if (ReverseForce == false) {
+                if (this.ReverseForce) {
                     setPyshic = setPyshic + 1;
                 }
                 else {
