@@ -121,9 +121,6 @@ export default class Oct8Obj {
             this.StopEvent();
         }
     }
-    StopAnimationEvent(){
-        clearInterval(this.AnimateEvent)
-    }
     StopEvent() {
         clearInterval(this.event);
     }

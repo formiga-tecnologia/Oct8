@@ -12,8 +12,10 @@ export default class Oct8 extends (Oct8Obj) {
         this.AppendElement = AppendElement;
         this.Render = Render;
         this.Pyshics = new Oct8Pyshics();
+        this.OctObj = new Oct8Obj();
         if (Render = true) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
+            this.OctObj = OctCreate;
             this.Pyshics.SetDynamics();
         }
     }

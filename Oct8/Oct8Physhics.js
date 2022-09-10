@@ -5,6 +5,9 @@ export default class Oct8Pyshics {
         this.wind = 0;
         this.EventPyshicsForce = 0;
         this.DeltaTime = 0;
+        this.colider = false;
+        this.GravityActive = true;
+        this.coliderEvent = 0;
     }
     SetDynamics(gravitySet = 1, forceSet = 1, windSet = 1, DeltaTimeSet = 100) {
         this.gravity = gravitySet;
@@ -12,22 +15,20 @@ export default class Oct8Pyshics {
         this.wind = windSet;
         this.DeltaTime = DeltaTimeSet;
     }
-    CreateGravityForce(objectOct8) {
+    CreateGravityForce(element, ObjectOct8) {
+        let setPyshic = parseInt(element.style.marginTop) + this.gravity;
         this.EventPyshicsForce = setInterval(() => {
-            this.force -= 1;
-            if (this.force <= 0) {
-                this.StopEventForce()
-                console.log("parrra fio")
-                objectOct8.StopAnimationEvent()
-            }
-            else
-            {
-                console.log(this.force)
-                objectOct8.CreateAnimationEvent("marginTop", this.DeltaTime, -this.gravity, "-");
+            if (this.GravityActive == true) {
+                ObjectOct8.Properties.marginTop = setPyshic;
+                element.style.marginTop = setPyshic + "vh";
+                setPyshic = setPyshic + 1;
             }
         }, this.DeltaTime);
     }
-    StopEventForce(){
-        clearInterval(this.EventPyshicsForce);
+    CreateColider(ObjectTarget, ObjectHit) {
+        this.coliderEvent = setInterval(() => {
+            //Detectar TOPO
+            console.log(ObjectTarget.Properties.marginTop + " " + ObjectHit.Properties.height);
+        }, 10);
     }
 }
