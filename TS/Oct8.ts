@@ -8,6 +8,7 @@ export default  class Oct8 extends (Oct8Obj){
     Pyshics = new Oct8Pyshics()
     OctObj= new Oct8Obj()
     CallEvents = new Oct8Events()
+
     constructor(       
     public Id:string = "",
     public X:number =0,
