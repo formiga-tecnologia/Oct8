@@ -25,10 +25,12 @@ export default class Oct8Pyshics {
             }
         }, this.DeltaTime);
     }
-    CreateColider(ObjectTarget, ObjectHit) {
+    CreateColider(ObjectTarget, ObjectHit, Callfuncion) {
         this.coliderEvent = setInterval(() => {
             //Detectar TOPO
-            console.log(ObjectTarget.Properties.marginTop + " " + ObjectHit.Properties.height);
-        }, 10);
+            if (ObjectTarget.Properties.marginTop == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft + ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft) {
+                Callfuncion();
+            }
+        }, 1000);
     }
 }

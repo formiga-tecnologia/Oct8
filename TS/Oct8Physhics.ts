@@ -27,10 +27,12 @@ export default class Oct8Pyshics{
             }
         },this.DeltaTime)
     }
-    CreateColider(ObjectTarget:Oct8Obj,ObjectHit:Oct8Obj){
+    CreateColider(ObjectTarget:Oct8Obj,ObjectHit:Oct8Obj,Callfuncion:any){
         this.coliderEvent = setInterval(()=>{
             //Detectar TOPO
-            console.log(ObjectTarget.Properties.marginTop+" "+ ObjectHit.Properties.height)
-        },10)
+            if(ObjectTarget.Properties.marginTop == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
+                Callfuncion()
+            }
+        },1000)
     }
 }
