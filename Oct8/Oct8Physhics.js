@@ -39,7 +39,7 @@ export default class Oct8Pyshics {
     CreateColider(ObjectTarget, ObjectHit, Callfuncion) {
         this.coliderEvent = setInterval(() => {
             //Detectar TOPO
-            if (ObjectTarget.Properties.marginTop == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft + ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft) {
+            if (ObjectTarget.Properties.marginTop - 2 == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft + ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft) {
                 Callfuncion();
             }
             if (ObjectTarget.Properties.marginTop + ObjectTarget.Properties.height == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft - ObjectTarget.Properties.width <= ObjectHit.Properties.marginLeft) {
