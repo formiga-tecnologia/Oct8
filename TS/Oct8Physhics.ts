@@ -10,6 +10,7 @@ export default class Oct8Pyshics{
     colider = false
     GravityActive = true
     coliderEvent = 0
+    EventmoveForce = 0
     SetDynamics(gravitySet:number=1,forceSet:number=1,windSet:number=1,DeltaTimeSet=100){
         this.gravity = gravitySet
         this.force = forceSet
@@ -29,18 +30,33 @@ export default class Oct8Pyshics{
             }
         },this.DeltaTime)
     }
+    CreateMoveForce(element:HTMLElement,ObjectOct8:Oct8Obj,ReverseForce:boolean=false){
+        let setPyshic = 0
+        if(ReverseForce == false){setPyshic = parseInt(element.style.marginLeft)+this.gravity }else{setPyshic = parseInt(element.style.marginLeft)+this.gravity-1 }
+        this.EventmoveForce = setInterval(()=>{      
+            if(this.GravityActive == true)
+            {
+                ObjectOct8.Properties.marginLeft = setPyshic
+                element.style.marginLeft=setPyshic+"vh"
+                
+                if(ReverseForce == false){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
+            }
+        },this.DeltaTime)
+    }
     CreateColider(ObjectTarget:Oct8Obj,ObjectHit:Oct8Obj,Callfuncion:any){
         this.coliderEvent = setInterval(()=>{
-            //Detectar TOPO
             if(ObjectTarget.Properties.marginTop-2 == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
                 Callfuncion()
             } 
-            if(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width <= ObjectHit.Properties.marginLeft){
+            if(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop && ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft && ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width >= ObjectHit.Properties.marginLeft){
                 Callfuncion()
             } 
-            console.log(ObjectHit.Properties.marginLeft > ObjectTarget.Properties.marginLeft )
-           // console.log(ObjectTarget.Properties.marginLeft-ObjectTarget.Properties.width <= ObjectHit.Properties.marginLeft)
-            //console.log(ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height == ObjectHit.Properties.marginTop)
+            if(ObjectTarget.Properties.marginLeft-2 == ObjectHit.Properties.marginLeft && ObjectHit.Properties.marginTop > ObjectTarget.Properties.marginTop && ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height >= ObjectHit.Properties.marginTop){
+                Callfuncion()
+            }
+            if(ObjectTarget.Properties.marginLeft+ObjectTarget.Properties.width == ObjectHit.Properties.marginLeft && ObjectTarget.Properties.marginTop+ObjectTarget.Properties.height >= ObjectHit.Properties.marginTop){
+                Callfuncion()
+            }
         },10)
     }
 }
