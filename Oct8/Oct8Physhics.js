@@ -29,12 +29,13 @@ export default class Oct8Pyshics {
             if (this.GravityActive == true) {
                 ObjectOct8.Properties.marginTop = setPyshic;
                 element.style.marginTop = setPyshic + "vh";
-                if (ReverseForce == false) {
+                if (ReverseForce == false && this.force > 0) {
                     setPyshic = setPyshic + 1;
                 }
                 else {
                     setPyshic = setPyshic - 1;
                 }
+                this.force -= 1;
             }
         }, this.DeltaTime);
     }
@@ -48,7 +49,7 @@ export default class Oct8Pyshics {
             setPyshic = parseInt(element.style.marginLeft) + this.gravity - 1;
         }
         this.EventmoveForce = setInterval(() => {
-            if (this.GravityActive == true) {
+            if (this.GravityActive == true && this.force > 0) {
                 ObjectOct8.Properties.marginLeft = setPyshic;
                 element.style.marginLeft = setPyshic + "vh";
                 if (this.ReverseForce) {
@@ -57,6 +58,7 @@ export default class Oct8Pyshics {
                 else {
                     setPyshic = setPyshic - 1;
                 }
+                this.force -= 1;
             }
         }, this.DeltaTime);
     }

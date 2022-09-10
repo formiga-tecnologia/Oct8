@@ -27,7 +27,8 @@ export default class Oct8Pyshics{
                 ObjectOct8.Properties.marginTop = setPyshic
                 element.style.marginTop=setPyshic+"vh"
                 
-                if(ReverseForce == false){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
+                if(ReverseForce == false && this.force>0){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
+                this.force-=1
             }
         },this.DeltaTime)
     }
@@ -36,12 +37,13 @@ export default class Oct8Pyshics{
         this.ReverseForce = ReverseForce
         if(this.ReverseForce){setPyshic = parseInt(element.style.marginLeft)+this.gravity }else{setPyshic = parseInt(element.style.marginLeft)+this.gravity-1 }
         this.EventmoveForce = setInterval(()=>{      
-            if(this.GravityActive == true)
+            if(this.GravityActive == true && this.force > 0)
             {
                 ObjectOct8.Properties.marginLeft = setPyshic
                 element.style.marginLeft=setPyshic+"vh"
                 
                 if(this.ReverseForce){setPyshic=setPyshic+1 }else{setPyshic=setPyshic-1 }
+                this.force-=1
             }
         },this.DeltaTime)
     }
