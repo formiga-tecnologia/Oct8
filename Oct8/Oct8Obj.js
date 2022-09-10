@@ -31,7 +31,7 @@ export default class Oct8Obj {
         this.ContainerTypes = ["sse", "sse-on"];
         this.containerSet = "";
         this.id = "Null";
-        this.AnimateEvent = 0;
+        this.AnimateEvent = [];
         this.event = 0;
         this.On = true;
         this.animMove = 0;
@@ -104,7 +104,7 @@ export default class Oct8Obj {
     CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0, moveDirect = "+") {
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
-        this.AnimateEvent = setInterval(() => {
+        this.AnimateEvent[this.AnimateEvent.length] = setInterval(() => {
             if (moveDirect == "+") {
                 this.ModifyProps(document.getElementById(this.Id), +Value, TypePropModify);
             }
@@ -112,6 +112,9 @@ export default class Oct8Obj {
                 this.ModifyProps(document.getElementById(this.Id), -Value, TypePropModify);
             }
         }, Time);
+    }
+    StopAnimation(Id = 0) {
+        clearInterval(this.AnimateEvent[Id]);
     }
     CreateEvent(functionCallback = (() => { console.log("Oct8 Functions"); }), time = 100) {
         if (this.On == true) {
