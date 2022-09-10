@@ -70,7 +70,7 @@ export default class Oct8Obj {
         document.body.appendChild(newElement);
     }
     GetElementId() {
-        return document.getElementById(this.id);
+        return document.getElementById(this.Id);
     }
     ModifyProps(element, value = 0, prop = "MarginLeft") {
         if (prop.constructor === Array) {

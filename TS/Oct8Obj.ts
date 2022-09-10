@@ -78,7 +78,7 @@ export default class Oct8Obj{
 
     GetElementId()
     {
-        return document.getElementById(this.id)
+        return document.getElementById(this.Id)
     }
 
     ModifyProps(element:HTMLElement, value:any = 0, prop:string="MarginLeft") {
