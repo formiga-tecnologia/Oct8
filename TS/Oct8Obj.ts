@@ -3,12 +3,15 @@ export default class Oct8Obj{
     PropsElement:any = {
         Skew: ["transform", "skew"],
         Rotate: ["transform", "rotate"],
+        ScaleX: ["transform", "scaleX"],
+        ScaleY: ["transform", "scaleY"],
         BackgroundImage: "backgroundImage",
         MoveX: "marginLeft",
         MoveY: "marginTop",
         W: "width",
         H: "height",
-        backgroundColor:"backgroundColor"
+        backgroundColor:"backgroundColor",
+        alpha:"opacity"
     }
 
     Properties:any = {
@@ -18,6 +21,10 @@ export default class Oct8Obj{
         height: 0,
         skew: 0,
         rotate: 0,
+        translateX:0,
+        scaleX:0,
+        scaleY:0,
+        opacity:0,
         backgroundImage: null,
         backgroundColor:"null"
     }
@@ -89,12 +96,27 @@ export default class Oct8Obj{
             if(value.valueOf().length >=1)
             {
                 this.Properties[prop[1]] =  value
-                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
+                if(prop[1] == "rotate" || "skew")
+                {
+                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"    
+                }
+                else
+                {
+                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + ")"    
+                }
             }
             else
             {
                 this.Properties[prop[1]] = this.Properties[prop[1]]+value
-                element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"
+                if(prop[1] == "rotate" || prop[1] =="skew")
+                {
+                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)"    
+                }
+                else
+                {
+                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + ")" 
+ 
+                }
             }
             
         }
@@ -112,17 +134,27 @@ export default class Oct8Obj{
                 }
                 else {
                     this.Properties[prop] = this.Properties[prop]+value
-                    element.style[Teste] = this.Properties[prop] + "vh"
+                    if(Teste == "opacity")
+                    {
+                    element.style[Teste] = this.Properties[prop]
+                    }
+                    else
+                    {
+                        element.style[Teste] = this.Properties[prop] + "vh"
+                    }
+                    
                 }
                 
             }
         }
     }
 
-    CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+"){
+    CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+",LimitValue:any="infinity"){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
+        let IdAnimateFixed = this.AnimateEvent.length+1
         this.AnimateEvent[this.AnimateEvent.length] = setInterval(()=>{
+            let IdAnimate = IdAnimateFixed
             if(moveDirect == "+")
             {
                 this.ModifyProps(document.getElementById(this.Id)!,+Value,TypePropModify)
@@ -131,7 +163,22 @@ export default class Oct8Obj{
             {
                 this.ModifyProps(document.getElementById(this.Id)!,-Value,TypePropModify)
             }
-           
+
+            if(typeof(LimitValue) == "number")
+            {             
+              if(TypePropModify.length >1)
+              {
+                if( LimitValue < this.Properties[TypePropModify[1]])
+               {
+                clearInterval(IdAnimate)
+               }
+              }
+              if( LimitValue < this.Properties[TypePropModify])
+               {
+                clearInterval(IdAnimate)
+               }
+            }
+   
         },Time)
     }
 
