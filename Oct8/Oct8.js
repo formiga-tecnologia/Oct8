@@ -19,7 +19,11 @@ export default class Oct8 extends (Oct8Obj) {
             var OctCreate = new Oct8Obj(Id, X, Y, W, H, TypeContainer, AppendElement, true);
             this.OctObj = OctCreate;
             this.OctObj.Id = Id;
+            this.OctObj.Properties.height = H;
+            this.OctObj.Properties.width = W;
             this.Pyshics.SetDynamics();
+            console.log(OctCreate.Properties.height + "Create Props");
+            console.log(this.OctObj.Properties.height + " OctObjs");
         }
     }
 }
