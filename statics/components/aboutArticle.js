@@ -4,8 +4,8 @@ export default function CreareAboutArticle(id,title,value)
 {
     var AboutArticle = new Oct8(id,0,0,"infinity",0,"elb elb-off","material",true)
     InsertValues(id,title,value)    
-    AboutArticle.CreateAnimationEvent(AboutArticle.PropsElement.alpha,90,0.1,"+",5)
-    AboutArticle.OctObj.CreateAnimationEvent(AboutArticle.PropsElement.H,10 ,1,"+",30)
+    AboutArticle.CreateAnimationEvent(AboutArticle.PropsElement.alpha,10,0.1,"+",5)
+    AboutArticle.OctObj.CreateAnimationEvent(AboutArticle.PropsElement.H,30 ,1,"+",30)
 
   }
 

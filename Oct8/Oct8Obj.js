@@ -139,7 +139,7 @@ export default class Oct8Obj {
             }
             if (typeof (LimitValue) == "number") {
                 if (TypePropModify.length > 1) {
-                    if (LimitValue < this.Properties[TypePropModify[1]]) {
+                    if (LimitValue < this.Properties[TypePropModify]) {
                         clearInterval(IdAnimate);
                     }
                 }

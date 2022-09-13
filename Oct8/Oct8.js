@@ -22,8 +22,6 @@ export default class Oct8 extends (Oct8Obj) {
             this.OctObj.Properties.height = H;
             this.OctObj.Properties.width = W;
             this.Pyshics.SetDynamics();
-            console.log(OctCreate.Properties.height + "Create Props");
-            console.log(this.OctObj.Properties.height + " OctObjs");
         }
     }
 }
