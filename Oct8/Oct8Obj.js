@@ -42,6 +42,7 @@ export default class Oct8Obj {
         this.event = 0;
         this.On = true;
         this.animMove = 0;
+        this.AnimationEventId = 0;
         this.Properties.marginLeft = X;
         this.Properties.marginTop = Y;
         this.Properties.height = H;
@@ -112,9 +113,7 @@ export default class Oct8Obj {
                     element.style[Teste] = this.Properties[prop] + "vh";
                 }
                 else {
-                    console.log(this.Properties[prop] + " ''");
                     this.Properties[prop] = this.Properties[prop] + value;
-                    console.log(this.Properties[prop]);
                     if (Teste == "opacity") {
                         element.style[Teste] = this.Properties[prop];
                     }
@@ -128,7 +127,8 @@ export default class Oct8Obj {
     CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0, moveDirect = "+", LimitValue = "infinity") {
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
-        let IdAnimateFixed = this.AnimateEvent.length + 1;
+        this.AnimationEventId += 1;
+        let IdAnimateFixed = this.AnimationEventId;
         this.AnimateEvent[this.AnimateEvent.length] = setInterval(() => {
             let IdAnimate = IdAnimateFixed;
             if (moveDirect == "+") {
