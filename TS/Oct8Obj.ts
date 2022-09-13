@@ -133,9 +133,8 @@ export default class Oct8Obj{
                     element.style[Teste] = this.Properties[prop] + "vh";
                 }
                 else {
-                    console.log(this.Properties[prop]+" ''")
                     this.Properties[prop] = this.Properties[prop]+value
-                    console.log(this.Properties[prop])
+
                     if(Teste == "opacity")
                     {
                     element.style[Teste] = this.Properties[prop]
