@@ -1,11 +1,17 @@
 import Oct8 from '../../Oct8/Oct8.js'
 import CreareAboutArticle from '../components/aboutArticle.js'
-
+var CreateBox = true
 export default function CreateNewArticle(x,y,id,values,tile,link){
     var Article =  new Oct8(id,x,y,45,35,"elb elb-off","article",true)
     InsertValues(values,id,tile,link)  
     document.getElementById(id).addEventListener('click',()=>{
-        CreareAboutArticle("teste01","Hola tittulo 01","Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena ")
+      if(CreateBox == true)
+      {
+        CreareAboutArticle("AboutBox","Hola tittulo 01","Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena ")
+        CreateBox =false
+        
+      }
+        
     },false)
 }
 

@@ -169,15 +169,15 @@ export default class Oct8Obj{
             {             
               if(TypePropModify.length >1)
               {
-                if( LimitValue < this.Properties[TypePropModify])
+                if( LimitValue < this.Properties[TypePropModify] && moveDirect == "+")
+               {
+                clearInterval(IdAnimate)
+               }
+               if( LimitValue > this.Properties[TypePropModify] && moveDirect != "+")
                {
                 clearInterval(IdAnimate)
                }
               }
-              if( LimitValue < this.Properties[TypePropModify])
-               {
-                clearInterval(IdAnimate)
-               }
             }
    
         },Time)
