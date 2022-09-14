@@ -6,6 +6,9 @@
    * GENERIC EVENTS mouse, keyboard and other events providers with periferics
 */
 export default class Oct8Events {
+    constructor() {
+        this.AlertResponsivePage = 0;
+    }
     WhereColide(PyshicsOct8, timeColider, Callfunction) {
         setInterval(() => {
             if (PyshicsOct8.colider == true) {
@@ -13,5 +16,21 @@ export default class Oct8Events {
             }
             console.log(PyshicsOct8.colider);
         }, timeColider);
+    }
+    ResponsiveForMobile(HorizontalMobile, VerticalMobile) {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        console.log("W: " + w + " | H:" + h);
+        window.addEventListener("resize", () => {
+            window.location.reload();
+        }, false);
+        window.addEventListener("load", () => {
+            if (w < 400) {
+                VerticalMobile();
+            }
+            if (w > 400 && h < 400) {
+                HorizontalMobile();
+            }
+        }, false);
     }
 }
