@@ -27,7 +27,7 @@ export default class Oct8Events{
          window.location.reload()
         },false)
       window.addEventListener("load",()=>{
-        if(w <400)
+        if(w <500)
         {
           VerticalMobile()
           
