@@ -5,16 +5,16 @@ export default function CreareAboutArticle(id,title,value)
 {
     var AboutArticle = new Oct8(id,0,0,"infinity",0,"elb elb-off art-about","material",true)
     InsertValues(id,title,value,AboutArticle)    
-   AboutArticle.OctObj.ModifyProps(AboutArticle.OctObj.GetElementId(),3,AboutArticle.OctObj.PropsElement.alpha)
-   AboutArticle.OctObj.ModifyProps(AboutArticle.OctObj.GetElementId(),30,AboutArticle.OctObj.PropsElement.H)
+    AboutArticle.OctObj.ModifyProps(AboutArticle.OctObj.GetElementId(),3,AboutArticle.OctObj.PropsElement.alpha)
+    AboutArticle.OctObj.ModifyProps(AboutArticle.OctObj.GetElementId(),30,AboutArticle.OctObj.PropsElement.H)
+    AboutArticle.OctObj.ModifyPropsDefault(document.getElementById("material"),null,[-20],null,[80]) 
     AboutArticle.CallEvents.ResponsiveForMobile(()=>{
       AboutArticle.OctObj.ModifyPropsDefault(document.getElementById("material"),null,[-240],null,[80])   
-     AboutArticle.OctObj.ModifyPropsDefault(AboutArticle.OctObj.GetElementId(),null,[-2],null,[90])
+      AboutArticle.OctObj.ModifyPropsDefault(AboutArticle.OctObj.GetElementId(),null,[-2],null,[90])
     },()=>{
       AboutArticle.OctObj.ModifyPropsDefault(document.getElementById("material"),null,[-30],null,[120])
       AboutArticle.OctObj.ModifyPropsDefault(AboutArticle.OctObj.GetElementId(),null,[0],null,[90])
     })
-AboutArticle.OctObj.StopEvent(3)
   }
 
 function InsertValues(id,title,value,Oct8Pass){
