@@ -163,9 +163,10 @@ export default class Oct8Obj {
     }
     ModifyPropsDefault(id = "", X = 0, Y = 0, W = 0, H = 0) {
         let ModifyId = id == "" ? this.GetElementId() : id;
-        this.ModifyProps(ModifyId, X, this.PropsElement.MoveX);
-        this.ModifyProps(ModifyId, Y, this.PropsElement.MoveY);
-        this.ModifyProps(ModifyId, H, this.PropsElement.H);
-        this.ModifyProps(ModifyId, W, this.PropsElement.W);
+        let Dynamic;
+        Dynamic = X > 0 ? this.ModifyProps(ModifyId, X, this.PropsElement.MoveX) : 0;
+        Dynamic = Y > 0 ? this.ModifyProps(ModifyId, Y, this.PropsElement.MoveY) : 0;
+        Dynamic = H > 0 ? this.ModifyProps(ModifyId, H, this.PropsElement.H) : 0;
+        Dynamic = W > 0 ? this.ModifyProps(ModifyId, W, this.PropsElement.W) : 0;
     }
 }

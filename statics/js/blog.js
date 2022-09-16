@@ -12,12 +12,7 @@ Oct8Screen.CallEvents.ResponsiveForMobile(
 
         Oct8Screen.OctObj.ModifyProps(document.getElementById("OctArt"),[80],Oct8Screen.OctObj.PropsElement.W)
         Oct8Screen.OctObj.ModifyProps(document.getElementById("OctArt"),[40],Oct8Screen.OctObj.PropsElement.H)
-
-        Oct8Screen.OctObj.ModifyProps(document.getElementById("teste"),[80],Oct8Screen.OctObj.PropsElement.MoveX)
-        Oct8Screen.OctObj.ModifyProps(document.getElementById("teste"),[-40],Oct8Screen.OctObj.PropsElement.MoveY)
-
-        Oct8Screen.OctObj.ModifyProps(document.getElementById("teste"),[80],Oct8Screen.OctObj.PropsElement.W)
-        Oct8Screen.OctObj.ModifyProps(document.getElementById("teste"),[40],Oct8Screen.OctObj.PropsElement.H)
+        Oct8Screen.OctObj.ModifyPropsDefault(document.getElementById("teste"),[80],[-40],[80],[40])
 
     },()=>{
         Oct8Screen.OctObj.ModifyProps(document.getElementById("teste"),[4],Oct8Screen.OctObj.PropsElement.MoveX)
