@@ -5,3 +5,7 @@
 .art{
     opacity: 0;
 }
+
+.art-about{
+    transition: 1s all;
+}

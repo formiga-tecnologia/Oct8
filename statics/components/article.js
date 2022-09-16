@@ -10,7 +10,6 @@ export default function CreateNewArticle(x,y,id,values,tile,link){
       if(CreateBox == true)
       {
         CreareAboutArticle("AboutBox","Hola tittulo 01","Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena Hello worlds lorena lorenas lorena na lorena ")
-        CreateBox =false
         
       }
         
