@@ -5,18 +5,7 @@ var count = 0
 export default function CreateNewArticle(x,y,id,values,tile,link){
     var Article =  new Oct8(id,x,y,45,35,"elb elb-off","article",true)
     InsertValues(values,id,tile,link)  
-    Article.CallEvents.ResponsiveForMobile(
-      ()=>{
-        
-      },
-      ()=>{
-        if(count>=1)
-        {
-          console.log(Article.OctObj.GetElementId())
-        }
-      }
-    )
-    count+=1
+   
     document.getElementById(id).addEventListener('click',()=>{
       if(CreateBox == true)
       {

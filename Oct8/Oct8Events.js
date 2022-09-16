@@ -20,7 +20,12 @@ export default class Oct8Events {
     ResponsiveForMobile(HorizontalMobile, VerticalMobile) {
         var w = window.innerWidth;
         var h = window.innerHeight;
-        console.log("W: " + w + " | H:" + h);
+        if (w < 500) {
+            VerticalMobile();
+        }
+        if (w > 400 && h < 400) {
+            HorizontalMobile();
+        }
         window.addEventListener("resize", () => {
             window.location.reload();
         }, false);
