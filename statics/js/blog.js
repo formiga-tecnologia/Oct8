@@ -16,4 +16,3 @@ Oct8Screen.CallEvents.ResponsiveForMobile(
         Oct8Screen.OctObj.ModifyProps(document.getElementById("PoderOct8"),[-10],Oct8Screen.OctObj.PropsElement.MoveY)
     }
 )
-
