@@ -199,5 +199,12 @@ export default class Oct8Obj{
     StopEvent() {
         clearInterval(this.event)
     }
+    ModifyPropsDefault(id:string="",X:number=0,Y:number=0,W:number=0,H:number=0){
+        let ModifyId:any = id == "" ? this.GetElementId() : id
+        this.ModifyProps(ModifyId,X,this.PropsElement.MoveX)
+        this.ModifyProps(ModifyId,Y,this.PropsElement.MoveY)
+        this.ModifyProps(ModifyId,H,this.PropsElement.H)
+        this.ModifyProps(ModifyId,W,this.PropsElement.W)
+    }
 
 }
