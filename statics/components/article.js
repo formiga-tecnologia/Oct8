@@ -13,7 +13,7 @@ export default function CreateNewArticle(x,y,id,values,tile,link){
     document.getElementById(id).addEventListener('click',()=>{
       if(CreateBox == true)
       {
-        console.log(conteudo[id][1])
+        console.log(conteudo[id][1]) 
         CreareAboutArticle("AboutBox",conteudo[id][0],conteudo[id][1])
       }
         
