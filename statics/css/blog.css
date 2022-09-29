@@ -18,7 +18,8 @@
 #ArticlesBar{
     display: flex;
     flex-direction: row;
-    overflow: visible;
+    overflow-y: hidden;
+
 }
 .boxExample{
     background-color: #261a3d;
@@ -27,10 +28,12 @@
     border-radius: 2vh;
 }
 .material-page{
-    overflow: visible;
+    overflow-y: hidden;
+
 }
 #materialPage{
-    overflow: visible;
+    overflow-y: hidden;
+
 }
 .space{
     padding: 210vh;
