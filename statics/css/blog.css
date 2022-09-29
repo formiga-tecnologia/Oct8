@@ -1,3 +1,6 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
 .barelement{
     height: 100%;
     width: 100%;
@@ -8,4 +11,29 @@
 
 .art-about{
     transition: 1s all;
+}
+.barSelector{
+    margin-top: -90vh;
+}
+#ArticlesBar{
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+}
+.boxExample{
+    background-color: #261a3d;
+    padding: 4vh;
+    color: #A6ACCD;
+    border-radius: 2vh;
+}
+.material-page{
+    overflow: visible;
+}
+#materialPage{
+    overflow: visible;
+}
+.space{
+    padding: 210vh;
+    margin-top: 2vh;
+    margin-left: 1vh;
 }
