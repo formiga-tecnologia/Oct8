@@ -19,7 +19,7 @@ Download yours for git clone
 
 <h1>Documentation Oct8 </h1>
 Short snippet to get started in Oct8 understand that Oct8 uses a cartesian plan system inside boxes or containers, fully responsive. The basic structure follows with 3 main types of standard containers: 
-
+   
 <ul> 
    <li>CBE class: element that keeps centered and all elements within it are centered</li>
    <li>ELB class: An element that helps center varied elements if you want to create interactivity of various elements in a dynamic way create the ELB to place several elements.</li>
@@ -82,3 +82,5 @@ create pyshics forces
 <h1>Componetization support</h1>
 
 <p>With Oct8 you can create component interfaces more easily and elegantly and ensure responsiveness of the components themselves elegantly</P>
+
+Pyshics forces includes colision  
