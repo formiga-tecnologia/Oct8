@@ -84,7 +84,7 @@ export default class Oct8Obj {
             if (value.valueOf().length >= 1) {
                 this.Properties[prop[1]] = value;
                 if (prop[1] == "rotate" || prop[1] == "skew") {
-                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)";
+                    element.style[prop[0][0]] = prop[0][1] + "(" + value + "deg)";
                 }
                 else {
                     element.style[prop[0]] =  this.Properties[prop[1]] ;
@@ -93,7 +93,7 @@ export default class Oct8Obj {
             else {
                 this.Properties[prop[1]] = this.Properties[prop[1]] + value;
                 if (prop[1] == "rotate" || prop[1] == "skew") {
-                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)";
+                    element.style[prop[0][0]] = prop[0][1] + "(" + value + "deg)";
                 }
                 else {
                     element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + ")";
