@@ -18,7 +18,7 @@ export default class Oct8Obj {
             MoveY: "marginTop",
             W: "width",
             H: "height",
-            backgroundColor: "backgroundColor",
+            backgroundColor: "background-color",
             alpha: "opacity"
         };
         this.Properties = {
@@ -83,11 +83,11 @@ export default class Oct8Obj {
         if (prop.constructor === Array) {
             if (value.valueOf().length >= 1) {
                 this.Properties[prop[1]] = value;
-                if (prop[1] == "rotate" || "skew") {
+                if (prop[1] == "rotate" || prop[1] == "skew") {
                     element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + "deg)";
                 }
                 else {
-                    element.style[prop[0]] = prop[1] + "(" + this.Properties[prop[1]] + ")";
+                    element.style[prop[0]] =  this.Properties[prop[1]] ;
                 }
             }
             else {
