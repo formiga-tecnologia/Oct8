@@ -87,7 +87,7 @@ export default class Oct8Obj {
                     element.style[prop[0][0]] = prop[0][1] + "(" + value + "deg)";
                 }
                 else {
-                    element.style[prop[0]] =  this.Properties[prop[1]] ;
+                    element.style[prop[0]] = this.Properties[prop[1]];
                 }
             }
             else {
@@ -131,26 +131,23 @@ export default class Oct8Obj {
             let IdAnimate = IdAnimateFixed;
             if (moveDirect == "+") {
                 this.ModifyProps(document.getElementById(this.Id), +Value, TypePropModify);
-                console.log(IdAnimateFixed)
             }
             else {
                 this.ModifyProps(document.getElementById(this.Id), -Value, TypePropModify);
-                console.log(IdAnimateFixed)
             }
             if (typeof (LimitValue) == "number") {
                 if (TypePropModify.length > 1) {
                     if (LimitValue < this.Properties[TypePropModify] && moveDirect == "+") {
-                        clearInterval();
+                        clearInterval(IdAnimate);
                     }
                     if (LimitValue > this.Properties[TypePropModify] && moveDirect != "+") {
-                        clearInterval();
+                        clearInterval(IdAnimate);
                     }
                 }
             }
         }, Time);
     }
     StopAnimation(Id = 0) {
-        console.log("Para aqui")
         clearInterval(this.AnimateEvent[Id]);
     }
     CreateEvent(functionCallback = (() => { console.log("Oct8 Functions"); }), time = 100) {
