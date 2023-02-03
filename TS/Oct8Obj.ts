@@ -13,6 +13,7 @@ export default class Oct8Obj{
         backgroundColor: "background-color",
         alpha:"opacity"
     }
+    ObjectsFactory:Array<any> = []
 
     Properties:any = {
         marginLeft: 0,
@@ -148,6 +149,18 @@ export default class Oct8Obj{
                 
             }
         }
+    }
+
+    CreateObjectFactory(Object:any,ObjectName:string){
+        this.ObjectsFactory.push([Object,ObjectName])
+    }
+    AppendObjectFacyotyTo(ObjectName:string){
+        this.ObjectsFactory.forEach(element => {
+            if(element[1] == ObjectName)
+            {
+                element[0]()
+            }
+        });
     }
 
     CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+",LimitValue:any="infinity"){

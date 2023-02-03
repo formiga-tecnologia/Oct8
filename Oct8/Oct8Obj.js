@@ -21,6 +21,7 @@ export default class Oct8Obj {
             backgroundColor: "background-color",
             alpha: "opacity"
         };
+        this.ObjectsFactory = [];
         this.Properties = {
             marginLeft: 0,
             marginTop: 0,
@@ -122,6 +123,16 @@ export default class Oct8Obj {
                 }
             }
         }
+    }
+    CreateObjectFactory(Object, ObjectName) {
+        this.ObjectsFactory.push([Object, ObjectName]);
+    }
+    AppendObjectFacyotyTo(ObjectName) {
+        this.ObjectsFactory.forEach(element => {
+            if (element[1] == ObjectName) {
+                element[0]();
+            }
+        });
     }
     CreateAnimationEvent(TypePropModify = "marginLeft", Time = 100, Value = 0, moveDirect = "+", LimitValue = "infinity") {
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
