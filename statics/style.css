@@ -42,10 +42,16 @@ Tipo fonte:
 }
 #Mainbanner h1{
     font-size: 10vh;
-    margin-top: 12vh;
+    margin-top: 2vh;
 }
 #Mainbanner h2{
     margin-top: -6vh;
     width: 80vh;
     margin-left: 60vh;
+}
+#squareBasic{
+    background-color: #FFC031;
+    border-radius: 2vh;
+    margin-left: 94vh;
+    margin-top: 2vh;
 }
