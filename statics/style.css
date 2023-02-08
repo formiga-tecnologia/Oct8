@@ -55,3 +55,18 @@ Tipo fonte:
     margin-left: 94vh;
     margin-top: 2vh;
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    #squareBasic{
+        background-color: #FFC031;
+        border-radius: 2vh;
+        margin-left: 20vh;
+        margin-top: 2vh;
+    }
+    #Mainbanner h2{
+        margin-top: -6vh;
+        width: 40vh;
+        margin-left: 4vh;
+    }
+}
