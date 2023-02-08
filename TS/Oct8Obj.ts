@@ -73,6 +73,7 @@ export default class Oct8Obj{
         newElement.className = typeContainerProp
         newElement.setAttribute("style","height:"+this.Properties.height+"vh;width:"+this.Properties.width+"vh; margin-left:"+this.Properties.marginLeft+"vh;margin-top:"+this.Properties.marginTop+"vh;")
         let positionElement = document.getElementById(AppendElementId)?.appendChild(newElement)
+        return newElement
     }
 
     CreateContainerElementBody(id:string ="",typeContainerProp:string="sse sse-on") {
