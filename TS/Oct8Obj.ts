@@ -100,7 +100,7 @@ export default class Oct8Obj{
                 this.Properties[prop[1]] =  value
                 if (prop[1] == "rotate" || prop[1] == "skew") 
                 {
-                    element.style[prop[0][0]] = prop[0][1] + "(" + value + "deg)";
+                    element.style.transform = prop[1] + "(" + value + "deg)";
                 }
                 else
                 {
@@ -112,7 +112,7 @@ export default class Oct8Obj{
                 this.Properties[prop[1]] = this.Properties[prop[1]]+value
                 if(prop[1] == "rotate" || prop[1] =="skew")
                 {
-                    element.style[prop[0][0]] = prop[0][1] + "(" + value + "deg)";  
+                    element.style.transform = prop[1] + "(" + this.Properties[prop[1]] + "deg)";
                 }
                 else
                 {
@@ -164,7 +164,7 @@ export default class Oct8Obj{
         });
     }
 
-    CreateAnimationEvent(TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+",LimitValue:any="infinity"){
+    CreateAnimationEvent(element:any,TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+",LimitValue:any="infinity"){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
         let IdAnimateFixed = this.AnimateEvent.length+1
@@ -172,11 +172,11 @@ export default class Oct8Obj{
             let IdAnimate = IdAnimateFixed
             if(moveDirect == "+")
             {
-                this.ModifyProps(document.getElementById(this.Id)!,+Value,TypePropModify)
+                this.ModifyProps(element!,+Value,TypePropModify)
             }
             else
             {
-                this.ModifyProps(document.getElementById(this.Id)!,-Value,TypePropModify)
+                this.ModifyProps(element!,-Value,TypePropModify)
             }
 
             if(typeof(LimitValue) == "number")
