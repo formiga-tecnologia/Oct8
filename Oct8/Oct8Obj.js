@@ -128,10 +128,15 @@ export default class Oct8Obj {
     CreateObjectFactory(Object, ObjectName) {
         this.ObjectsFactory.push([Object, ObjectName]);
     }
-    AppendObjectFacyotyTo(ObjectName) {
+    AppendObjectFacyotyTo(ObjectName, param) {
         this.ObjectsFactory.forEach(element => {
             if (element[1] == ObjectName) {
-                element[0]();
+                if (param != null) {
+                    element[0](param);
+                }
+                else {
+                    element[0]();
+                }
             }
         });
     }
@@ -173,6 +178,14 @@ export default class Oct8Obj {
     StopEvent() {
         clearInterval(this.event);
     }
+    /**
+     * Modify your selected element  [ X,Y,W,H ] propries.
+     * @param {string} id of tag Html what your want add to page.
+     * @param {string} X Value of X position.
+     * @param {string} Y Value of Y position.
+     * @param {string} W Value of Width value.
+     * @param {string} H Value of Heigth value.
+     */
     ModifyPropsDefault(id = "", X = 0, Y = 0, W = 0, H = 0) {
         let ModifyId = id == "" ? this.GetElementId() : id;
         let Dynamic;
