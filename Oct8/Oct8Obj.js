@@ -149,10 +149,10 @@ export default class Oct8Obj {
             }
             if (typeof (LimitValue) == "number") {
                 if (TypePropModify.length > 1) {
-                    if (LimitValue < this.Properties[TypePropModify] && moveDirect == "+") {
+                    if (LimitValue < this.Properties[TypePropModify] && moveDirect == "+" || LimitValue < this.Properties[TypePropModify[1]] && moveDirect == "+") {
                         clearInterval(IdAnimate);
                     }
-                    if (LimitValue > this.Properties[TypePropModify] && moveDirect != "+") {
+                    if (LimitValue > this.Properties[TypePropModify] && moveDirect != "+" || LimitValue > this.Properties[TypePropModify[1]] && moveDirect != "+") {
                         clearInterval(IdAnimate);
                     }
                 }
