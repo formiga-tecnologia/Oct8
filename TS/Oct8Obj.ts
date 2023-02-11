@@ -27,7 +27,8 @@ export default class Oct8Obj{
         scaleY:0,
         opacity:0,
         backgroundImage: null,
-        backgroundColor:"null"
+        backgroundColor:"null",
+        colider:false
     }
     ContainerTypes = ["sse","sse-on"]
     containerSet ="";
@@ -178,13 +179,18 @@ export default class Oct8Obj{
         let IdAnimateFixed = this.AnimateEvent.length+1
         this.AnimateEvent[this.AnimateEvent.length] = setInterval(()=>{
             let IdAnimate = IdAnimateFixed
+            let valueMove = 0
             if(moveDirect == "+")
             {
-                this.ModifyProps(element!,+Value,TypePropModify)
+                valueMove = parseInt(element.style[TypePropModify])+Value
+                element.style[TypePropModify] = valueMove+"vh"
+                //this.ModifyProps(element!,+Value,TypePropModify)
             }
             else
             {
-                this.ModifyProps(element!,-Value,TypePropModify)
+                valueMove = parseInt(element.style[TypePropModify])-Value
+                element.style[TypePropModify] = valueMove+"vh"
+                //this.ModifyProps(element!,-Value,TypePropModify)
             }
 
             if(typeof(LimitValue) == "number")
@@ -238,6 +244,27 @@ export default class Oct8Obj{
         Dynamic = H!=null ? this.ModifyProps(ModifyId,H,this.PropsElement.H) : 0
         Dynamic = W!=null ? this.ModifyProps(ModifyId,W,this.PropsElement.W) : 0
         
+    }
+
+    CreateColider(ColiderElement:any,HitElement:any,functionColider:any){
+        var element = document.getElementById("ola")
+        element?.style.height
+        element?.style.marginLeft
+        var ColiderValues_ =  [ ColiderElement.style.marginTop, ColiderElement.style.width,ColiderElement.style.height,ColiderElement.style.marginLeft]
+        var HitValues_ =  [ HitElement.style.marginTop, HitElement.style.width,HitElement.style.height,HitElement.style.marginLeft] 
+        var ColiderMinValue_Width =  parseInt(ColiderValues_[3])-parseInt(ColiderValues_[1])
+        var ColiderMaxValue_Width =  parseInt(ColiderValues_[3])+parseInt(ColiderValues_[1])
+        
+        if(parseInt(ColiderValues_[0])-parseInt(ColiderValues_[1])<parseInt(HitValues_[0]) && parseInt(HitValues_[3]) >= ColiderMinValue_Width &&  ColiderMaxValue_Width >= parseInt(HitValues_[3])  ){
+            functionColider()
+            console.warn("oi")
+        }
+
+        if(parseInt(ColiderValues_[0])+parseInt(ColiderValues_[1])<parseInt(HitValues_[0]) && parseInt(HitValues_[3]) >= ColiderMinValue_Width &&  ColiderMaxValue_Width >= parseInt(HitValues_[3])  ){
+            functionColider()
+            console.error("se pegar aqui deu xabe")
+        }
+
     }
 
 }
