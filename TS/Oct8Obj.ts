@@ -38,6 +38,9 @@ export default class Oct8Obj{
     On:boolean = true
     animMove =0
 
+    frameAnimation:any = []
+    frameSelected:number = 0
+
     constructor(
         public Id:string = "",
         public X:number =0,
@@ -243,28 +246,50 @@ export default class Oct8Obj{
         Dynamic = Y!=null ? this.ModifyProps(ModifyId,Y,this.PropsElement.MoveY) : 0
         Dynamic = H!=null ? this.ModifyProps(ModifyId,H,this.PropsElement.H) : 0
         Dynamic = W!=null ? this.ModifyProps(ModifyId,W,this.PropsElement.W) : 0
-        
     }
 
-    CreateColider(ColiderElement:any,HitElement:any,functionColider:any){
-        var element = document.getElementById("ola")
-        element?.style.height
-        element?.style.marginLeft
-        var ColiderValues_ =  [ ColiderElement.style.marginTop, ColiderElement.style.width,ColiderElement.style.height,ColiderElement.style.marginLeft]
-        var HitValues_ =  [ HitElement.style.marginTop, HitElement.style.width,HitElement.style.height,HitElement.style.marginLeft] 
-        var ColiderMinValue_Width =  parseInt(ColiderValues_[3])-parseInt(ColiderValues_[1])
-        var ColiderMaxValue_Width =  parseInt(ColiderValues_[3])+parseInt(ColiderValues_[1])
-        
-        if(parseInt(ColiderValues_[0])-parseInt(ColiderValues_[1])<parseInt(HitValues_[0]) && parseInt(HitValues_[3]) >= ColiderMinValue_Width &&  ColiderMaxValue_Width >= parseInt(HitValues_[3])  ){
-            functionColider()
-            console.warn("oi")
+    NewSceneFrame(SceneNameFrame:string,Element:any="null",Time:number,TimeFrameRate:number){
+        var Object:any = {
+            SceneName:SceneNameFrame,
+            frames:[Element],
+            times:Time,
+            TimeFrameRates:TimeFrameRate
         }
-
-        if(parseInt(ColiderValues_[0])+parseInt(ColiderValues_[1])<parseInt(HitValues_[0]) && parseInt(HitValues_[3]) >= ColiderMinValue_Width &&  ColiderMaxValue_Width >= parseInt(HitValues_[3])  ){
-            functionColider()
-            console.error("se pegar aqui deu xabe")
-        }
-
+        this.frameAnimation.push(Object)
     }
 
+    PlaySceneFrame(SceneNameFrame:string){
+        var i:number = 0;
+        var RelativeTime = 0
+        var IntervalEvent:any = null
+        while(this.frameAnimation.length > i){
+            if(this.frameAnimation[i].SceneName == SceneNameFrame){
+                this.frameSelected = i
+                var setA = setInterval(()=>{
+                    var ElementsToExec =  0
+                    var PropElement = null
+                    while(this.frameAnimation[i].frames[0].length>=ElementsToExec){
+                         PropElement=this.frameAnimation[i].frames[0][ElementsToExec]
+                        if(typeof PropElement == "string"){
+                            console.log(PropElement)
+                        }
+                        if(typeof PropElement == "function"){
+                            console.log(ElementsToExec)
+                            this.frameAnimation[i].frames[0][ElementsToExec]()
+                        }
+                        ElementsToExec++
+                    }
+                    console.log(RelativeTime+" |"+this.frameAnimation[i].times)
+                    if(this.frameAnimation[i].times!=Infinity && RelativeTime >= this.frameAnimation[i].times)
+                    {
+                        clearInterval(setA)       
+                    }
+                    RelativeTime+=1
+                    ElementsToExec = 0
+                },this.frameAnimation[i].TimeFrameRates)
+                break
+            }
+            i++
+        }
+    }
 }
