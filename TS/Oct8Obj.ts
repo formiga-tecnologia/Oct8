@@ -248,7 +248,7 @@ export default class Oct8Obj{
         Dynamic = W!=null ? this.ModifyProps(ModifyId,W,this.PropsElement.W) : 0
     }
 
-    NewSceneFrame(SceneNameFrame:string,Element:any="null",Time:number,TimeFrameRate:number){
+    NewScene(SceneNameFrame:string,Element:any="null",Time:number,TimeFrameRate:number){
         var Object:any = {
             SceneName:SceneNameFrame,
             frames:[Element],
@@ -258,35 +258,43 @@ export default class Oct8Obj{
         this.frameAnimation.push(Object)
     }
 
-    PlaySceneFrame(SceneNameFrame:string){
+    RemoveScene(SceneNameFrame:string){
+        var i=0
+        while(this.frameAnimation.length > i){
+            if(this.frameAnimation[i].SceneName == SceneNameFrame){
+                this.frameAnimation.splice(i, 1)
+                break
+            }
+            i++
+        }
+    }
+
+    ExecuteScene(SceneNameFrame:string){
         var i:number = 0;
         var RelativeTime = 0
-        var IntervalEvent:any = null
+        var ValueToReturn = []
         while(this.frameAnimation.length > i){
             if(this.frameAnimation[i].SceneName == SceneNameFrame){
                 this.frameSelected = i
-                var setA = setInterval(()=>{
+                var setb:any = null
                     var ElementsToExec =  0
                     var PropElement = null
                     while(this.frameAnimation[i].frames[0].length>=ElementsToExec){
                          PropElement=this.frameAnimation[i].frames[0][ElementsToExec]
                         if(typeof PropElement == "string"){
-                            console.log(PropElement)
+                            ValueToReturn.push(PropElement)
                         }
                         if(typeof PropElement == "function"){
-                            console.log(ElementsToExec)
-                            this.frameAnimation[i].frames[0][ElementsToExec]()
+
+                                console.log(ElementsToExec)
+                                this.frameAnimation[i].frames[0][ElementsToExec]()
                         }
                         ElementsToExec++
                     }
-                    console.log(RelativeTime+" |"+this.frameAnimation[i].times)
-                    if(this.frameAnimation[i].times!=Infinity && RelativeTime >= this.frameAnimation[i].times)
-                    {
-                        clearInterval(setA)       
-                    }
-                    RelativeTime+=1
                     ElementsToExec = 0
-                },this.frameAnimation[i].TimeFrameRates)
+                    if(ValueToReturn.length >=1){
+                        return ValueToReturn
+                    }
                 break
             }
             i++

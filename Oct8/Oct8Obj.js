@@ -202,7 +202,7 @@ export default class Oct8Obj {
         Dynamic = H != null ? this.ModifyProps(ModifyId, H, this.PropsElement.H) : 0;
         Dynamic = W != null ? this.ModifyProps(ModifyId, W, this.PropsElement.W) : 0;
     }
-    NewSceneFrame(SceneNameFrame, Element = "null", Time, TimeFrameRate) {
+    NewScene(SceneNameFrame, Element = "null", Time, TimeFrameRate) {
         var Object = {
             SceneName: SceneNameFrame,
             frames: [Element],
@@ -211,34 +211,41 @@ export default class Oct8Obj {
         };
         this.frameAnimation.push(Object);
     }
-    PlaySceneFrame(SceneNameFrame) {
+    RemoveScene(SceneNameFrame) {
+        var i = 0;
+        while (this.frameAnimation.length > i) {
+            if (this.frameAnimation[i].SceneName == SceneNameFrame) {
+                this.frameAnimation.splice(i, 1);
+                break;
+            }
+            i++;
+        }
+    }
+    ExecuteScene(SceneNameFrame) {
         var i = 0;
         var RelativeTime = 0;
-        var IntervalEvent = null;
+        var ValueToReturn = [];
         while (this.frameAnimation.length > i) {
             if (this.frameAnimation[i].SceneName == SceneNameFrame) {
                 this.frameSelected = i;
-                var setA = setInterval(() => {
-                    var ElementsToExec = 0;
-                    var PropElement = null;
-                    while (this.frameAnimation[i].frames[0].length >= ElementsToExec) {
-                        PropElement = this.frameAnimation[i].frames[0][ElementsToExec];
-                        if (typeof PropElement == "string") {
-                            console.log(PropElement);
-                        }
-                        if (typeof PropElement == "function") {
-                            console.log(ElementsToExec);
-                            this.frameAnimation[i].frames[0][ElementsToExec]();
-                        }
-                        ElementsToExec++;
+                var setb = null;
+                var ElementsToExec = 0;
+                var PropElement = null;
+                while (this.frameAnimation[i].frames[0].length >= ElementsToExec) {
+                    PropElement = this.frameAnimation[i].frames[0][ElementsToExec];
+                    if (typeof PropElement == "string") {
+                        ValueToReturn.push(PropElement);
                     }
-                    console.log(RelativeTime + " |" + this.frameAnimation[i].times);
-                    if (this.frameAnimation[i].times != Infinity && RelativeTime >= this.frameAnimation[i].times) {
-                        clearInterval(setA);
+                    if (typeof PropElement == "function") {
+                        console.log(ElementsToExec);
+                        this.frameAnimation[i].frames[0][ElementsToExec]();
                     }
-                    RelativeTime += 1;
-                    ElementsToExec = 0;
-                }, this.frameAnimation[i].TimeFrameRates);
+                    ElementsToExec++;
+                }
+                ElementsToExec = 0;
+                if (ValueToReturn.length >= 1) {
+                    return ValueToReturn;
+                }
                 break;
             }
             i++;
