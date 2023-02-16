@@ -150,6 +150,8 @@ export default class Oct8Obj {
         this.AnimateEvent[this.AnimateEvent.length] = setInterval(() => {
             let IdAnimate = IdAnimateFixed;
             let valueMove = 0;
+            let valueTransform = 0;
+            let GetTransformation = "";
             if (moveDirect == "+") {
                 valueMove = parseInt(element.style[TypePropModify]) + Value;
                 element.style[TypePropModify] = valueMove + "vh";
@@ -158,6 +160,29 @@ export default class Oct8Obj {
             else {
                 valueMove = parseInt(element.style[TypePropModify]) - Value;
                 element.style[TypePropModify] = valueMove + "vh";
+                console.log(typeof TypePropModify);
+                if (typeof TypePropModify == "object") {
+                    var getValueTransform_ = element.style.transform;
+                    var ValuesGets = getValueTransform_.split(" ");
+                    for (let index = 0; index < ValuesGets.length; index++) {
+                        if (ValuesGets[index].includes(TypePropModify[1])) {
+                            GetTransformation = ValuesGets[index];
+                            break;
+                        }
+                    }
+                    //valueTransform = parseInt(element.style[TypePropModify][0][1])-Value
+                    if (GetTransformation != "") {
+                        GetTransformation = GetTransformation.replace("(", "").replace(")", "").replace(TypePropModify[1], "").replace("deg", "");
+                        valueTransform = parseInt(GetTransformation) + Value;
+                    }
+                    if (valueTransform > 0) {
+                        element.style[TypePropModify[0]] = TypePropModify[1] + '(' + valueTransform + "deg)";
+                    }
+                    else {
+                        Value = Value - 1;
+                        element.style[TypePropModify[0]] = TypePropModify[1] + '(' + Value + "deg)";
+                    }
+                }
                 //this.ModifyProps(element!,-Value,TypePropModify)
             }
             if (typeof (LimitValue) == "number") {
