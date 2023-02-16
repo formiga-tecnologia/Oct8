@@ -185,7 +185,7 @@ export default class Oct8Obj{
             let valueMove = 0
             let valueTransform= 0
             let GetTransformation =""
-            if(moveDirect == "+")
+            if(moveDirect == "+" && typeof TypePropModify != "object")
             {
                 valueMove = parseInt(element.style[TypePropModify])+Value
                 element.style[TypePropModify] = valueMove+"vh"
