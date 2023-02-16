@@ -228,7 +228,6 @@ export default class Oct8Obj {
         while (this.frameAnimation.length > i) {
             if (this.frameAnimation[i].SceneName == SceneNameFrame) {
                 this.frameSelected = i;
-                var setb = null;
                 var ElementsToExec = 0;
                 var PropElement = null;
                 while (this.frameAnimation[i].frames[0].length >= ElementsToExec) {
@@ -237,7 +236,6 @@ export default class Oct8Obj {
                         ValueToReturn.push(PropElement);
                     }
                     if (typeof PropElement == "function") {
-                        console.log(ElementsToExec);
                         this.frameAnimation[i].frames[0][ElementsToExec]();
                     }
                     ElementsToExec++;
