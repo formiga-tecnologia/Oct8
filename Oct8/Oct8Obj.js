@@ -190,7 +190,7 @@ export default class Oct8Obj {
                     if (LimitValue < this.Properties[TypePropModify] && moveDirect == "+" || LimitValue < this.Properties[TypePropModify[1]] && moveDirect == "+") {
                         clearInterval(IdAnimate);
                     }
-                    if (LimitValue > this.Properties[TypePropModify] && moveDirect != "+" || LimitValue > this.Properties[TypePropModify[1]] && moveDirect != "+") {
+                    if (LimitValue > this.Properties[TypePropModify] && moveDirect != "+" || LimitValue < this.Properties[TypePropModify[1]] && moveDirect != "+") {
                         clearInterval(IdAnimate);
                     }
                 }
