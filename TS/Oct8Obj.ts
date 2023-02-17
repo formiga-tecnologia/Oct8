@@ -176,7 +176,7 @@ export default class Oct8Obj{
         });
     }
 
-    CreateAnimationEvent(element:any,TypePropModify:string="marginLeft",Time:number=100,Value:number=0,moveDirect:String="+",LimitValue:any="infinity"){
+    CreateAnimationEvent(element:any,TypePropModify:string="marginLeft",Time:number=100,Value:number=0,LimitValue:any="infinity"){
         //Receber o parametro que ira mudar, ID (se for null usar do mesmo) ,Tempo  e valor 
         //Modificar props
         let IdAnimateFixed = this.AnimateEvent.length+1
@@ -200,17 +200,25 @@ export default class Oct8Obj{
                     if(GetTransformation!="")
                     {
                         GetTransformation = GetTransformation.replace("(","").replace(")","").replace(TypePropModify[1],"").replace("deg","")
-                        valueTransform = parseInt(GetTransformation)+Value
+                        if(Value<0){
+                            var a = Math.abs(Value)
+                            valueTransform = parseInt(GetTransformation)-a
+                        }
+                        else
+                        {
+                            valueTransform = parseInt(GetTransformation)+Value
+                        }
+                        
                     }
                     
-                    if(valueTransform>0)
+                    if(valueTransform>0 || Value<0 && valueTransform!=0  )
                     {
                         element.style[TypePropModify[0]] = TypePropModify[1]+'('+valueTransform+"deg)"
                     }
                     else
                     {
-                        Value=Value-1
-                        element.style[TypePropModify[0]] = TypePropModify[1]+'('+Value+"deg)"
+                        //Value=Value-1
+                        element.style[TypePropModify[0]] = TypePropModify[1]+'('+(Value-1)+"deg)"
                     }
                     
                 }
@@ -231,17 +239,28 @@ export default class Oct8Obj{
             
 
             if(typeof(LimitValue) == "number")
-            {             
-              if(TypePropModify.length >1)
+            {     
+              if(TypePropModify.length >1 && element.style[TypePropModify]!=undefined)
               {
-                if( LimitValue < this.Properties[TypePropModify] && moveDirect == "+" || LimitValue < this.Properties[TypePropModify[1]] && moveDirect == "+" )
+                if( LimitValue < parseInt(element.style[TypePropModify].replace("vh","")) && Value>0)
                {
                 clearInterval(IdAnimate)
                }
-               if( LimitValue > this.Properties[TypePropModify] && moveDirect != "+" || LimitValue < this.Properties[TypePropModify[1]] && moveDirect != "+")
+               if( LimitValue > parseInt(element.style[TypePropModify].replace("vh","")) && Value<0)
                {
                 clearInterval(IdAnimate)
                }
+              }
+              if(GetTransformation!=undefined)
+              {
+                if( LimitValue<parseInt(GetTransformation)&& Value>0)
+                {
+                    clearInterval(IdAnimate)
+                }
+                if(LimitValue>parseInt(GetTransformation) && Value<0)
+                {
+                    clearInterval(IdAnimate)
+                }
               }
             }
    
