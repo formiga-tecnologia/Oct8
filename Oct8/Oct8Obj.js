@@ -152,38 +152,38 @@ export default class Oct8Obj {
             let valueMove = 0;
             let valueTransform = 0;
             let GetTransformation = "";
-            if (moveDirect == "+" && typeof TypePropModify != "object") {
-                valueMove = parseInt(element.style[TypePropModify]) + Value;
-                element.style[TypePropModify] = valueMove + "vh";
-                //this.ModifyProps(element!,+Value,TypePropModify)
-            }
-            else {
-                valueMove = parseInt(element.style[TypePropModify]) - Value;
-                element.style[TypePropModify] = valueMove + "vh";
-                console.log(typeof TypePropModify);
-                if (typeof TypePropModify == "object") {
-                    var getValueTransform_ = element.style.transform;
-                    var ValuesGets = getValueTransform_.split(" ");
-                    for (let index = 0; index < ValuesGets.length; index++) {
-                        if (ValuesGets[index].includes(TypePropModify[1])) {
-                            GetTransformation = ValuesGets[index];
-                            break;
-                        }
-                    }
-                    //valueTransform = parseInt(element.style[TypePropModify][0][1])-Value
-                    if (GetTransformation != "") {
-                        GetTransformation = GetTransformation.replace("(", "").replace(")", "").replace(TypePropModify[1], "").replace("deg", "");
-                        valueTransform = parseInt(GetTransformation) + Value;
-                    }
-                    if (valueTransform > 0) {
-                        element.style[TypePropModify[0]] = TypePropModify[1] + '(' + valueTransform + "deg)";
-                    }
-                    else {
-                        Value = Value - 1;
-                        element.style[TypePropModify[0]] = TypePropModify[1] + '(' + Value + "deg)";
+            if (typeof TypePropModify == "object") {
+                var getValueTransform_ = element.style.transform;
+                var ValuesGets = getValueTransform_.split(" ");
+                for (let index = 0; index < ValuesGets.length; index++) {
+                    if (ValuesGets[index].includes(TypePropModify[1])) {
+                        GetTransformation = ValuesGets[index];
+                        break;
                     }
                 }
-                //this.ModifyProps(element!,-Value,TypePropModify)
+                //valueTransform = parseInt(element.style[TypePropModify][0][1])-Value
+                if (GetTransformation != "") {
+                    GetTransformation = GetTransformation.replace("(", "").replace(")", "").replace(TypePropModify[1], "").replace("deg", "");
+                    valueTransform = parseInt(GetTransformation) + Value;
+                }
+                if (valueTransform > 0) {
+                    element.style[TypePropModify[0]] = TypePropModify[1] + '(' + valueTransform + "deg)";
+                }
+                else {
+                    Value = Value - 1;
+                    element.style[TypePropModify[0]] = TypePropModify[1] + '(' + Value + "deg)";
+                }
+            }
+            else {
+                if (Value < 0) {
+                    var a = Math.abs(Value);
+                    valueMove = parseInt(element.style[TypePropModify]) - a;
+                }
+                else {
+                    valueMove = parseInt(element.style[TypePropModify]);
+                    valueMove = valueMove + Value;
+                }
+                element.style[TypePropModify] = valueMove + "vh";
             }
             if (typeof (LimitValue) == "number") {
                 if (TypePropModify.length > 1) {

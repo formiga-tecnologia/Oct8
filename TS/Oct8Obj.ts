@@ -185,17 +185,7 @@ export default class Oct8Obj{
             let valueMove = 0
             let valueTransform= 0
             let GetTransformation =""
-            if(moveDirect == "+" && typeof TypePropModify != "object")
-            {
-                valueMove = parseInt(element.style[TypePropModify])+Value
-                element.style[TypePropModify] = valueMove+"vh"
-                //this.ModifyProps(element!,+Value,TypePropModify)
-            }
-            else
-            {
-                valueMove = parseInt(element.style[TypePropModify])-Value
-                element.style[TypePropModify] = valueMove+"vh"
-                console.log(typeof TypePropModify)
+
                 if(typeof TypePropModify == "object")
                 {
                     var getValueTransform_ = element.style.transform;
@@ -224,8 +214,21 @@ export default class Oct8Obj{
                     }
                     
                 }
-                //this.ModifyProps(element!,-Value,TypePropModify)
-            }
+                else
+                {
+                    
+                    if(Value<0){
+                        var a = Math.abs(Value)
+                        valueMove = parseInt(element.style[TypePropModify])-a
+                    }
+                    else
+                    {
+                        valueMove = parseInt(element.style[TypePropModify])
+                        valueMove = valueMove+Value
+                    }
+                    element.style[TypePropModify] = valueMove+"vh"
+                }
+            
 
             if(typeof(LimitValue) == "number")
             {             
