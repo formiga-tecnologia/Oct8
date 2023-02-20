@@ -222,6 +222,8 @@ export default class Oct8Obj {
             this.StopEvent();
         }
     }
+    CreateAnimationCssEvent() {
+    }
     StopEvent() {
         clearInterval(this.event);
     }
