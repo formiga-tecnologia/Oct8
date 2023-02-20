@@ -270,7 +270,7 @@ export default class Oct8Obj{
     StopAnimation(Id=0){
         clearInterval(this.AnimateEvent[Id])
     }
-
+    
     CreateEvent(functionCallback:any=(()=>{console.log("Oct8 Functions")}), time:number=100) {
         if (this.On == true) {
             this.event = setInterval(functionCallback, time)!
