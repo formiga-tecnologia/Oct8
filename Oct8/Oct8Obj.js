@@ -223,16 +223,26 @@ export default class Oct8Obj {
         }
     }
     CreateAnimationCssEvent(animationCssRuleName, element, time, timeAnimation) {
-        this.CreateEvent(() => {
+        if (time > 0) {
+            this.CreateEvent(() => {
+                element.style.webkitAnimationName = animationCssRuleName;
+                element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
+            }, time);
+        }
+        else {
             element.style.webkitAnimationName = animationCssRuleName;
             element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
-        }, time);
+        }
     }
     StopAnimationCssEvent(element, time) {
-        this.CreateEvent(() => {
+        if (time > 0) {
+            this.CreateEvent(() => {
+                element.style.webkitAnimationName = "";
+            }, time);
+        }
+        else {
             element.style.webkitAnimationName = "";
-            this.StopEvent();
-        }, time);
+        }
     }
     StopEvent() {
         clearInterval(this.event);
