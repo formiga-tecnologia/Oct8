@@ -280,8 +280,16 @@ export default class Oct8Obj{
         }
     }
 
-    CreateAnimationCssEvent(){
-        
+    CreateAnimationCssEvent(animationCssRuleName:string,element:any,time:number,timeAnimation:number){
+        this.CreateEvent(()=>{
+            element.style.webkitAnimationName=animationCssRuleName
+            element.style["-webkit-animation-duration"] = ''+timeAnimation+'s'
+        },time)
+    }
+    StopAnimationCssEvent(element:any,time:number){
+        this.CreateEvent(()=>{
+            element.style.webkitAnimationName = ""
+        },time)
     }
 
     StopEvent() {
