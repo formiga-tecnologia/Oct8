@@ -225,12 +225,12 @@ export default class Oct8Obj {
     CreateAnimationCssEvent(animationCssRuleName, element, time, timeAnimation) {
         if (time > 0) {
             this.CreateEvent(() => {
-                element.style.webkitAnimationName = animationCssRuleName;
+                element.style.webkitAnimationName += " " + animationCssRuleName;
                 element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
             }, time);
         }
         else {
-            element.style.webkitAnimationName = animationCssRuleName;
+            element.style.webkitAnimationName += " " + animationCssRuleName;
             element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
         }
     }
