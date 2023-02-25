@@ -37,7 +37,8 @@ export default class Oct8Obj{
     event = 0
     On:boolean = true
     animMove =0
-
+    timeLine_ = {}
+    timeline_event:Array<any> = [0,0,false]
     frameAnimation:any = []
     frameSelected:number = 0
 
@@ -337,6 +338,28 @@ export default class Oct8Obj{
         Dynamic = Y!=null ? this.ModifyProps(ModifyId,Y,this.PropsElement.MoveY) : 0
         Dynamic = H!=null ? this.ModifyProps(ModifyId,H,this.PropsElement.H) : 0
         Dynamic = W!=null ? this.ModifyProps(ModifyId,W,this.PropsElement.W) : 0
+    }
+
+    CreateTimeLine(time:number,loop:boolean=false){
+        this.timeLine_ = this.frameAnimation
+        this.timeline_event[1] = time
+        this.timeline_event[2]=loop
+        return "TimeLine created: "+this.frameAnimation.length+" Frames."
+    }
+
+    ExecuteTimeLine(){
+        let a = setInterval(()=>{
+            for (let index = 0; index < this.frameAnimation.length; index++) {
+                console.log(this.frameAnimation[index]) 
+            }
+            this.timeline_event[0]+=1
+            console.log(this.timeline_event)
+            if(this.timeline_event[1]>1 && this.timeline_event[2]==false)
+            {
+                clearInterval(a)
+                console.log("opa")
+            }
+        },this.timeline_event[1])
     }
 
     NewScene(SceneNameFrame:string,Element:any="null",Time:number,TimeFrameRate:number){
