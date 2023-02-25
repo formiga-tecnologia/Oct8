@@ -331,13 +331,12 @@ export default class Oct8Obj{
      * @param {string} W Value of Width value.
      * @param {string} H Value of Heigth value.
      */
-    ModifyPropsDefault(id:string="",X:any=0,Y:any=0,W:any=0,H:any=0){
-        let ModifyId:any = id == "" ? this.GetElementId() : id
+    ModifyPropsDefault(element:any,X:any=0,Y:any=0,W:any=0,H:any=0){
         let Dynamic:any
-        Dynamic = X !=null ? this.ModifyProps(ModifyId,X,this.PropsElement.MoveX) : 0
-        Dynamic = Y!=null ? this.ModifyProps(ModifyId,Y,this.PropsElement.MoveY) : 0
-        Dynamic = H!=null ? this.ModifyProps(ModifyId,H,this.PropsElement.H) : 0
-        Dynamic = W!=null ? this.ModifyProps(ModifyId,W,this.PropsElement.W) : 0
+        Dynamic = X !=null ? this.ModifyProps(element,X,this.PropsElement.MoveX) : 0
+        Dynamic = Y!=null ? this.ModifyProps(element,Y,this.PropsElement.MoveY) : 0
+        Dynamic = H!=null ? this.ModifyProps(element,H,this.PropsElement.H) : 0
+        Dynamic = W!=null ? this.ModifyProps(element,W,this.PropsElement.W) : 0
     }
 
     CreateTimeLine(time:number,loop:boolean=false){
@@ -384,7 +383,7 @@ export default class Oct8Obj{
     ExecuteScene(SceneNameFrame:string){
         var i:number = 0;
         var RelativeTime = 0
-        var ValueToReturn = []
+        var ValueToReturn:any = []
         while(this.frameAnimation.length > i){
             if(this.frameAnimation[i].SceneName == SceneNameFrame){
                 this.frameSelected = i
@@ -393,10 +392,13 @@ export default class Oct8Obj{
                     while(this.frameAnimation[i].frames[0].length>=ElementsToExec){
                          PropElement=this.frameAnimation[i].frames[0][ElementsToExec]
                         if(typeof PropElement == "string"){
-                            ValueToReturn.push(PropElement)
+                            var element  = PropElement
+                            setTimeout(()=>{ValueToReturn.push(element)},this.frameAnimation[i].TimeFrameRates)
+                            
                         }
                         if(typeof PropElement == "function"){
-                                this.frameAnimation[i].frames[0][ElementsToExec]()
+                            setTimeout(()=>{this.frameAnimation[i].frames[0][ElementsToExec]()},this.frameAnimation[i].TimeFrameRates)
+                                
                         }
                         ElementsToExec++
                     }

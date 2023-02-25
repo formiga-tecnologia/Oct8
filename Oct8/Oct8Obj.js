@@ -266,13 +266,12 @@ export default class Oct8Obj {
      * @param {string} W Value of Width value.
      * @param {string} H Value of Heigth value.
      */
-    ModifyPropsDefault(id = "", X = 0, Y = 0, W = 0, H = 0) {
-        let ModifyId = id == "" ? this.GetElementId() : id;
+    ModifyPropsDefault(element, X = 0, Y = 0, W = 0, H = 0) {
         let Dynamic;
-        Dynamic = X != null ? this.ModifyProps(ModifyId, X, this.PropsElement.MoveX) : 0;
-        Dynamic = Y != null ? this.ModifyProps(ModifyId, Y, this.PropsElement.MoveY) : 0;
-        Dynamic = H != null ? this.ModifyProps(ModifyId, H, this.PropsElement.H) : 0;
-        Dynamic = W != null ? this.ModifyProps(ModifyId, W, this.PropsElement.W) : 0;
+        Dynamic = X != null ? this.ModifyProps(element, X, this.PropsElement.MoveX) : 0;
+        Dynamic = Y != null ? this.ModifyProps(element, Y, this.PropsElement.MoveY) : 0;
+        Dynamic = H != null ? this.ModifyProps(element, H, this.PropsElement.H) : 0;
+        Dynamic = W != null ? this.ModifyProps(element, W, this.PropsElement.W) : 0;
     }
     CreateTimeLine(time, loop = false) {
         this.timeLine_ = this.frameAnimation;
@@ -322,10 +321,11 @@ export default class Oct8Obj {
                 while (this.frameAnimation[i].frames[0].length >= ElementsToExec) {
                     PropElement = this.frameAnimation[i].frames[0][ElementsToExec];
                     if (typeof PropElement == "string") {
-                        ValueToReturn.push(PropElement);
+                        var element = PropElement;
+                        setTimeout(() => { ValueToReturn.push(element); }, this.frameAnimation[i].TimeFrameRates);
                     }
                     if (typeof PropElement == "function") {
-                        this.frameAnimation[i].frames[0][ElementsToExec]();
+                        setTimeout(() => { this.frameAnimation[i].frames[0][ElementsToExec](); }, this.frameAnimation[i].TimeFrameRates);
                     }
                     ElementsToExec++;
                 }
