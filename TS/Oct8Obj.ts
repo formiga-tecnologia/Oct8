@@ -350,6 +350,7 @@ export default class Oct8Obj{
     ExecuteTimeLine(){
         let IntervalSet_Timeline = setInterval(()=>{
             for (let index = 0; index < this.frameAnimation.length; index++) {
+                this.ExecuteScene(this.frameAnimation[index].SceneName)
             }
             this.timeline_event[0]+=1
             if(this.timeline_event[1]>1 && this.timeline_event[2]==false)
