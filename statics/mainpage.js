@@ -11,7 +11,9 @@ function ArticleComp(Conteudo){
 }
 var CompArray = {
     ElementoArtigo_01: ["Artigo01"],
-    ElementoArtigo_02: ["Artigo02"]
+    ElementoArtigo_02: ["Artigo02"],
+    ElementoArtigo_03: ["Artigo03"]
 }
 OctEngine.AppendObjectFacyotyTo("ArtigoPrincipal",CompArray.ElementoArtigo_01)
 OctEngine.AppendObjectFacyotyTo("ArtigoPrincipal",CompArray.ElementoArtigo_02)
+OctEngine.AppendObjectFacyotyTo("ArtigoPrincipal",CompArray.ElementoArtigo_03)
