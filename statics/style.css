@@ -55,6 +55,29 @@ Tipo fonte:
     margin-left: 94vh;
     margin-top: 2vh;
 }
+#Article-area-main{
+    height: 300px;
+    width: 90%;
+    background-color: #BD8E23;
+    margin:auto;
+    padding: 2vh;
+}
+.article{
+    background-color: red;
+    width: 10vh;
+    height: 10vh;
+    float: left;
+    margin-left: 4vh;
+}
+.area{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 70vh;
+    height: auto;
+    width: 100%;
+    margin-left: -2vh;
+}
 
 /* Mobile */
 @media only screen and (max-width: 600px) {

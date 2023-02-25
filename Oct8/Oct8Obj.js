@@ -268,10 +268,10 @@ export default class Oct8Obj {
      */
     ModifyPropsDefault(element, X = 0, Y = 0, W = 0, H = 0) {
         let Dynamic;
-        Dynamic = X != null ? this.ModifyProps(element, X, this.PropsElement.MoveX) : 0;
-        Dynamic = Y != null ? this.ModifyProps(element, Y, this.PropsElement.MoveY) : 0;
-        Dynamic = H != null ? this.ModifyProps(element, H, this.PropsElement.H) : 0;
-        Dynamic = W != null ? this.ModifyProps(element, W, this.PropsElement.W) : 0;
+        Dynamic = X != null ? this.ModifyProps(element, X, this.PropsElement.MoveX) : element.style.marginLeft = null;
+        Dynamic = Y != null ? this.ModifyProps(element, Y, this.PropsElement.MoveY) : element.style.marginTop = null;
+        Dynamic = H != null ? this.ModifyProps(element, H, this.PropsElement.H) : element.style.height = null;
+        Dynamic = W != null ? this.ModifyProps(element, W, this.PropsElement.W) : element.style.width = null;
     }
     CreateTimeLine(time, loop = false) {
         this.timeLine_ = this.frameAnimation;
