@@ -61,6 +61,7 @@ Tipo fonte:
     background-color: #BD8E23;
     margin:auto;
     padding: 2vh;
+
 }
 .article{
     background-color: red;
@@ -68,6 +69,7 @@ Tipo fonte:
     height: 10vh;
     float: left;
     margin-left: 12vh;
+    border-radius: 2vh;
 }
 .area{
     display: flex;

@@ -338,6 +338,14 @@ export default class Oct8Obj{
         Dynamic = H!=null ? this.ModifyProps(element,H,this.PropsElement.H) : element.style.height = null
         Dynamic = W!=null ? this.ModifyProps(element,W,this.PropsElement.W) : element.style.width = null
     }
+    ModifyContentContainer(element:any,content:HTMLElement,clearContent:boolean=false){
+        if(clearContent == true){
+            element.innerHTML= content
+            return element
+        }
+        element.innerHTML+= content
+        return element
+    }
 
     CreateTimeLine(time:number,loop:boolean=false){
         this.timeLine_ = this.frameAnimation
