@@ -112,6 +112,14 @@ Tipo fonte:
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
+.boxcode{
+
+    height: 6vh;
+    width: 1vh;
+    margin-top: -8vh;
+    margin-left: 20vh;
+    transform: rotate(8deg);
+}
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
@@ -129,10 +137,18 @@ Tipo fonte:
 }
 
 /* Animations  */ 
-@keyframes moveBox {
+@keyframes boxfac {
     0%   {margin-left: 20vh;}
     25%  {margin-left: 10vh;}
     50%  {margin-left: 0vh;}
     75%  {margin-left: 10vh;}
     100% {margin-left: 20vh;}
   }
+
+@keyframes boxcode{
+    0%   {background-color:rgba(6, 187, 0,1);margin-left: 20vh;}
+    25%  {background-color:rgba(6, 187, 0,0.4);margin-left: 10vh;}
+    50%  {background-color:rgba(6, 187, 0,0.2);margin-left: 8vh;}
+    75%  {background-color:rgba(6, 187, 0,0.4);margin-left: 10vh;}
+    100% {background-color:rgba(6, 187, 0,1);margin-left: 20vh;}
+}

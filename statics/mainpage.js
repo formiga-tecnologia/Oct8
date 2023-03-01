@@ -20,7 +20,7 @@ function ArticleComp(Conteudo){
 function ElementoAnimado(conteudo){
     var animacao = OctEngine.CreateContainerElement(conteudo[0]+"Animation",conteudo[0],"animationBox "+conteudo[1])
     OctEngine.ModifyPropsDefault(animacao,null,null,null,null)
-    OctEngine.CreateAnimationCssEvent("moveBox",animacao,4,3,"infinite",true,false)
+    OctEngine.CreateAnimationCssEvent(conteudo[1],animacao,2,4,"infinite",true,false)
 }
 
 //Conteudos que os componetes podem recebrer de forma padrão
