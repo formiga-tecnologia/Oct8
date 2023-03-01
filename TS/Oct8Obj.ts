@@ -280,7 +280,7 @@ export default class Oct8Obj{
             this.StopEvent()
         }
     }
-//objA.CreateAnimationCssEvent("rotateX",document.getElementById("Objeto2"),0,14)
+
     CreateAnimationCssEvent(animationCssRuleName:string,element:any,time:number,timeAnimation:number,iteration:any="infinite",reverse:String="reverse",fillMode:boolean=true){      
         element.style.webkitAnimationName+=" "+animationCssRuleName
         element.style["animation-iteration-count"] = iteration
