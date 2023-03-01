@@ -281,42 +281,22 @@ export default class Oct8Obj{
         }
     }
 //objA.CreateAnimationCssEvent("rotateX",document.getElementById("Objeto2"),0,14)
-    CreateAnimationCssEvent(animationCssRuleName:string,element:any,time:number,timeAnimation:number,iteration:number,reverse:String="reverse"){
-        if(time>0)
+    CreateAnimationCssEvent(animationCssRuleName:string,element:any,time:number,timeAnimation:number,iteration:any="infinite",reverse:String="reverse",fillMode:boolean=true){      
+        element.style.webkitAnimationName+=" "+animationCssRuleName
+        element.style["animation-iteration-count"] = iteration
+        element.style["-webkit-animation-duration"] = ''+timeAnimation+'s'
+        if(fillMode == true)
         {
-            this.CreateEvent(()=>{
-                element.style.webkitAnimationName+=" "+animationCssRuleName
-                element.style["-webkit-animation-duration"] = ''+timeAnimation+'s'
-                element.style["animation-fill-mode"] = "forwards"
-                if(iteration >0)
-                {
-                    element.style["animation-iteration-count"] = iteration
-                }
-                element.style["animation-direction"]=reverse
-            },time)    
-        }
-        else{
-            element.style.webkitAnimationName+=" "+animationCssRuleName
-            element.style["-webkit-animation-duration"] = ''+timeAnimation+'s'
             element.style["animation-fill-mode"] = "forwards"
-            element.style["animation-iteration-count"] = iteration
+        }
+        if(reverse!=null)
+        {
             element.style["animation-direction"]=reverse
         }
-        
-        
+      
     }
     StopAnimationCssEvent(element:any,time:number){
-        if(time>0)
-        {
-            this.CreateEvent(()=>{
-                element.style.webkitAnimationName = ""
-            },time)
-        }
-        else
-        {
-            element.style.webkitAnimationName = ""
-        }
-        
+            element.style.webkitAnimationName = ""      
     }
 
     StopEvent() {

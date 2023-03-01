@@ -225,35 +225,19 @@ export default class Oct8Obj {
         }
     }
     //objA.CreateAnimationCssEvent("rotateX",document.getElementById("Objeto2"),0,14)
-    CreateAnimationCssEvent(animationCssRuleName, element, time, timeAnimation, iteration, reverse = "reverse") {
-        if (time > 0) {
-            this.CreateEvent(() => {
-                element.style.webkitAnimationName += " " + animationCssRuleName;
-                element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
-                element.style["animation-fill-mode"] = "forwards";
-                if (iteration > 0) {
-                    element.style["animation-iteration-count"] = iteration;
-                }
-                element.style["animation-direction"] = reverse;
-            }, time);
-        }
-        else {
-            element.style.webkitAnimationName += " " + animationCssRuleName;
-            element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
+    CreateAnimationCssEvent(animationCssRuleName, element, time, timeAnimation, iteration = "infinite", reverse = "reverse", fillMode = true) {
+        element.style.webkitAnimationName += " " + animationCssRuleName;
+        element.style["animation-iteration-count"] = iteration;
+        element.style["-webkit-animation-duration"] = '' + timeAnimation + 's';
+        if (fillMode == true) {
             element.style["animation-fill-mode"] = "forwards";
-            element.style["animation-iteration-count"] = iteration;
+        }
+        if (reverse != null) {
             element.style["animation-direction"] = reverse;
         }
     }
     StopAnimationCssEvent(element, time) {
-        if (time > 0) {
-            this.CreateEvent(() => {
-                element.style.webkitAnimationName = "";
-            }, time);
-        }
-        else {
-            element.style.webkitAnimationName = "";
-        }
+        element.style.webkitAnimationName = "";
     }
     StopEvent() {
         clearInterval(this.event);

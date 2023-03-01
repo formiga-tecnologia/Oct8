@@ -64,12 +64,32 @@ Tipo fonte:
 
 }
 .article{
-    background-color: red;
+    background-color: #866415;
     width: 10vh;
     height: 10vh;
     float: left;
     margin-left: 12vh;
     border-radius: 2vh;
+}
+.article figure{
+    background-color: white;
+    height: 20vh;
+    width: 40vh;
+    margin: auto;
+    border-radius: 2vh 2vh 0vh 0vh;
+}
+.article figure img{
+    margin: auto;
+    margin-top: 6vh;
+    margin-left: 16vh;
+}
+.article section{
+    color: white;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    text-align: center;
+    margin-top: 2vh;
+    font-family: 'Open Sans', sans-serif;
 }
 .area{
     display: flex;
@@ -79,6 +99,18 @@ Tipo fonte:
     height: auto;
     width: 100%;
     margin-left: -2vh;
+}
+
+/* Boxes */
+.boxfac{
+    background-color: #866415;
+    height: 2vh;
+    width: 2vh;
+    margin-top: -3.8vh;
+    margin-left: 8vh;
+    animation-name: moveBox;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 /* Mobile */
@@ -95,3 +127,12 @@ Tipo fonte:
         margin-left: 4vh;
     }
 }
+
+/* Animations  */ 
+@keyframes moveBox {
+    0%   {margin-left: 20vh;}
+    25%  {margin-left: 10vh;}
+    50%  {margin-left: 0vh;}
+    75%  {margin-left: 10vh;}
+    100% {margin-left: 20vh;}
+  }
