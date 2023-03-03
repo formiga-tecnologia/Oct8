@@ -48,6 +48,8 @@ export default class Oct8Obj {
         this.timeline_event = [0, 0, false];
         this.frameAnimation = [];
         this.frameSelected = 0;
+        this.current_scene = 0;
+        this.Scene_Return_values = [];
         this.Properties.marginLeft = X;
         this.Properties.marginTop = Y;
         this.Properties.height = H;
@@ -224,7 +226,6 @@ export default class Oct8Obj {
             this.StopEvent();
         }
     }
-    //objA.CreateAnimationCssEvent("rotateX",document.getElementById("Objeto2"),0,14)
     CreateAnimationCssEvent(animationCssRuleName, element, time, timeAnimation, iteration = "infinite", reverse = "reverse", fillMode = true) {
         element.style.webkitAnimationName += " " + animationCssRuleName;
         element.style["animation-iteration-count"] = iteration;
@@ -301,6 +302,26 @@ export default class Oct8Obj {
             i++;
         }
     }
+    ExecuteNextScene() {
+        if (this.current_scene < this.frameAnimation.length) {
+            let sceneName = this.frameAnimation[this.current_scene].SceneName;
+            this.ExecuteScene(sceneName);
+            if (this.current_scene == 0) {
+                this.current_scene += 1;
+            }
+            return true;
+        }
+        return false;
+    }
+    ExecutePrevScene() {
+        if (this.current_scene > -1) {
+            let sceneName = this.frameAnimation[this.current_scene].SceneName;
+            this.ExecuteScene(sceneName);
+            this.current_scene -= 1;
+            return true;
+        }
+        return false;
+    }
     ExecuteScene(SceneNameFrame) {
         var i = 0;
         var RelativeTime = 0;
@@ -312,9 +333,12 @@ export default class Oct8Obj {
                 var PropElement = null;
                 while (this.frameAnimation[i].frames[0].length >= ElementsToExec) {
                     PropElement = this.frameAnimation[i].frames[0][ElementsToExec];
-                    if (typeof PropElement == "string") {
+                    if (typeof PropElement == "string" || typeof PropElement == "number") {
                         var element = PropElement;
-                        setTimeout(() => { ValueToReturn.push(element); }, this.frameAnimation[i].TimeFrameRates);
+                        setTimeout(() => {
+                            ValueToReturn.push(element);
+                            this.Scene_Return_values.push(element);
+                        }, this.frameAnimation[i].TimeFrameRates);
                     }
                     if (typeof PropElement == "function") {
                         setTimeout(() => { this.frameAnimation[i].frames[0][ElementsToExec](); }, this.frameAnimation[i].TimeFrameRates);

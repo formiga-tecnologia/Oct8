@@ -41,6 +41,8 @@ export default class Oct8Obj{
     timeline_event:Array<any> = [0,0,false]
     frameAnimation:any = []
     frameSelected:number = 0
+    current_scene:number = 0
+    Scene_Return_values:any = []
 
     constructor(
         public Id:string = "",
@@ -368,6 +370,31 @@ export default class Oct8Obj{
         }
     }
 
+    ExecuteNextScene(){
+        if(this.current_scene < this.frameAnimation.length)
+        {
+            let sceneName = this.frameAnimation[this.current_scene].SceneName
+            this.ExecuteScene(sceneName)
+            if(this.current_scene == 0)
+            {
+                this.current_scene+=1
+            }    
+            return true 
+        }
+        return false
+    }
+
+    ExecutePrevScene(){ 
+        if(this.current_scene >-1)
+        {
+            let sceneName = this.frameAnimation[this.current_scene].SceneName
+            this.ExecuteScene(sceneName)
+            this.current_scene-=1
+            return true
+        }
+        return false
+    }
+
     ExecuteScene(SceneNameFrame:string){
         var i:number = 0;
         var RelativeTime = 0
@@ -379,9 +406,11 @@ export default class Oct8Obj{
                     var PropElement = null
                     while(this.frameAnimation[i].frames[0].length>=ElementsToExec){
                          PropElement=this.frameAnimation[i].frames[0][ElementsToExec]
-                        if(typeof PropElement == "string"){
+                        if(typeof PropElement == "string" || typeof PropElement == "number"){
                             var element  = PropElement
-                            setTimeout(()=>{ValueToReturn.push(element)},this.frameAnimation[i].TimeFrameRates)
+                            setTimeout(()=>{ValueToReturn.push(element)
+                                this.Scene_Return_values.push(element)
+                            },this.frameAnimation[i].TimeFrameRates)
                             
                         }
                         if(typeof PropElement == "function"){
