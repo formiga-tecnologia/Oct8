@@ -120,6 +120,55 @@ Tipo fonte:
     margin-left: 20vh;
     transform: rotate(8deg);
 }
+.boxdev{
+    width: 8.8vh;
+    height: 11.5vh;
+    background-color: #726970;
+    margin-top: -12vh;
+    margin-left: 16vh;
+}
+
+#DocumentationArea{
+    height: 60vh;
+    width: 92%;
+    margin-top: 50vh;
+    margin-left: 7.9vh;
+    position: absolute;
+    background-color: #BD8E23;
+    display: flex;
+    flex-direction: column;
+}
+#DocumentationArea_content{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+}
+#ArticleDocs{
+    height: 50vh;
+    width: 70vh;
+}
+#CodeReview{
+    height: 50vh;
+    width: 60vh;
+    margin-left: 28vh;
+    border-radius: 2vh;
+    background-color: #02012b;
+}
+#element_title_h3{
+    border-top-left-radius: 2vh;
+    border-top-right-radius: 2vh;
+    background-color: #000046;
+    color: white;
+    margin-top: 0.1vh;
+    text-align: center;
+    padding-bottom: 1vh;
+}
+#NavegationMenu{
+    height: 10vh;
+    width: 100%;
+    background-color: #866415;
+}
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
@@ -133,6 +182,27 @@ Tipo fonte:
         margin-top: -6vh;
         width: 40vh;
         margin-left: 4vh;
+    }
+    .article{
+        height: 10vh;
+        width: 10vh;
+        margin-left: 1vh;
+        margin-top: 4vh;
+    }
+    #Article-area-main{
+        height: auto;
+    }
+    .boxdev{
+        height: 2vh;
+        width: 6.4vh;
+        animation-name: boxdev2;
+    }
+
+    @keyframes boxdev2{
+        0%   {height: 2vh;}
+        25%  {height: 1.6vh;}
+        75%  {height: 1.6vh;}
+        100% {height: 2vh;}
     }
 }
 
@@ -151,4 +221,12 @@ Tipo fonte:
     50%  {background-color:rgba(6, 187, 0,0.2);margin-left: 8vh;}
     75%  {background-color:rgba(6, 187, 0,0.4);margin-left: 10vh;}
     100% {background-color:rgba(6, 187, 0,1);margin-left: 20vh;}
+}
+
+@keyframes boxdev{
+    0%   {height: 11.5vh;}
+    25%  {height: 10vh;}
+    50%  {height: 0vh;}
+    75%  {height: 10vh;}
+    100% {height: 11.5vh;}
 }
