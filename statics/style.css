@@ -154,6 +154,8 @@ Tipo fonte:
 #ArticleDocs h4{
     font-weight: lighter;
 }
+/* Code Reviews */
+
 #CodeReview{
     height: 50vh;
     width: 60vh;
@@ -209,12 +211,20 @@ Tipo fonte:
         width: 6.4vh;
         animation-name: boxdev2;
     }
-
-    @keyframes boxdev2{
-        0%   {height: 2vh;}
-        25%  {height: 1.6vh;}
-        75%  {height: 1.6vh;}
-        100% {height: 2vh;}
+    #DocumentationArea{
+        margin-top: 140vh;
+        margin-left: 2vh;
+        height: 100vh;
+    }
+    #DocumentationArea_content
+    {
+        flex-direction: column;
+    }
+    #CodeReview{
+        margin-left: -1vh;
+        width: 120%;
+        overflow-wrap: break-word;
+        margin-top: -13vh;
     }
 }
 
