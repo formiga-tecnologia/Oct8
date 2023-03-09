@@ -3,6 +3,9 @@ Fontes :
 Background : 
 Tipo fonte: 
 */ 
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 #MenuBar{
     background-color: #BD8E23;
     height: 20vh;
@@ -134,7 +137,6 @@ Tipo fonte:
     margin-top: 50vh;
     margin-left: 7.9vh;
     position: absolute;
-    background-color: #BD8E23;
     display: flex;
     flex-direction: column;
 }
@@ -147,19 +149,29 @@ Tipo fonte:
 #ArticleDocs{
     height: 50vh;
     width: 70vh;
+    margin-left: 2vh;
+}
+#ArticleDocs h4{
+    font-weight: lighter;
 }
 #CodeReview{
     height: 50vh;
     width: 60vh;
     margin-left: 28vh;
     border-radius: 2vh;
-    background-color: #02012b;
+    background-color: #222225;
+}
+#CodeReview h6{
+    color: wheat;
+    margin-left: 2vh;
+    font-weight: bold;
+    font-size: 1.8vh;
 }
 #element_title_h3{
     border-top-left-radius: 2vh;
     border-top-right-radius: 2vh;
-    background-color: #000046;
-    color: white;
+    background-color: #272733;
+    color: #726970;
     margin-top: 0.1vh;
     text-align: center;
     padding-bottom: 1vh;
