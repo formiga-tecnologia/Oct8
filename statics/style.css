@@ -182,6 +182,22 @@ Tipo fonte:
     height: 10vh;
     width: 100%;
     background-color: #866415;
+    display: flex;
+    flex-direction: row;
+}
+
+button{
+    border-radius: 2vh;
+    background-color: #FFC031;
+    color: #866415;
+    padding: 2vh;
+    text-align: center;
+    border-color: #BD8E23;
+}
+#flutter button
+{
+    margin-top: 2vh;
+    margin-left: 2vh;
 }
 
 /* Mobile */
