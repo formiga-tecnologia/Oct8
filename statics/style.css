@@ -256,6 +256,16 @@ footer{
     #ArticleDocs{
         width: 40vh;
     }
+    footer{
+        width: 100%;
+        background-color: #866415;
+        color: #FFC031;
+        height: 20vh;
+        margin-top: 320vh;
+        text-align: center;
+        position: absolute;
+        left: 0;
+    }
 }
 
 /* Animations  */ 
