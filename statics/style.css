@@ -242,6 +242,9 @@ button{
         overflow-wrap: break-word;
         margin-top: -13vh;
     }
+    #ArticleDocs{
+        width: 40vh;
+    }
 }
 
 /* Animations  */ 
