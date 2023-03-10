@@ -184,6 +184,7 @@ Tipo fonte:
     background-color: #866415;
     display: flex;
     flex-direction: row;
+    border-radius: 2vh;
 }
 
 button{
@@ -194,10 +195,20 @@ button{
     text-align: center;
     border-color: #BD8E23;
 }
-#flutter button
+.flutter button
 {
     margin-top: 2vh;
     margin-left: 2vh;
+}
+footer{
+    width: 100%;
+    background-color: #866415;
+    color: #FFC031;
+    height: 20vh;
+    margin-top: 190vh;
+    text-align: center;
+    position: absolute;
+    left: 0;
 }
 
 /* Mobile */
