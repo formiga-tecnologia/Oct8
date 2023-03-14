@@ -267,7 +267,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 920px) {
     body{
         background-color: red;
     }
