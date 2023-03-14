@@ -211,7 +211,7 @@ footer{
 }
 
 /* Mobile */
-@media only screen and (max-width: 600px) {
+@media screen and (max-width:600px) {
     #squareBasic{
         background-color: #FFC031;
         border-radius: 2vh;
@@ -267,7 +267,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 920px) {
+@media screen and (min-width: 914px) {
     body{
         background-color: red;
     }
