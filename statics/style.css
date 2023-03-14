@@ -267,7 +267,7 @@ footer{
     }
 }
 
-@media screen and (min-width: 914px) {
+@media screen and (min-width: 914px) and (max-width:980px) {
     body{
         background-color: red;
     }
