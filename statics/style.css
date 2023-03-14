@@ -267,7 +267,10 @@ footer{
     }
 }
 
-@media only screen and (min-width: 914px) {
+@media only screen and (max-width: 980px) {
+    body{
+        background-color: red;
+    }
     nav ul li img{
         margin-top: -4vh;
         width: 14vh;
@@ -282,8 +285,32 @@ footer{
     #Mainbanner h2{
         margin-top: -10vh;
     }
-    .article{
+    .animationBox{
         padding: 2VH;
+    }
+    #Article-area-main{
+        margin-left: 20vh;
+        height: 110vh;
+        position: relative;
+     /*   background-color: rebeccapurple;*/
+    }
+    .article figure{
+        height: 40vh;
+    }
+    .article section{
+        background-color: #866415;
+        padding: 2vh;
+        border-radius: 2vh;
+    }
+    #DocumentationArea{
+        margin-top: 110vh;
+        margin-left: 24vh;
+    }
+    #NavegationMenu{
+        margin-left: -14vh;
+    }
+    footer{
+        margin-top: 260vh;
     }
 }
 
