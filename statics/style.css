@@ -267,6 +267,26 @@ footer{
     }
 }
 
+@media only screen and (min-width: 914px) {
+    nav ul li img{
+        margin-top: -4vh;
+        width: 14vh;
+        height: 18vh;
+    }
+    nav ul li h1{
+        margin-top: -8vh;
+    }
+    #Mainbanner h1{
+        margin-left: -20vh;
+    }
+    #Mainbanner h2{
+        margin-top: -10vh;
+    }
+    .article{
+        padding: 2VH;
+    }
+}
+
 /* Animations  */ 
 @keyframes boxfac {
     0%   {margin-left: 20vh;}
