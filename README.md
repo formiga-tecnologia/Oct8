@@ -87,5 +87,37 @@ A scene will be what will be executed in predetermined order, so each scene is r
 It follows as an example a scene creation in practice.
 
 ```javascript
-objA.NewScene("Scene01",[ConsoleLog,"Ola mundo"],9000,5000)
+function RenderComp(){
+	....
+}
+
+function Validate(){
+	....
+}
+
+function ChangeColor(){
+	....
+}
+OctEngine.NewScene("Scene01",[RenderComp,Validate,ChangeColor],9000,5000)
+```
+As parameters you have to pass the name of the scene, its functions that will be executed, the execution time of each value of the Array, and the execution time of the scene as a whole (its timeout value in a nutshell)
+
+<h3>Running the scene</h3>
+To perform the scene you can directly delete the name of the created scene or even using parameters that perform the next scene or previous scene, where the scene always begins with the first scene created.
+follows how it works in these three ways:
+
+```javascript
+//Execute Scene for direct name
+OctEngine.ExecuteScene("Scene01")
+// Execute Next Scene for Default
+OctEngine.ExecuteNextScene()
+//Execute Prev Scene for Default
+OctEngine.ExecutePrevScene()
+```
+
+<h3>Timeline System</h3> 
+With the scenes created you can run all of them at once with the Timeline system. The Timeline system performs all functions within the order within the time each was determined, each Variable Oct8 has only a single Timeline and to run this Timeline you need to run this code: 
+
+```javascript
+OctEngine.ExecuteTimeLine()
 ```
