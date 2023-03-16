@@ -45,13 +45,19 @@ var CompArray = {
     ElementoArtigo_02: ["Artigo02","https://th.bing.com/th/id/OIP.icyD4BfpPgBruE9_ok5MxgHaHa?pid=ImgDet&rs=1","Desenvolvimento de suas paginas web ganham mais vida com o nosso framework , que alem da vlocidade, ela te proprociona mais liberdade criativa para desenvolver do seu jeito","boxcode"],
     ElementoArtigo_03: ["Artigo03","https://th.bing.com/th/id/R.8ce8ffc984c80bfd339958aa1fa904c0?rik=P4vw5d%2bEqTXKQQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_545542.png&ehk=J9tzxqGHV9Iz68q6GetB57lWMmnTW0tR0FZDn8t4FGI%3d&risl=&pid=ImgRaw&r=0","A legibilidade do codigo é simplesmente facil, alem da sua curva de aprendizado ser altamente baixa podendo no mesmo dia começar a produzir seu proprio projeto web.","boxdev"]
 }
+
 var CodigoArray  ={
     CodigoExemplo_01:["<h1>Como criar uma fabrica</h1></br><h4>As fabricas são eventos pre determinados que fazem a montagem do seus futuros componentes em Oct8.</h4>","<h6>import Oct8 from '../Oct8/Oct8.js';<br/>&nbsp &nbsp var OctEngine = new Oct8();</br> &nbsp &nbsp OctEngine.CreateObjectFactory(ArticleComp,'ArtigoPrincipal')</h6>"],
-    CodigoExemplo_02:["<h1>Como criar uma Cena</h1></br><h4>As Cenas são componentes importantes dentro do Oct8. Dentro de uma cena você determina a ordem de cada ação que você criou, dando uma organização muito maior dentro do seu projeto.</h4>","<h6>import Oct8 from '../Oct8/Oct8.js';<br/>&nbsp &nbsp var OctEngine = new Oct8();</br> &nbsp &nbsp OctEngine.CreateObjectFactory(ArticleComp,'ArtigoPrincipal') &nbsp &nbsp OctEngine.NewScene('Scene01',[EventoA,EventoB,EventoC],200,100) &nbsp &nbsp  OctEngine.ExecuteScene('Scene01')</h6>"]
+    CodigoExemplo_02:["<h1>Como criar uma Cena</h1></br><h4>As Cenas são componentes importantes dentro do Oct8. Dentro de uma cena você determina a ordem de cada ação que você criou, dando uma organização muito maior dentro do seu projeto.</h4>","<h6>import Oct8 from '../Oct8/Oct8.js';<br/>&nbsp &nbsp var OctEngine = new Oct8();</br> &nbsp &nbsp OctEngine.CreateObjectFactory(ArticleComp,'ArtigoPrincipal') &nbsp &nbsp OctEngine.NewScene('Scene01',[EventoA,EventoB,EventoC],200,100) &nbsp &nbsp  OctEngine.ExecuteScene('Scene01')</h6>"],
+    CodigoExemplo_03:["<h1>Como executar TimeLine</h1></br><h4>uma TimeLine executa em ordem as suas cenas criadas, com o tempo de execução já determinada de cada cena.</h4>","<h6>import Oct8 from '../Oct8/Oct8.js';<br/>&nbsp &nbsp var OctEngine = new Oct8();</br> &nbsp &nbsp OctEngine.CreateObjectFactory(ArticleComp,'ArtigoPrincipal') &nbsp &nbsp OctEngine.NewScene('Scene01',[EventoA,EventoB,EventoC],200,100) &nbsp &nbsp  OctEngine.ExecuteScene('Scene01')</br> &nbsp &nbsp  OctEngine.ExecuteTimeLine()</h6>"],
+    CodigoExemplo_04:["<h1>Como criar elementos dinamicos</h1></br><h4>Criar elementos de forma dinamica é bem tranquilo e rqapido com Oct8, com o sistema de criação dinamica você consegue criar os elementos com poucas linhas e é altamente customizavel.</h4>","<h6>import Oct8 from '../Oct8/Oct8.js';<br/>&nbsp &nbsp var OctEngine = new Oct8();</br> &nbsp &nbsp OctEngine.CreateObjectFactory(ArticleComp,'ArtigoPrincipal') &nbsp &nbsp </br> &nbsp &nbsp var Element = OctEngine.CreateContainerElement('Id','IdAppendTo','class-name','spam') </br> &nbsp &nbsp OctEngine.ModifyContentContainer(Element,'Hello World') </h6>"]
 }
+
 var NavegacaoCodigo = {
     CriacaoComponente:["bt01",()=>{ExCodigo(CodigoArray.CodigoExemplo_01)},"Como criar componente"],
-    CriacaoCena:["bt02",()=>{ExCodigo(CodigoArray.CodigoExemplo_02)},"Como Criar cenas"]
+    CriacaoCena:["bt02",()=>{ExCodigo(CodigoArray.CodigoExemplo_02)},"Como Criar cenas"],
+    CriacaoTimeline:["bt03",()=>{ExCodigo(CodigoArray.CodigoExemplo_03)},"Como Criar Timeline"],
+    CriacaoDinamico:["bt04",()=>{ExCodigo(CodigoArray.CodigoExemplo_04)},"Como criar elementos Dinamicos"]
 }
 
 //Criando na tela os Elementos de Fabrica
@@ -65,4 +71,6 @@ OctEngine.AppendObjectFacyotyTo("ExemploCodigo",CodigoArray.CodigoExemplo_01)
 //Criando sistema de navegação
 OctEngine.AppendObjectFacyotyTo("BotaoCodigo",NavegacaoCodigo.CriacaoComponente)
 OctEngine.AppendObjectFacyotyTo("BotaoCodigo",NavegacaoCodigo.CriacaoCena)
+OctEngine.AppendObjectFacyotyTo("BotaoCodigo",NavegacaoCodigo.CriacaoTimeline)
+OctEngine.AppendObjectFacyotyTo("BotaoCodigo",NavegacaoCodigo.CriacaoDinamico)
 

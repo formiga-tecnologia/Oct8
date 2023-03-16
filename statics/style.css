@@ -255,12 +255,22 @@ footer{
     #ArticleDocs{
         width: 40vh;
     }
+    #NavegationMenu{
+        flex-direction: column;
+        -ms-flex-align: center;
+        height: 40vh;
+        margin-top: 4vh;
+        padding-bottom: 2vh;
+    }
+    .flutter{
+        margin-left: 10vh;
+    }
     footer{
         width: 100%;
         background-color: #866415;
         color: #FFC031;
         height: 20vh;
-        margin-top: 320vh;
+        margin-top: 350vh;
         text-align: center;
         position: absolute;
         left: 0;
@@ -268,9 +278,6 @@ footer{
 }
 
 @media screen and (min-width: 914px) and (max-width:980px) {
-    body{
-        background-color: red;
-    }
     nav ul li img{
         margin-top: -4vh;
         width: 14vh;
@@ -308,9 +315,11 @@ footer{
     }
     #NavegationMenu{
         margin-left: -14vh;
+        margin-top: 20vh;
+        height: 50vh;
     }
     footer{
-        margin-top: 260vh;
+        margin-top: 290vh;
     }
 }
 

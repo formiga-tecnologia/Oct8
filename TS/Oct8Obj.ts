@@ -72,8 +72,8 @@ export default class Oct8Obj{
      * @param {string} AppendElementId Content for your new element.
      * @param {string} typeContainerProp Target object of your add the new element.
      */
-    CreateContainerElement(id:string="", AppendElementId:string="",typeContainerProp:string=""){
-        let  newElement = document.createElement("div")
+    CreateContainerElement(id:string="", AppendElementId:string="",typeContainerProp:string="",typeValueCreated="div"){
+        let  newElement = document.createElement(typeValueCreated)
         if(id != ""){
             newElement.id = id
         }
@@ -83,8 +83,8 @@ export default class Oct8Obj{
         return newElement
     }
 
-    CreateContainerElementBody(id:string ="",typeContainerProp:string="sse sse-on") {
-        let newElement = document.createElement("div")
+    CreateContainerElementBody(id:string ="",typeContainerProp:string="sse sse-on",typeValueCreated="div") {
+        let newElement = document.createElement(typeValueCreated)
         if (id != "") {
             newElement.id = id
         }
