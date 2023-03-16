@@ -121,3 +121,23 @@ With the scenes created you can run all of them at once with the Timeline system
 ```javascript
 OctEngine.ExecuteTimeLine()
 ```
+<h2>Create Dynamic Elements for Oct8 function </h2>
+To create on-screen elements with greater ease and much greater readability, it is by using the functions of the Oct8 itself even outside the manufacturing system, in the example below follows how to create a small component without using many lines:
+
+```javascript
+    var ElementBase = OctEngine.CreateContainerElement("Id_element","append_element_Id","Class_Names")
+```
+
+With this single line you can create an element that is the "div" type, and you can modify its properties or even insert more elements within that component, the example is to modify the properties and elements:
+
+```javascript
+    var ElementBase = OctEngine.CreateContainerElement("Id_element","append_element_Id","Class_Names")
+    //Modify content value.
+    OctEngine.ModifyContentContainer(ElementBase , "<section>Section type</section>")
+    //Modify props element.
+    OctEngine.ModifyPropsDefault(ElementBase , 9,4,[40],[40])
+```
+
+To modify the properties you need to put the values inside keys [10] , if you put without the keys the Oct8 will add values to the element if you negatively put -1 the Oct8 will decrease the property according to the current value.
+
+<h3>Creating oct8 animations</h3>
