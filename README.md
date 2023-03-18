@@ -1,4 +1,4 @@
-# Oct8
+# Oct8 frameworks
 <p align="center">
   <img width="200" src="./image/oct8logo.png" alt="Material Bread logo"><br/>
 </p>  
