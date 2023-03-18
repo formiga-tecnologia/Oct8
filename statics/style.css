@@ -199,13 +199,16 @@ button{
     margin-top: 2vh;
     margin-left: 2vh;
 }
+
 .getStart{
     margin-left: 7vh;
 }
+
 #VersaoArea_1{
     margin-top: 190vh;
     position: absolute;
 }
+
 footer{
     width: 100%;
     background-color: #866415;
