@@ -1,7 +1,5 @@
 # Oct8 frameworks
-<p align="center">
-  <img width="200" src="./image/oct8logo.png" alt="Material Bread logo"><br/>
-</p>  
+
 <h1> Objetive  </h1>
 Functional language for dynamic  graphic desing
 Oct8 is one  library for desing and dynamic sites , with support to cartesian plan ( basic) 
