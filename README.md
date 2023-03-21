@@ -141,3 +141,4 @@ With this single line you can create an element that is the "div" type, and you 
 To modify the properties you need to put the values inside keys [10] , if you put without the keys the Oct8 will add values to the element if you negatively put -1 the Oct8 will decrease the property according to the current value.
 
 <h3>Creating oct8 animations</h3>
+<h2>Actions Animations </h2>
