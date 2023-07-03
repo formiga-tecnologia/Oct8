@@ -72,7 +72,10 @@ export default class Oct8Obj {
         if (id != "") {
             newElement.id = id;
         }
-        newElement.className = typeContainerProp;
+        if(typeContainerProp != "")
+        {
+            newElement.className = typeContainerProp;
+        }
         newElement.setAttribute("style", "height:" + this.Properties.height + "vh;width:" + this.Properties.width + "vh; margin-left:" + this.Properties.marginLeft + "vh;margin-top:" + this.Properties.marginTop + "vh;");
         let positionElement = (_a = document.getElementById(AppendElementId)) === null || _a === void 0 ? void 0 : _a.appendChild(newElement);
         return newElement;
