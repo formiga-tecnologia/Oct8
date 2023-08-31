@@ -248,6 +248,12 @@ export default class Oct8Obj {
         clearInterval(this.event);
     }
 
+    CreateList(list="",simbol=','){
+        let ListBase = list+""
+        let ListFinal = ListBase.split(simbol)
+        return ListFinal
+    }
+
     createNewTag(TagName,Event){
         return this.TagCreated.push({TagName,Event})
     }
@@ -261,7 +267,14 @@ export default class Oct8Obj {
                     let s = element['Event']
                     if(typeof s == 'function')
                     {
-                        s()
+                        if(a[index].getAttribute("prop")!=null)
+                        {
+                            let RetunrBase = s(a[index].getAttribute("prop"))
+                            a[index].innerHTML+=RetunrBase
+                        }
+                        else{
+                            s()
+                        }
                         if(a[index].getAttribute("text") !=null){
                             a[index].innerHTML+= a[index].getAttribute("text")
                         }
