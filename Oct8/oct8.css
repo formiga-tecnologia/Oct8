@@ -235,3 +235,12 @@
 
 .hoverAplly-W{transition: width 0.3s;}
 */
+
+
+.baseTest{
+  background-color: rebeccapurple;
+  color: wheat;
+  padding: 2vh;
+  height: 10vh;
+  width: 15vh;
+}
