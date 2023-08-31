@@ -56,6 +56,7 @@ export default class Oct8Obj {
         this.Properties.width = W;
         this.containerSet = TypeContainer;
         this.id = Id;
+        this.TagCreated =[]
         if (Render == true) {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
         }
@@ -245,6 +246,44 @@ export default class Oct8Obj {
     }
     StopEvent() {
         clearInterval(this.event);
+    }
+
+    createNewTag(TagName,Event){
+        return this.TagCreated.push({TagName,Event})
+    }
+    ReactiveTags(Target,Stop=true){
+       let IntervalSet = setInterval(()=>{
+            let Elem = document.getElementById(Target)
+            this.TagCreated.forEach(element => {
+                let a = Elem.getElementsByTagName(element['TagName'])
+                for (let index = 0; index < a.length; index++) {
+                    a[index].innerHTML = ""
+                    let s = element['Event']
+                    if(typeof s == 'function')
+                    {
+                        s()
+                        if(a[index].getAttribute("text") !=null){
+                            a[index].innerHTML+= a[index].getAttribute("text")
+                        }
+
+                    }
+                    else
+                    {
+                        if(a[index].getAttribute("text") !=null){
+                            a[index].innerHTML+= a[index].getAttribute("text")
+                        }
+                        else{
+                            a[index].innerHTML+=element['Event']
+                        }
+                    }
+                    
+                }
+                if(Stop == true){
+                    clearInterval(IntervalSet)
+                }
+                
+            });
+        },'30')
     }
     /**
      * Modify your selected element  [ X,Y,W,H ] propries.
