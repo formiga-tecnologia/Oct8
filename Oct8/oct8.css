@@ -244,3 +244,18 @@
   height: 10vh;
   width: 15vh;
 }
+
+.CardPage{
+  background-color: #6cf16c;
+  color: #235323;
+  padding: 2vh;
+  height: 40vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+*{
+  overflow: auto;
+}
