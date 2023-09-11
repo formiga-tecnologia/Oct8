@@ -1,5 +1,7 @@
-export default class Oct8Obj {
+import Oct8Events from "./Oct8Events.js";
+export default class Oct8Obj extends(Oct8Events) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
+        super()
         this.Id = Id;
         this.X = X;
         this.Y = Y;
