@@ -26,9 +26,16 @@ export default class Oct8Events {
      */
     CreateReactiveState(ElementTarget=HTMLElement,functionBase=Object,ReactionNameId =""){
         ElementTarget = document.getElementById(ReactionNameId).innerHTML
+        let ValueAtribute = false
+        console.log(ElementTarget+"<<<!")
+        if(ElementTarget ==""){
+            ElementTarget = document.getElementById(ReactionNameId).value
+            ValueAtribute = true
+        }
         this.ElementHistory.push({ReactionNameId:ReactionNameId,ElementName:ElementTarget,Func:functionBase})
         this.Reaction.push({ReactionName:ReactionNameId,Iteration:0,Interval:
         setInterval(()=>{
+            let valueBase = ValueAtribute
             let OldObject = ""
             let FunctionExec = null
             let IdTarget = ""
@@ -41,9 +48,17 @@ export default class Oct8Events {
                 }
             });
             let compare = document.getElementById(IdTarget).innerHTML
-            if(compare != OldObject){
+            let compare2 = document.getElementById(IdTarget).value
+            console.log(compare2+"  "+OldObject)
+            console.log(valueBase)
+            if(compare != OldObject && valueBase == false){
                 OldObject = ElementTarget
                 ElementsHistory[this._SearchObj(ReactionNameId,ElementsHistory)].ElementName = compare
+                FunctionExec()
+            }
+            if(compare2!=OldObject && valueBase == true){
+                OldObject = ElementTarget
+                ElementsHistory[this._SearchObj(ReactionNameId,ElementsHistory)].ElementName = compare2
                 FunctionExec()
             }
         },200)
