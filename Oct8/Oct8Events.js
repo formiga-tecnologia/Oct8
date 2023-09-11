@@ -11,12 +11,13 @@ export default class Oct8Events {
     }
     WhereColide(PyshicsOct8, timeColider, Callfunction) {
         setInterval(() => {
-            if (PyshicsOct8.colider == true) {
+            if (PyshicsOct8.colider == true) { 
                 Callfunction();
             }
             console.log(PyshicsOct8.colider);
         }, timeColider);
     }
+    
     ResponsiveForMobile(HorizontalMobile, VerticalMobile) {
         var w = window.innerWidth;
         var h = window.innerHeight;
