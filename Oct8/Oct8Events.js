@@ -49,8 +49,6 @@ export default class Oct8Events {
             });
             let compare = document.getElementById(IdTarget).innerHTML
             let compare2 = document.getElementById(IdTarget).value
-            console.log(compare2+"  "+OldObject)
-            console.log(valueBase)
             if(compare != OldObject && valueBase == false){
                 OldObject = ElementTarget
                 ElementsHistory[this._SearchObj(ReactionNameId,ElementsHistory)].ElementName = compare
