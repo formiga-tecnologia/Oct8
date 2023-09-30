@@ -94,6 +94,13 @@ export default class Oct8Obj extends(Oct8Events) {
     GetElementId() {
         return document.getElementById(this.Id);
     }
+
+    AddAtributes(Element,Value,Atribute){
+        let atribute = document.createAttribute(Atribute)
+        atribute.value = Value
+        Element.setAttribute(Atribute,Value)
+    }
+
     ModifyProps(element, value = 0, prop = "MarginLeft") {
         if (prop.constructor === Array) {
             if (value.valueOf().length >= 1) {
