@@ -4,6 +4,7 @@ class oct8Pack{
     Object_pack = ""
     Style_pack = ""
     Var_packs = ""
+
     PacksProps(){
         let index = 1
         this.Var_packs.forEach(element => {
@@ -34,6 +35,15 @@ class oct8Pack{
             this.Var_packs = data[0]["Pack"]["Prop"]
             this.Style_pack = data[0]["Pack"]["style"]
         })
+
+    }
+    PackAssembly(PackFunction,time){
+        let A_Ps = setInterval(()=>{
+            this.PacksProps()
+            this.RenderStyle()
+            PackFunction()
+            clearInterval(A_Ps)
+        },time)
     }
 }
 

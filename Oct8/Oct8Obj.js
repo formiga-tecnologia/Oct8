@@ -308,6 +308,20 @@ export default class Oct8Obj extends  (Oct8Events) {
             });
         },'30')
     }
+
+    CreatePackComponent(ComponetName,TargetId,Id="",type='div',Clear=false){
+        this.CreateObjectFactory(()=>{ 
+        let Pack_append = this.CreateContainerElement(Id,TargetId,'',type)
+        this.ModifyPropsDefault(Pack_append,null,null,null,null)
+        this.ModifyContentContainer(Pack_append,this.Object_pack,Clear)
+        }
+        ,ComponetName)
+    }
+    RenderPackComponent(componentName){
+        this.AppendObjectFacyotyTo(componentName,null)
+    }
+
+
     /**
      * Modify your selected element  [ X,Y,W,H ] propries.
      * @param {string} id of tag Html what your want add to page.
