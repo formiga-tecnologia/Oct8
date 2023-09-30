@@ -1,3 +1,5 @@
+
+import oct8Pack from "./Oct8packs.js"
 /*
   CREATE EVENTS TO PROCESSING
    * FISICS EVENTS (Where colider, where move, where wind..etc)
@@ -5,7 +7,7 @@
    * OBJECT EVENT Where modify one proprie with Heigth or widht
    * GENERIC EVENTS mouse, keyboard and other events providers with periferics
 */
-export default class Oct8Events {
+export default class Oct8Events extends(oct8Pack){
     ElementHistory=[]
     Reaction = []
   
