@@ -1,3 +1,4 @@
+import Oct8 from "../Oct8/Oct8";
 
 var Engine = new  Oct8();
 var Engine_2 = new Oct8();
@@ -101,3 +102,15 @@ function Rotate(){
     }
 }
 
+
+let oct8 =new Oct8()
+oct8.CreateObjectFactory(()=>{ 
+//Your component base//
+let main_obj = oct8.CreateContainerElement('Id',
+'IdAppendElement','class','div')
+oct8.ModifyPropsDefault(main_obj,null,null,null,null)
+oct8.ModifyContentContainer(main_obj,"<h1></h1>")
+}
+,"teste")
+
+oct8.AppendObjectFacyotyTo("teste",null)

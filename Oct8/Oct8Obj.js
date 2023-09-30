@@ -309,16 +309,16 @@ export default class Oct8Obj extends  (Oct8Events) {
         },'30')
     }
 
-    CreatePackComponent(ComponetName,TargetId,Id="",type='div',Clear=false){
+    CreatePackComponent(TargetId,Id="",type='div',Clear=false){
         this.CreateObjectFactory(()=>{ 
         let Pack_append = this.CreateContainerElement(Id,TargetId,'',type)
         this.ModifyPropsDefault(Pack_append,null,null,null,null)
         this.ModifyContentContainer(Pack_append,this.Object_pack,Clear)
         }
-        ,ComponetName)
+        ,this.Comp_name)
     }
-    RenderPackComponent(componentName){
-        this.AppendObjectFacyotyTo(componentName,null)
+    RenderPackComponent(){
+        this.AppendObjectFacyotyTo(this.Comp_name,null)
     }
 
 

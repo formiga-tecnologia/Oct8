@@ -4,6 +4,7 @@ class oct8Pack{
     Object_pack = ""
     Style_pack = ""
     Var_packs = ""
+    Comp_name =""
 
     PacksProps(){
         let index = 1
@@ -34,6 +35,7 @@ class oct8Pack{
             this.Object_pack = data[0]["Pack"]["component"]
             this.Var_packs = data[0]["Pack"]["Prop"]
             this.Style_pack = data[0]["Pack"]["style"]
+            this.Comp_name = data[0]["Name"]
         })
 
     }
