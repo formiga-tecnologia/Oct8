@@ -5,8 +5,7 @@ class Oct8Route{
         this.StatusRoutes = undefined
         this.NotFoundStatus =false
         this.NotFoundEvent = null
-        this.CreateNewRoute(Route,Event)
-        this.#_Route_Path_event()
+        this.LocalVars = []
     }
 
     CreateNewRoute(Route="/",Event=()=>{console.log("none")}){
@@ -29,14 +28,30 @@ class Oct8Route{
         let Gethash = window.location.hash
             Gethash = Gethash.toLowerCase()
             this.Routes.forEach(element => {
-                //console.log(element["Route"][0]+" "+Gethash.replace("#",''))
-                if(Gethash.replace("#",'') == element["Route"][0].toLowerCase())
+                console.log(element["Route"][0]+" "+Gethash.replace("#",''))
+                if(Gethash.replace("#",'') == element["Route"][0].toLowerCase() && !element["Route"][0].includes("/:"))
                 {
                     console.log("Deu math")
                     this.NotFoundStatus = false
                     this.StatusRoutes = "ROUTE 200"
                     element["Route"][1]()
                     return this.StatusRoutes
+                }
+                if(element["Route"][0].includes("/:")){
+                    let GetHashVector = Gethash.replace("#",'').split("/")
+                    let LocationRoute =  element["Route"][0].replace("#",'').split("/")
+                    if(GetHashVector[1] == LocationRoute[1]){
+                        if(this.#_GetHashNumber('/',Gethash) == this.#_GetHashNumber('/',element["Route"][0])){
+                           console.log(GetHashVector)
+                           for (let index = 2; index < GetHashVector.length; index++) {
+                            this.LocalVars.push(GetHashVector[index])
+                           }
+                            element["Route"][1]()
+                            this.StatusRoutes = "ROUTE 200"
+                            this.NotFoundStatus = false
+                            return this.StatusRoutes
+                        }
+                    }
                 }
                 else{
                     this.NotFoundStatus = true
@@ -56,6 +71,22 @@ class Oct8Route{
     }
     AddNotFoundPage(Event404){
         this.NotFoundEvent = Event404
+    }
+    ReturnParamsURLRoute(Indice=null){
+        if(Indice==null)
+        {
+            return this.LocalVars    
+        }
+        return this.LocalVars[Indice]
+    }
+    #_GetHashNumber(Char,Url){
+        let Count =0
+        for (let index = 0; index < Url.length; index++) {
+            if(Url[index] == Char){
+                Count++
+            }
+        }
+        return Count
     }
 }
 
