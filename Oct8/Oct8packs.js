@@ -1,5 +1,6 @@
+import Oct8Route from "./Oct8Route.js"
 
-class oct8Pack{
+class oct8Pack extends (Oct8Route){
     _State_pack = ""
     Object_pack = ""
     Style_pack = ""
