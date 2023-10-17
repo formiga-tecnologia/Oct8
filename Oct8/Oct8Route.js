@@ -6,15 +6,17 @@ class Oct8Route{
         this.NotFoundStatus =false
         this.NotFoundEvent = null
         this.LocalVars = []
+        this.TypeVars =[]
     }
 
-    CreateNewRoute(Route="/",Event=()=>{console.log("none")}){
+    CreateNewRoute(Route="/",Event=()=>{console.log("none")},ConfigVarsRoute=null){
         let ObjectRoute = {Route:[Route,Event]}
+        this.TypeVars = ConfigVarsRoute
         this.Routes.push(ObjectRoute)
     }
+
     #_Route_Path_event(){
         window.addEventListener('hashchange',()=>{
-            console.clear()
             this.#_Search_Route()
         })
 
@@ -28,10 +30,9 @@ class Oct8Route{
         let Gethash = window.location.hash
             Gethash = Gethash.toLowerCase()
             this.Routes.forEach(element => {
-                console.log(element["Route"][0]+" "+Gethash.replace("#",''))
+                //console.log(element["Route"][0]+" "+Gethash.replace("#",''))
                 if(Gethash.replace("#",'') == element["Route"][0].toLowerCase() && !element["Route"][0].includes("/:"))
                 {
-                    console.log("Deu math")
                     this.NotFoundStatus = false
                     this.StatusRoutes = "ROUTE 200"
                     element["Route"][1]()
@@ -42,9 +43,34 @@ class Oct8Route{
                     let LocationRoute =  element["Route"][0].replace("#",'').split("/")
                     if(GetHashVector[1] == LocationRoute[1]){
                         if(this.#_GetHashNumber('/',Gethash) == this.#_GetHashNumber('/',element["Route"][0])){
-                           console.log(GetHashVector)
-                           for (let index = 2; index < GetHashVector.length; index++) {
-                            this.LocalVars.push(GetHashVector[index])
+                           let IndexType = 0
+                           let OutputValue = null
+                            for (let index = 2; index < GetHashVector.length; index++) {
+                            if(this.TypeVars !=null){
+                                try {
+                                      if(this.TypeVars[IndexType]=="number")
+                                      {
+                                         OutputValue = parseInt(GetHashVector[index])
+                                      }                                  
+                                    
+                                } catch (error) {
+                                    //pass error 
+                                }
+                                if(OutputValue!=NaN ){
+                                    if(typeof OutputValue == this.TypeVars[IndexType])
+                                    {
+                                        this.LocalVars.push(GetHashVector[index])        
+                                    }
+                                    
+                                }
+                                IndexType++
+                            }
+                            else{
+                                if(this.TypeVars ==null){
+                                    this.LocalVars.push(GetHashVector[index])
+                                }
+                            }
+
                            }
                             element["Route"][1]()
                             this.StatusRoutes = "ROUTE 200"
