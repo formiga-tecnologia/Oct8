@@ -141,5 +141,54 @@ With this single line you can create an element that is the "div" type, and you 
 To modify the properties you need to put the values inside keys [10] , if you put without the keys the Oct8 will add values to the element if you negatively put -1 the Oct8 will decrease the property according to the current value.
 
 <h3>Create packs</h3>
+This pack system is generated through a Json file that should follow this structure:
 
+```json
+	[
+  {
+    "Name": "navBar",
+    "Pack": {
+      "style": ["background-color: green;color:white","color:red;heigth:20vh;margin-top:10vh"],
+      "component": ["<div style='{#1}'> {$1} </div>"],   
+      "Prop": ["Value of prop!!"]
+    }
+  }
+]
+```
 
+In this Json the Name field is very important because in it you will bring the exact component of the Pack, in each Json you can have more than one component in your pack.
+
+<h4>Creating yout pack in your application</h4>
+First of all you need to read the pack that was created and for that, pass the relative path of the json created in the Oct8 method:
+
+```javascript
+ oct.ReadPack("./pack_oct8.json","navBar")
+```
+
+Inside this method have the path and name of yout componnt what your can call in your application.
+before this create the function for render your pack: 
+```javascript
+
+function RenderPack(){
+    oct.NewElementObjectPack("<h1 style='{#1}'>New title {$1}</h1>")
+    oct.RenderPack(document.getElementById("SandBox"))
+}
+
+```
+Within this function, the method that should appear is oct. RenderPack(...) where you define where you will include the contents of that pack. The NewElementObject Method if you want to dynamically add some new element to your pack without changing the Json.
+
+For render the componente pack in your screen call the function Assemble pack: 
+```javascript
+
+oct.PackAssembly(RenderPack,400)
+
+```
+
+This method first comes to the function that does the treatment of the pack and then the rendering time of your component, we recommend a time greater than 400
+
+<h4>Notation of Packs</h4>
+In packs you can call styles or elements of components in component base, for this use this Notation: 
+
+'{#1}' : You can call frist element from your style packs into Target Element, changing the number to your number that you choose.
+
+{$1} : You can call frist element component into your pack 
