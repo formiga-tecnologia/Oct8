@@ -149,7 +149,9 @@ This pack system is generated through a Json file that should follow this struct
     "Name": "navBar",
     "Pack": {
       "style": ["background-color: green;color:white","color:red;heigth:20vh;margin-top:10vh"],
-      "component": ["<div style='{#1}'> {$1} </div>"],   
+      "component": ["<div class='nv'>","Elements {$1}  <h3 style='{#1}'>hello  {$2} </h3>",
+      "<h2>Navbar apply</h2>",
+      "</div>"],  
       "Prop": ["Value of prop!!"]
     }
   }
