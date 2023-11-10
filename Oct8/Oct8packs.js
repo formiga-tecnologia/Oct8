@@ -11,7 +11,15 @@ class oct8Pack extends (Oct8Route){
         let index = 1
         this.Var_packs.forEach(element => {
             if(String(this.Object_pack).includes("$"+index)){
-                this.Object_pack = String(this.Object_pack).replace("{$"+index+"}",element)
+                var RegexValue = /\$/g
+                var ObjReplace = String(this.Object_pack)
+                var Count = String(this.Object_pack).match(RegexValue).length
+                for (let _index = 0; _index <= Count; _index++) {
+                    ObjReplace = ObjReplace.replace("{$"+index+"}",element)
+                    console.log("Find"+"#"+index+" "+_index)
+                }
+                this.Object_pack = ObjReplace
+                //this.Object_pack = String(this.Object_pack).replace("{$"+index+"}",element)
             }
             index+=1
         });
@@ -20,23 +28,45 @@ class oct8Pack extends (Oct8Route){
         let index = 1
         this.Style_pack.forEach(styles =>{
             if(String(this.Object_pack).includes("#"+index)){
-                this.Object_pack = String(this.Object_pack).replace("{#"+index+"}",styles)
+                var RegexValue = /\#/g
+                var ObjReplace = String(this.Object_pack)
+                var Count = String(this.Object_pack).match(RegexValue).length
+                for (let _index = 0; _index <= Count; _index++) {
+                    ObjReplace = ObjReplace.replace("{#"+index+"}",styles)
+                    console.log("Find"+"#"+index+" "+_index)
+                }
+                this.Object_pack = ObjReplace
             }
             index+=1
         })
     }
     RenderPack(Element){
+        console.log(this.Object_pack)
         Element.innerHTML+= this.Object_pack
+        console.log("op")
+        this.RenderStyle()
     }
-     ReadPack(PackUrl){
+    NewElementObjectPack(element){
+        this.Object_pack+=element
+        this.RenderStyle()
+        this.PacksProps()
+    }
+     ReadPack(PackUrl,PackName){
         fetch(PackUrl).then(Response=>{
             return Response.json()
         }).then(data=>{
-            this._State_pack = data
-            this.Object_pack = data[0]["Pack"]["component"]
-            this.Var_packs = data[0]["Pack"]["Prop"]
-            this.Style_pack = data[0]["Pack"]["style"]
-            this.Comp_name = data[0]["Name"]
+            console.log(data)
+            data.forEach(elem =>{
+                if(elem["Name"]==PackName)
+                {
+                    this._State_pack = elem
+                    this.Object_pack = elem["Pack"]["component"]
+                    this.Var_packs = elem["Pack"]["Prop"]
+                    this.Style_pack = elem["Pack"]["style"]
+                    this.Comp_name = elem["Name"]
+                }
+            })
+
         })
 
     }
