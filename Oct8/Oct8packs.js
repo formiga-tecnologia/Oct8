@@ -42,8 +42,7 @@ class oct8Pack extends (Oct8Route){
     }
     RenderPack(Element){
         console.log(this.Object_pack)
-        Element.innerHTML+= this.Object_pack
-        console.log("op")
+        Element.innerHTML+= this.__JoinObjects(this.Object_pack)
         this.RenderStyle()
     }
     NewElementObjectPack(element){
@@ -69,6 +68,15 @@ class oct8Pack extends (Oct8Route){
 
         })
 
+    }
+    __JoinObjects(){
+        var newObject = ""
+        var ObjctVetor = this.Object_pack.split(',')
+        console.log(ObjctVetor)
+        ObjctVetor.forEach(elem =>{
+            newObject += " "+elem
+        })
+        return newObject
     }
     PackAssembly(PackFunction,time){
         let A_Ps = setInterval(()=>{

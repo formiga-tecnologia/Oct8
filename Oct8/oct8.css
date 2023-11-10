@@ -259,3 +259,9 @@
 *{
   overflow: auto;
 }
+.nv{
+  background-color: green;
+  color: white;
+  border-radius: 2vh;
+  padding: 2vh;
+}
