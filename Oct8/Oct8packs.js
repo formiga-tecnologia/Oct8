@@ -16,7 +16,6 @@ class oct8Pack extends (Oct8Route){
                 var Count = String(this.Object_pack).match(RegexValue).length
                 for (let _index = 0; _index <= Count; _index++) {
                     ObjReplace = ObjReplace.replace("{$"+index+"}",element)
-                    console.log("Find"+"#"+index+" "+_index)
                 }
                 this.Object_pack = ObjReplace
                 //this.Object_pack = String(this.Object_pack).replace("{$"+index+"}",element)
@@ -33,7 +32,6 @@ class oct8Pack extends (Oct8Route){
                 var Count = String(this.Object_pack).match(RegexValue).length
                 for (let _index = 0; _index <= Count; _index++) {
                     ObjReplace = ObjReplace.replace("{#"+index+"}",styles)
-                    console.log("Find"+"#"+index+" "+_index)
                 }
                 this.Object_pack = ObjReplace
             }
@@ -41,7 +39,6 @@ class oct8Pack extends (Oct8Route){
         })
     }
     RenderPack(Element){
-        console.log(this.Object_pack)
         Element.innerHTML+= this.__JoinObjects(this.Object_pack)
         this.RenderStyle()
     }
@@ -54,7 +51,6 @@ class oct8Pack extends (Oct8Route){
         fetch(PackUrl).then(Response=>{
             return Response.json()
         }).then(data=>{
-            console.log(data)
             data.forEach(elem =>{
                 if(elem["Name"]==PackName)
                 {
@@ -72,7 +68,6 @@ class oct8Pack extends (Oct8Route){
     __JoinObjects(){
         var newObject = ""
         var ObjctVetor = this.Object_pack.split(',')
-        console.log(ObjctVetor)
         ObjctVetor.forEach(elem =>{
             newObject += " "+elem
         })
