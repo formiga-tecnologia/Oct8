@@ -47,6 +47,16 @@ class oct8Pack extends (Oct8Route){
         this.RenderStyle()
         this.PacksProps()
     }
+
+    NewPropPack(prop){
+        this.Var_packs.push(prop)
+        this.PacksProps()
+    }
+
+    NewStylePack(style){
+        this.Style_pack.push(style)
+        this.RenderStyle()
+    }
      ReadPack(PackUrl,PackName){
         fetch(PackUrl).then(Response=>{
             return Response.json()
