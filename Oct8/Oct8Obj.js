@@ -8,6 +8,7 @@ export default class Oct8Obj extends  (Oct8Events) {
         this.Y = Y;
         this.W = W;
         this.H = H;
+        this._Style = []
         this.TypeContainer = TypeContainer;
         this.AppendElement = AppendElement;
         this.Render = Render;
@@ -263,6 +264,32 @@ export default class Oct8Obj extends  (Oct8Events) {
         let ListFinal = ListBase.split(simbol)
         return ListFinal
     }
+
+    createStyleElement(StyleName,Rule,Class=false){
+        return this._Style.push({StyleName,Rule,Class})
+    }
+
+    styleElement(StyleName){
+        let Element = ""
+        let Type =false
+        this._Style.forEach(element => {
+            console.log("opa")
+            if(element.StyleName == StyleName){
+                console.log(element.Class)
+                Element =  element.Rule
+                Type = element.Class
+            }
+        });
+        if(Type == true){
+            return "class='"+Element+"'"
+        }
+        else{
+            return  "style='"+Element+"'"
+        }
+
+        
+    }
+
 
     createNewTag(TagName,Event){
         return this.TagCreated.push({TagName,Event})
