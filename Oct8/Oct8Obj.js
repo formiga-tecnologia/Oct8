@@ -269,7 +269,7 @@ export default class Oct8Obj extends  (Oct8Events) {
         return this._Style.push({StyleName,Rule,Class})
     }
 
-    styleElement(StyleName){
+    styleElement(StyleName,TargetElement=null){
         let Element = ""
         let Type =false
         this._Style.forEach(element => {
@@ -281,9 +281,21 @@ export default class Oct8Obj extends  (Oct8Events) {
             }
         });
         if(Type == true){
-            return "class='"+Element+"'"
+            if(TargetElement!=null)
+            {
+                TargetElement.classList+=" "+Element
+
+            }
+            return Element
+            
         }
         else{
+            if(TargetElement!=null)
+            {
+                console.log("a")
+                TargetElement.style.cssText+=Element
+                return Element
+            }
             return  "style='"+Element+"'"
         }
 
