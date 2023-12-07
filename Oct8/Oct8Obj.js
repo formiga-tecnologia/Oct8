@@ -293,7 +293,7 @@ export default class Oct8Obj extends  (Oct8Events) {
             if(TargetElement!=null)
             {
                 console.log("a")
-                TargetElement.style.cssText+=Element
+                TargetElement.style.cssText+=" "+Element
                 return Element
             }
             return  "style='"+Element+"'"
