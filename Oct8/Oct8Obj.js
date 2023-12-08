@@ -302,6 +302,18 @@ export default class Oct8Obj extends  (Oct8Events) {
         
     }
 
+    MergeStyleElement(element,rule){
+        let ListaElementos = element.style.cssText
+        console.log(ListaElementos)
+        let ListKeys = Object.keys(rule)
+        let elem = ""
+        ListKeys.forEach(element_ => {
+            console.log(element_) 
+            console.log(rule[element_])
+            element.style[element_] = rule[element_]
+        });
+    }
+
 
     createNewTag(TagName,Event){
         return this.TagCreated.push({TagName,Event})
