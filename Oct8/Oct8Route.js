@@ -31,6 +31,9 @@ class Oct8Route{
             Gethash = Gethash.toLowerCase()
             this.Routes.forEach(element => {
                 //console.log(element["Route"][0]+" "+Gethash.replace("#",''))
+                if(window.location.hash == ''){
+                    return 0 
+                }
                 if(Gethash.replace("#",'') == element["Route"][0].toLowerCase() && !element["Route"][0].includes("/:"))
                 {
                     this.NotFoundStatus = false

@@ -273,9 +273,7 @@ export default class Oct8Obj extends  (Oct8Events) {
         let Element = ""
         let Type =false
         this._Style.forEach(element => {
-            console.log("opa")
             if(element.StyleName == StyleName){
-                console.log(element.Class)
                 Element =  element.Rule
                 Type = element.Class
             }
@@ -292,7 +290,6 @@ export default class Oct8Obj extends  (Oct8Events) {
         else{
             if(TargetElement!=null)
             {
-                console.log("a")
                 TargetElement.style.cssText+=" "+Element
                 return Element
             }
@@ -304,12 +301,9 @@ export default class Oct8Obj extends  (Oct8Events) {
 
     MergeStyleElement(element,rule){
         let ListaElementos = element.style.cssText
-        console.log(ListaElementos)
         let ListKeys = Object.keys(rule)
         let elem = ""
         ListKeys.forEach(element_ => {
-            console.log(element_) 
-            console.log(rule[element_])
             element.style[element_] = rule[element_]
         });
     }
