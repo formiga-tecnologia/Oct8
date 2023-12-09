@@ -24,6 +24,12 @@ class Oct8Test{
         
         console.log("Erro aqui")
     }
+    #ReturnSucess(){
+
+    }
+    #ReturnReport(){
+        
+    }
 }
 
 let oct_test = new Oct8Test()
