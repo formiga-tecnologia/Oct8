@@ -15,6 +15,10 @@ class Oct8Route{
         this.Routes.push(ObjectRoute)
     }
 
+    CreateDefaultRoute(FunctionDefault){
+        this.Routes.push({"/":[FunctionDefault]})
+    }
+
     #_Route_Path_event(){
         window.addEventListener('hashchange',()=>{
             this.#_Search_Route()
@@ -32,6 +36,10 @@ class Oct8Route{
             this.Routes.forEach(element => {
                 //console.log(element["Route"][0]+" "+Gethash.replace("#",''))
                 if(window.location.hash == ''){
+                    
+                    if(this.Routes["/"] != undefined){
+                        this.Routes["/"][0]()
+                    }
                     return 0 
                 }
                 if(Gethash.replace("#",'') == element["Route"][0].toLowerCase() && !element["Route"][0].includes("/:"))
