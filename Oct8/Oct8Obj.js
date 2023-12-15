@@ -269,6 +269,11 @@ export default class Oct8Obj extends  (Oct8Events) {
         return this._Style.push({StyleName,Rule,Class})
     }
 
+    createPsudoClassElement(PseudoClass,Rule,Target)
+    {
+        document.styleSheets[0].insertRule(PseudoClass+"{"+Rule+"}",0)
+    }
+
     styleElement(StyleName,TargetElement=null){
         let Element = ""
         let Type =false
