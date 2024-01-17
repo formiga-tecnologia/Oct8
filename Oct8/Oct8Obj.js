@@ -1,5 +1,6 @@
 import Oct8Events from "./Oct8Events.js";
 import oct8Pack from "./Oct8packs.js";
+import Oct8Animation from "./Oct8Animate.js";
 export default class Oct8Obj extends  (Oct8Events) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         super()
@@ -61,8 +62,10 @@ export default class Oct8Obj extends  (Oct8Events) {
         this.containerSet = TypeContainer;
         this.id = Id;
         this.TagCreated =[]
+        this.AnimationOct8 = new Oct8Animation()
         if (Render == true) {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
+            this.AnimationOct8.CreateAnimation()
         }
     }
     /**

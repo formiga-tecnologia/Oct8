@@ -1,4 +1,4 @@
-
+import Oct8Animation from "./Oct8Animate.js"
 class Oct8Route{
     constructor(Route,Event){
         this.Routes=[]

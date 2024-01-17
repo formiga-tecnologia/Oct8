@@ -1,7 +1,8 @@
+import Oct8Animation from "./Oct8Animate.js";
 import Oct8Events from "./Oct8Events.js";
 import Oct8Obj from "./Oct8Obj.js";
 import Oct8Pyshics from "./Oct8Physhics.js";
-export default class Oct8 extends (Oct8Obj) {
+class Oct8 extends (Oct8Obj) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         super();
         this.Id = Id;
@@ -25,3 +26,5 @@ export default class Oct8 extends (Oct8Obj) {
         }
     }
 }
+
+export {Oct8,Oct8Animation}
