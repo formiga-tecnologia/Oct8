@@ -307,6 +307,27 @@ export default class Oct8Obj extends  (Oct8Events) {
         
     }
 
+    CreateMetaData(content,value){
+        var meta = document.createElement('meta')
+        meta.content = content+"="+value
+        document.getElementsByTagName('head')[0].appendChild(meta)
+    }
+    GetElementData(content){
+        let a= document.getElementsByTagName('head')[0].getElementsByTagName('meta')
+        let MetaValues =[]
+        for (let index = 0; index < a.length; index++) {
+            MetaValues.push(a[index]["content"].split("="))
+        }
+            
+        for (let index = 0; index < MetaValues.length; index++) {
+            if(MetaValues[index][0] == content)
+            {
+                return MetaValues[index]
+            }
+        }
+        return MetaValues
+    }
+
     NewAnimation(ElementTarget,Start={Rule:"0"},End={Rule:"0"},Time,Iteration,direction="normal",deplay="0s",fill="forwards"){
         ElementTarget.animate([Start,End],{
             duration:Time,
