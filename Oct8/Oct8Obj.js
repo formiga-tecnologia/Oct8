@@ -307,6 +307,16 @@ export default class Oct8Obj extends  (Oct8Events) {
         
     }
 
+    NewAnimation(ElementTarget,Start={Rule:"0"},End={Rule:"0"},Time,Iteration,direction="normal",deplay="0s",fill="forwards"){
+        ElementTarget.animate([Start,End],{
+            duration:Time,
+            iterations: Iteration,
+            direction:direction,
+            fill:fill
+        })
+
+    }
+
     MergeStyleElement(element,rule){
         let ListaElementos = element.style.cssText
         let ListKeys = Object.keys(rule)
