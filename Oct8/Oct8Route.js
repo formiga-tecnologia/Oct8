@@ -33,6 +33,7 @@ class Oct8Route{
     #_Search_Route(){
         let Gethash = window.location.hash
             Gethash = Gethash.toLowerCase()
+            let foundStatus = null
             this.Routes.forEach(element => {
                 //console.log(element["Route"][0]+" "+Gethash.replace("#",''))
                 if(window.location.hash == ''){
@@ -46,8 +47,10 @@ class Oct8Route{
                 {
                     this.NotFoundStatus = false
                     this.StatusRoutes = "ROUTE 200"
+                    foundStatus = true
                     element["Route"][1]()
                     return this.StatusRoutes
+                    
                 }
                 if(element["Route"][0].includes("/:")){
                     let GetHashVector = Gethash.replace("#",'').split("/")
@@ -94,7 +97,7 @@ class Oct8Route{
                     this.NotFoundStatus = true
                 }
             });
-            if(this.NotFoundStatus == true){
+            if(this.NotFoundStatus == true && foundStatus == null){
                 this.StatusRoutes = "ROUTE 404"
                 if(this.NotFoundEvent != null){
                     this.NotFoundEvent()
