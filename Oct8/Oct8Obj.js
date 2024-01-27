@@ -1,7 +1,7 @@
 import Oct8Events from "./Oct8Events.js";
 import oct8Pack from "./Oct8packs.js";
 import Oct8Animation from "./Oct8Animate.js";
-export default class Oct8Obj extends  (Oct8Events) {
+export default class Oct8Obj extends (Oct8Events) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         super()
         this.Id = Id;
@@ -61,7 +61,7 @@ export default class Oct8Obj extends  (Oct8Events) {
         this.Properties.width = W;
         this.containerSet = TypeContainer;
         this.id = Id;
-        this.TagCreated =[]
+        this.TagCreated = []
         this.AnimationOct8 = new Oct8Animation()
         if (Render == true) {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
@@ -80,8 +80,7 @@ export default class Oct8Obj extends  (Oct8Events) {
         if (id != "") {
             newElement.id = id;
         }
-        if(typeContainerProp != "")
-        {
+        if (typeContainerProp != "") {
             newElement.className = typeContainerProp;
         }
         newElement.setAttribute("style", "height:" + this.Properties.height + "vh;width:" + this.Properties.width + "vh; margin-left:" + this.Properties.marginLeft + "vh;margin-top:" + this.Properties.marginTop + "vh;");
@@ -100,10 +99,10 @@ export default class Oct8Obj extends  (Oct8Events) {
         return document.getElementById(this.Id);
     }
 
-    AddAtributes(Element,Value,Atribute){
+    AddAtributes(Element, Value, Atribute) {
         let atribute = document.createAttribute(Atribute)
         atribute.value = Value
-        Element.setAttribute(Atribute,Value)
+        Element.setAttribute(Atribute, Value)
     }
 
     ModifyProps(element, value = 0, prop = "MarginLeft") {
@@ -262,83 +261,79 @@ export default class Oct8Obj extends  (Oct8Events) {
         clearInterval(this.event);
     }
 
-    CreateList(list="",simbol=','){
-        let ListBase = list+""
+    CreateList(list = "", simbol = ',') {
+        let ListBase = list + ""
         let ListFinal = ListBase.split(simbol)
         return ListFinal
     }
 
-    createStyleElement(StyleName,Rule,Class=false){
-        return this._Style.push({StyleName,Rule,Class})
+    createStyleElement(StyleName, Rule, Class = false) {
+        return this._Style.push({ StyleName, Rule, Class })
     }
 
-    createPsudoClassElement(PseudoClass,Rule,Target)
-    {
-        document.styleSheets[0].insertRule(PseudoClass+"{"+Rule+"}",0)
+    createPsudoClassElement(PseudoClass, Rule, Target) {
+        document.styleSheets[0].insertRule(PseudoClass + "{" + Rule + "}", 0)
     }
 
-    styleElement(StyleName,TargetElement=null){
+    styleElement(StyleName, TargetElement = null) {
         let Element = ""
-        let Type =false
+        let Type = false
         this._Style.forEach(element => {
-            if(element.StyleName == StyleName){
-                Element =  element.Rule
+            if (element.StyleName == StyleName) {
+                Element = element.Rule
                 Type = element.Class
             }
         });
-        if(Type == true){
-            if(TargetElement!=null)
-            {
-                TargetElement.classList+=" "+Element
+        if (Type == true) {
+            if (TargetElement != null) {
+                TargetElement.classList += " " + Element
 
             }
             return Element
-            
+
         }
-        else{
-            if(TargetElement!=null)
-            {
-                TargetElement.style.cssText+=" "+Element
+        else {
+            if (TargetElement != null) {
+                TargetElement.style.cssText += " " + Element
                 return Element
             }
-            return  "style='"+Element+"'"
+            return "style='" + Element + "'"
         }
 
-        
+
     }
 
-    CreateMetaData(content,value){
+    CreateMetaData(content, value) {
         var meta = document.createElement('meta')
-        meta.content = content+"="+value
+        meta.content = content + "=" + value
         document.getElementsByTagName('head')[0].appendChild(meta)
     }
-    GetElementData(content){
-        let a= document.getElementsByTagName('head')[0].getElementsByTagName('meta')
-        let MetaValues =[]
+    GetElementData(content) {
+        let a = document.getElementsByTagName('head')[0].getElementsByTagName('meta')
+        let MetaValues = []
         for (let index = 0; index < a.length; index++) {
             MetaValues.push(a[index]["content"].split("="))
         }
-            
+
         for (let index = 0; index < MetaValues.length; index++) {
-            if(MetaValues[index][0] == content)
-            {
+            if (MetaValues[index][0] == content) {
                 return MetaValues[index]
             }
         }
         return MetaValues
     }
 
-    NewAnimation(ElementTarget,Start={Rule:"0"},End={Rule:"0"},Time,Iteration,direction="normal",deplay="0s",fill="forwards"){
-        ElementTarget.animate([Start,End],{
-            duration:Time,
+    NewAnimation(ElementTarget, Start = { Rule: "0" }, End = { Rule: "0" }, Time, Iteration, direction = "normal", deplay = "0s", fill = "forwards") {
+        ElementTarget.animate([Start, End], {
+            duration: Time,
             iterations: Iteration,
-            direction:direction,
-            fill:fill
+            direction: direction,
+            fill: fill
         })
 
     }
 
-    MergeStyleElement(element,rule){
+    MergeStyleElement(element, rule) {
         let ListaElementos = element.style.cssText
         let ListKeys = Object.keys(rule)
         let elem = ""
@@ -348,61 +343,45 @@ export default class Oct8Obj extends  (Oct8Events) {
     }
 
 
-    createNewTag(TagName,Event){
-        return this.TagCreated.push({TagName,Event})
+    createNewTag(TagName, Event) {
+        return this.TagCreated.push({ TagName, Event })
     }
-    ReactiveTags(Target,Stop=true){
-       let IntervalSet = setInterval(()=>{
-            let Elem = document.getElementById(Target)
+
+    ReactiveTags(Target, Stop = true) {
+        let IntervalSet = setInterval(() => {
+            let Elem = Target
             this.TagCreated.forEach(element => {
                 let a = Elem.getElementsByTagName(element['TagName'])
                 for (let index = 0; index < a.length; index++) {
                     a[index].innerHTML = ""
-                    let s = element['Event']
-                    if(typeof s == 'function')
-                    {
-                        if(a[index].getAttribute("prop")!=null)
-                        {
-                            let RetunrBase = s(a[index].getAttribute("prop"))
-                            a[index].innerHTML+=RetunrBase
-                        }
-                        else{
-                            s()
-                        }
-                        if(a[index].getAttribute("text") !=null){
-                            a[index].innerHTML+= a[index].getAttribute("text")
-                        }
 
+                    let s = element['Event']
+                    let Atributed_node = document.getElementsByTagName(element['TagName'])[index].attributes
+                    if (typeof s == 'function') {
+                        s(Atributed_node)
                     }
-                    else
-                    {
-                        if(a[index].getAttribute("text") !=null){
-                            a[index].innerHTML+= a[index].getAttribute("text")
-                        }
-                        else{
-                            a[index].innerHTML+=element['Event']
-                        }
-                    }
-                    
+
+                    document.getElementsByTagName(element['TagName'])[index].remove()
+
                 }
-                if(Stop == true){
+                if (Stop == true) {
                     clearInterval(IntervalSet)
                 }
-                
+
             });
-        },'30')
+        }, '30')
     }
 
-    CreatePackComponent(TargetId,Id="",type='div',Clear=false){
-        this.CreateObjectFactory(()=>{ 
-        let Pack_append = this.CreateContainerElement(Id,TargetId,'',type)
-        this.ModifyPropsDefault(Pack_append,null,null,null,null)
-        this.ModifyContentContainer(Pack_append,this.Object_pack,Clear)
+    CreatePackComponent(TargetId, Id = "", type = 'div', Clear = false) {
+        this.CreateObjectFactory(() => {
+            let Pack_append = this.CreateContainerElement(Id, TargetId, '', type)
+            this.ModifyPropsDefault(Pack_append, null, null, null, null)
+            this.ModifyContentContainer(Pack_append, this.Object_pack, Clear)
         }
-        ,this.Comp_name)
+            , this.Comp_name)
     }
-    RenderPackComponent(){
-        this.AppendObjectFacyotyTo(this.Comp_name,null)
+    RenderPackComponent() {
+        this.AppendObjectFacyotyTo(this.Comp_name, null)
     }
 
 
