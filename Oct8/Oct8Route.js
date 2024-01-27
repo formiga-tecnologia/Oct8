@@ -55,37 +55,24 @@ class Oct8Route{
                 if(element["Route"][0].includes("/:")){
                     let GetHashVector = Gethash.replace("#",'').split("/")
                     let LocationRoute =  element["Route"][0].replace("#",'').split("/")
-                    if(GetHashVector[1] == LocationRoute[1]){
+                    if(GetHashVector[0] == LocationRoute[0]){
                         if(this.#_GetHashNumber('/',Gethash) == this.#_GetHashNumber('/',element["Route"][0])){
-                           let IndexType = 0
-                           let OutputValue = null
-                            for (let index = 2; index < GetHashVector.length; index++) {
-                            if(this.TypeVars !=null){
-                                try {
-                                      if(this.TypeVars[IndexType]=="number")
-                                      {
-                                         OutputValue = parseInt(GetHashVector[index])
-                                      }                                  
+                            let VarsLocals = Gethash.split("/:").splice(1)
+                            VarsLocals = String(VarsLocals).split("?")
+                            VarsLocals = String(VarsLocals).split("&")
+                            VarsLocals.forEach(elem=>{
+                                if(elem.includes("="))
+                                {
                                     
-                                } catch (error) {
-                                    //pass error 
+                                    let val = elem.split("=")
+                                    VarsLocals = VarsLocals.filter((a)=>{
+                                        return a !== elem
+                                    })
+                                    VarsLocals.push((elem))
                                 }
-                                if(OutputValue!=NaN ){
-                                    if(typeof OutputValue == this.TypeVars[IndexType])
-                                    {
-                                        this.LocalVars.push(GetHashVector[index])        
-                                    }
-                                    
-                                }
-                                IndexType++
-                            }
-                            else{
-                                if(this.TypeVars ==null){
-                                    this.LocalVars.push(GetHashVector[index])
-                                }
-                            }
-
-                           }
+                            })
+                            console.log(VarsLocals)
+                            this.LocalVars = VarsLocals
                             element["Route"][1]()
                             this.StatusRoutes = "ROUTE 200"
                             this.NotFoundStatus = false
