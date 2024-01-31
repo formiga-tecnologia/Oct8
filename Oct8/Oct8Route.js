@@ -60,7 +60,7 @@ class Oct8Route{
                             let VarsLocals = Gethash.split("/:").splice(1)
                             VarsLocals = String(VarsLocals).split("?")
                             VarsLocals = String(VarsLocals).split("&")
-                            VarsLocals = String(VarsLocals).split(",")
+                            VarsLocals = String(VarsLocals).split(",") 
                             VarsLocals.forEach(elem=>{
                                 if(elem.includes("="))
                                 {

@@ -63,6 +63,10 @@ export default class Oct8Obj extends (Oct8Events) {
         this.id = Id;
         this.TagCreated = []
         this.AnimationOct8 = new Oct8Animation()
+        this._ReactionData = {}
+        this.ReactionType= {Reference : "Ref"}
+        this.Experiences = []
+
         if (Render == true) {
             this.CreateContainerElement(this.Id, this.AppendElement, this.TypeContainer);
             this.AnimationOct8.CreateAnimation()
@@ -383,6 +387,102 @@ export default class Oct8Obj extends (Oct8Events) {
     RenderPackComponent() {
         this.AppendObjectFacyotyTo(this.Comp_name, null)
     }
+
+    //Reaction base system
+    // CREATED BY FELIPE CATÃO 
+
+    Reaction(ReactionName,Value=null){
+        this._ReactionData[ReactionName] = {
+            "value":Value,
+            "id": ReactionName[1]+Math.floor(Math.random()*200)+ReactionName[0],
+            "OldValue":Value,
+            "Labels":[],
+            "ifReaction":[]
+        }
+    }
+
+    InjectReaction(ReactionName,TargetElement){
+        let ReactionTarget = this.GetReaction(ReactionName,"id")
+        return TargetElement.innerHTML += `<${ReactionTarget}>${this.GetReaction(ReactionName)}</${ReactionTarget}>`
+    }
+
+    GetReaction(ReactionName,Prop="value"){
+        return this._ReactionData[ReactionName][Prop]
+    }
+
+    ListReactions(ReactionName=null){
+        if(ReactionName !=null){
+            return this._ReactionData[ReactionName]
+        }
+        return this._ReactionData
+    }
+
+    RefReaction(ReactionName){
+        return document.getElementsByTagName(this._ReactionData[ReactionName]["id"])[0]
+    }
+
+    LabelReaction(ReactionName,Label,ReactionFunc){
+        this._ReactionData[ReactionName]["Labels"].push({"Label":Label,"ReactionFunc":ReactionFunc}) 
+    }
+
+    IfReaction(ReactionName,ReactionCond,Event="Label"){
+        this._ReactionData[ReactionName]["ifReaction"].push({
+            "ReactionName":ReactionName,
+            "ReactionCondition":ReactionCond,
+            "OldValue":this._ReactionData[ReactionName]["value"],
+            "Event":Event
+        })
+    }
+
+    
+
+    MakeExperience(ReactionName,Object)
+    {
+        this.Experiences.push({Reaction:ReactionName,Experience:Object})
+    }
+
+    ReturnExperience(ReactionName,Key,NewValue="NullValue"){
+        for (let index = 0; index < this.Experiences.length; index++) {
+
+            if(this.Experiences[index]["Reaction"] == ReactionName)
+            {
+
+               if(NewValue !="NullValue")
+               {
+                 return this.Experiences[index]["Experience"][Key] = NewValue
+               }
+
+               return this.Experiences[index]["Experience"][Key]
+            }
+            
+        }
+    }
+
+    SetReaction(ReactionName,Value){
+        
+        if (typeof Value == "object" )
+        {
+            this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
+            this._ReactionData[ReactionName]["value"]  = Value[1]
+            for (let index = 0; index < this._ReactionData[ReactionName]["Labels"].length; index++) {
+               if(this._ReactionData[ReactionName]["Labels"][index]["Label"] == Value[0])
+               {
+                 this._ReactionData[ReactionName]["Labels"][index]["ReactionFunc"](Value[1])
+                 return Value[1]
+               }
+            }
+        }
+
+        this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
+        this._ReactionData[ReactionName]["value"]  = Value
+
+        let ElementsReactions = document.getElementsByTagName(this._ReactionData[ReactionName]["id"])
+        for (let index = 0; index < ElementsReactions.length; index++) {
+            ElementsReactions[index].innerHTML = this._ReactionData[ReactionName]["value"]
+        }
+    }
+    
+    
 
 
     /**

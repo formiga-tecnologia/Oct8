@@ -9,7 +9,6 @@ import oct8Pack from "./Oct8packs.js"
 */
 export default class Oct8Events extends(oct8Pack){
     ElementHistory=[]
-    Reaction = []
   
     WhereColide(PyshicsOct8, timeColider, Callfunction) {
         setInterval(() => {
