@@ -407,6 +407,7 @@ export default class Oct8Obj extends (Oct8Events) {
     }
 
     GetReaction(ReactionName,Prop="value"){
+
         return this._ReactionData[ReactionName][Prop]
     }
 
@@ -418,7 +419,7 @@ export default class Oct8Obj extends (Oct8Events) {
     }
 
     RefReaction(ReactionName){
-        return document.getElementsByTagName(this._ReactionData[ReactionName]["id"])[0]
+        return document.getElementsByTagName(this._ReactionData[ReactionName]["id"])
     }
 
     LabelReaction(ReactionName,Label,ReactionFunc){
@@ -426,33 +427,33 @@ export default class Oct8Obj extends (Oct8Events) {
     }
 
 
-    MakeExperience(ReactionName,Object)
+    MakeExperience(ReactionName)
     {
-        this.Experiences.push({Reaction:ReactionName,Experience:Object})
+        let NewList = new Map()
+        this._ReactionData[ReactionName]["value"].forEach(function(key,value){
+            NewList.set(value,key)
+        })
+        return NewList
     }
 
-    ReturnExperience(ReactionName,Key="",NewValue="NullValue"){
-        for (let index = 0; index < this.Experiences.length; index++) {
-
-            if(this.Experiences[index]["Reaction"] == ReactionName)
-            {
-
-               if(NewValue !="NullValue")
-               {
-                 return this.Experiences[index]["Experience"][Key] = NewValue
-               }
-               if(Key != "")
-               {
-                    return this.Experiences[index]["Experience"][Key] 
-               }
-               return this.Experiences[index]["Experience"]
-            }
-            
-        }
-    }
 
     SetReaction(ReactionName,Value){
-        
+
+        let LabelExecute = false
+            this._ReactionData[ReactionName]["Labels"].forEach(elementos=>{
+                if (elementos["Label"] == Value[0]){
+                    LabelExecute = true
+                }
+            })
+
+        if(this._ReactionData[ReactionName]["ifReaction"].length >=1 && LabelExecute == false)
+        {
+
+            this._ReactionData[ReactionName]["ifReaction"].forEach(elem=>{
+                 this.SetReaction(elem["ReactionCall"],[elem["Label"],Value])
+            })
+        }
+
         if (typeof Value == "object" )
         {
             for (let index = 0; index < this._ReactionData[ReactionName]["Labels"].length; index++) {
@@ -482,6 +483,16 @@ export default class Oct8Obj extends (Oct8Events) {
             }
         }
 
+    }
+
+    IfReaction(Reaction,Target,Label){
+        this._ReactionData[Target]["ifReaction"].push({
+            "OldValue":this._ReactionData[Target]["value"],
+            "Label":Label,
+            "ReactionCall":Reaction
+        })
+        
+        console.log(this._ReactionData[Target]["ifReaction"])
     }
     
     
