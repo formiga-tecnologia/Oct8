@@ -450,9 +450,11 @@ export default class Oct8Obj extends (Oct8Events) {
         {
 
             this._ReactionData[ReactionName]["ifReaction"].forEach(elem=>{
+                 elem["OldValue"] =  this._ReactionData[ReactionName]["value"]
                  this.SetReaction(elem["ReactionCall"],[elem["Label"],Value])
             })
         }
+
 
         if (typeof Value == "object" )
         {
@@ -492,7 +494,6 @@ export default class Oct8Obj extends (Oct8Events) {
             "ReactionCall":Reaction
         })
         
-        console.log(this._ReactionData[Target]["ifReaction"])
     }
     
     
