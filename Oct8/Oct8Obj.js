@@ -425,23 +425,13 @@ export default class Oct8Obj extends (Oct8Events) {
         this._ReactionData[ReactionName]["Labels"].push({"Label":Label,"ReactionFunc":ReactionFunc}) 
     }
 
-    IfReaction(ReactionName,ReactionCond,Event="Label"){
-        this._ReactionData[ReactionName]["ifReaction"].push({
-            "ReactionName":ReactionName,
-            "ReactionCondition":ReactionCond,
-            "OldValue":this._ReactionData[ReactionName]["value"],
-            "Event":Event
-        })
-    }
-
-    
 
     MakeExperience(ReactionName,Object)
     {
         this.Experiences.push({Reaction:ReactionName,Experience:Object})
     }
 
-    ReturnExperience(ReactionName,Key,NewValue="NullValue"){
+    ReturnExperience(ReactionName,Key="",NewValue="NullValue"){
         for (let index = 0; index < this.Experiences.length; index++) {
 
             if(this.Experiences[index]["Reaction"] == ReactionName)
@@ -451,8 +441,11 @@ export default class Oct8Obj extends (Oct8Events) {
                {
                  return this.Experiences[index]["Experience"][Key] = NewValue
                }
-
-               return this.Experiences[index]["Experience"][Key]
+               if(Key != "")
+               {
+                    return this.Experiences[index]["Experience"][Key] 
+               }
+               return this.Experiences[index]["Experience"]
             }
             
         }
@@ -462,24 +455,40 @@ export default class Oct8Obj extends (Oct8Events) {
         
         if (typeof Value == "object" )
         {
-            this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
-            this._ReactionData[ReactionName]["value"]  = Value[1]
+            
             for (let index = 0; index < this._ReactionData[ReactionName]["Labels"].length; index++) {
                if(this._ReactionData[ReactionName]["Labels"][index]["Label"] == Value[0])
                {
+                this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
+            this._ReactionData[ReactionName]["value"]  = Value[1]
                  this._ReactionData[ReactionName]["Labels"][index]["ReactionFunc"](Value[1])
                  return Value[1]
                }
             }
+
         }
 
-        this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
-        this._ReactionData[ReactionName]["value"]  = Value
-
-        let ElementsReactions = document.getElementsByTagName(this._ReactionData[ReactionName]["id"])
-        for (let index = 0; index < ElementsReactions.length; index++) {
-            ElementsReactions[index].innerHTML = this._ReactionData[ReactionName]["value"]
+        console.log(typeof Value)
+        if(typeof Value == "object")
+        {
+           let GetOption = this._ReactionData[ReactionName]["value"]
+           console.log(GetOption);
+           
+           this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
+           this._ReactionData[ReactionName]["value"] =Value
         }
+        else
+        {
+            console.log("====") 
+            this._ReactionData[ReactionName]["OldValue"]  = this._ReactionData[ReactionName]["value"]
+            this._ReactionData[ReactionName]["value"]  = Value
+    
+            let ElementsReactions = document.getElementsByTagName(this._ReactionData[ReactionName]["id"])
+            for (let index = 0; index < ElementsReactions.length; index++) {
+                ElementsReactions[index].innerHTML = this._ReactionData[ReactionName]["value"]
+            }
+        }
+
     }
     
     
