@@ -427,9 +427,14 @@ export default class Oct8Obj extends (Oct8Events) {
     }
 
 
-    MakeExperience(ReactionName)
+    MakeExperience(ReactionName,Object)
     {
+        
         let NewList = new Map()
+        if(Object != undefined){
+            NewList = new Map(Object)
+            return NewList
+        }
         this._ReactionData[ReactionName]["value"].forEach(function(key,value){
             NewList.set(value,key)
         })
@@ -450,7 +455,8 @@ export default class Oct8Obj extends (Oct8Events) {
         {
 
             this._ReactionData[ReactionName]["ifReaction"].forEach(elem=>{
-                 elem["OldValue"] =  this._ReactionData[ReactionName]["value"]
+                console.log(this._ReactionData[ReactionName])
+                 elem["OldValue"] = this._ReactionData[ReactionName]["value"]
                  this.SetReaction(elem["ReactionCall"],[elem["Label"],Value])
             })
         }
