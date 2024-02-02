@@ -432,9 +432,37 @@ export default class Oct8Obj extends (Oct8Events) {
         
         let NewList = new Map()
         if(Object != undefined){
+            if(Object[0] =="obj"){
+                function ExperienceData(Object){}
+                let Exp = new ExperienceData()
+                this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
+                this._ReactionData[ReactionName]["value"] = Exp
+                return Exp
+            }
+            if(Object[0] == "add"){      
+                function ExperienceData(Object){}
+                for (let index = 0; index < Object[1].length; index++) {
+                        ExperienceData.prototype[Object[1][index]]= Object[2][index]
+                    }
+                let Exp = new ExperienceData(Object)
+                this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
+                this._ReactionData[ReactionName]["value"] = Exp
+                return Exp
+            }
+
+            if(Object[0] == "update"){      
+                let Exp =  Object[1]
+                Exp[Object[2]] = Object[3]
+                this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
+                this._ReactionData[ReactionName]["value"] = Exp
+                console.log([Object[1]["cliente"]])
+                return Exp
+            }
+
             NewList = new Map(Object)
             return NewList
         }
+        this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
         this._ReactionData[ReactionName]["value"].forEach(function(key,value){
             NewList.set(value,key)
         })
