@@ -64,7 +64,7 @@ export default class Oct8Obj extends (Oct8Events) {
         this.TagCreated = []
         this.AnimationOct8 = new Oct8Animation()
         this._ReactionData = {}
-        this.ReactionType= {Reference : "Ref"}
+        this.ReactionType= {Reference : "Ref",ObjectData:["obj"],UpdateData:"update"}
         this.Experiences = []
 
         if (Render == true) {
@@ -455,7 +455,6 @@ export default class Oct8Obj extends (Oct8Events) {
                 Exp[Object[2]] = Object[3]
                 this._ReactionData[ReactionName]["OldValue"] = this._ReactionData[ReactionName]["value"]
                 this._ReactionData[ReactionName]["value"] = Exp
-                console.log([Object[1]["cliente"]])
                 return Exp
             }
 
@@ -483,7 +482,6 @@ export default class Oct8Obj extends (Oct8Events) {
         {
 
             this._ReactionData[ReactionName]["ifReaction"].forEach(elem=>{
-                console.log(this._ReactionData[ReactionName])
                  elem["OldValue"] = this._ReactionData[ReactionName]["value"]
                  this.SetReaction(elem["ReactionCall"],[elem["Label"],Value])
             })
