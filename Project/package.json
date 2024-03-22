@@ -1,0 +1,15 @@
+{
+  "name": "oct8",
+  "version": "1.0.0",
+  "description": "Projeto Zada",
+  "main": "./js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Formiga",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.5"
+  }
+}
