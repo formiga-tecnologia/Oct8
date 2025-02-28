@@ -361,11 +361,16 @@ export default class Oct8Obj extends (Oct8Events) {
 
                     let s = element['Event']
                     let Atributed_node = document.getElementsByTagName(element['TagName'])[index].attributes
+                    
                     if (typeof s == 'function') {
-                        s(Atributed_node)
+                        let List_prop = {}
+                        for (let attr of Atributed_node) {
+                            List_prop[attr.name] =attr.value 
+                        }
+                        document.getElementsByTagName(element['TagName'])[index].innerHTML += s(List_prop)
                     }
 
-                    document.getElementsByTagName(element['TagName'])[index].remove()
+                    //document.getElementsByTagName(element['TagName'])[index].remove()
 
                 }
                 if (Stop == true) {
