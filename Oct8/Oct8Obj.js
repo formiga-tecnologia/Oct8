@@ -347,8 +347,8 @@ export default class Oct8Obj extends (Oct8Events) {
     }
 
 
-    createNewTag(TagName, Event) {
-        return this.TagCreated.push({ TagName, Event })
+    createNewTag(TagName, Event,returnValue=true) {
+        return this.TagCreated.push({ TagName, Event,returnValue })
     }
 
     ReactiveTags(Target, Stop = true) {
@@ -369,8 +369,10 @@ export default class Oct8Obj extends (Oct8Events) {
                         }
                         document.getElementsByTagName(element['TagName'])[index].innerHTML += s(List_prop)
                     }
-
-                    //document.getElementsByTagName(element['TagName'])[index].remove()
+                    if (element['returnValue'] == false)
+                    {
+                        document.getElementsByTagName(element['TagName'])[index].remove()
+                    }
 
                 }
                 if (Stop == true) {
