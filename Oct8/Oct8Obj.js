@@ -1,6 +1,7 @@
 import Oct8Events from "./Oct8Events.js";
 import oct8Pack from "./Oct8packs.js";
 import Oct8Animation from "./Oct8Animate.js";
+import { DocumentFactory } from "./Oct8DocumentFactory.js";
 export default class Oct8Obj extends (Oct8Events) {
     constructor(Id = "", X = 0, Y = 0, W = 0, H = 0, TypeContainer = "", AppendElement = "", Render = true) {
         super()
@@ -27,6 +28,7 @@ export default class Oct8Obj extends (Oct8Events) {
             alpha: "opacity"
         };
         this.ObjectsFactory = [];
+        this.Documents = []
         this.Properties = {
             marginLeft: 0,
             marginTop: 0,
@@ -63,6 +65,7 @@ export default class Oct8Obj extends (Oct8Events) {
         this.id = Id;
         this.TagCreated = []
         this.AnimationOct8 = new Oct8Animation()
+        this.Documentfactory = new DocumentFactory()
         this._ReactionData = {}
         this.ReactionType= {Reference : "Ref",ObjectData:["obj"],UpdateData:"update"}
         this.Experiences = []
@@ -156,10 +159,30 @@ export default class Oct8Obj extends (Oct8Events) {
     CreateObjectFactory(Object, ObjectName) {
         this.ObjectsFactory.push([Object, ObjectName]);
     }
+
+    ReturnDocumentFactory(ObjectName){
+        this.ObjectsFactory.forEach(element => {
+            if (element[0] == ObjectName) {
+                    return element[1]
+            }
+        })
+    }
+    
     AppendObjectFacyotyTo(ObjectName, param) {
+        
+        
         this.ObjectsFactory.forEach(element => {
             if (element[1] == ObjectName) {
                 if (param != null) {
+                    let v  = new DocumentFactory()
+                    if(typeof(param) == "object" && !Array.isArray(param))
+                    {
+                        Object.keys(param).forEach(element => {
+                            console.log(element+" "+param[element])
+                            Reflect.set(v,element,param[element])    
+                        });
+                        this.Documents.push([ObjectName,v])
+                    }
                     element[0](param);
                 }
                 else {
