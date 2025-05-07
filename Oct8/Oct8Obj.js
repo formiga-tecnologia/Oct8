@@ -156,8 +156,8 @@ export default class Oct8Obj extends (Oct8Events) {
             }
         }
     }
-    CreateObjectFactory(Object, ObjectName) {
-        this.ObjectsFactory.push([Object, ObjectName]);
+    CreateObjectFactory(Object, ObjectName,documentFactory) {
+        this.ObjectsFactory.push([Object, ObjectName,documentFactory=null]);
     }
 
     ReturnDocumentFactory(ObjectName){
@@ -174,15 +174,6 @@ export default class Oct8Obj extends (Oct8Events) {
         this.ObjectsFactory.forEach(element => {
             if (element[1] == ObjectName) {
                 if (param != null) {
-                    let v  = new DocumentFactory()
-                    if(typeof(param) == "object" && !Array.isArray(param))
-                    {
-                        Object.keys(param).forEach(element => {
-                            console.log(element+" "+param[element])
-                            Reflect.set(v,element,param[element])    
-                        });
-                        this.Documents.push([ObjectName,v])
-                    }
                     element[0](param);
                 }
                 else {
