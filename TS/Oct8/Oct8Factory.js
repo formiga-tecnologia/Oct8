@@ -1,3 +1,4 @@
+const OCT8_ELEMENT = Symbol("oct8_element");
 class Oct8Factory {
     /**
      * Create Object fatory base Oct8, Register in Oct8 Factory Class
@@ -11,6 +12,14 @@ class Oct8Factory {
         }
         this.registry.set(name, component);
     }
+    /**
+     * Render the component in targte element HTML.
+     *
+     * @param name  Name od Oct8 component register in list of base components
+     * @param target  target element where the comppont , to go insert
+     * @param props  Props of target component
+     * @returns
+     */
     static render(name, target, props) {
         const Component = this.registry.get(name);
         if (!Component) {
@@ -23,12 +32,13 @@ class Oct8Factory {
         const instance = new Component(props);
         const result = instance.build();
         const element = this.normalizeElement(result);
-        if (typeof instance.styled == "function") {
+        if (instance.styled) {
             Object.assign(element.style, instance.styled());
         }
         host.appendChild(element);
+        instance[OCT8_ELEMENT] = element;
         this.instances.set(element, instance);
-        return element;
+        return instance;
     }
     static normalizeElement(content) {
         if (content instanceof HTMLElement) {
@@ -41,6 +51,12 @@ class Oct8Factory {
         }
         return wrapper;
     }
+    /**
+     * Destroy component in HTML document
+     *
+     * @param element  target element for destroy.
+     * @returns
+     */
     static destroy(element) {
         const instance = this.instances.get(element);
         if (!instance) {
@@ -51,6 +67,27 @@ class Oct8Factory {
         instance.onDestroy?.();
         this.instances.delete(element);
         element.remove();
+    }
+    /**
+     * Update the component realize the new render to element
+     *
+     * @param instance Realizes Update in the target instances element.
+     * @returns
+     */
+    static update(instance) {
+        const element = instance[OCT8_ELEMENT];
+        if (!element) {
+            throw new Error("Oct8: instância sem elemento associado");
+        }
+        const result = instance.build();
+        const newElement = this.normalizeElement(result);
+        instance.styled &&
+            Object.assign(newElement.style, instance.styled());
+        element.replaceWith(newElement);
+        this.instances.delete(element);
+        this.instances.set(newElement, instance);
+        instance[OCT8_ELEMENT] = newElement;
+        return newElement;
     }
 }
 Oct8Factory.registry = new Map();
