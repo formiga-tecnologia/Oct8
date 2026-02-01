@@ -1,5 +1,5 @@
-import { Oct8Factory } from "./Oct8Factory";
-import { Oct8Reaction } from "./Oct8Reaction";
+import { Oct8Factory } from "./Oct8Factory.js";
+import { Oct8Reaction } from "./Oct8Reaction.js";
 class Oct8 {
 }
 Oct8.Factory = Oct8Factory;

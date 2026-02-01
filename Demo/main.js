@@ -1,53 +1,65 @@
-import { Oct8Factory } from "../TS/Oct8/Oct8Factory.js"
-import { Oct8Reaction } from "../TS/Oct8/Oct8Reaction.js"
+
 import {Oct8} from "../TS/Oct8/Oct.js"
+import { Oct8Routes } from "../TS/Oct8/Oct8Routes.js"
+import { MenuBlog } from "./component/menu.js"
+import {Oct8Styled} from "../TS/Oct8/Oct8Styled.js"
+import {Oct8Page} from "../TS/Oct8/Oct8Page.js"
 
-class Header{
-    constructor(props={}){
-        this.props = props
-        this.element = null
-        this.State =false
-        
-    }
-    setterRule(){
-        if(this.props.content == "Excel"){
-            return "green"
-        }
-        else{
-            return "black"
-        }
-    }
-    styled(){
+// Oct8.Factory.register("menu", MenuBlog)
+// Oct8.Factory.render("menu","#app",{menu:["Home","Artigos"]})
 
-        return {
-            color:"red",
-            backgroundColor:this.setterRule(),
-            textAlign:"center"
-        }
-    }
-    build(){
-        if(this.State == true)
-        {
-        return `<h1>${this.props.content} [update] </h1>`
-
-        }
-        this.State =true
-        return `<h1>${this.props.content} + ${Oct8Reaction.inject("Valor")} </h1>`
-    }
+class Home {
+  build() {
+     var f = new MenuBlog(["d"])
+     f.props.menu = ["d"]
+    return  f.build()
+  }
 }
 
-Oct8Reaction.create("Valor",20)
-Oct8Factory.register("Header",Header)
-let s = ["Word","Excel","PTT"]
-let base = []
-s.forEach(element => {
+class Produtos {
+  build() {
+    return `<h1 class='colors'>Produtos</h1>`
+  }
+}
 
-    base.push(Oct8Factory.render("Header","#app",{content:element}))
-        
-});
+class Page extends Oct8Page{
+    build(){
+        this.mount(MenuBlog,{menu:["opa"]})
+        this.mount(Produtos)
+    }
+    
+}
 
-document.addEventListener('click',()=>{
-    Oct8Factory.update(base[1])
-    Oct8Reaction.update("Valor",10)
-    Oct8Factory.destroy(base[0])
-})
+let a  = new Page()
+a.render("#app")
+
+
+
+// Oct8.Factory.register("Home", Produtos)
+// Oct8.Factory.register("Produtos", Produtos)
+
+
+// Oct8Routes.register("/", Produtos)
+// Oct8Routes.register("/produtos",Produtos)
+
+// Oct8Routes.mount("#app")
+// Oct8Routes.navigate("/")
+
+// Oct8Styled.register("White","./css/theme_white.css")
+// Oct8Styled.register("Body","./css/colors_blue.css")
+
+// let f = true
+// document.addEventListener("click",()=>{
+//     if(f){
+//         Oct8Styled.unuse("Body")
+//         Oct8Styled.set("White")
+//         f= false
+//     }
+//     else{
+//         Oct8Styled.clear()
+//          Oct8Styled.set("White")
+//         Oct8Styled.set("Body")
+//         f =true
+//     }
+
+// })

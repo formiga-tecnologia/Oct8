@@ -1,5 +1,5 @@
-import { Oct8Factory } from "./Oct8Factory";
-import { Oct8Reaction } from "./Oct8Reaction";
+import { Oct8Factory } from "./Oct8Factory.js";
+import { Oct8Reaction } from "./Oct8Reaction.js";
 declare class Oct8 {
     static Factory: typeof Oct8Factory;
     static Reaction: typeof Oct8Reaction;
