@@ -1,8 +1,14 @@
 import { Oct8Factory } from "./Oct8Factory.js";
+import { Oct8Page } from "./Oct8Page.js";
 import { Oct8Reaction } from "./Oct8Reaction.js";
+import { Oct8Routes } from "./Oct8Routes.js";
+import { Oct8Styled } from "./Oct8Styled.js";
 class Oct8 {
 }
 Oct8.Factory = Oct8Factory;
 Oct8.Reaction = Oct8Reaction;
+Oct8.Styled = Oct8Styled;
+Oct8.Pages = Oct8Page;
+Oct8.Route = Oct8Routes;
 export { Oct8 };
 //# sourceMappingURL=Oct.js.map
