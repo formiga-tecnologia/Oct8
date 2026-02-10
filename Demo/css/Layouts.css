@@ -39,3 +39,11 @@ nav ul li:hover{
     padding: 1vh;
     transition: all 2s;
 }
+
+[oct-style="page"]{
+    background-color: red;
+}
+
+[oct-style="page:dark"] {
+  background: #111;
+}

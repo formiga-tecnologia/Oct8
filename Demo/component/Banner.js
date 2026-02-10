@@ -7,7 +7,7 @@ class Banner{
         return `
         <div class='banner'>
             <h1> ${this.props.Titulo} </h1>
-            <div>
+            <div oct-style='page'>
                 <h3> ${this.props.Conteudo} </h3>
                 <button> Acessar </button
             </div>
