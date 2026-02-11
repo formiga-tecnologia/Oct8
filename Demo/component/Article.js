@@ -7,9 +7,11 @@ class Article{
         this.prop.style = ""
         return `
             <article oct-css="${this.prop.article}">
-                <h1>${this.prop.Titulo}</h1>
-                <h3>${this.prop.Conteudo}</h3>
-                <img id='box_test'  src='${this.prop.Url}'>
+            <div>
+            <h1>${this.prop.Titulo}</h1>
+            <h3>${this.prop.Conteudo}</h3>
+            </div>
+            <img id='box_test'  src='${this.prop.Url}'>
             </div> 
         `
     }

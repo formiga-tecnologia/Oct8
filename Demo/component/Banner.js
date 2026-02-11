@@ -6,6 +6,7 @@ class Banner{
     build(){
         return `
         <div class='banner'>
+            <img class='logoBanner' src='../image/Oct8Logo2026.png' >
             <h1> ${this.props.Titulo} </h1>
             <div>
                 <h3> ${this.props.Conteudo} </h3>
