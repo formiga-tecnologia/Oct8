@@ -19,9 +19,7 @@ class Oct8Event {
   private static customTypes = new Map<string, CustomEventFactory>()
   private static globalActive = true
 
-  /* ========================= */
-  /* CONFIG                    */
-  /* ========================= */
+
 
   static setAttributeName(name: string) {
     this.attributeName = name
@@ -35,17 +33,10 @@ class Oct8Event {
     this.globalActive = false
   }
 
-  /* ========================= */
-  /* CUSTOM EVENT TYPES        */
-  /* ========================= */
-
   static createEventType(name: string, factory: CustomEventFactory) {
     this.customTypes.set(name, factory)
   }
 
-  /* ========================= */
-  /* REGISTER                  */
-  /* ========================= */
 
   static register(
     eventType: string,
@@ -81,9 +72,7 @@ class Oct8Event {
     })
   }
 
-  /* ========================= */
-  /* CONTROL                   */
-  /* ========================= */
+
 
   static disable(eventName: string) {
     this.events

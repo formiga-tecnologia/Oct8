@@ -1,7 +1,4 @@
 class Oct8Event {
-    /* ========================= */
-    /* CONFIG                    */
-    /* ========================= */
     static setAttributeName(name) {
         this.attributeName = name;
     }
@@ -11,15 +8,9 @@ class Oct8Event {
     static disableAll() {
         this.globalActive = false;
     }
-    /* ========================= */
-    /* CUSTOM EVENT TYPES        */
-    /* ========================= */
     static createEventType(name, factory) {
         this.customTypes.set(name, factory);
     }
-    /* ========================= */
-    /* REGISTER                  */
-    /* ========================= */
     static register(eventType, eventName, handler) {
         const elements = document.querySelectorAll(`[${this.attributeName}="${eventName}"]`);
         elements.forEach(el => {
@@ -45,9 +36,6 @@ class Oct8Event {
             this.events.push(registered);
         });
     }
-    /* ========================= */
-    /* CONTROL                   */
-    /* ========================= */
     static disable(eventName) {
         this.events
             .filter(e => e.name === eventName)
