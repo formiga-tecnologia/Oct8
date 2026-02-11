@@ -54,3 +54,41 @@ nav ul li:hover{
 [oct-css="article:gray"] img{
     width: 90vh;
 }
+
+/* Testes */
+@keyframes fadeIn {
+  from { opacity: 0; margin-left: 20vh;}
+  to { opacity: 1 ;margin-left: 90vh;}
+}
+
+@keyframes fadeOut {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px) }
+  to { transform: translateY(0) }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+.slideUp {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  background: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
