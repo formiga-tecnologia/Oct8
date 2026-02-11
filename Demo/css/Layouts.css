@@ -1,12 +1,15 @@
 
 .banner{
     display: flex;
-    flex-direction: row-reverse;
-    margin: auto;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 98%;
     height: 40vh;
     background-color: orange;
     padding: 2vh;
+    padding-bottom: 10vh;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,17 +22,18 @@
 }
 nav{
 height: 6vh;
+width: 98vw;
 background-color: #f5bc52;
 border-radius: 2vh 2vh 0 0;
 color: #735722;
-font-size: 1vw;
+font-size: 1.8vh;
 font-family: Arial, Helvetica, sans-serif;
 }
 nav ul{position: absolute; margin-top: 2vh;}
 nav ul li{
     float: left;
     list-style: none;
-    margin-left: 4vh;
+    margin-left: 2vh;
     cursor: pointer;
     transition: all 2s;
 }
@@ -42,11 +46,18 @@ nav ul li:hover{
     transition: all 2s;
 }
 .logoBanner {
-    margin-left: 30vh;
-    margin-top: -15vh;
-  width:90vh;
-  height: auto;
-  clip-path: inset(50px 51vh 50px 20px);
+
+
+  width:50vh;
+  height: 40vh;
+  margin-left: 15vh;
+  clip-path: inset(14px 28.3vh 10px 20px);
+  animation: colorCycle 10s infinite;
+
+
+}
+.compBanner{
+margin-top: -10vh;
 
 }
 [oct-css] h3{
@@ -62,6 +73,24 @@ nav ul li:hover{
 
 [oct-css="article:gray"] img{
     width: 90vh;
+}
+
+.logoBanner img {
+  width: 300px;
+  height: auto;
+  animation: colorCycle 10s infinite;
+}
+
+@keyframes colorCycle {
+  45%  { filter: hue-rotate(30deg); }    /* laranja */
+  0%   { filter: hue-rotate(200deg); }   /* azul */
+  15%  { filter: hue-rotate(0deg); }     /* vermelho */
+  30%  { filter: grayscale(100%); }      /* cinza */
+  60%  { filter: hue-rotate(320deg); }   /* rosa */
+  75%  { filter: brightness(340%); }       /* preto */
+  90% { filter: hue-rotate(320deg); }   /* volta ao azul */
+  100%  { filter: hue-rotate(30deg); }    /* laranja */
+
 }
 
 /* Testes */

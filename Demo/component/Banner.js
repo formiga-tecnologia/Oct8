@@ -7,8 +7,8 @@ class Banner{
         return `
         <div class='banner'>
             <img class='logoBanner' src='../image/Oct8Logo2026.png' >
-            <h1> ${this.props.Titulo} </h1>
-            <div>
+            <div class='compBanner'>
+                <h1> ${this.props.Titulo} </h1>
                 <h3> ${this.props.Conteudo} </h3>
                 <button oct-event='click_teste'> Acessar </button>
                 <button> Acessar documentacao </button
