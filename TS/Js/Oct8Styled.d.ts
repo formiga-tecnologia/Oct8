@@ -10,6 +10,7 @@ declare class Oct8Styled {
     private static BindCssList;
     static register(name: string, href: string): void;
     static GetAttributeCSS(Attribute: string): BindCssList[];
+    static BindAttributes(): void;
     static SetAttributeCSS(value: any): void;
     static set(name: string): void;
     static unuse(name: string): void;

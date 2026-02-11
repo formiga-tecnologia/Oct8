@@ -17,6 +17,22 @@ class Oct8Styled {
         this.BindCssList.push(...CssListElements);
         return CssListElements;
     }
+    static BindAttributes() {
+        const values = this.GetAttributeCSS(this.Attribute);
+        if (!values)
+            return;
+        values.forEach(P => {
+            if (P.value.split(" ").length >= 1) {
+                console.log(P.value);
+                P.value.split(" ").forEach(el => {
+                    const valueRender = el.split(":");
+                    var Key = valueRender[0] ? valueRender[0]?.toString() : "";
+                    var Value = valueRender[1] ? valueRender[1]?.toString() : "";
+                    P.Element.setAttribute(Key, Value);
+                });
+            }
+        });
+    }
     static SetAttributeCSS(value) {
         let Att = "";
         if (this.BindCssList) {
