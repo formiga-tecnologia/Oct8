@@ -5,6 +5,7 @@ class HomePage extends Oct8.Pages{
    build(){
     this.mount(MenuBlog,{menu:["Home","Iniciando no Oct8","Status","Sobre"]})
     this.mount(Banner,{Conteudo:"Oct8 Novidades",Titulo:"Sobre Oct8 V2026"})
+
    } 
 }
 

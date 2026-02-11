@@ -1,16 +1,46 @@
 type StyleEntry = {
   href: string
 }
+type BindCssList = {
+  Attribute:string
+  value:string
+  Element:HTMLElement
+}
 
 class Oct8Styled{
   private static registry = new Map<string, StyleEntry>()
   private static active = new Map<string, HTMLLinkElement>()
-
+  private static Attribute = ""
+  private static BindCssList:BindCssList[] =[]
   static register(name: string, href: string): void {
     if (this.registry.has(name)) {
       throw new Error(`Oct8Styles: estilo "${name}" já registrado`)
     }
     this.registry.set(name, { href })
+  }
+
+  static GetAttributeCSS(Attribute:string):BindCssList[]{
+    const Elements = document.querySelectorAll(`[${Attribute}]`)
+    const CssListElements:BindCssList[] = Array.from(Elements).map(el =>{
+      return{
+        Attribute:Attribute,
+        value: (el as HTMLElement).getAttribute(Attribute)??"",
+        Element: el as HTMLElement
+      }
+    })
+    this.BindCssList.push(...CssListElements)
+    return CssListElements
+  }
+
+  static SetAttributeCSS(value:any):void{
+    let Att = ""
+    if(this.BindCssList){
+      this.BindCssList.forEach(element => {
+        element["Element"].setAttribute(element["Attribute"],value)
+        Att = element["Attribute"]
+      });
+    }
+    this.GetAttributeCSS(Att)
   }
 
   static set(name: string): void {

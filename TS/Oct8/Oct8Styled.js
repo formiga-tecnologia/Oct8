@@ -5,6 +5,28 @@ class Oct8Styled {
         }
         this.registry.set(name, { href });
     }
+    static GetAttributeCSS(Attribute) {
+        const Elements = document.querySelectorAll(`[${Attribute}]`);
+        const CssListElements = Array.from(Elements).map(el => {
+            return {
+                Attribute: Attribute,
+                value: el.getAttribute(Attribute) ?? "",
+                Element: el
+            };
+        });
+        this.BindCssList.push(...CssListElements);
+        return CssListElements;
+    }
+    static SetAttributeCSS(value) {
+        let Att = "";
+        if (this.BindCssList) {
+            this.BindCssList.forEach(element => {
+                element["Element"].setAttribute(element["Attribute"], value);
+                Att = element["Attribute"];
+            });
+        }
+        this.GetAttributeCSS(Att);
+    }
     static set(name) {
         if (this.active.has(name))
             return;
@@ -36,5 +58,7 @@ class Oct8Styled {
 }
 Oct8Styled.registry = new Map();
 Oct8Styled.active = new Map();
+Oct8Styled.Attribute = "";
+Oct8Styled.BindCssList = [];
 export { Oct8Styled };
 //# sourceMappingURL=Oct8Styled.js.map

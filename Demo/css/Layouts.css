@@ -47,3 +47,7 @@ nav ul li:hover{
 [oct-style="page:dark"] {
   background: #111;
 }
+
+[oct-style="page:white"] {
+  background: #fff;
+}
