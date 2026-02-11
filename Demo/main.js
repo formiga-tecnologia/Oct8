@@ -3,12 +3,25 @@ import { Oct8 } from "../TS/Oct8/Oct.js";
 let a  = new HomePage()
 a.render("#app")
 
+Oct8.Events.createEventType("enabledClick",(el,handler)=>{
+  el.addEventListener("click",e=>{
+    var s = prompt("Deseja mesmo executar isso?")
+    if(s == "sim")
+    {
+      handler(e)
+    }
+    else{
+      console.log(Oct8.Events.getStats("enabledClick"))
+    }
+    
+  })
+})
+Oct8.Events.register("enabledClick","click_teste",()=>{
 
-
-  document.getElementById("box_test").addEventListener("mouseenter",()=>{
 Oct8.Animate.playAnimation(document.getElementById("box_test"),[
     "fadeOut",
     "slideUp",
     "fadeIn"
   ])
   })
+

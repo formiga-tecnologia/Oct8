@@ -10,7 +10,7 @@ class Banner{
             <h1> ${this.props.Titulo} </h1>
             <div>
                 <h3> ${this.props.Conteudo} </h3>
-                <button> Acessar </button>
+                <button oct-event='click_teste'> Acessar </button>
                 <button> Acessar documentacao </button
             </div>
             </div>
