@@ -99,7 +99,7 @@ class Oct8Factory {
     element.remove()
   }
 
-    static SetDataAttribute(Attribute:string,InfoData:any):void{
+    static SetDataAttribute(Attribute:string,InfoData:Array<any>):void{
     const Elements = document.querySelectorAll(`[${Attribute}]`)
     let index = 0;
     Elements.forEach(el =>{
