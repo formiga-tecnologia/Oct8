@@ -11,6 +11,8 @@ class Banner{
                 <h3> ${this.props.Conteudo} </h3>
                 <button> Acessar </button
             </div>
+            </div>
+            <div oct-style='page:white'> 
         </div>
         `
     }

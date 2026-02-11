@@ -33,6 +33,7 @@ declare class Oct8Factory {
      * @returns
      */
     static destroy(element: HTMLElement): void;
+    static SetDataAttribute(Attribute: string, InfoData: any): void;
     /**
      * Update the component realize the new render to element
      *

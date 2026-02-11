@@ -68,6 +68,14 @@ class Oct8Factory {
         this.instances.delete(element);
         element.remove();
     }
+    static SetDataAttribute(Attribute, InfoData) {
+        const Elements = document.querySelectorAll(`[${Attribute}]`);
+        let index = 0;
+        Elements.forEach(el => {
+            el.innerHTML = InfoData[index];
+            index += 1;
+        });
+    }
     /**
      * Update the component realize the new render to element
      *
