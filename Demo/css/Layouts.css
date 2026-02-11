@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+text-align: center;
     width: 98%;
     height: 40vh;
     background-color: orange;
@@ -22,7 +22,7 @@
 }
 nav{
 height: 6vh;
-width: 98vw;
+width: 98.4vw;
 background-color: #f5bc52;
 border-radius: 2vh 2vh 0 0;
 color: #735722;
@@ -50,7 +50,7 @@ nav ul li:hover{
 
   width:50vh;
   height: 40vh;
-  margin-left: 15vh;
+  margin-left: 20vh;
   clip-path: inset(14px 28.3vh 10px 20px);
   animation: colorCycle 10s infinite;
 
