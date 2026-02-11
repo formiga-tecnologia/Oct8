@@ -76,6 +76,10 @@ class Oct8Factory {
             index += 1;
         });
     }
+    static GetDataAttribute(Attribute) {
+        const Elements = document.querySelectorAll(`[${Attribute}]`);
+        return Elements;
+    }
     /**
      * Update the component realize the new render to element
      *

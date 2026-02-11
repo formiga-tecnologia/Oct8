@@ -34,6 +34,7 @@ declare class Oct8Factory {
      */
     static destroy(element: HTMLElement): void;
     static SetDataAttribute(Attribute: string, InfoData: Array<any>): void;
+    static GetDataAttribute(Attribute: string): NodeListOf<Element>;
     /**
      * Update the component realize the new render to element
      *

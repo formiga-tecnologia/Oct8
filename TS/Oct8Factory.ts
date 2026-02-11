@@ -108,6 +108,11 @@ class Oct8Factory {
     })
   }
 
+  static GetDataAttribute(Attribute:string):NodeListOf<Element>{
+    const Elements = document.querySelectorAll(`[${Attribute}]`)
+    return Elements
+  }
+
   /**
    * Update the component realize the new render to element
    * 
