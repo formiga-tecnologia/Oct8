@@ -26,7 +26,13 @@ class Oct8Query {
                 el.innerHTML += value;
             }
         });
-        return this; // mantém encadeamento
+        return this;
+    }
+    delete() {
+        this.Results.Result.forEach(el => {
+            el.remove();
+        });
+        return this;
     }
 }
 export { Oct8Query };

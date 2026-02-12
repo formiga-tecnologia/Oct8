@@ -38,7 +38,14 @@ update(value:any,eraseContent=true): Oct8Query {
         }
 
   });
-  return this; // mantém encadeamento
+  return this;
+}
+delete():Oct8Query{
+     this.Results.Result.forEach(el => {
+        el.remove()
+
+  });
+  return this;
 }
 
 

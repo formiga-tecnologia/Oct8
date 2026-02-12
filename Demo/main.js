@@ -5,7 +5,7 @@ let a  = new HomePage()
 a.render("#app")
 Oct8.Reaction.update("teste",90)
 
-new Oct8.Query("article").where("div").where("h1").update("oi")
+new Oct8.Query("article").where("div").where("h1").delete()
 
 
 Oct8.Events.createEventType("enabledClick",(el,handler)=>{
