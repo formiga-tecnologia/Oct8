@@ -13,6 +13,7 @@ declare class Oct8Reaction {
      * @returns  <Return: The HTML value node Reaction>
      */
     static inject(name: string): string;
+    static GetReaction(name: string): any;
     /**
      * Update the value of valid Reaction
      *

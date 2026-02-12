@@ -34,6 +34,10 @@ class Oct8Reaction {
         ReactionElement.setAttribute("reaction",name)
         return ReactionElement.outerHTML
     }
+
+    static GetReaction(name:string):any{
+        return this.ReactionsListStore.get(name);
+    }
     /**
      * Update the value of valid Reaction
      * 
@@ -43,7 +47,7 @@ class Oct8Reaction {
     static update(name:string,value:any): void{
         const ReactionsNode = document.querySelectorAll<HTMLHeadingElement>(("octreaction"))
         const Reaction = this.ReactionsListStore.get(name)
-        console.log(Reaction)
+        
         if(Reaction)
         {
             Reaction.value = value
