@@ -37,6 +37,7 @@ declare class Oct8Factory {
     static SetDataAttribute(Attribute: string, InfoData: Array<any>): void;
     static getInstancesByName(name: string): Oct8InternalInstance[];
     static GetDataAttribute(Attribute: string): NodeListOf<Element>;
+    static ValidValue(value: any, condition: Function, returnTrue: any, ReturnFalse: any): any;
     /**
      * Update the component realize the new render to element
      *

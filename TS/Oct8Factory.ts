@@ -125,6 +125,13 @@ class Oct8Factory {
     return Elements
   }
 
+  static ValidValue(value:any,condition:Function,returnTrue:any,ReturnFalse:any):any{
+      if(condition(value)){
+          return returnTrue
+      }
+      return ReturnFalse
+  }
+
   /**
    * Update the component realize the new render to element
    * 

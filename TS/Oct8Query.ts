@@ -5,7 +5,6 @@ type QueryResult = {
 
 class Oct8Query {
   Results: QueryResult;
-  private Selected: Element[] = []; // lista acumulada de elementos selecionados
 
 
   constructor(query: string) {
@@ -43,6 +42,12 @@ update(value:any,eraseContent=true): Oct8Query {
 
   });
   return this;
+}
+SetAttribute(att:string,value:string):Oct8Query{
+    this.Results.Result.forEach(el => {
+        el.setAttribute(att,value)
+    })
+    return this
 }
 ReturnSelect():Oct8Query{
     let v = this.Results.Result

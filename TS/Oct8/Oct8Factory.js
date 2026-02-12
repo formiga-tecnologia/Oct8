@@ -20,19 +20,12 @@ class Oct8Factory {
      * @param props  Props of target component
      * @returns
      */
-    static render(name, target, props,AddInElment=false) {
+    static render(name, target, props) {
         const Component = this.registry.get(name);
         if (!Component) {
             throw new Error(`Oct8: componente "${name}" não encontrado`);
         }
-        let host
-        if(AddInElment)
-        {
-            host =target
-        }
-        else{
-            host = document.querySelector(target);
-        }
+        const host = document.querySelector(target);
         if (!host) {
             throw new Error(`Oct8: alvo "${target}" não encontrado no DOM`);
         }
@@ -95,6 +88,12 @@ class Oct8Factory {
     static GetDataAttribute(Attribute) {
         const Elements = document.querySelectorAll(`[${Attribute}]`);
         return Elements;
+    }
+    static ValidValue(value, condition, returnTrue, ReturnFalse) {
+        if (condition(value)) {
+            return returnTrue;
+        }
+        return ReturnFalse;
     }
     /**
      * Update the component realize the new render to element

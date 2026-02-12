@@ -1,6 +1,5 @@
 class Oct8Query {
     constructor(query) {
-        this.Selected = []; // lista acumulada de elementos selecionados
         this.Results = {
             Result: Array.from(document.querySelectorAll(query)),
             Query: query
@@ -27,6 +26,12 @@ class Oct8Query {
             else {
                 el.innerHTML += value;
             }
+        });
+        return this;
+    }
+    SetAttribute(att, value) {
+        this.Results.Result.forEach(el => {
+            el.setAttribute(att, value);
         });
         return this;
     }

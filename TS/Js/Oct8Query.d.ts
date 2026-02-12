@@ -4,11 +4,11 @@ type QueryResult = {
 };
 declare class Oct8Query {
     Results: QueryResult;
-    private Selected;
     constructor(query: string);
     ReturnResult(): QueryResult;
     where(predicate: string): Oct8Query;
     update(value: any, eraseContent?: boolean): Oct8Query;
+    SetAttribute(att: string, value: string): Oct8Query;
     ReturnSelect(): Oct8Query;
     delete(): Oct8Query;
 }
