@@ -4,7 +4,9 @@ type QueryResult = {
 };
 
 class Oct8Query {
-  private Results: QueryResult;
+  Results: QueryResult;
+  private Selected: Element[] = []; // lista acumulada de elementos selecionados
+
 
   constructor(query: string) {
     this.Results = {
@@ -12,16 +14,18 @@ class Oct8Query {
       Query: query
     };
   }
+ReturnResult(){
+    return this.Results
+}
+
 
 where(predicate: string): Oct8Query {
   const filtered: Element[] = [];
 
-  // Para cada elemento atual, busca filhos que batem com o seletor
   this.Results.Result.forEach(el => {
     filtered.push(...Array.from(el.querySelectorAll(predicate)));
   });
 
-  // Atualiza o resultado com os filhos encontrados
   this.Results.Result = filtered;
   this.Results.Query += ` -> ${predicate}`;
   return this;
@@ -39,6 +43,10 @@ update(value:any,eraseContent=true): Oct8Query {
 
   });
   return this;
+}
+ReturnSelect():Oct8Query{
+    let v = this.Results.Result
+    return this
 }
 delete():Oct8Query{
      this.Results.Result.forEach(el => {

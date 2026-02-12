@@ -1,17 +1,19 @@
 class Oct8Query {
     constructor(query) {
+        this.Selected = []; // lista acumulada de elementos selecionados
         this.Results = {
             Result: Array.from(document.querySelectorAll(query)),
             Query: query
         };
     }
+    ReturnResult() {
+        return this.Results;
+    }
     where(predicate) {
         const filtered = [];
-        // Para cada elemento atual, busca filhos que batem com o seletor
         this.Results.Result.forEach(el => {
             filtered.push(...Array.from(el.querySelectorAll(predicate)));
         });
-        // Atualiza o resultado com os filhos encontrados
         this.Results.Result = filtered;
         this.Results.Query += ` -> ${predicate}`;
         return this;
@@ -26,6 +28,10 @@ class Oct8Query {
                 el.innerHTML += value;
             }
         });
+        return this;
+    }
+    ReturnSelect() {
+        let v = this.Results.Result;
         return this;
     }
     delete() {

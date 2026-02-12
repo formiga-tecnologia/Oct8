@@ -20,12 +20,19 @@ class Oct8Factory {
      * @param props  Props of target component
      * @returns
      */
-    static render(name, target, props) {
+    static render(name, target, props,AddInElment=false) {
         const Component = this.registry.get(name);
         if (!Component) {
             throw new Error(`Oct8: componente "${name}" não encontrado`);
         }
-        const host = document.querySelector(target);
+        let host
+        if(AddInElment)
+        {
+            host =target
+        }
+        else{
+            host = document.querySelector(target);
+        }
         if (!host) {
             throw new Error(`Oct8: alvo "${target}" não encontrado no DOM`);
         }
