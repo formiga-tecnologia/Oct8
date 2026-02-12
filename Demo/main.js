@@ -1,9 +1,13 @@
 import { HomePage } from "./templates/Home.js";
 import { Oct8 } from "../TS/Oct8/Oct.js";
+import { Article } from "./component/Article.js";
 let a  = new HomePage()
 a.render("#app")
 Oct8.Reaction.update("teste",90)
-console.log(Oct8.Reaction.GetReaction("teste"))
+
+new Oct8.Query("article").where("div").where("h1").update("oi")
+
+
 Oct8.Events.createEventType("enabledClick",(el,handler)=>{
   el.addEventListener("click",e=>{
     var s = prompt("Deseja mesmo executar isso?")

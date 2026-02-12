@@ -38,6 +38,7 @@ class Oct8Factory {
         host.appendChild(element);
         instance[OCT8_ELEMENT] = element;
         this.instances.set(element, instance);
+        this.liveInstances.add(instance);
         return instance;
     }
     static normalizeElement(content) {
@@ -66,6 +67,7 @@ class Oct8Factory {
         }
         instance.onDestroy?.();
         this.instances.delete(element);
+        this.liveInstances.delete(instance);
         element.remove();
     }
     static SetDataAttribute(Attribute, InfoData) {
@@ -75,6 +77,13 @@ class Oct8Factory {
             el.innerHTML = InfoData[index];
             index += 1;
         });
+    }
+    static getInstancesByName(name) {
+        const Component = this.registry.get(name);
+        if (!Component)
+            return [];
+        return Array.from(this.liveInstances)
+            .filter(inst => inst instanceof Component);
     }
     static GetDataAttribute(Attribute) {
         const Elements = document.querySelectorAll(`[${Attribute}]`);
@@ -104,5 +113,6 @@ class Oct8Factory {
 }
 Oct8Factory.registry = new Map();
 Oct8Factory.instances = new WeakMap();
+Oct8Factory.liveInstances = new Set();
 export { Oct8Factory };
 //# sourceMappingURL=Oct8Factory.js.map

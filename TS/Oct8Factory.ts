@@ -1,5 +1,5 @@
 const OCT8_ELEMENT = Symbol("oct8_element")
-interface Oct8InternalInstance {
+export interface Oct8InternalInstance {
   build(): string | HTMLElement
   styled?(): Partial<CSSStyleDeclaration>
   destroy?(): void
@@ -13,6 +13,8 @@ type ComponentConstructor<T = any> = new (
 class Oct8Factory {
   private static registry = new Map<string, ComponentConstructor>()
   private static instances = new WeakMap<HTMLElement, any>()
+  private static liveInstances = new Set<Oct8InternalInstance>()
+
 
   /**
    * Create Object fatory base Oct8, Register in Oct8 Factory Class
@@ -59,6 +61,8 @@ class Oct8Factory {
 
     instance[OCT8_ELEMENT] = element
     this.instances.set(element, instance)
+    this.liveInstances.add(instance)
+
 
     return instance
   }
@@ -96,6 +100,7 @@ class Oct8Factory {
 
     instance.onDestroy?.()
     this.instances.delete(element)
+    this.liveInstances.delete(instance)
     element.remove()
   }
 
@@ -108,6 +113,13 @@ class Oct8Factory {
     })
   }
 
+  static getInstancesByName(name: string): Oct8InternalInstance[] {
+  const Component = this.registry.get(name)
+  if (!Component) return []
+
+  return Array.from(this.liveInstances)
+    .filter(inst => inst instanceof Component)
+}
   static GetDataAttribute(Attribute:string):NodeListOf<Element>{
     const Elements = document.querySelectorAll(`[${Attribute}]`)
     return Elements

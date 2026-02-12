@@ -1,5 +1,5 @@
 declare const OCT8_ELEMENT: unique symbol;
-interface Oct8InternalInstance {
+export interface Oct8InternalInstance {
     build(): string | HTMLElement;
     styled?(): Partial<CSSStyleDeclaration>;
     destroy?(): void;
@@ -9,6 +9,7 @@ type ComponentConstructor<T = any> = new (props?: T) => Oct8InternalInstance;
 declare class Oct8Factory {
     private static registry;
     private static instances;
+    private static liveInstances;
     /**
      * Create Object fatory base Oct8, Register in Oct8 Factory Class
      *
@@ -34,6 +35,7 @@ declare class Oct8Factory {
      */
     static destroy(element: HTMLElement): void;
     static SetDataAttribute(Attribute: string, InfoData: Array<any>): void;
+    static getInstancesByName(name: string): Oct8InternalInstance[];
     static GetDataAttribute(Attribute: string): NodeListOf<Element>;
     /**
      * Update the component realize the new render to element
