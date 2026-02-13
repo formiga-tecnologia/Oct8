@@ -41,6 +41,14 @@ class Oct8Factory {
         this.liveInstances.add(instance);
         return instance;
     }
+    static ExistProp(key, obj, // objeto genérico
+    ValueReturn // função que recebe o valor e retorna algo
+    ) {
+        if (key in obj) {
+            return ValueReturn(obj[key]); // acessa dinamicamente
+        }
+        return ""; // se não existir, retorna undefined
+    }
     static normalizeElement(content) {
         if (content instanceof HTMLElement) {
             return content;

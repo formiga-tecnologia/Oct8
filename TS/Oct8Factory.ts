@@ -66,6 +66,17 @@ class Oct8Factory {
 
     return instance
   }
+static ExistProp(
+    key: string,
+    obj: Record<string, any>, // objeto genérico
+    ValueReturn: (val: any) => any // função que recebe o valor e retorna algo
+  ): any {
+    if (key in obj) {
+      return ValueReturn(obj[key]); // acessa dinamicamente
+    }
+    return ""; // se não existir, retorna undefined
+  }
+
 
   private static normalizeElement(content: string | HTMLElement): HTMLElement {
 

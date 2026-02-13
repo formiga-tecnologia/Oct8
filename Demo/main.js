@@ -1,7 +1,11 @@
 import { HomePage } from "./templates/Home.js";
 import { Oct8 } from "../TS/Oct8/Oct.js";
 import { Article } from "./component/Article.js";
+import { CardT } from "./component/CardTemplate.js";
 let a  = new HomePage()
+new CardT().buildOct8()
+
+
 a.render("#app")
 Oct8.Reaction.update("teste",90)
 var f = new Article({Conteudo:"Crie componentes Oct8 com facilidade de uso e sem dificuldade de implementar logicas.",Titulo:"Crie você mesmo as regras </br> de seus componentes ",

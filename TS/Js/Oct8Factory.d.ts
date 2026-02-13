@@ -26,6 +26,8 @@ declare class Oct8Factory {
      * @returns
      */
     static render<T>(name: string, target: string, props?: T): any;
+    static ExistProp(key: string, obj: Record<string, any>, // objeto genérico
+    ValueReturn: (val: any) => any): any;
     private static normalizeElement;
     /**
      * Destroy component in HTML document
