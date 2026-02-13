@@ -23,3 +23,76 @@
   border-radius: 2vh 2vh 0vh 0vh;
 }
 }
+
+@layer Banner{
+[oct-css*="banner"]{
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #725319;
+}
+[oct-css*="banner"] article{
+  margin-top: 1vh;
+  margin-left: 4vw;
+}
+[oct-css*="banner"] img{
+  height: 20vh;
+  width:  30vh;
+}
+[oct-css="banner big orange"]{
+  height: 50vh;
+  background-color: #f5b238;
+  text-align: center;
+  padding: 0.1vw;
+}
+[oct-css*="banner"] button{
+  background-color: #78571b;
+  color:#ffae22;
+  padding: 1vh;
+  border-radius: 1vh;
+  border: none;
+}
+[oct-css="banner big whiteRange flex"]{
+  margin-top: 1vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #ffe9c2;
+  color:#663b03;
+  text-align: left;
+  border-radius: 1vh;
+  border: none;
+}
+[oct-css*="flex"]  article{
+  width: 40vh;
+  margin-bottom: 7vw;
+}
+}
+@layer Code{
+  .codeEx nav{
+    border-radius: 2vh 2vh  0 0;
+    width: 59vw;
+    background-color: #d3d3d3;
+    color: #686868;
+    padding: 0.5vw;
+    
+  }
+  .codeEx p{
+    text-align: left;
+    padding: 1vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+  }
+  .codeEx{
+    margin-left: 5vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    border-radius: 2vh;
+    background-color: #eeeeee;
+    width: 60vw;
+    padding-bottom: 4vh;
+    border: #b9b9b9 solid 0.2vh;
+    ;
+  }
+}
