@@ -23,7 +23,6 @@
   border-radius: 2vh 2vh 0vh 0vh;
 }
 }
-
 @layer Banner{
 [oct-css*="banner"]{
   width: 100%;
@@ -95,4 +94,34 @@
     border: #b9b9b9 solid 0.2vh;
     ;
   }
+}
+@layer MiniCards{
+  [oct-css="containerCard"]{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #686868;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    
+  }
+
+  [oct-css="containerCard"] div{
+
+     padding: 2vh;
+     text-align: center;
+     width: 30vh;
+     height: 20vh;
+     margin-left: 1vh;
+     margin-bottom: 3vh;
+  }
+  [oct-css="containerCard"] h3{font-weight: lighter;}
+}
+
+.titulo_center{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #686868;
 }

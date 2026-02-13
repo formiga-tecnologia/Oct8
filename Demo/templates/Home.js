@@ -14,8 +14,12 @@ class HomePage{
         < r base> <br>
            < base> < /base> </br>
         < /r base>
-        
       `})
+
+      Oct8.Factory.render("MiniCards","#page",{titulo:"Ferramentas para sua Produtividade e agilidade",card:[["Versatil","Utilize as classes como sua imaginação ordenar.","./img/3d-cube.png"],
+        ["Reações","Crie variaveis que sempre são atualizadas em tempo real.","./img/3d-cube.png"] ,
+        ["Ciclo controlado","Você possui todo o cilco de vida e de atualziação, sem Re-renders.","./img/3d-cube.png"] 
+      ]})
   }
    build(){
     return `
