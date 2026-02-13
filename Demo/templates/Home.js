@@ -14,7 +14,10 @@ class HomePage extends Oct8.Pages{
       Url:"https://th.bing.com/th/id/OIP.LK2txdLchkVuHzGqaMUY5QHaEK?w=269&h=180&c=7&r=0&o=7&pid=1.7&rm=3",article:"article:gray"})
     this.mount(Article,{Conteudo:"Crie componentes Oct8 com facilidade de uso e sem dificuldade de implementar logicas.",Titulo:"Crie você mesmo as regras </br> de seus componentes ",
       Url:"",article:"article:white",idcontent:v})
-      Oct8.Factory.render("CardT","#app",{Titulo:"Componente Inteligente"})
+      Oct8.Factory.render("CardT","#app",{Titulo:"Componente Inteligente",Conteudo:"O site é sobre Oct8 v2026",icone:'../../image/Oct8Logo2026.png'})
+      Oct8.Factory.render("CardT","#app",{Titulo:"Componente Inteligente",Conteudo:"O site é sobre Oct8 v2026"})
+
+      
    } 
 }
 
