@@ -1,26 +1,21 @@
-
+import { Oct8 } from "../../TS/Oct8/Oct.js";
 class MenuBlog{
     constructor(List){
         this.props = List
     }
-    MenuOptions(list){
+    MenuOptions(List){
         let menu = ""
-        list.forEach(element => {
+        List.forEach(element => {
             menu+="<li>"+element+"</li>"
         });
         return menu
     }
-    styled(){
-        return {
-            color:"#ce9522cc",
-            float:"left",
-        }
-    }
+
     build(){
-        let lista = this.props.menu
-        return `<nav>
+        return `<nav oct-css='menu'>
             <ul>
-                ${this.MenuOptions(lista)}
+                ${Oct8.Factory.ExistProp("menu",this.props,this.MenuOptions)}
+                
             </ul>
         </nav>`
     }
