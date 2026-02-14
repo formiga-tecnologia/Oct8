@@ -28,6 +28,15 @@ class HomePage{
            < base> < /base> </br>
         < /r base>
       `})
+      Oct8.Factory.render("Container","#page",{css:"md",id:"cardContainer"})
+      
+  }
+  static ElementosPage(){
+    Oct8.Factory.render("Cards","#cardContainer",{css:" md",Titulo:"Porque Oct8?",Botao:"Sobre Oct8",Conteudo:"Aprenda os seus beneficios e facilidades de uso!!"})
+    Oct8.Factory.render("Cards","#cardContainer",{css:" md",Titulo:"Porque Oct8?",Botao:"Sobre Oct8",Conteudo:"Aprenda os seus beneficios e facilidades de uso!!"})
+
+    Oct8.Factory.render("Cards","#cardContainer",{css:" md",Titulo:"Porque Oct8?",Botao:"Sobre Oct8",Conteudo:"Aprenda os seus beneficios e facilidades de uso!!"})
+
   }
    build(){
     return `

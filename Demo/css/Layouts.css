@@ -119,9 +119,31 @@
   }
   [oct-css="containerCard"] h3{font-weight: lighter;}
 }
-
+@layer Cards{
+  [oct-css*="card"]{
+    
+    margin-top: 4vh;
+    border: 0.1vh solid #ffae22;
+    color: #ffae22;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 2vh;
+  }
+  [oct-css~="card"][oct-css~="md"]{width: 30vh;padding: 4vh;}
+  [oct-css*="card"] button{color:#f5b238;background-color:transparent;border: 0.1vh solid #ffae22;padding: 0.8vh;cursor: pointer;}
+  [oct-css*="card"] button:focus{color: #663b03; background-color: #dda339;}
+}
+@layer Container{
+  [oct-css~="container"]{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  [oct-css~="container"][oct-css~="md"]{width: 70%; padding: 2vh;margin: auto;}
+}
+@layer Class{
 .titulo_center{
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   color: #686868;
+}
 }
