@@ -20,6 +20,14 @@ class HomePage{
         ["Reações","Crie variaveis que sempre são atualizadas em tempo real.","./img/3d-cube.png"] ,
         ["Ciclo controlado","Você possui todo o cilco de vida e de atualziação, sem Re-renders.","./img/3d-cube.png"] 
       ]})
+
+           Oct8.Factory.render("Banner_big","#page",{Titulo:"Construa componentes mais rapido!",style:"big whiteRange flex",
+      Subtitulo:"Com Oct8 se tornou mais intuitivo contruir componentes com Js com legibilidade e flexibilidade.",
+      Button:"Acessar Documentação",Code:`
+        < r base> <br>
+           < base> < /base> </br>
+        < /r base>
+      `})
   }
    build(){
     return `
