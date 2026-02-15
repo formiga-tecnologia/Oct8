@@ -1,5 +1,9 @@
+import { Oct8 } from "./Oct.js";
 const OCT8_ELEMENT = Symbol("oct8_element");
 class Oct8Factory {
+    constructor() {
+        Oct8.Styled.ValidCssFile();
+    }
     /**
      * Create Object fatory base Oct8, Register in Oct8 Factory Class
      *
@@ -136,7 +140,13 @@ class FactoryClass extends Oct8Factory {
         this.FactoryObj = "";
     }
     build() {
-        return this.FactoryObj;
+        try {
+            Oct8.Styled.ValidCssFile();
+            return this.FactoryObj;
+        }
+        catch {
+            console.error("oct8 Styled: Erros em criação de CSS files");
+        }
     }
     GetValidProp(Prop, Return) {
         return Oct8Factory.ExistProp(Prop, this.props, Return);

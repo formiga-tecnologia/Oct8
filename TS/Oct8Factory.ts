@@ -1,3 +1,5 @@
+import { Oct8 } from "./Oct.js"
+
 const OCT8_ELEMENT = Symbol("oct8_element")
 export interface Oct8InternalInstance {
   build(): string | HTMLElement
@@ -14,7 +16,9 @@ class Oct8Factory {
   private static registry = new Map<string, ComponentConstructor>()
   private static instances = new WeakMap<HTMLElement, any>()
   private static liveInstances = new Set<Oct8InternalInstance>()
-
+  constructor(){
+      Oct8.Styled.ValidCssFile()
+  }
 
   /**
    * Create Object fatory base Oct8, Register in Oct8 Factory Class
@@ -182,7 +186,14 @@ class FactoryClass extends Oct8Factory{
     this.FactoryObj = ""
   }
   build(){
-    return this.FactoryObj
+    try{
+      Oct8.Styled.ValidCssFile()
+
+      return this.FactoryObj
+    }
+    catch{
+      console.error("oct8 Styled: Erros em criação de CSS files");
+    }
   }
   GetValidProp(Prop:any,Return:(vak:any)=>{}):any{
     return  Oct8Factory.ExistProp(Prop,this.props,Return)

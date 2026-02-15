@@ -10,6 +10,7 @@ declare class Oct8Factory {
     private static registry;
     private static instances;
     private static liveInstances;
+    constructor();
     /**
      * Create Object fatory base Oct8, Register in Oct8 Factory Class
      *
@@ -53,7 +54,7 @@ declare class FactoryClass extends Oct8Factory {
     FactoryObj: string;
     Factory: Oct8Factory;
     constructor(props: any);
-    build(): string;
+    build(): string | undefined;
     GetValidProp(Prop: any, Return: (vak: any) => {}): any;
 }
 export { Oct8Factory, FactoryClass };

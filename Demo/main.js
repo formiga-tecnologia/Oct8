@@ -27,3 +27,7 @@ Oct8.Factory.register("Home",HomePage)
 Oct8.Factory.render("Home","#app")
 HomePage.buildPage()
 HomePage.ElementosPage()
+
+Oct8.Styled.CssOct8.Card
+
+// Teste

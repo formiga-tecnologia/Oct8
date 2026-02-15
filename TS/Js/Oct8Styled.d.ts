@@ -16,6 +16,9 @@ declare class Oct8Styled {
     static unuse(name: string): void;
     static clear(): void;
     static list(): string[];
+    static GetCssStyled(Styled: string, Layer: string): void;
+    static ValidCssFile(): void;
+    static CssOct8: Record<string, string>;
 }
 export { Oct8Styled };
 //# sourceMappingURL=Oct8Styled.d.ts.map

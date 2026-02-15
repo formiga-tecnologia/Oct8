@@ -71,10 +71,32 @@ class Oct8Styled {
     static list() {
         return [...this.active.keys()];
     }
+    static GetCssStyled(Styled, Layer) {
+    }
+    static ValidCssFile() {
+        let df = document.styleSheets;
+        for (const x of Array.from(df)) {
+            try {
+                for (const f of Array.from(x.cssRules)) {
+                    if (f instanceof CSSRule) {
+                        if (f.cssText.includes("@layer") == false)
+                            console.error("oct8 Styled Error: Não existe layer para a classe instanciada, crie uma @layer{ } e coloque sua classe dentro da layer.");
+                    }
+                }
+            }
+            catch (e) {
+                console.error(e);
+            }
+        }
+    }
 }
 Oct8Styled.registry = new Map();
 Oct8Styled.active = new Map();
 Oct8Styled.Attribute = "";
 Oct8Styled.BindCssList = [];
+Oct8Styled.CssOct8 = {
+    Card: "card",
+    Medium: "md"
+};
 export { Oct8Styled };
 //# sourceMappingURL=Oct8Styled.js.map
