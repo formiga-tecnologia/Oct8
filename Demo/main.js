@@ -16,7 +16,7 @@ Oct8.Factory.register("MenuPrinc",MenuBlog)
 Oct8.Factory.register("Container",Container)
 
 //Documents
-CardsDocument.Document_homePage()
+new CardsDocument()
 
 //Default render
 Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})

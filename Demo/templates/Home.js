@@ -31,6 +31,7 @@ class HomePage{
       Oct8.Factory.render("Container","#page",{css:"sm",id:"cardContainer"})
       
   }
+  
   static ElementosPage(){
     Oct8.Factory.render("Cards","#cardContainer",Oct8.Document.getDocument("CardHome"))
     Oct8.Factory.render("Cards","#cardContainer",Oct8.Document.getDocument("CardHome"))
