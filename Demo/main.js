@@ -6,6 +6,7 @@ import { Minicards } from "./component/MiniCards.js";
 import { Cards } from "./component/Cards.js";
 import { HomePage } from "./templates/Home.js";
 import { Container } from "./component/Container.js";
+import { CardsDocument } from "./Document/Cards_document.js";
 
 //Componentes Registrados
 Oct8.Factory.register("Banner_big",Banner)
@@ -14,6 +15,8 @@ Oct8.Factory.register("Cards",Cards)
 Oct8.Factory.register("MenuPrinc",MenuBlog)
 Oct8.Factory.register("Container",Container)
 
+//Documents
+CardsDocument.Document_homePage()
 
 //Default render
 Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})

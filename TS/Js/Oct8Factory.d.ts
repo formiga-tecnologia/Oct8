@@ -48,5 +48,13 @@ declare class Oct8Factory {
      */
     static update(instance: Oct8InternalInstance): HTMLElement;
 }
-export { Oct8Factory };
+declare class FactoryClass extends Oct8Factory {
+    props: Record<string, any>;
+    FactoryObj: string;
+    Factory: Oct8Factory;
+    constructor(props: any);
+    build(): string;
+    GetValidProp(Prop: any, Return: (vak: any) => {}): any;
+}
+export { Oct8Factory, FactoryClass };
 //# sourceMappingURL=Oct8Factory.d.ts.map

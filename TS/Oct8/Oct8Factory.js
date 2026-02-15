@@ -128,5 +128,19 @@ class Oct8Factory {
 Oct8Factory.registry = new Map();
 Oct8Factory.instances = new WeakMap();
 Oct8Factory.liveInstances = new Set();
-export { Oct8Factory };
+class FactoryClass extends Oct8Factory {
+    constructor(props) {
+        super();
+        this.Factory = new Oct8Factory();
+        this.props = props;
+        this.FactoryObj = "";
+    }
+    build() {
+        return this.FactoryObj;
+    }
+    GetValidProp(Prop, Return) {
+        return Oct8Factory.ExistProp(Prop, this.props, Return);
+    }
+}
+export { Oct8Factory, FactoryClass };
 //# sourceMappingURL=Oct8Factory.js.map

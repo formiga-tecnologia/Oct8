@@ -129,6 +129,8 @@
     margin-left: 2vh;
   }
   [oct-css~="card"][oct-css~="md"]{width: 30vh;padding: 4vh;}
+  [oct-css~="card"][oct-css~="sm"]{width: 20vh;padding: 4vh;background-color: #725319;}
+
   [oct-css*="card"] button{color:#f5b238;background-color:transparent;border: 0.1vh solid #ffae22;padding: 0.8vh;cursor: pointer;}
   [oct-css*="card"] button:focus{color: #663b03; background-color: #dda339;}
 }
@@ -139,6 +141,7 @@
     flex-wrap: wrap;
   }
   [oct-css~="container"][oct-css~="md"]{width: 70%; padding: 2vh;margin: auto;}
+  [oct-css~="container"][oct-css~="sm"]{width: 45%; padding: 2vh;margin: auto;}
 }
 @layer Class{
 .titulo_center{

@@ -172,6 +172,21 @@ static ExistProp(
   }
 }
 
+class FactoryClass extends Oct8Factory{
+   props:Record<string,any>
+   FactoryObj:string 
+   Factory:Oct8Factory = new Oct8Factory()
+  constructor(props:any){
+    super()
+    this.props = props
+    this.FactoryObj = ""
+  }
+  build(){
+    return this.FactoryObj
+  }
+  GetValidProp(Prop:any,Return:(vak:any)=>{}):any{
+    return  Oct8Factory.ExistProp(Prop,this.props,Return)
+  }
+}
 
-
-export { Oct8Factory }
+export { Oct8Factory ,FactoryClass}

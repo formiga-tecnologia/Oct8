@@ -1,6 +1,7 @@
 import { Oct8Anima } from "./Oct8Anima.js";
+import { Oct8Document } from "./Oct8Document.js";
 import { Oct8Event } from "./Oct8Event.js";
-import { Oct8Factory } from "./Oct8Factory.js";
+import { Oct8Factory, FactoryClass } from "./Oct8Factory.js";
 import { Oct8Page } from "./Oct8Page.js";
 import { Oct8Query } from "./Oct8Query.js";
 import { Oct8Reaction } from "./Oct8Reaction.js";
@@ -15,6 +16,8 @@ declare class Oct8 {
     static Animate: typeof Oct8Anima;
     static Events: typeof Oct8Event;
     static Query: typeof Oct8Query;
+    static FactoryClass: typeof FactoryClass;
+    static Document: typeof Oct8Document;
 }
 export { Oct8 };
 //# sourceMappingURL=Oct.d.ts.map
