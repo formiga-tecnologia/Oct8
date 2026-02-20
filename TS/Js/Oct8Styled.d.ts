@@ -9,7 +9,7 @@ declare class Oct8Styled {
     private static Attribute;
     private static BindCssList;
     private static CssClassList;
-    static CssRules(CssClasslist_: string, MergeStyle: string): string;
+    static CssRules(CssClasslist_: Array<string>): string;
     static InitCSS(): void;
     static register(name: string, href: string): void;
     static GetAttributeCSS(Attribute: string): BindCssList[];

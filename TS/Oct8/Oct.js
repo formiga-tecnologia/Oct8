@@ -19,5 +19,12 @@ Oct8.Events = Oct8Event;
 Oct8.Query = Oct8Query;
 Oct8.FactoryClass = FactoryClass;
 Oct8.Document = Oct8Document;
+Oct8.CssClassList = {
+    DisplayContainer: "div ",
+    LabelWarning: "label",
+    Card: "card",
+    TextCenter: "center",
+    ColorRed: "red"
+};
 export { Oct8 };
 //# sourceMappingURL=Oct.js.map

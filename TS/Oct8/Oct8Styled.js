@@ -1,6 +1,10 @@
 class Oct8Styled {
-    static CssRules(CssClasslist_, MergeStyle) {
-        return CssClasslist_ + MergeStyle;
+    static CssRules(CssClasslist_) {
+        let v = "oct8css = '";
+        CssClasslist_.forEach((el) => {
+            v += " " + el;
+        });
+        return v + "'";
     }
     static InitCSS() {
         const link = document.createElement("link");

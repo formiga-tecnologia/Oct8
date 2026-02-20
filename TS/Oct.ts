@@ -19,6 +19,14 @@ class Oct8{
     static Query = Oct8Query
     static FactoryClass = FactoryClass
     static Document = Oct8Document
+
+    static CssClassList:Record<string,string> = {
+    DisplayContainer:"div ",
+    LabelWarning:"label",
+    Card:"card",
+    TextCenter:"center",
+    ColorRed:"red"
+  }
 }
 
 export {Oct8}

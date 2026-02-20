@@ -19,5 +19,23 @@
     border-radius: 1vh;
     margin-bottom: 5vh;
   }
+  [oct8css~="card"]{
+    width: 20vh;
+    height: 20vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    border:  0.2vh solid #ccc;
+  }
+}
 
+@layer Text{
+  [oct8css~="center"]{
+    text-align: center;
+  }
+}
+
+@layer Color{
+  [oct8css~="red"]{
+    background-color: red;
+  }
 }

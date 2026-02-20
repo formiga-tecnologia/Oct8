@@ -16,9 +16,12 @@ class Oct8Styled {
     DisplayContainer:"oct8css = 'div' ",
     LabelWarning:"oct8css = 'label'"
   }
-  static CssRules(CssClasslist_:string,MergeStyle:string):string{
-    
-    return CssClasslist_+MergeStyle
+  static CssRules(CssClasslist_:Array<string>):string{
+    let v = "oct8css = '"
+    CssClasslist_.forEach((el)=>{
+      v+=" "+el 
+    })
+    return v+"'"
   }
   static InitCSS():void{
     const link = document.createElement("link");
