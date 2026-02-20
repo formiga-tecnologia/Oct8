@@ -31,3 +31,8 @@ HomePage.ElementosPage()
 Oct8.Styled.CssOct8.Card
 
 // Teste
+Oct8.Styled.InitCSS()
+document.addEventListener("click",()=>{
+    var g = document.querySelector(".box");
+    g.style.setProperty("--color","red")
+})

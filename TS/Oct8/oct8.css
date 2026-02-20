@@ -1,0 +1,12 @@
+/* Oct8 CSS Styles */
+@layer oct8css{
+  body{
+    background-color: antiquewhite;
+  }
+}
+
+@layer Display{
+  [oct8css~="div"]{
+    background-color: red;
+  }
+}

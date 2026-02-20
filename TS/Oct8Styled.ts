@@ -12,6 +12,20 @@ class Oct8Styled {
   private static active = new Map<string, HTMLLinkElement>()
   private static Attribute = ""
   private static BindCssList: BindCssList[] = []
+  private static CssClassList:Record<string,string> = {
+    DisplayContainer:"oct8css = 'div' "
+  }
+  static CssRules(CssClasslist_:string,MergeStyle:string):string{
+    
+    return CssClasslist_+MergeStyle
+  }
+  static InitCSS():void{
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "../TS/Oct8/oct8.css"; // Fixed : in version final apply Folder Oct8
+    document.head.appendChild(link);
+
+  }
   static register(name: string, href: string): void {
     if (this.registry.has(name)) {
       throw new Error(`Oct8Styles: estilo "${name}" já registrado`)
@@ -104,7 +118,10 @@ class Oct8Styled {
         for (const f of Array.from(x.cssRules)) {
           if (f instanceof CSSRule) {
             if(f.cssText.includes("@layer")==false)
-            console.error("oct8 Styled Error: Não existe layer para a classe instanciada, crie uma @layer{ } e coloque sua classe dentro da layer.");
+              {
+              console.log(f.cssText)
+              console.error("oct8 Styled Error: Não existe layer para a classe instanciada, crie uma @layer{ } e coloque sua classe dentro da layer.");
+            }
           }
         }
       }
