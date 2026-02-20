@@ -139,7 +139,7 @@ class Oct8Styled {
             if(f.cssText.includes("@layer")==false)
               {
               console.log(f.cssText)
-              console.error("oct8 Styled Error: Não existe layer para a classe instanciada, crie uma @layer{ } e coloque sua classe dentro da layer.");
+             throw new Error ( "oct8 Styled Error: Não existe layer para a classe instanciada, crie uma @layer{ } e coloque sua classe dentro da layer.");
             }
           }
         }

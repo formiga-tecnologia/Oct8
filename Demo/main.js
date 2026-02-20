@@ -13,6 +13,9 @@ import { WarningLabel } from "./component/WarningLabel.js";
 Oct8.Styled.InitCSS()
 Oct8.Styled.CreateApplyRule("LabelAviso",[Oct8.CssClassList.LabelWarning])
 
+//Reactions 
+Oct8.Reaction.create("countNum",0)
+
 //Componentes Registrados
 Oct8.Factory.register("Banner_big",Banner)
 Oct8.Factory.register("MiniCards",Minicards)
@@ -34,8 +37,6 @@ Oct8.Factory.register("Home",HomePage)
 Oct8.Factory.render("Home","#app")
 HomePage.buildPage()
 HomePage.ElementosPage()
+HomePage.AddEvents()
 
-Oct8.Styled.CssOct8.Card
-
-// Teste
 

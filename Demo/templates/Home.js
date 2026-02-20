@@ -39,6 +39,11 @@ class HomePage{
     Oct8.Factory.render("Cards","#cardContainer",Oct8.Document.getDocument("CardHome"))
 
   }
+  static AddEvents(){
+    document.getElementById("d").addEventListener("click",()=>{
+      Oct8.Reaction.update("countNum",Oct8.Reaction.GetReaction("countNum")+1)
+    })
+  }
    build(){
     return `
      <div id='page'>

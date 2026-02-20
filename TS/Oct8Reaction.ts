@@ -36,7 +36,7 @@ class Oct8Reaction {
     }
 
     static GetReaction(name:string):any{
-        return this.ReactionsListStore.get(name);
+        return this.ReactionsListStore.get(name)?.value;
     }
     /**
      * Update the value of valid Reaction
@@ -47,14 +47,14 @@ class Oct8Reaction {
     static update(name:string,value:any): void{
         const ReactionsNode = document.querySelectorAll<HTMLHeadingElement>(("octreaction"))
         const Reaction = this.ReactionsListStore.get(name)
+        console.log(Reaction?.value)
         
         if(Reaction)
         {
             Reaction.value = value
 
             ReactionsNode.forEach(d =>{
-            
-            d.innerText = String(Reaction?.value)
+            d.innerText = Reaction?.value
         })
         }
         else{
