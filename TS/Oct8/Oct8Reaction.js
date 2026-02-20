@@ -28,7 +28,7 @@ class Oct8Reaction {
         return ReactionElement.outerHTML;
     }
     static GetReaction(name) {
-        return this.ReactionsListStore.get(name)?.value;
+        return this.ReactionsListStore.get(name);
     }
     /**
      * Update the value of valid Reaction
@@ -39,11 +39,10 @@ class Oct8Reaction {
     static update(name, value) {
         const ReactionsNode = document.querySelectorAll(("octreaction"));
         const Reaction = this.ReactionsListStore.get(name);
-        console.log(Reaction?.value);
         if (Reaction) {
             Reaction.value = value;
             ReactionsNode.forEach(d => {
-                d.innerText = Reaction?.value;
+                d.innerText = String(Reaction?.value);
             });
         }
         else {
