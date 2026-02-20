@@ -6,7 +6,6 @@ class Cards{
     }
     build(){
         return `
-        <div ${Oct8.Styled.CssClassList.DisplayContainer} >Só teste</div>
             <div oct-css='card ${Oct8.Factory.ExistProp("css",this.props,(el)=>{return `${el}`})} '>
                 ${Oct8.Factory.ExistProp("Titulo",this.props,(el)=>{return `<h1> ${el} </h1>`})}
                 ${Oct8.Factory.ExistProp("Conteudo",this.props,(el)=>{return `<h3> ${el} </h3>`})}

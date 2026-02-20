@@ -7,6 +7,7 @@ import { Cards } from "./component/Cards.js";
 import { HomePage } from "./templates/Home.js";
 import { Container } from "./component/Container.js";
 import { CardsDocument } from "./Document/Cards_document.js";
+import { WarningLabel } from "./component/WarningLabel.js";
 
 //Componentes Registrados
 Oct8.Factory.register("Banner_big",Banner)
@@ -14,11 +15,13 @@ Oct8.Factory.register("MiniCards",Minicards)
 Oct8.Factory.register("Cards",Cards)
 Oct8.Factory.register("MenuPrinc",MenuBlog)
 Oct8.Factory.register("Container",Container)
+Oct8.Factory.register("LabelDocument",WarningLabel)
 
 //Documents
 new CardsDocument()
 
 //Default render
+Oct8.Factory.render("LabelDocument","#app",{})
 Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})
 
 
@@ -32,7 +35,3 @@ Oct8.Styled.CssOct8.Card
 
 // Teste
 Oct8.Styled.InitCSS()
-document.addEventListener("click",()=>{
-    var g = document.querySelector(".box");
-    g.style.setProperty("--color","red")
-})

@@ -106,7 +106,8 @@ Oct8Styled.active = new Map();
 Oct8Styled.Attribute = "";
 Oct8Styled.BindCssList = [];
 Oct8Styled.CssClassList = {
-    DisplayContainer: "oct8css = 'div' "
+    DisplayContainer: "oct8css = 'div' ",
+    LabelWarning: "oct8css = 'label'"
 };
 Oct8Styled.CssOct8 = {
     Card: "card",

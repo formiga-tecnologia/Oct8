@@ -13,7 +13,8 @@ class Oct8Styled {
   private static Attribute = ""
   private static BindCssList: BindCssList[] = []
   private static CssClassList:Record<string,string> = {
-    DisplayContainer:"oct8css = 'div' "
+    DisplayContainer:"oct8css = 'div' ",
+    LabelWarning:"oct8css = 'label'"
   }
   static CssRules(CssClasslist_:string,MergeStyle:string):string{
     
