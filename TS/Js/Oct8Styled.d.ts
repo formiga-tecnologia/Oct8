@@ -7,9 +7,12 @@ declare class Oct8Styled {
     private static registry;
     private static active;
     private static Attribute;
+    private static RulesApply;
     private static BindCssList;
     private static CssClassList;
     static CssRules(CssClasslist_: Array<string>): string;
+    static CreateApplyRule(RuleName: string, RulesOct8Css: Array<string>): void;
+    static RenderApplyRule(RuleName: string): string;
     static InitCSS(): void;
     static register(name: string, href: string): void;
     static GetAttributeCSS(Attribute: string): BindCssList[];

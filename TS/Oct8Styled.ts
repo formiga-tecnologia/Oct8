@@ -6,11 +6,16 @@ type BindCssList = {
   value: string
   Element: HTMLElement
 }
+type ApplyRule ={
+  RuleName: string
+  ElementRules: string
+}
 
 class Oct8Styled {
   private static registry = new Map<string, StyleEntry>()
   private static active = new Map<string, HTMLLinkElement>()
   private static Attribute = ""
+  private static RulesApply: ApplyRule[] = []
   private static BindCssList: BindCssList[] = []
   private static CssClassList:Record<string,string> = {
     DisplayContainer:"oct8css = 'div' ",
@@ -22,6 +27,16 @@ class Oct8Styled {
       v+=" "+el 
     })
     return v+"'"
+  }
+  static CreateApplyRule(RuleName:string,RulesOct8Css:Array<string>):void{
+    const Element:ApplyRule ={
+      ElementRules:this.CssRules(RulesOct8Css),
+      RuleName:RuleName
+    }    
+    this.RulesApply.push(Element)
+  }
+  static RenderApplyRule(RuleName:string):string{
+    return this.RulesApply.find(x => x.RuleName == RuleName)?.ElementRules  ?? ""
   }
   static InitCSS():void{
     const link = document.createElement("link");

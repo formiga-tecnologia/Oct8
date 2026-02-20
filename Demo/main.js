@@ -9,6 +9,10 @@ import { Container } from "./component/Container.js";
 import { CardsDocument } from "./Document/Cards_document.js";
 import { WarningLabel } from "./component/WarningLabel.js";
 
+//Initial Styled
+Oct8.Styled.InitCSS()
+Oct8.Styled.CreateApplyRule("LabelAviso",[Oct8.CssClassList.LabelWarning])
+
 //Componentes Registrados
 Oct8.Factory.register("Banner_big",Banner)
 Oct8.Factory.register("MiniCards",Minicards)
@@ -34,4 +38,4 @@ HomePage.ElementosPage()
 Oct8.Styled.CssOct8.Card
 
 // Teste
-Oct8.Styled.InitCSS()
+

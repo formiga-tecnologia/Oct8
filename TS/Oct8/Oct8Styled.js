@@ -6,6 +6,16 @@ class Oct8Styled {
         });
         return v + "'";
     }
+    static CreateApplyRule(RuleName, RulesOct8Css) {
+        const Element = {
+            ElementRules: this.CssRules(RulesOct8Css),
+            RuleName: RuleName
+        };
+        this.RulesApply.push(Element);
+    }
+    static RenderApplyRule(RuleName) {
+        return this.RulesApply.find(x => x.RuleName == RuleName)?.ElementRules ?? "";
+    }
     static InitCSS() {
         const link = document.createElement("link");
         link.rel = "stylesheet";
@@ -108,6 +118,7 @@ class Oct8Styled {
 Oct8Styled.registry = new Map();
 Oct8Styled.active = new Map();
 Oct8Styled.Attribute = "";
+Oct8Styled.RulesApply = [];
 Oct8Styled.BindCssList = [];
 Oct8Styled.CssClassList = {
     DisplayContainer: "oct8css = 'div' ",
