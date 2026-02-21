@@ -1,65 +1,19 @@
 class Oct8Event {
-    static setAttributeName(name) {
-        this.attributeName = name;
-    }
-    static enableAll() {
-        this.globalActive = true;
-    }
-    static disableAll() {
-        this.globalActive = false;
-    }
-    static createEventType(name, factory) {
-        this.customTypes.set(name, factory);
-    }
-    static register(eventType, eventName, handler) {
-        const elements = document.querySelectorAll(`[${this.attributeName}="${eventName}"]`);
-        elements.forEach(el => {
-            const registered = {
-                eventType,
-                name: eventName,
-                handler,
-                active: true,
-                count: 0
-            };
-            const wrappedHandler = (e) => {
-                if (!this.globalActive || !registered.active)
-                    return;
-                registered.count++;
-                handler(e);
-            };
-            if (this.customTypes.has(eventType)) {
-                this.customTypes.get(eventType)(el, wrappedHandler);
+    static CreateEvent(Event, name, children, TypeEvent = "click") {
+        children = `<div oct-event=${name}> ${children}</div>`;
+        document.querySelectorAll("[oct-event]").forEach(el => {
+            console.log(el);
+            const Type = el.getAttribute("oct-event");
+            const Id = Math.random().toString(36).substring(2, 6);
+            if (Type === name) {
+                el.setAttribute("oct-event", Type + Id);
+                el.addEventListener(TypeEvent, () => {
+                    Event();
+                });
             }
-            else {
-                el.addEventListener(eventType, wrappedHandler);
-            }
-            this.events.push(registered);
         });
-    }
-    static disable(eventName) {
-        this.events
-            .filter(e => e.name === eventName)
-            .forEach(e => (e.active = false));
-    }
-    static enable(eventName) {
-        this.events
-            .filter(e => e.name === eventName)
-            .forEach(e => (e.active = true));
-    }
-    static getStats(eventName) {
-        return this.events
-            .filter(e => e.name === eventName)
-            .map(e => ({
-            name: e.name,
-            eventType: e.eventType,
-            count: e.count,
-            active: e.active
-        }));
+        return children;
     }
 }
-Oct8Event.attributeName = "oct-event";
-Oct8Event.events = [];
-Oct8Event.customTypes = new Map();
-Oct8Event.globalActive = true;
 export { Oct8Event };
 //# sourceMappingURL=Oct8Event.js.map

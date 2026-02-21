@@ -15,6 +15,9 @@ class Banner{
             ${Oct8.Factory.ExistProp("Titulo",this.props,(p)=>{return`<h1> ${p} </h1>`})} 
             ${Oct8.Factory.ExistProp("Subtitulo",this.props,(p)=>{return`<h3> ${p} </h3>`})} 
             ${Oct8.Factory.ExistProp("Button",this.props,(p)=>{return`<button id='a'> ${p} </button>`})} 
+            
+            ${Oct8.Events.CreateEvent(()=>{alert("opa")},"Btclick","<button>Clique aqui</button>","click")}
+            
             </article>
             <p>
             ${Oct8.Factory.ExistProp("Code",this.props,this.codeExemple)} 

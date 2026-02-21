@@ -21,7 +21,7 @@ class HomePage{
         ["Ciclo controlado","Você possui todo o cilco de vida e de atualziação, sem Re-renders.","./img/3d-cube.png"] 
       ]})
 
-           Oct8.Factory.render("Banner_big","#page",{Titulo:"Construa componentes mais rapido!",style:"big whiteRange flex",
+     Oct8.Factory.render("Banner_big","#page",{Titulo:"Construa componentes mais rapido!",style:"big whiteRange flex",
       Subtitulo:"Com Oct8 se tornou mais intuitivo contruir componentes com Js com legibilidade e flexibilidade.",
       Button:"Acessar Documentação",Code:`
         < r base> <br>
@@ -40,9 +40,8 @@ class HomePage{
 
   }
   static AddEvents(){
-    document.getElementById("d").addEventListener("click",()=>{
-      Oct8.Reaction.update("countNum",Oct8.Reaction.GetReaction("countNum")+1)
-    })
+   
+
   }
    build(){
     return `

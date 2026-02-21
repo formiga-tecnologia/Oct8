@@ -13,7 +13,7 @@ class Cards{
                 ${Oct8.Factory.ExistProp("Titulo",this.props,(el)=>{return `<h1> ${el} </h1>`})}
                 ${Oct8.Factory.ExistProp("Conteudo",this.props,(el)=>{return `<h3> ${el} </h3>`})}
                 ${Oct8.Factory.ExistProp("Botao",this.props,(el)=>{return `<button> ${el} </button>`})}
-                ${Oct8.Factory.ExistProp("Botao",this.props,(el)=>{return `<button id='d'> Add reação </button>`})}
+                ${Oct8.Events.CreateEvent(()=>{Oct8.Reaction.update("countNum",Oct8.Reaction.GetReaction("countNum")+1)},"AddCount","<button> Add reação </button>")}
                 </div>
                 `
     }
