@@ -2,7 +2,7 @@
 
 class Oct8Event {
    static CreateEvent(Event:any,name:string,children:string,TypeEvent:string="click"):string{
-    children  =`<div oct-event=${name}> ${children}</div>`
+    children  =`<oct oct-event=${name}> ${children}</oct>`
     document.querySelectorAll("[oct-event]").forEach(el =>{
       console.log(el)
       const Type = el.getAttribute("oct-event")

@@ -1,6 +1,6 @@
 class Oct8Event {
     static CreateEvent(Event, name, children, TypeEvent = "click") {
-        children = `<div oct-event=${name}> ${children}</div>`;
+        children = `<oct oct-event=${name}> ${children}</oct>`;
         document.querySelectorAll("[oct-event]").forEach(el => {
             console.log(el);
             const Type = el.getAttribute("oct-event");
