@@ -40,3 +40,4 @@ HomePage.ElementosPage()
 HomePage.AddEvents()
 
 
+Oct8.Events.ApplyAEvents()
