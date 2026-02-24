@@ -22,7 +22,6 @@ class Oct8Event {
                 }
             });
         });
-        //console.log(this.CreateEventArray.reduce())
         this.CreateEventArray.forEach(e => {
             document.getElementById(e.EventName)?.addEventListener(e.Type, e.Event);
         });
