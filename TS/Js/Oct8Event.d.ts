@@ -1,6 +1,7 @@
 declare class Oct8Event {
     private static Names;
     private static EventOct_;
+    private static CreateEventArray;
     static randomCustom(length?: number, chars?: string): string;
     static ApplyAEvents(): void;
     static CreateEvent(Event: any, name: string, children: string, TypeEvent?: string): string;

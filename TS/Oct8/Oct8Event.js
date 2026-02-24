@@ -11,7 +11,7 @@ class Oct8Event {
             const a = document.querySelectorAll("[oct-event]");
             a.forEach(el => {
                 let id_ = this.randomCustom(4);
-                if (els.EventName == el.getAttribute("oct-event")) {
+                if (els.EventName == el.getAttribute("oct-event") && el.id != els.EventName) {
                     el.id = els.EventName + id_;
                     document.getElementById(el.id)?.addEventListener(els.Type, els.Event);
                 }
@@ -36,5 +36,6 @@ class Oct8Event {
 }
 Oct8Event.Names = [];
 Oct8Event.EventOct_ = [];
+Oct8Event.CreateEventArray = [];
 export { Oct8Event };
 //# sourceMappingURL=Oct8Event.js.map

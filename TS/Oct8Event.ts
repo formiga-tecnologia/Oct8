@@ -8,6 +8,7 @@ type EventOct = {
 class Oct8Event {
   private static Names: Array<EventOct> = []
   private static EventOct_ :Array<EventOct> = []
+  private static CreateEventArray:Array<string> =[]
 
   static  randomCustom(length: number = 4, chars: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"): string {
   let result = "";
@@ -24,7 +25,7 @@ class Oct8Event {
       const a = document.querySelectorAll("[oct-event]");
       a.forEach(el=>{
         let id_ = this.randomCustom(4)
-        if(els.EventName == el.getAttribute("oct-event")){
+        if(els.EventName == el.getAttribute("oct-event") && el.id != els.EventName){
            el.id = els.EventName+ id_
            document.getElementById(el.id)?.addEventListener(els.Type,els.Event)
         }
