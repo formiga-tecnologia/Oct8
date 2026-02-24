@@ -1,6 +1,7 @@
 
 type EventOct = {
   EventName: string
+  idEvent?:string 
   Type: string
   Event: any
 }
@@ -29,6 +30,7 @@ class Oct8Event {
            el.id = els.EventName+ id_
            const Event_id:EventOct ={
             EventName:el.id,
+            idEvent:els.EventName,
             Event:els.Event,
             Type:els.Type
            }
@@ -36,13 +38,21 @@ class Oct8Event {
         }    
       })
     })
-
-
     this.CreateEventArray.forEach(e=>{
       document.getElementById(e.EventName)?.addEventListener(e.Type,e.Event)
     })
+  }
 
-
+  static DisableEvent(EventName:string=""):void{
+      if(EventName == ""){
+        this.CreateEventArray.forEach(el=>{
+         document.getElementById(el.EventName)?.removeEventListener(el.Type,el.Event)
+        })
+      }
+      const Events = this.CreateEventArray.filter(x => x.idEvent == EventName)   
+      Events.forEach(el=>{
+        document.getElementById(el.EventName)?.removeEventListener(el.Type,el.Event)
+      })
   }
   static CreateEvent(Event: any, name: string, children: string, TypeEvent: string = "click"): string {
     children = `<oct oct-event=${name}> ${children}</oct>`
