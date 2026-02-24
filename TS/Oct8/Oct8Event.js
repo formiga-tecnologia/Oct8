@@ -13,9 +13,18 @@ class Oct8Event {
                 let id_ = this.randomCustom(4);
                 if (els.EventName == el.getAttribute("oct-event") && el.id != els.EventName) {
                     el.id = els.EventName + id_;
-                    document.getElementById(el.id)?.addEventListener(els.Type, els.Event);
+                    const Event_id = {
+                        EventName: el.id,
+                        Event: els.Event,
+                        Type: els.Type
+                    };
+                    this.CreateEventArray.push(Event_id);
                 }
             });
+        });
+        //console.log(this.CreateEventArray.reduce())
+        this.CreateEventArray.forEach(e => {
+            document.getElementById(e.EventName)?.addEventListener(e.Type, e.Event);
         });
     }
     static CreateEvent(Event, name, children, TypeEvent = "click") {
