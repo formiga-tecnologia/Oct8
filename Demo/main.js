@@ -28,16 +28,38 @@ Oct8.Factory.register("LabelDocument",WarningLabel)
 new CardsDocument()
 
 //Default render
-Oct8.Factory.render("LabelDocument","#app",{})
-Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})
+
 
 
 //Paginas
-Oct8.Factory.register("Home",HomePage)
-Oct8.Factory.render("Home","#app")
-HomePage.buildPage()
-HomePage.ElementosPage()
-HomePage.AddEvents()
+// Oct8.Factory.register("Home",HomePage)
+// Oct8.Factory.render("Home","#app")
+// HomePage.buildPage()
+// HomePage.ElementosPage()
+
+//Routes
+function Default(){
+     Oct8.Factory.render("LabelDocument","#app",{})
+    Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})
+}
+
+Oct8.Route.register("PageHome",()=>{
+    Default()
+    Oct8.Factory.register("Home",HomePage)
+    Oct8.Factory.render("Home","#app")
+    HomePage.buildPage()
+    HomePage.ElementosPage()
+    Oct8.Events.ApplyAEvents()
+    
+})
+
+Oct8.Route.register("Store",()=>{
+     Default()
+})
+Oct8.Route.navigate("#app","PageHome")
 
 
-Oct8.Events.ApplyAEvents()
+document.addEventListener("click",()=>{
+   
+    Oct8.Route.navigate("#app","Store")
+})

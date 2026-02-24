@@ -1,40 +1,37 @@
+type MapRoute={
+  Name:string
+  Event:any
+}
 class Oct8Routes {
-  private static routes = new Map<string, any>()
+  private static routes:Array<MapRoute> = []
   private static current: string | null = null
-  private static outlet: HTMLElement
+  private static DefaultComp?: ()=>void
 
   static register(name: string, component: any) {
-    this.routes.set(name, component)
+    const ElementRoute:MapRoute ={
+      Name:name,
+      Event:component
+    }
+    this.routes.push(ElementRoute)
   }
-
-  static mount(target: string) {
-    const el = document.querySelector(target)
-    if (!el) throw new Error("Oct8Routes: target element not setter")
-    this.outlet = el as HTMLElement
+  static DefaultElements(event:()=>void){
+    this.DefaultComp =  event
   }
-
-  static navigate(name: string) {
-    if (!this.routes.has(name)) {
-      console.warn(`Oct8Routes: Route "${name}" not exists`)
-      return
+  static navigate(ElementId:string,NameRoute:string):void{
+    this.current = NameRoute
+    const Element = this.routes.filter(x=>x.Name == NameRoute)
+    if(Element){
+      const Base =  document.querySelector(ElementId)
+      if(Base){
+        Base.innerHTML = ""
+      }
+      Element[0]?.Event()
+      if(this.DefaultComp){
+        console.log(this.DefaultComp)
+        this.DefaultComp
+      }
     }
 
-    this.current = name
-    this.render()
-  }
-
-  private static render() {
-    this.outlet.innerHTML = ""
-
-    const Component = this.routes.get(this.current!)
-    const instance = new Component()
-    const content = instance.build()
-
-    if (typeof content === "string") {
-      this.outlet.innerHTML = content
-    } else {
-      this.outlet.appendChild(content)
-    }
   }
 }
 
