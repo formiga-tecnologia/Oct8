@@ -1,13 +1,19 @@
 class Oct8Event {
+    static randomCustom(length = 4, chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") {
+        let result = "";
+        for (let i = 0; i < length; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
+    }
     static ApplyAEvents() {
         this.Names.forEach(els => {
             const a = document.querySelectorAll("[oct-event]");
             a.forEach(el => {
-                console.log(this.Names);
+                let id_ = this.randomCustom(4);
                 if (els.EventName == el.getAttribute("oct-event")) {
-                    //el.addEventListener(els.Type,els.Event)
-                    el.id = els.EventName + 0;
-                    // Implementar Sistema de varredur por ID
+                    el.id = els.EventName + id_;
+                    document.getElementById(el.id)?.addEventListener(els.Type, els.Event);
                 }
             });
         });

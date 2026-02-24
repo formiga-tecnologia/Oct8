@@ -8,22 +8,33 @@ type EventOct = {
 class Oct8Event {
   private static Names: Array<EventOct> = []
   private static EventOct_ :Array<EventOct> = []
+
+  static  randomCustom(length: number = 4, chars: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"): string {
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+
   static ApplyAEvents(): void {
+    
     this.Names.forEach(els=>{
       
       const a = document.querySelectorAll("[oct-event]");
       a.forEach(el=>{
-        console.log(this.Names)
+        let id_ = this.randomCustom(4)
         if(els.EventName == el.getAttribute("oct-event")){
-           //el.addEventListener(els.Type,els.Event)
-           el.id = els.EventName+ 0
-           // Implementar Sistema de varredur por ID
+           el.id = els.EventName+ id_
+           document.getElementById(el.id)?.addEventListener(els.Type,els.Event)
         }
        
       })
       
 
     })
+
+
   }
   static CreateEvent(Event: any, name: string, children: string, TypeEvent: string = "click"): string {
     children = `<oct oct-event=${name}> ${children}</oct>`
