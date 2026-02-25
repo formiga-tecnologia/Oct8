@@ -42,24 +42,19 @@ function Default(){
      Oct8.Factory.render("LabelDocument","#app",{})
     Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})
 }
+Oct8.Factory.register("Home",HomePage)
 
 Oct8.Route.register("PageHome",()=>{
     Default()
-    Oct8.Factory.register("Home",HomePage)
     Oct8.Factory.render("Home","#app")
     HomePage.buildPage()
     HomePage.ElementosPage()
     Oct8.Events.ApplyAEvents()
     
-})
-
+},"#home")
 Oct8.Route.register("Store",()=>{
-     Default()
-})
+    Default()
+},"#store")
 Oct8.Route.navigate("#app","PageHome")
 
-
-document.addEventListener("click",()=>{
-   
-    Oct8.Route.navigate("#app","Store")
-})
+Oct8.Route.RunRoutes()
