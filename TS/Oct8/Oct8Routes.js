@@ -11,10 +11,6 @@ class Oct8Routes {
         this.DefaultComp = event;
     }
     static RunRoutes() {
-        const RouteFind = window.location.hash;
-            const Navigate = this.routes.find(x => x.Route == RouteFind) ?? "";
-            if (Navigate)
-                this.navigate("#app", Navigate?.Name);
         window.addEventListener("hashchange", () => {
             const RouteFind = window.location.hash;
             const Navigate = this.routes.find(x => x.Route == RouteFind) ?? "";
@@ -23,7 +19,6 @@ class Oct8Routes {
         });
     }
     static navigate(ElementId, NameRoute) {
-        debugger;
         this.current = NameRoute;
         const Element = this.routes.filter(x => x.Name == NameRoute);
         if (Element) {

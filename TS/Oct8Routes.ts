@@ -29,7 +29,6 @@ class Oct8Routes {
     })
   }
   static navigate(ElementId:string,NameRoute:string):void{
-    debugger
     this.current = NameRoute
     const Element = this.routes.filter(x=>x.Name == NameRoute)
     if(Element){
