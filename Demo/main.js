@@ -9,6 +9,8 @@ import { Container } from "./component/Container.js";
 import { CardsDocument } from "./Document/Cards_document.js";
 import { WarningLabel } from "./component/WarningLabel.js";
 
+Oct8.Factory.Template.
+
 //Initial Styled
 Oct8.Styled.InitCSS()
 Oct8.Styled.CreateApplyRule("LabelAviso",[Oct8.CssClassList.LabelWarning])
@@ -23,26 +25,17 @@ Oct8.Factory.register("Cards",Cards)
 Oct8.Factory.register("MenuPrinc",MenuBlog)
 Oct8.Factory.register("Container",Container)
 Oct8.Factory.register("LabelDocument",WarningLabel)
+Oct8.Factory.register("Home",HomePage)
 
 //Documents
 new CardsDocument()
 
-//Default render
-
-
-
-//Paginas
-// Oct8.Factory.register("Home",HomePage)
-// Oct8.Factory.render("Home","#app")
-// HomePage.buildPage()
-// HomePage.ElementosPage()
 
 //Routes
 function Default(){
      Oct8.Factory.render("LabelDocument","#app",{})
     Oct8.Factory.render("MenuPrinc","#app",{menu:["Home","Referencia","Templates","Blog"]})
 }
-Oct8.Factory.register("Home",HomePage)
 
 Oct8.Route.register("PageHome",()=>{
     Default()
@@ -55,6 +48,7 @@ Oct8.Route.register("PageHome",()=>{
 Oct8.Route.register("Store",()=>{
     Default()
 },"#store")
+
 Oct8.Route.navigate("#app","PageHome")
 
 Oct8.Route.RunRoutes()

@@ -6,10 +6,15 @@ export interface Oct8InternalInstance {
     [OCT8_ELEMENT]?: HTMLElement;
 }
 type ComponentConstructor<T = any> = new (props?: T) => Oct8InternalInstance;
+declare class TemplateFactory {
+    private FactoryRegister;
+    NewTemplate(TemplateName: string, StyledFunc: Event, Reactions: Event, FactoryRegister: Event, Documents: Event, Routes: Event): void;
+}
 declare class Oct8Factory {
     private static registry;
     private static instances;
     private static liveInstances;
+    static Template: TemplateFactory;
     constructor();
     /**
      * Create Object fatory base Oct8, Register in Oct8 Factory Class

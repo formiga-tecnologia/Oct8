@@ -1,5 +1,20 @@
 import { Oct8 } from "./Oct.js";
 const OCT8_ELEMENT = Symbol("oct8_element");
+class TemplateFactory {
+    constructor() {
+        this.FactoryRegister = [];
+    }
+    NewTemplate(TemplateName, StyledFunc, Reactions, FactoryRegister, Documents, Routes) {
+        const TemplateElement = {
+            NameTemplate: TemplateName,
+            styled: StyledFunc,
+            Reaction: Reactions,
+            FactoryRegister: FactoryRegister,
+            Documents: Documents,
+            Routes: Routes
+        };
+    }
+}
 class Oct8Factory {
     constructor() {
         Oct8.Styled.ValidCssFile();
@@ -132,6 +147,7 @@ class Oct8Factory {
 Oct8Factory.registry = new Map();
 Oct8Factory.instances = new WeakMap();
 Oct8Factory.liveInstances = new Set();
+Oct8Factory.Template = new TemplateFactory();
 class FactoryClass extends Oct8Factory {
     constructor(props) {
         super();

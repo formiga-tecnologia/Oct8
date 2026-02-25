@@ -11,11 +11,34 @@ export interface Oct8InternalInstance {
 type ComponentConstructor<T = any> = new (
   props?: T
 ) => Oct8InternalInstance
+type FactoryTemplate ={
+  NameTemplate:string
+  styled?:Event
+  Reaction?:Event
+  FactoryRegister?:Event
+  Documents?:Event
+  Routes?:Event
+}
+class TemplateFactory{
+  private FactoryRegister:Array<FactoryTemplate> = []
+    NewTemplate(TemplateName:string,StyledFunc:Event,Reactions:Event,FactoryRegister:Event,Documents:Event,Routes:Event):void{
+        const TemplateElement:FactoryTemplate = {
+            NameTemplate:TemplateName,
+            styled:StyledFunc,
+            Reaction:Reactions,
+            FactoryRegister:FactoryRegister,
+            Documents:Documents,
+            Routes:Routes
+
+        }
+    }
+}
 
 class Oct8Factory {
   private static registry = new Map<string, ComponentConstructor>()
   private static instances = new WeakMap<HTMLElement, any>()
   private static liveInstances = new Set<Oct8InternalInstance>()
+  static Template = new TemplateFactory()
   constructor(){
       Oct8.Styled.ValidCssFile()
   }
