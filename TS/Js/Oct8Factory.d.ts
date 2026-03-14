@@ -7,13 +7,20 @@ export interface Oct8InternalInstance {
 }
 type ComponentConstructor<T = any> = new (props?: T) => Oct8InternalInstance;
 declare class TemplateFactory {
-    private FactoryRegister;
-    NewTemplate(TemplateName: string, StyledFunc: Event, Reactions: Event, FactoryRegister: Event, Documents: Event, Routes: Event): void;
+    private FactoryRegister_;
+    NewTemplate(TemplateName: string, StyledFunc: Function, Reactions: Function, FactoryRegister: Function, Documents: Function, Routes: Function): void;
+    private RenderTemplate;
 }
+type Component = {
+    name: string;
+    value?: string;
+};
 declare class Oct8Factory {
     private static registry;
     private static instances;
     private static liveInstances;
+    static Components: Component[];
+    static Pathcomponent: string;
     static Template: TemplateFactory;
     constructor();
     /**
@@ -23,6 +30,19 @@ declare class Oct8Factory {
      * @param component  Target Component, represents with object Class
      */
     static register<T>(name: string, component: ComponentConstructor<T>): void;
+    /**
+     *
+     * @param nameComponent Name component for your new componet ex: "ComponentName"
+     */
+    static CreateComponent(nameComponent: string): void;
+    /**
+     *
+     * @param nameComponet Name component registred in CreateComponent function
+     * @param TargetIdorClass  Select target where this element , will created ex: "#id .clss or div"
+     * @param props  Props witch your component will inject in HTML ex: {Name: "Value"} in html: <div>{Name}</div>
+     */
+    static RenderComponent(nameComponet: string, TargetIdorClass: string, props: object): void;
+    static fetchLocal(path: string): Promise<string>;
     /**
      * Render the component in targte element HTML.
      *

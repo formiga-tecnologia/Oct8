@@ -19,7 +19,12 @@ class Oct8{
     static Query = Oct8Query
     static FactoryClass = FactoryClass
     static Document = Oct8Document
-
+    static App(start:Function):void {
+        let d = setInterval(() => {
+          start()
+          clearInterval(d)
+        }, 300);
+    }
     static CssClassList:Record<string,string> = {
     DisplayContainer:"div ",
     LabelWarning:"label",

@@ -8,6 +8,12 @@ import { Oct8Reaction } from "./Oct8Reaction.js";
 import { Oct8Routes } from "./Oct8Routes.js";
 import { Oct8Styled } from "./Oct8Styled.js";
 class Oct8 {
+    static App(start) {
+        let d = setInterval(() => {
+            start();
+            clearInterval(d);
+        }, 300);
+    }
 }
 Oct8.Factory = Oct8Factory;
 Oct8.Reaction = Oct8Reaction;

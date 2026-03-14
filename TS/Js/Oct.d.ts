@@ -18,6 +18,7 @@ declare class Oct8 {
     static Query: typeof Oct8Query;
     static FactoryClass: typeof FactoryClass;
     static Document: typeof Oct8Document;
+    static App(start: Function): void;
     static CssClassList: Record<string, string>;
 }
 export { Oct8 };

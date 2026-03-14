@@ -13,15 +13,15 @@ type ComponentConstructor<T = any> = new (
 ) => Oct8InternalInstance
 type FactoryTemplate ={
   NameTemplate:string
-  styled?:Event
-  Reaction?:Event
-  FactoryRegister?:Event
-  Documents?:Event
-  Routes?:Event
+  styled?:Function
+  Reaction?:Function
+  FactoryRegister?:Function
+  Documents?:Function
+  Routes?:Function
 }
 class TemplateFactory{
-  private FactoryRegister:Array<FactoryTemplate> = []
-    NewTemplate(TemplateName:string,StyledFunc:Event,Reactions:Event,FactoryRegister:Event,Documents:Event,Routes:Event):void{
+  private FactoryRegister_:Array<FactoryTemplate> = []
+    NewTemplate(TemplateName:string,StyledFunc:Function,Reactions:Function,FactoryRegister:Function,Documents:Function,Routes:Function):void{
         const TemplateElement:FactoryTemplate = {
             NameTemplate:TemplateName,
             styled:StyledFunc,
@@ -29,18 +29,35 @@ class TemplateFactory{
             FactoryRegister:FactoryRegister,
             Documents:Documents,
             Routes:Routes
-
         }
+
+        this.FactoryRegister_.push(TemplateElement)
     }
+    private RenderTemplate(name:string):void{
+      const Template = this.FactoryRegister_.find(x =>x.NameTemplate == name)
+      Template?.styled != undefined ? Template.styled():""
+      Template?.Reaction != undefined ? Template?.Reaction():""
+      Template?.FactoryRegister != undefined ? Template?.FactoryRegister():""
+      Template?.Documents != undefined ? Template?.Documents():""
+      Template?.Routes != undefined ? Template.Routes():""
+    
+    }
+}
+type Component={
+  name:string,
+  value?:string
 }
 
 class Oct8Factory {
   private static registry = new Map<string, ComponentConstructor>()
   private static instances = new WeakMap<HTMLElement, any>()
   private static liveInstances = new Set<Oct8InternalInstance>()
+  public static Components = new Array<Component>
+  public static Pathcomponent:string = ""
   static Template = new TemplateFactory()
   constructor(){
       Oct8.Styled.ValidCssFile()
+     
   }
 
   /**
@@ -55,6 +72,79 @@ class Oct8Factory {
     }
     this.registry.set(name, component)
   }
+  /**
+   * 
+   * @param nameComponent Name component for your new componet ex: "ComponentName"
+   */
+  static CreateComponent(nameComponent: string): void {
+    const newComp: Component = {
+      name: nameComponent
+    }
+    try {
+      (async () => {
+        console.log(this.Pathcomponent + "/" + nameComponent + ".html")
+        const content = await this.fetchLocal(this.Pathcomponent + "/" + nameComponent + ".html")
+        newComp.value = content
+        if (this.Components.filter(x => x.name == nameComponent).length >= 1) {
+          throw Error("Oct8: Element already  exists with this name ")
+        }
+        else {
+          this.Components.push(newComp)
+        }
+      })()
+    }
+    catch (err) {
+
+      console.error(err)
+    }
+
+  }
+
+  /**
+   * 
+   * @param nameComponet Name component registred in CreateComponent function
+   * @param TargetIdorClass  Select target where this element , will created ex: "#id .clss or div"
+   * @param props  Props witch your component will inject in HTML ex: {Name: "Value"} in html: <div>{Name}</div>
+   */
+  static RenderComponent(nameComponet:string,TargetIdorClass:string,props:object):void{
+    const Element = this.Components.find(x => x.name == nameComponet)
+    const Target = document.querySelector(TargetIdorClass)
+
+    if(Element!=undefined && Target){
+      if (Element !== undefined) {
+            if(props){
+
+              const Keys = Object.keys(props)
+              Keys.forEach(k =>{
+                let  f=  props[k as keyof  typeof props]
+                if(Element.value)
+                  while((Element.value.includes("{id}")))
+                {
+                  Element.value = Element.value?.replace(`{${k}}`,String(f).toString())
+                }
+                
+              }) 
+            }
+            Target.innerHTML += Element.value??"<div> Sorry, not have content here </div>"
+        }
+        else{
+          throw Error("Oct8: target element dont find in document")
+        }
+    }
+    else{
+          throw Error("Oct8: Component not register in Oct8")
+    }
+  }
+  
+  static async fetchLocal(path:string):Promise<string> {
+    const response = await fetch(path)
+    if(!response.ok){
+      console.log("error")
+      throw new Error("Erro ao carregar o arquivo de componente")
+    }
+    console.log(response.text)
+    return await response.text();
+  } 
 
   /**
    * Render the component in targte element HTML.

@@ -2,7 +2,7 @@ import { Oct8 } from "./Oct.js";
 const OCT8_ELEMENT = Symbol("oct8_element");
 class TemplateFactory {
     constructor() {
-        this.FactoryRegister = [];
+        this.FactoryRegister_ = [];
     }
     NewTemplate(TemplateName, StyledFunc, Reactions, FactoryRegister, Documents, Routes) {
         const TemplateElement = {
@@ -13,6 +13,15 @@ class TemplateFactory {
             Documents: Documents,
             Routes: Routes
         };
+        this.FactoryRegister_.push(TemplateElement);
+    }
+    RenderTemplate(name) {
+        const Template = this.FactoryRegister_.find(x => x.NameTemplate == name);
+        Template?.styled != undefined ? Template.styled() : "";
+        Template?.Reaction != undefined ? Template?.Reaction() : "";
+        Template?.FactoryRegister != undefined ? Template?.FactoryRegister() : "";
+        Template?.Documents != undefined ? Template?.Documents() : "";
+        Template?.Routes != undefined ? Template.Routes() : "";
     }
 }
 class Oct8Factory {
@@ -30,6 +39,71 @@ class Oct8Factory {
             throw new Error(`Oct8: componente "${name}" já registrado`);
         }
         this.registry.set(name, component);
+    }
+    /**
+     *
+     * @param nameComponent Name component for your new componet ex: "ComponentName"
+     */
+    static CreateComponent(nameComponent) {
+        const newComp = {
+            name: nameComponent
+        };
+        try {
+            (async () => {
+                console.log(this.Pathcomponent + "/" + nameComponent + ".html");
+                const content = await this.fetchLocal(this.Pathcomponent + "/" + nameComponent + ".html");
+                newComp.value = content;
+                if (this.Components.filter(x => x.name == nameComponent).length >= 1) {
+                    throw Error("Oct8: Element already  exists with this name ");
+                }
+                else {
+                    this.Components.push(newComp);
+                }
+            })();
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }
+    /**
+     *
+     * @param nameComponet Name component registred in CreateComponent function
+     * @param TargetIdorClass  Select target where this element , will created ex: "#id .clss or div"
+     * @param props  Props witch your component will inject in HTML ex: {Name: "Value"} in html: <div>{Name}</div>
+     */
+    static RenderComponent(nameComponet, TargetIdorClass, props) {
+        const Element = this.Components.find(x => x.name == nameComponet);
+        const Target = document.querySelector(TargetIdorClass);
+        if (Element != undefined && Target) {
+            if (Element !== undefined) {
+                if (props) {
+                    const Keys = Object.keys(props);
+                    Keys.forEach(k => {
+                        let f = props[k];
+                        if (Element.value)
+                            while ((Element.value.includes("{id}"))) {
+                                Element.value = Element.value?.replace(`{${k}}`, String(f).toString());
+                            }
+                    });
+                }
+                Target.innerHTML += Element.value ?? "<div> Sorry, not have content here </div>";
+            }
+            else {
+                throw Error("Oct8: target element dont find in document");
+            }
+        }
+        else {
+            throw Error("Oct8: Component not register in Oct8");
+        }
+    }
+    static async fetchLocal(path) {
+        const response = await fetch(path);
+        if (!response.ok) {
+            console.log("error");
+            throw new Error("Erro ao carregar o arquivo de componente");
+        }
+        console.log(response.text);
+        return await response.text();
     }
     /**
      * Render the component in targte element HTML.
@@ -147,6 +221,8 @@ class Oct8Factory {
 Oct8Factory.registry = new Map();
 Oct8Factory.instances = new WeakMap();
 Oct8Factory.liveInstances = new Set();
+Oct8Factory.Components = new Array;
+Oct8Factory.Pathcomponent = "";
 Oct8Factory.Template = new TemplateFactory();
 class FactoryClass extends Oct8Factory {
     constructor(props) {

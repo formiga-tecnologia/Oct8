@@ -9,7 +9,6 @@ import { Container } from "./component/Container.js";
 import { CardsDocument } from "./Document/Cards_document.js";
 import { WarningLabel } from "./component/WarningLabel.js";
 
-Oct8.Factory.Template.
 
 //Initial Styled
 Oct8.Styled.InitCSS()
@@ -52,3 +51,18 @@ Oct8.Route.register("Store",()=>{
 Oct8.Route.navigate("#app","PageHome")
 
 Oct8.Route.RunRoutes()
+
+
+// Testes
+Oct8.Factory.Pathcomponent = "./component"
+Oct8.Factory.CreateComponent("CardBase")
+
+Oct8.App(()=>{
+var a  = setInterval(()=>{
+    Oct8.Factory.RenderComponent("CardBase","#app",{id:"Hello world"})
+    clearInterval(a)
+},300)
+})
+
+
+
