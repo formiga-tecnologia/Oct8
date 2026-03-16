@@ -58,10 +58,7 @@ Oct8.Factory.Pathcomponent = "./component"
 Oct8.Factory.CreateComponent("CardBase")
 
 Oct8.App(()=>{
-var a  = setInterval(()=>{
     Oct8.Factory.RenderComponent("CardBase","#app",{id:"Hello world"})
-    clearInterval(a)
-},300)
 })
 
 
